@@ -1,0 +1,11 @@
+{
+  "name": "mws-restaurant-stage-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/udacity/mws-restaurant-stage-1.git",
+  "author": "Aman Ghebreweldi <amanuelg@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^3.11.0"
+  }
+}
