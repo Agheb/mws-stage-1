@@ -1,3 +1,6 @@
+import "./assets/css/styles.css";
+import DBHelper from "./assets/js/dbhelper";
+
 let restaurants, neighborhoods, cuisines;
 var map;
 var markers = [];
