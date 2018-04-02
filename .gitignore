@@ -62,3 +62,4 @@ typings/
 
 # vscode editor settings
 .vscode/
+.vscode/settings.json
