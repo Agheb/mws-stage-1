@@ -116,6 +116,17 @@ loadGoogleMapsApi(MapsOption)
 /**
  * Update page and map for current restaurants.
  */
+
+const NeighborhoodSelect = document.getElementById("neighborhoods-select");
+const CuisinesSelect = document.getElementById("cuisines-select");
+NeighborhoodSelect.addEventListener("change", () => {
+  updateRestaurants();
+});
+
+CuisinesSelect.addEventListener("change", () => {
+  updateRestaurants();
+});
+
 let updateRestaurants = () => {
   const cSelect = document.getElementById("cuisines-select");
   const nSelect = document.getElementById("neighborhoods-select");
@@ -134,7 +145,6 @@ let updateRestaurants = () => {
         // Got an error!
         console.error(error);
       } else {
-        console.log(restaurants);
         resetRestaurants(restaurants);
         fillRestaurantsHTML();
       }
@@ -152,7 +162,6 @@ let resetRestaurants = restaurants => {
   ul.innerHTML = "";
 
   // Remove all map markers
-  console.log(self.marker);
 
   if (typeof self.marker !== "undefined") {
     self.markers.forEach(m => m.setMap(null));
