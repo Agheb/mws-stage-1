@@ -4,8 +4,10 @@ import DBHelper from "./assets/js/dbhelper";
 
 let restaurants, neighborhoods, cuisines;
 var map;
+var googleMap;
 var markers = [];
 
+const loadGoogleMapsApi = require("load-google-maps-api");
 /**
  * Load all images from img subfolder for webpack
  */
@@ -89,19 +91,28 @@ let fillCuisinesHTML = (cuisines = self.cuisines) => {
 /**
  * Initialize Google map, called from HTML.
  */
-let initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
+const MapsOption = {
+  key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+  libraries: ["places"]
 };
-window.initMap = initMap;
+
+loadGoogleMapsApi(MapsOption)
+  .then(googleMaps => {
+    const loc = {
+      lat: 40.722216,
+      lng: -73.9875
+    };
+    map = new googleMaps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: loc,
+      scrollwheel: false
+    });
+    updateRestaurants();
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
 /**
  * Update page and map for current restaurants.
  */
@@ -199,7 +210,7 @@ let createRestaurantHTML = restaurant => {
 let addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
+    const marker = DBHelper.mapMarkerForRestaurant(restaurant, map);
     google.maps.event.addListener(marker, "click", () => {
       window.location.href = marker.url;
     });
