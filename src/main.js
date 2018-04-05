@@ -163,7 +163,7 @@ let resetRestaurants = restaurants => {
 
   // Remove all map markers
 
-  if (typeof self.marker !== "undefined") {
+  if (typeof self.markers !== "undefined") {
     self.markers.forEach(m => m.setMap(null));
   }
 
@@ -224,5 +224,6 @@ let addMarkersToMap = (restaurants = self.restaurants) => {
       window.location.href = marker.url;
     });
     self.markers.push(marker);
+    console.log(self.markers);
   });
 };
