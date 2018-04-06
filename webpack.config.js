@@ -7,7 +7,8 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const config = {
   context: path.resolve(__dirname, "src"),
   entry: {
-    main: "./main.js"
+    main: "./main.js",
+    restaurant: "./restaurant_info.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -43,10 +44,17 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(["dist"]),
-    // html-webpack-plugin instantiation
     new HtmlWebpackPlugin({
-      template: "index.html"
+      filename: "index.html",
+      template: "index.html",
+      chunks: ["main"]
     }),
+    new HtmlWebpackPlugin({
+      filename: "restaurant.html",
+      template: "restaurant.html",
+      chunks: ["restaurant"]
+    }),
+
     new ExtractTextPlugin("styles.css")
   ],
 
