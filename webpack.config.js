@@ -29,7 +29,7 @@ const config = {
         use: ["html-loader"]
       },
       {
-        test: /\.json$/,
+        test: /\.(jpg|png|gif|svg|json)$/,
         use: [
           {
             loader: "file-loader",
