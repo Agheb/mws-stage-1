@@ -1,3 +1,4 @@
+import "normalize.css";
 import "./assets/css/styles.css";
 import DBHelper from "./assets/js/dbhelper";
 
