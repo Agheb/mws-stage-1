@@ -1,4 +1,3 @@
-import "normalize.css";
 import "./assets/css/styles.css";
 import DBHelper from "./assets/js/dbhelper";
 
@@ -147,7 +146,7 @@ let createReviewHTML = review => {
   li.appendChild(date);
 
   const rating = document.createElement("p");
-  rating.innerHTML = `Rating: ${review.rating}`;
+  rating.innerHTML = createReviewStars(review.rating);
   li.appendChild(rating);
 
   const comments = document.createElement("p");
@@ -178,4 +177,25 @@ let getParameterByName = (name, url) => {
   if (!results) return null;
   if (!results[2]) return "";
   return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+
+/**
+ * Create star rating in revies
+ */
+let createReviewStars = rating => {
+  const star = `
+  <div class="star">
+  <i class="star-empty"></i>
+  <i class="star-half"></i>
+  <i class="star-filled"></i>
+</div>
+  `;
+  const markup = `
+  <div class="rating small star-icon value-${rating} color-ok">
+   <div class="star-container">
+       ${star.repeat(5)}
+    </div>
+  </div>
+  `;
+  return markup;
 };
