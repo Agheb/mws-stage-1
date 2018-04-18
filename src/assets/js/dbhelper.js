@@ -162,11 +162,15 @@ export default class DBHelper {
   }
 
   /**
-   * Restaurant image URL.
+   * Restaurant image URL
    */
   static imageUrlForRestaurant(restaurant) {
     return `assets/data/${restaurant.photograph}`;
   }
+
+  /**
+   *
+   */
 
   /**
    * Map marker for a restaurant.

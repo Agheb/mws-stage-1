@@ -27,18 +27,24 @@
   <!-- End header -->
 
   <main id="maincontent">
-    <section>
-      <img id="restaurant-img">
-    </section>
     <section id="restaurant-container">
+      <h1 id="restaurant-name"></h1>
+      <p id="restaurant-cuisine"></p>
+      <img id="restaurant-img">
       <div class="wrapper">
 
-        <h1 id="restaurant-name"></h1>
-        <p id="restaurant-cuisine"></p>
-        <p id="restaurant-address"></p>
-        <table id="restaurant-hours"></table>
+        <div class="address-container item">
+          <h2>Address</h2>
+          <p id="restaurant-address"></p>
+        </div>
 
-      </div>
+        <div class="item">
+          <h2>Opening Hours</h2>
+          <table id="restaurant-hours"></table>
+        </div>
+
+
+
     </section>
     <section id="map-container">
       <div id="map"></div>

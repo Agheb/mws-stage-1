@@ -29,7 +29,18 @@ const config = {
         use: ["html-loader"]
       },
       {
-        test: /\.(jpg|png|gif|svg|json)$/,
+        test: /\.(jpg|png)$/,
+        use: [
+          {
+            loader: "responsive-loader",
+            options: {
+              sizes: [400, 600, 800]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(gif|svg|json)$/,
         use: [
           {
             loader: "file-loader",

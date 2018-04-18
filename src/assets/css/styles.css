@@ -13,6 +13,10 @@ p {
   line-height: 1.5;
 }
 
+body {
+  background-color: #f3f3f3;
+}
+
 ul,
 li {
   font-family: Arial, Helvetica, sans-serif;
@@ -61,7 +65,10 @@ section {
 }
 
 #maincontent {
+  overflow: auto;
   background-color: #f3f3f3;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #footer {
@@ -93,9 +100,8 @@ nav h1 {
 nav h1 a {
   color: #fff;
   font-size: 0.7em;
+  letter-spacing: 2px;
   font-weight: 200;
-  letter-spacing: 5px;
-  text-transform: uppercase;
 }
 
 #breadcrumb {
@@ -238,53 +244,65 @@ nav h1 a {
 
 /* ====================== Restaurant Details ====================== */
 
+.inside h2 {
+  margin-bottom: 0;
+  font-size: 1.3em;
+}
+
 .inside header {
   width: 100%;
   height: 110px;
 }
 
-/* TODO: Fixed Header for larger Screenheits */
-
-.inside #restaurant-img {
-  max-width: 100%;
-  height: auto;
+#restaurant-img {
+  margin: 16px 0 0 0;
+  width: 100%;
 }
 
-.inside #restaurant-container {
-  margin: 24px 16px 0;
+#restaurant-container {
+  margin: 0 16px 0;
+}
+.wrapper {
   display: flex;
-  justify-content: left;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.inside #restaurant-name {
+.item {
+  width: 100%;
+}
+@media all and (min-width: 40em) {
+  .item {
+    width: 50%;
+    justify-content: center;
+  }
+}
+#restaurant-name {
   font-family: Arial, sans-serif;
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 1.1;
-  margin-bottom: 0;
+  margin: 24px 0 0;
 }
 
-.inside #restaurant-cuisine {
+#restaurant-cuisine {
   margin: 0 0 0;
   font-size: 1.2em;
   font-weight: 300;
   color: #666;
 }
 
-.inside #restaurant-address {
-  margin: 16px 0 0;
+#restaurant-address {
+  margin: 16px 0 16px;
   font-size: 1.2em;
 }
-
 
 .inside table {
   margin: 16px 0 24px;
 }
 
-.inside #restaurant-hours td {
-  font-size: 1.2em;
+#restaurant-hours td {
+  font-size: 1.1em;
   color: #666;
 }
 
@@ -316,12 +334,13 @@ nav h1 a {
 #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  margin: 30px 16px 40px;
+  margin: 24px 16px 24px;
   background-color: #f3f3f3;
 }
 
 #reviews-container h2 {
-  font-size: 1.4em;
+  margin-bottom: 16px;
+  font-size: 1.3em;
   font-weight: 600;
 }
 

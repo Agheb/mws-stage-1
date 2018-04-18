@@ -1,4 +1,3 @@
-import "normalize.css";
 import "./assets/css/styles.css";
 import Data from "./assets/data/restaurants.json";
 import DBHelper from "./assets/js/dbhelper";
@@ -191,7 +190,10 @@ let createRestaurantHTML = restaurant => {
 
   const image = document.createElement("img");
   image.className = "restaurant-img";
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  const img = require(`./assets/data/img/${restaurant.photograph}`);
+  console.log(img);
+  image.src = img.src;
+  image.srcset = img.srcSet;
   li.append(image);
 
   const name = document.createElement("h1");
