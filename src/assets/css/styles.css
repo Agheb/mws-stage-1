@@ -72,10 +72,9 @@ section {
 }
 
 #footer {
-  background-color: #444;
-  color: #aaa;
+  background-color: #252831;
+  color: #fff;
   font-size: 8pt;
-  letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
@@ -100,8 +99,7 @@ nav h1 {
 nav h1 a {
   color: #fff;
   font-size: 0.7em;
-  letter-spacing: 2px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 #breadcrumb {
@@ -153,17 +151,16 @@ nav h1 a {
 .filter-options {
   display: block;
   width: 100%;
-  background-color: #3397db;
   align-items: center;
   padding-top: 20px;
+  margin: 0 20px;
 }
 
 .filter-options h2 {
-  color: white;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1;
-  margin: 0 0 0 15px;
+  margin: 0 0 16px 0;
 }
 
 .filter-options select {
@@ -187,7 +184,7 @@ nav h1 a {
   background-color: #f3f3f3;
   list-style: outside none none;
   justify-items: center;
-  padding: 30px 0 60px;
+  padding: 0 20px 60px;
 }
 
 #restaurants-list li {
@@ -196,7 +193,6 @@ nav h1 a {
   font-family: Arial, sans-serif;
   min-height: 300px;
   text-align: left;
-  width: 300px;
 }
 
 #restaurants-list .restaurant-img {
