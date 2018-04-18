@@ -8,19 +8,6 @@ var googleMap;
 var markers = [];
 
 const loadGoogleMapsApi = require("load-google-maps-api");
-/**
- * Load all images from img subfolder for webpack
- */
-const req = require.context("./assets/data/img", true, /^\.\/.*\.jpg$/);
-
-const ImgFiles = (ctx => {
-  let keys = ctx.keys();
-  let values = keys.map(ctx); // Neat trick ! It returns value of keys
-  return keys.reduce((o, k, i) => {
-    o[k] = values[i];
-    return o;
-  }, {});
-})(req);
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
