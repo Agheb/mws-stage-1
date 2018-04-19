@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 const config = {
   context: path.resolve(__dirname, "src"),
@@ -79,7 +80,8 @@ const config = {
       chunks: ["restaurant"]
     }),
 
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    new WorkboxPlugin.GenerateSW()
   ],
 
   devServer: {
