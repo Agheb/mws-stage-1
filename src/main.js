@@ -178,9 +178,9 @@ let createRestaurantHTML = restaurant => {
   const image = document.createElement("img");
   image.className = "restaurant-img";
   const img = require(`./assets/data/img/${restaurant.photograph}`);
-  console.log(img);
   image.src = img.src;
   image.srcset = img.srcSet;
+  image.alt = "Featured image of restaurant";
   li.append(image);
 
   const name = document.createElement("h1");
