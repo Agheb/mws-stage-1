@@ -85,8 +85,8 @@ const config = {
   ],
 
   devServer: {
-    contentBase: path.resolve(__dirname, "./dist/assets/data"),
-    port: 8000
+    port: 8000,
+    compress: true
   },
   devtool: "inline-source-map"
 };
