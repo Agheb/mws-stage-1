@@ -7,22 +7,25 @@
 </head>
 
 <body class="inside">
-  <!-- Beginning header -->
   <header>
-    <!-- Beginning nav -->
-    <nav>
+    <div class="col-header">
       <h1>
         <a href="/">Restaurant Reviews</a>
       </h1>
+    </div>
+
+
+    <nav aria-label="breadcrum">
+      <ul id="breadcrumb">
+        <li>
+          <a href="/">Home</a>
+        </li>
+      </ul>
     </nav>
-    <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb">
-      <li>
-        <a href="/">Home</a>
-      </li>
-    </ul>
-    <!-- End breadcrumb -->
-    <!-- End nav -->
+
+
+
+
   </header>
   <!-- End header -->
 
@@ -32,19 +35,14 @@
       <p id="restaurant-cuisine"></p>
       <img id="restaurant-img">
       <div class="wrapper">
-
         <div class="address-container item">
           <h2>Address</h2>
           <p id="restaurant-address"></p>
         </div>
-
         <div class="item">
           <h2>Opening Hours</h2>
           <table id="restaurant-hours"></table>
         </div>
-
-
-
     </section>
     <section id="map-container">
       <div id="map"></div>
@@ -58,7 +56,7 @@
 
   <!-- Beginning footer -->
   <footer id="footer">
-    Copyright (c) 2017
+    Copyright (c) 2008
     <a href="/">
       <strong>Restaurant Reviews</strong>
     </a> All Rights Reserved.
