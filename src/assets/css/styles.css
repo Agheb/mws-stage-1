@@ -111,6 +111,7 @@ section {
   font-size: 0.7em;
   font-weight: 300;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 #breadcrumb {
@@ -138,7 +139,7 @@ section {
 /* Add a color to all links inside the list */
 
 #breadcrumb li a {
-  color: #4183d7;
+  color: #1460aa;
   text-decoration: none;
 }
 
