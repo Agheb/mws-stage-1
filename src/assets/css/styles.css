@@ -26,13 +26,7 @@ li {
 }
 
 a {
-  color: orange;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: #3397db;
+  color: #3455DB;
   text-decoration: none;
 }
 
@@ -81,6 +75,10 @@ section {
   text-transform: uppercase;
 }
 
+#footer a {
+  color: #1e90ff;
+}
+
 .hidden {
   position: absolute;
   left: -10000px;
@@ -107,9 +105,9 @@ section {
 }
 
 .col-header h1 a {
-  color: #fff;
+  color: #FFFFFF;
   font-size: 0.7em;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -234,7 +232,8 @@ section {
 #restaurants-list li a {
   display: inline-block;
   font-size: 10pt;
-  margin: 8px;
+  font-weight: 600;
+  margin: 8px 8px 16px 8px;
   padding: 8px;
   text-align: center;
   text-decoration: none;
