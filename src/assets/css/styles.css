@@ -81,6 +81,15 @@ section {
   text-transform: uppercase;
 }
 
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* ====================== Navigation ====================== */
 
 .col-header {
@@ -120,7 +129,7 @@ section {
 
 /* Add a slash symbol (/) before/behind each list item */
 
-#breadcrumb li + li:before {
+#breadcrumb li+li:before {
   padding: 8px;
   color: black;
   content: "/\00a0";
@@ -246,6 +255,7 @@ section {
 #restaurant-container {
   margin: 0 16px 0;
 }
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -254,12 +264,14 @@ section {
 .item {
   width: 100%;
 }
+
 @media all and (min-width: 40em) {
   .item {
     width: 50%;
     justify-content: center;
   }
 }
+
 #restaurant-name {
   font-family: "Inter UI", sans-serif;
   font-size: 1.5em;
