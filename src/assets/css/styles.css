@@ -1,13 +1,14 @@
 @charset "utf-8";
 @import "~normalize.css/normalize.css";
 @import "~css-star-rating/css/star-rating.css";
+@import url("https://rsms.me/inter/inter-ui.css");
 /* CSS Document */
 
 body,
 td,
 th,
 p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter UI", sans-serif;
   font-size: 10pt;
   color: #333;
   line-height: 1.5;
@@ -19,7 +20,7 @@ body {
 
 ul,
 li {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter UI", sans-serif;
   font-size: 10pt;
   color: #333;
 }
@@ -45,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter UI", sans-serif;
   margin: 0 0 20px;
 }
 
@@ -72,9 +73,9 @@ section {
 }
 
 #footer {
-  background-color: #252831;
+  background-color: #000000;
   color: #fff;
-  font-size: 8pt;
+  font-size: 0.8em;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
@@ -85,7 +86,7 @@ section {
 .col-header {
   width: 100%;
   height: 60px;
-  background-color: #252831;
+  background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +101,7 @@ section {
   color: #fff;
   font-size: 0.7em;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 #breadcrumb {
@@ -127,7 +129,7 @@ section {
 /* Add a color to all links inside the list */
 
 #breadcrumb li a {
-  color: #0275d8;
+  color: #4183d7;
   text-decoration: none;
 }
 
@@ -166,7 +168,7 @@ section {
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
-  font-family: Arial, sans-serif;
+  font-family: "Inter UI", sans-serif;
   font-size: 11pt;
   height: 35px;
   letter-spacing: 0;
@@ -190,7 +192,7 @@ section {
 #restaurants-list li {
   background-color: #fff;
   border-radius: 2px;
-  font-family: Arial, sans-serif;
+  font-family: "Inter UI", sans-serif;
   min-height: 300px;
   text-align: left;
 }
@@ -205,7 +207,7 @@ section {
 }
 
 #restaurants-list li h1 {
-  font-family: Arial, sans-serif;
+  font-family: "Inter UI", sans-serif;
   font-size: 14pt;
   font-weight: 200;
   letter-spacing: 0;
@@ -259,7 +261,7 @@ section {
   }
 }
 #restaurant-name {
-  font-family: Arial, sans-serif;
+  font-family: "Inter UI", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 0;
