@@ -180,10 +180,10 @@ let createRestaurantHTML = restaurant => {
   const img = require(`./assets/data/img/${restaurant.photograph}`);
   image.src = img.src;
   image.srcset = img.srcSet;
-  image.alt = "Featured image of restaurant";
+  image.alt = `Image of ${restaurant.name} Restaurant`;
   li.append(image);
 
-  const name = document.createElement("h1");
+  const name = document.createElement("h2");
   name.innerHTML = restaurant.name;
   li.append(name);
 

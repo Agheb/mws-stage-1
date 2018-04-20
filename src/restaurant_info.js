@@ -78,7 +78,7 @@ let fillRestaurantHTML = (restaurant = self.restaurant) => {
   const img = require(`./assets/data/img/${restaurant.photograph}`);
   image.src = img.src;
   image.srcset = img.srcSet;
-
+  image.alt = `Image of ${restaurant.name} Restaurant`;
   const cuisine = document.getElementById("restaurant-cuisine");
   cuisine.innerHTML = restaurant.cuisine_type;
 
@@ -117,7 +117,7 @@ let fillRestaurantHoursHTML = (
  */
 let fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById("reviews-container");
-  const title = document.createElement("h2");
+  const title = document.createElement("h3");
   title.innerHTML = "Reviews";
   container.appendChild(title);
 

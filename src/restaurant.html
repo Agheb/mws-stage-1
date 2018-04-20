@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
   <title>Restaurant Info</title>
 </head>
 
@@ -13,7 +13,7 @@
         <a href="/">Restaurant Reviews</a>
       </h1>
     </div>
-    <nav aria-label="breadcrum">
+    <nav aria-label="Breadcrumb">
       <ul id="breadcrumb">
         <li>
           <a href="/">Home</a>
@@ -26,21 +26,21 @@
 
   <main id="maincontent">
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+      <h2 id="restaurant-name"></h2>
       <p id="restaurant-cuisine"></p>
       <img alt="Featured image of restaurant" id="restaurant-img">
       <div class="wrapper">
         <div class="address-container item">
-          <h2>Address</h2>
+          <h3>Address</h3>
           <p id="restaurant-address"></p>
         </div>
         <div class="item">
-          <h2>Opening Hours</h2>
+          <h3>Opening Hours</h3>
           <table id="restaurant-hours"></table>
         </div>
     </section>
     <section id="map-container">
-      <div id="map"></div>
+      <div aria-hidden="true" role="application" id="map"></div>
     </section>
     <section id="reviews-container">
       <ul id="reviews-list"></ul>
