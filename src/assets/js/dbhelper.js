@@ -8,7 +8,12 @@ export default class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 8000; // Change this to your server port
-    return `http://localhost:${port}/assets/data/restaurants.json`;
+    const url = `http://localhost:${port}`;
+    if (location.href !== url) {
+      url = location.href;
+    }
+
+    return `${url}/assets/data/restaurants.json`;
   }
 
   /**

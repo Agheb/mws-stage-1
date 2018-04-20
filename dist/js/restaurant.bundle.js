@@ -37,7 +37,11 @@
     "use strict";
     class c {
       static get DATABASE_URL() {
-        return "http://localhost:8000/assets/data/restaurants.json";
+        const e = "http://localhost:8000";
+        return (
+          location.href !== e && (e = location.href),
+          `${e}/assets/data/restaurants.json`
+        );
       }
       static fetchRestaurants(e) {
         let t = new XMLHttpRequest();
