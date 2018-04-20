@@ -12,8 +12,9 @@ module.exports = {
     restaurant: "./restaurant_info.js"
   },
   output: {
+    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
-    filename: "./js/[name].bundle.js"
+    filename: "[name].bundle.js"
   },
   module: {
     rules: [
@@ -80,7 +81,7 @@ module.exports = {
       chunks: ["restaurant"]
     }),
 
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin("styles.[contenthash].css"),
     new WorkboxPlugin.GenerateSW({ ignoreUrlParametersMatching: [/./] })
   ]
 };
