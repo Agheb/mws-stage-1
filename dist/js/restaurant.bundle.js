@@ -37,7 +37,7 @@
     "use strict";
     class c {
       static get DATABASE_URL() {
-        const e = "http://localhost:8000/";
+        let e = "http://localhost:8000/";
         return (
           location.href !== e && (e = location.href),
           `${e}assets/data/restaurants.json`

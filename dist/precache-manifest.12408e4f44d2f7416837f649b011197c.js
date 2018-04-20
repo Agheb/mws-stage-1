@@ -7,7 +7,7 @@ self.__precacheManifest = [
     url: "restaurant.html"
   },
   {
-    revision: "654903613e58c8de07c8",
+    revision: "d5c22981b1aa2b675093",
     url: "styles.css"
   },
   {
@@ -106,11 +106,11 @@ self.__precacheManifest = [
     url: "030973888a6ccd23cadcf92367f3625c-600.jpg"
   },
   {
-    revision: "654903613e58c8de07c8",
+    revision: "d5c22981b1aa2b675093",
     url: "./js/restaurant.bundle.js"
   },
   {
-    revision: "21dedc445c7f08d45c18",
+    revision: "584ca46960446853950b",
     url: "./js/main.bundle.js"
   }
 ];
