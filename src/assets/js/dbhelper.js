@@ -7,10 +7,10 @@ export default class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 8000; // Change this to your server port
+    let port = 8000; // Change this to your server port
     let url = `http://localhost:${port}/`;
     if (location.href !== url) {
-      url = location.href;
+      url = location.hostname;
     }
 
     return `${url}assets/data/restaurants.json`;
