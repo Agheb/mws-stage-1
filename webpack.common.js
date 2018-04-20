@@ -5,7 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 
-const config = {
+module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
     main: "./main.js",
@@ -82,13 +82,5 @@ const config = {
 
     new ExtractTextPlugin("styles.css"),
     new WorkboxPlugin.GenerateSW()
-  ],
-
-  devServer: {
-    port: 8000,
-    compress: true
-  },
-  devtool: "inline-source-map"
+  ]
 };
-
-module.exports = config;
