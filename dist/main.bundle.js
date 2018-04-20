@@ -29,7 +29,7 @@
     (a.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (a.p = ""),
+    (a.p = "/"),
     a((a.s = 14));
 })([
   function(e, t) {},
@@ -39,8 +39,7 @@
       static get DATABASE_URL() {
         let e = "http://localhost:8000/";
         return (
-          location.href !== e && (e = location.href),
-          `${e}assets/data/restaurants.json`
+          location.href !== e && (e = ""), `${e}assets/data/restaurants.json`
         );
       }
       static fetchRestaurants(e) {
@@ -149,16 +148,16 @@
               t(window.google.maps),
               delete window[a];
           };
-          var r = document.createElement("script"),
-            i = ["callback=" + a];
+          var p = document.createElement("script"),
+            r = ["callback=" + a];
           c.forEach(function(t) {
-            e[t] && i.push(t + "=" + e[t]);
+            e[t] && r.push(t + "=" + e[t]);
           }),
             e.libraries &&
               e.libraries.length &&
-              i.push("libraries=" + e.libraries.join(",")),
-            (r.src = "https://maps.googleapis.com/maps/api/js?" + i.join("&")),
-            document.body.appendChild(r);
+              r.push("libraries=" + e.libraries.join(",")),
+            (p.src = "https://maps.googleapis.com/maps/api/js?" + r.join("&")),
+            document.body.appendChild(p);
         })
       );
     };
@@ -547,12 +546,12 @@
     var c = a(0),
       n = (a.n(c), a(15)),
       d = (a.n(n), a(1));
-    var r;
-    const i = a(2);
+    var p;
+    const r = a(2);
     document.addEventListener("DOMContentLoaded", e => {
-      console.log("loaded"), p(), s();
+      console.log("loaded"), i(), s();
     });
-    let p = () => {
+    let i = () => {
         d.a.fetchNeighborhoods((e, t) => {
           e ? console.error(e) : ((self.neighborhoods = t), o());
         });
@@ -576,9 +575,9 @@
           (a.innerHTML = e), (a.value = e), t.append(a);
         });
       };
-    i({ key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI", libraries: ["places"] })
+    r({ key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI", libraries: ["places"] })
       .then(e => {
-        (r = new e.Map(document.getElementById("map"), {
+        (p = new e.Map(document.getElementById("map"), {
           zoom: 12,
           center: { lat: 40.722216, lng: -73.9875 },
           scrollwheel: !1
@@ -602,8 +601,8 @@
           a = e.selectedIndex,
           c = t.selectedIndex,
           n = e[a].value,
-          r = t[c].value;
-        d.a.fetchRestaurantByCuisineAndNeighborhood(n, r, (e, t) => {
+          p = t[c].value;
+        d.a.fetchRestaurantByCuisineAndNeighborhood(n, p, (e, t) => {
           e ? console.error(e) : (u(t), b());
         });
       },
@@ -628,14 +627,14 @@
         const n = a(3)(`./${e.photograph}`);
         (c.src = n.src),
           (c.srcset = n.srcSet),
-          (c.alt = "Featured image of restaurant"),
+          (c.alt = `Image of ${e.name} Restaurant`),
           t.append(c);
-        const r = document.createElement("h1");
-        (r.innerHTML = e.name), t.append(r);
+        const p = document.createElement("h2");
+        (p.innerHTML = e.name), t.append(p);
+        const r = document.createElement("p");
+        (r.innerHTML = e.neighborhood), t.append(r);
         const i = document.createElement("p");
-        (i.innerHTML = e.neighborhood), t.append(i);
-        const p = document.createElement("p");
-        (p.innerHTML = e.address), t.append(p);
+        (i.innerHTML = e.address), t.append(i);
         const o = document.createElement("a");
         return (
           (o.innerHTML = "View Details"),
@@ -646,7 +645,7 @@
       },
       w = (e = self.restaurants) => {
         e.forEach(e => {
-          const t = d.a.mapMarkerForRestaurant(e, r);
+          const t = d.a.mapMarkerForRestaurant(e, p);
           google.maps.event.addListener(t, "click", () => {
             window.location.href = t.url;
           }),

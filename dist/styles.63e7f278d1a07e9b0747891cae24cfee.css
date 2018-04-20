@@ -1285,7 +1285,7 @@ li {
 }
 
 a {
-  color: #3455DB;
+  color: #3455db;
   text-decoration: none;
 }
 
@@ -1335,7 +1335,7 @@ section {
 }
 
 #footer a {
-  color: #1e90ff;
+  color: white;
 }
 
 .hidden {
@@ -1364,7 +1364,7 @@ section {
 }
 
 .col-header h1 a {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 0.7em;
   font-weight: 400;
   text-transform: uppercase;
@@ -1387,7 +1387,7 @@ section {
 
 /* Add a slash symbol (/) before/behind each list item */
 
-#breadcrumb li+li:before {
+#breadcrumb li + li:before {
   padding: 8px;
   color: black;
   content: "/\A0";
@@ -1473,7 +1473,7 @@ section {
   height: auto;
 }
 
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   font-family: "Inter UI", sans-serif;
   font-size: 14pt;
   font-weight: 200;
@@ -1501,9 +1501,9 @@ section {
 
 /* ====================== Restaurant Details ====================== */
 
-.inside h2 {
+.inside h3 {
   margin-bottom: 0;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 #restaurant-img {
@@ -1548,15 +1548,16 @@ section {
 }
 
 #restaurant-address {
-  margin: 16px 0 16px;
+  margin: 24px 0 16px;
   font-size: 1.2em;
 }
 
 .inside table {
-  margin: 16px 0 24px;
+  margin: 23px 0 24px;
 }
 
-#restaurant-hours td {
+#restaurant-hours th,
+td {
   font-size: 1.1em;
   color: #666;
 }
@@ -1593,9 +1594,9 @@ section {
   background-color: #f3f3f3;
 }
 
-#reviews-container h2 {
+#reviews-container h3 {
   margin-bottom: 16px;
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: 600;
 }
 

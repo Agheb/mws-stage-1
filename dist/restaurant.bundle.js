@@ -29,7 +29,7 @@
     (a.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (a.p = ""),
+    (a.p = "/"),
     a((a.s = 16));
 })([
   function(e, t) {},
@@ -39,8 +39,7 @@
       static get DATABASE_URL() {
         let e = "http://localhost:8000/";
         return (
-          location.href !== e && (e = location.href),
-          `${e}assets/data/restaurants.json`
+          location.href !== e && (e = ""), `${e}assets/data/restaurants.json`
         );
       }
       static fetchRestaurants(e) {
@@ -586,6 +585,7 @@
         const c = a(3)(`./${e.photograph}`);
         (t.src = c.src),
           (t.srcset = c.srcSet),
+          (t.alt = `Image of ${e.name} Restaurant`),
           (document.getElementById("restaurant-cuisine").innerHTML =
             e.cuisine_type),
           e.operating_hours && p(),
@@ -603,7 +603,7 @@
       },
       o = (e = self.restaurant.reviews) => {
         const t = document.getElementById("reviews-container"),
-          a = document.createElement("h2");
+          a = document.createElement("h3");
         if (((a.innerHTML = "Reviews"), t.appendChild(a), !e)) {
           const e = document.createElement("p");
           return (e.innerHTML = "No reviews yet!"), void t.appendChild(e);
