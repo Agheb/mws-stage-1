@@ -1,0 +1,1626 @@
+@import url(https://rsms.me/inter/inter-ui.css);/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+@charset "UTF-8";
+/*VARIABLES
+====================================================*/
+/*Range*/
+/*Spacing*/
+/*Colors*/
+/*Sizes*/
+/*Animation*/
+/*Icons*/
+/*Disabled*/
+/*CSS Star Rating Elements
+=================================================================*/
+/*HELPER*/
+.center-all {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+/*
+Star element
+==================================================================*/
+.star {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /*
+  Fill states
+  ==================================================================*/
+    /*
+  Colors
+  ==================================================================*/
+    /*
+  Icon Types
+  ==================================================================*/
+    /*
+  Star Size
+  ===================================================================*/
+    /*
+Disabled
+=================================================*/
+    /*
+  Direction
+  =================================================*/
+}
+
+.star svg, .star i {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-style: normal;
+}
+
+.star svg.star-half, .star svg.star-filled, .star i.star-half, .star i.star-filled {
+    opacity: 0;
+}
+
+.star i {
+    top: 1px;
+    display: none;
+}
+
+.star.icon i, .rating.star-icon i {
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.star.icon i.star-empty:before, .rating.star-icon i.star-empty:before {
+    content: "\2606";
+}
+
+.star.icon i.star-half:before, .rating.star-icon i.star-half:before {
+    content: "\2605";
+}
+
+.star.icon i.star-filled:before, .rating.star-icon i.star-filled:before {
+    content: "\2605";
+}
+
+.star.custom-icon i, .rating.star-custom-icon i, .rating.theme-kununu .star-container .star i {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.star.empty svg.star-half, .rating.hover:hover.value-1.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-1 .star-container .star svg.star-half, .rating.hover:hover.value-2.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-2 .star-container .star svg.star-half, .rating.hover:hover.value-3.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-3 .star-container .star svg.star-half, .rating.hover:hover.value-4.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-4 .star-container .star svg.star-half, .rating.hover:hover.value-5.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-5 .star-container .star svg.star-half, .rating.hover:hover.value-6.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-6 .star-container .star svg.star-half, .star.empty svg.star-filled, .rating.hover:hover.value-1.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-1 .star-container .star svg.star-filled, .rating.hover:hover.value-2.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-2 .star-container .star svg.star-filled, .rating.hover:hover.value-3.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-3 .star-container .star svg.star-filled, .rating.hover:hover.value-4.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-4 .star-container .star svg.star-filled, .rating.hover:hover.value-5.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-5 .star-container .star svg.star-filled, .rating.hover:hover.value-6.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-6 .star-container .star svg.star-filled, .star.empty i.star-half, .rating.hover:hover.value-1.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-1 .star-container .star i.star-half, .rating.hover:hover.value-2.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-2 .star-container .star i.star-half, .rating.hover:hover.value-3.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-3 .star-container .star i.star-half, .rating.hover:hover.value-4.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-4 .star-container .star i.star-half, .rating.hover:hover.value-5.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-5 .star-container .star i.star-half, .rating.hover:hover.value-6.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-6 .star-container .star i.star-half, .star.empty i.star-filled, .rating.hover:hover.value-1.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-1 .star-container .star i.star-filled, .rating.hover:hover.value-2.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-2 .star-container .star i.star-filled, .rating.hover:hover.value-3.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-3 .star-container .star i.star-filled, .rating.hover:hover.value-4.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-4 .star-container .star i.star-filled, .rating.hover:hover.value-5.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-5 .star-container .star i.star-filled, .rating.hover:hover.value-6.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-6 .star-container .star i.star-filled {
+    opacity: 0;
+}
+
+.star.empty svg.star-empty, .rating.hover:hover.value-1.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-1 .star-container .star svg.star-empty, .rating.hover:hover.value-2.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-2 .star-container .star svg.star-empty, .rating.hover:hover.value-3.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-3 .star-container .star svg.star-empty, .rating.hover:hover.value-4.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-4 .star-container .star svg.star-empty, .rating.hover:hover.value-5.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-5 .star-container .star svg.star-empty, .rating.hover:hover.value-6.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-6 .star-container .star svg.star-empty, .star.empty i.star-empty, .rating.hover:hover.value-1.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-1 .star-container .star i.star-empty, .rating.hover:hover.value-2.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-2 .star-container .star i.star-empty, .rating.hover:hover.value-3.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-3 .star-container .star i.star-empty, .rating.hover:hover.value-4.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-4 .star-container .star i.star-empty, .rating.hover:hover.value-5.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-5 .star-container .star i.star-empty, .rating.hover:hover.value-6.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-6 .star-container .star i.star-empty {
+    opacity: 1;
+}
+
+.star.half svg.star-filled, .rating.value-0.half .star:nth-child(1) svg.star-filled, .rating.value-1.half .star-container .star:nth-child(2) svg.star-filled, .rating.value-2.half .star-container .star:nth-child(3) svg.star-filled, .rating.value-3.half .star-container .star:nth-child(4) svg.star-filled, .rating.value-4.half .star-container .star:nth-child(5) svg.star-filled, .rating.value-5.half .star-container .star:nth-child(6) svg.star-filled, .star.half svg.star-empty, .rating.value-0.half .star:nth-child(1) svg.star-empty, .rating.value-1.half .star-container .star:nth-child(2) svg.star-empty, .rating.value-2.half .star-container .star:nth-child(3) svg.star-empty, .rating.value-3.half .star-container .star:nth-child(4) svg.star-empty, .rating.value-4.half .star-container .star:nth-child(5) svg.star-empty, .rating.value-5.half .star-container .star:nth-child(6) svg.star-empty, .star.half i.star-filled, .rating.value-0.half .star:nth-child(1) i.star-filled, .rating.value-1.half .star-container .star:nth-child(2) i.star-filled, .rating.value-2.half .star-container .star:nth-child(3) i.star-filled, .rating.value-3.half .star-container .star:nth-child(4) i.star-filled, .rating.value-4.half .star-container .star:nth-child(5) i.star-filled, .rating.value-5.half .star-container .star:nth-child(6) i.star-filled, .star.half i.star-empty, .rating.value-0.half .star:nth-child(1) i.star-empty, .rating.value-1.half .star-container .star:nth-child(2) i.star-empty, .rating.value-2.half .star-container .star:nth-child(3) i.star-empty, .rating.value-3.half .star-container .star:nth-child(4) i.star-empty, .rating.value-4.half .star-container .star:nth-child(5) i.star-empty, .rating.value-5.half .star-container .star:nth-child(6) i.star-empty {
+    opacity: 0;
+}
+
+.star.half svg.star-half, .rating.value-0.half .star:nth-child(1) svg.star-half, .rating.value-1.half .star-container .star:nth-child(2) svg.star-half, .rating.value-2.half .star-container .star:nth-child(3) svg.star-half, .rating.value-3.half .star-container .star:nth-child(4) svg.star-half, .rating.value-4.half .star-container .star:nth-child(5) svg.star-half, .rating.value-5.half .star-container .star:nth-child(6) svg.star-half, .star.half i.star-half, .rating.value-0.half .star:nth-child(1) i.star-half, .rating.value-1.half .star-container .star:nth-child(2) i.star-half, .rating.value-2.half .star-container .star:nth-child(3) i.star-half, .rating.value-3.half .star-container .star:nth-child(4) i.star-half, .rating.value-4.half .star-container .star:nth-child(5) i.star-half, .rating.value-5.half .star-container .star:nth-child(6) i.star-half {
+    opacity: 1;
+}
+
+.star.filled svg.star-empty, .rating.value-1 .star-container .star:nth-child(-n+1) svg.star-empty, .rating.value-2 .star-container .star:nth-child(-n+2) svg.star-empty, .rating.value-3 .star-container .star:nth-child(-n+3) svg.star-empty, .rating.value-4 .star-container .star:nth-child(-n+4) svg.star-empty, .rating.value-5 .star-container .star:nth-child(-n+5) svg.star-empty, .rating.value-6 .star-container .star:nth-child(-n+6) svg.star-empty, .rating.value-7 .star-container .star:nth-child(-n+7) svg.star-empty, .rating.value-8 .star-container .star:nth-child(-n+8) svg.star-empty, .rating.value-9 .star-container .star:nth-child(-n+9) svg.star-empty, .rating.value-10 .star-container .star:nth-child(-n+10) svg.star-empty, .rating.value-11 .star-container .star:nth-child(-n+11) svg.star-empty, .rating.value-12 .star-container .star:nth-child(-n+12) svg.star-empty, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) svg.star-empty, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) svg.star-empty, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) svg.star-empty, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) svg.star-empty, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) svg.star-empty, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) svg.star-empty, .star.filled svg.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) svg.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) svg.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) svg.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) svg.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) svg.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) svg.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) svg.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) svg.star-filled, .star.filled i.star-empty, .rating.value-1 .star-container .star:nth-child(-n+1) i.star-empty, .rating.value-2 .star-container .star:nth-child(-n+2) i.star-empty, .rating.value-3 .star-container .star:nth-child(-n+3) i.star-empty, .rating.value-4 .star-container .star:nth-child(-n+4) i.star-empty, .rating.value-5 .star-container .star:nth-child(-n+5) i.star-empty, .rating.value-6 .star-container .star:nth-child(-n+6) i.star-empty, .rating.value-7 .star-container .star:nth-child(-n+7) i.star-empty, .rating.value-8 .star-container .star:nth-child(-n+8) i.star-empty, .rating.value-9 .star-container .star:nth-child(-n+9) i.star-empty, .rating.value-10 .star-container .star:nth-child(-n+10) i.star-empty, .rating.value-11 .star-container .star:nth-child(-n+11) i.star-empty, .rating.value-12 .star-container .star:nth-child(-n+12) i.star-empty, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) i.star-empty, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) i.star-empty, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) i.star-empty, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) i.star-empty, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) i.star-empty, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) i.star-empty, .star.filled i.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) i.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) i.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) i.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) i.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) i.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) i.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) i.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) i.star-filled {
+    opacity: 0;
+}
+
+.star.filled svg.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) svg.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) svg.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) svg.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) svg.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) svg.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) svg.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) svg.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) svg.star-filled, .star.filled i.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) i.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) i.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) i.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) i.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) i.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) i.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) i.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) i.star-filled {
+    opacity: 1;
+}
+
+.star.default svg, .star-container .star svg {
+    fill: #999;
+}
+
+.star.default i, .star-container .star i {
+    color: #999;
+}
+
+.star.negative svg, .rating.hover:hover.hover-1 .star-container .star svg, .rating.hover:hover.hover-2 .star-container .star svg, .rating.value-0.half .star svg, .rating.value-1.half .star-container .rating.value-0.star:nth-child(2) .star svg, .rating.value-2.half .star-container .rating.value-0.star:nth-child(3) .star svg, .rating.value-3.half .star-container .rating.value-0.star:nth-child(4) .star svg, .rating.value-4.half .star-container .rating.value-0.star:nth-child(5) .star svg, .rating.value-5.half .star-container .rating.value-0.star:nth-child(6) .star svg {
+    fill: #f03c56;
+}
+
+.star.negative i, .rating.hover:hover.hover-1 .star-container .star i, .rating.hover:hover.hover-2 .star-container .star i, .rating.value-0.half .star i, .rating.value-1.half .star-container .rating.value-0.star:nth-child(2) .star i, .rating.value-2.half .star-container .rating.value-0.star:nth-child(3) .star i, .rating.value-3.half .star-container .rating.value-0.star:nth-child(4) .star i, .rating.value-4.half .star-container .rating.value-0.star:nth-child(5) .star i, .rating.value-5.half .star-container .rating.value-0.star:nth-child(6) .star i {
+    color: #f03c56;
+}
+
+.star.ok svg, .rating.hover:hover.hover-3 .star-container .star svg {
+    fill: #ffc058;
+}
+
+.star.ok i, .rating.hover:hover.hover-3 .star-container .star i {
+    color: #ffc058;
+}
+
+.star.positive svg, .rating.value-6 .star-container .star svg, .rating.value-7 .star-container .star svg, .rating.value-8 .star-container .star svg, .rating.value-9 .star-container .star svg, .rating.value-10 .star-container .star svg, .rating.value-11 .star-container .star svg, .rating.value-12 .star-container .star svg, .rating.hover:hover.hover-4 .star-container .star svg, .rating.hover:hover.hover-5 .star-container .star svg, .rating.hover:hover.hover-6 .star-container .star svg {
+    fill: #7ed321;
+}
+
+.star.positive i, .rating.value-6 .star-container .star i, .rating.value-7 .star-container .star i, .rating.value-8 .star-container .star i, .rating.value-9 .star-container .star i, .rating.value-10 .star-container .star i, .rating.value-11 .star-container .star i, .rating.value-12 .star-container .star i, .rating.hover:hover.hover-4 .star-container .star i, .rating.hover:hover.hover-5 .star-container .star i, .rating.hover:hover.hover-6 .star-container .star i {
+    color: #7ed321;
+}
+
+.star.svg i, .rating.star-svg i {
+    display: none;
+}
+
+.star.svg svg, .rating.star-svg svg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.star.custom-icon svg, .rating.star-custom-icon svg, .rating.theme-kununu .star-container .star svg, .star.icon svg, .rating.star-icon svg {
+    display: none;
+}
+
+.star.custom-icon i, .rating.star-custom-icon i, .rating.theme-kununu .star-container .star i, .star.icon i, .rating.star-icon i {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.star.small, .rating.small .star {
+    width: 10px;
+    height: 9, 5px;
+}
+
+.star.small i, .rating.small .star i {
+    font-size: 11px;
+    line-height: 10px;
+}
+
+.star.medium, .rating.medium .star {
+    width: 20px;
+    height: 20px;
+}
+
+.star.medium i, .rating.medium .star i {
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.star.large, .rating.large .star {
+    width: 35px;
+    height: 33.3px;
+}
+
+.star.large i, .rating.large .star i {
+    font-size: 36px;
+    line-height: 35px;
+}
+
+.star.disabled, .rating.disabled .star-container .star {
+    opacity: 0.5;
+}
+
+.star.direction-rtl svg.star-half, .star-container.direction-rtl .star svg.star-half, .rating.direction-rtl .star-container .star svg.star-half, .star.direction-rtl i.star-half, .star-container.direction-rtl .star i.star-half, .rating.direction-rtl .star-container .star i.star-half {
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.star.direction-ltr svg.star-half, .star-container.direction-ltr .star svg.star-half, .star.direction-ltr i.star-half, .star-container.direction-ltr .star i.star-half {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+/*
+Label Element
+===================================================================*/
+.label-value {
+    font-size: 18px;
+    line-height: 18px;
+    /*
+  Sizes
+  =================================================================*/
+    /*
+  Disabled
+  =================================================*/
+}
+
+.label-value.small, .rating.small .label-value {
+    font-size: 9.5px;
+    line-height: 9.5px;
+}
+
+.label-value.medium, .rating.medium .label-value {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.label-value.large, .rating.large .label-value {
+    font-size: 28px;
+    line-height: 35px;
+}
+
+.label-value.disabled, .rating.disabled .label-value {
+    opacity: 0.5;
+}
+
+/*
+Star Container
+==================================================================*/
+.star-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    /*
+ Direction
+ ===================================================*/
+    /*
+  Space
+  ======================================================*/
+}
+
+.star-container + .star {
+    margin-left: 5px;
+}
+
+.star-container .star {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.star-container .star svg, .star-container .star i {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.star-container svg {
+    z-index: 2;
+}
+
+.star-container i {
+    z-index: 1;
+}
+
+.star-container.direction-rtl, .rating.direction-rtl .star-container {
+    direction: rtl;
+}
+
+.star-container.direction-ltr {
+    direction: ltr;
+}
+
+.star-container.space-no, .rating.space-no .star-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.star-container.space-between, .rating.space-between .star-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.star-container.space-around, .rating.space-around .star-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+/*
+Rating Component
+========================================================================= */
+.rating {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    /*Rating Value
+  ====================================================*/
+    /*Hover states
+  ====================================================*/
+    /*Half stars
+  ====================================================*/
+    /*Label Visible
+  ====================================================*/
+    /*Label Position
+  ====================================================*/
+    /*
+  Direction
+  ===================================================*/
+    /* Star Type
+  ====================================================*/
+    /* Sizes
+  ==========================================================*/
+    /* Space
+  ====================================================*/
+    /* Static Color
+    ====================================================*/
+    /*Disabled
+  ====================================================*/
+    /*AnimationSpeed
+ ====================================================*/
+}
+
+.rating.value-1 .star-container .star svg {
+    fill: #f03c56;
+}
+
+.rating.value-1 .star-container .star i {
+    color: #f03c56;
+}
+
+.rating.value-2 .star-container .star svg {
+    fill: #f03c56;
+}
+
+.rating.value-2 .star-container .star i {
+    color: #f03c56;
+}
+
+.rating.value-3 .star-container .star svg {
+    fill: #ffc058;
+}
+
+.rating.value-3 .star-container .star i {
+    color: #ffc058;
+}
+
+.rating.value-4 .star-container .star svg {
+    fill: #7ed321;
+}
+
+.rating.value-4 .star-container .star i {
+    color: #7ed321;
+}
+
+.rating.value-5 .star-container .star svg {
+    fill: #7ed321;
+}
+
+.rating.value-5 .star-container .star i {
+    color: #7ed321;
+}
+
+.rating.value-6 .star-container .star svg {
+    fill: #7ed321;
+}
+
+.rating.value-6 .star-container .star i {
+    color: #7ed321;
+}
+
+.rating.label-hidden .label-value {
+    display: none;
+}
+
+.rating.label-visible {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.rating.label-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.rating.label-top .label-value + .star-container {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 5px;
+}
+
+.rating.label-left .label-value {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+.rating.label-left .label-value + .star-container {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.rating.label-right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.rating.label-right .label-value + .star-container {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.rating.label-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -moz-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+.rating.label-bottom .label-value + .star-container {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+
+.rating.direction-rtl {
+    direction: rtl;
+}
+
+.rating.direction-ltr {
+    direction: ltr;
+}
+
+.rating.color-default .star-container .star svg {
+    fill: #999 !important;
+}
+
+.rating.color-default .star-container .star i {
+    color: #999 !important;
+}
+
+.rating.color-ok .star-container .star svg {
+    fill: #ffc058 !important;
+}
+
+.rating.color-ok .star-container .star i {
+    color: #ffc058 !important;
+}
+
+.rating.color-positive .star-container .star svg {
+    fill: #7ed321 !important;
+}
+
+.rating.color-positive .star-container .star i {
+    color: #7ed321 !important;
+}
+
+.rating.color-negative .star-container .star svg {
+    fill: #f03c56 !important;
+}
+
+.rating.color-negative .star-container .star i {
+    color: #f03c56 !important;
+}
+
+.rating.immediately .star-container {
+    -webkit-transition: all none;
+    -moz-transition: all none;
+    transition: all none;
+}
+
+.rating.immediately .star-container .star {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.rating.immediately .star-container .star svg, .rating.immediately .star-container .star i {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.rating.noticeable .star-container {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.rating.noticeable .star-container .star {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.rating.noticeable .star-container .star svg, .rating.noticeable .star-container .star i {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.rating.slow .star-container {
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+.rating.slow .star-container .star {
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+.rating.slow .star-container .star svg, .rating.slow .star-container .star i {
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+/*theme modifiers
+====================================================*/
+.rating.theme-kununu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 78px;
+}
+
+.rating.theme-kununu .label-value,
+.rating.theme-kununu .star-container {
+    width: 100%;
+}
+
+.rating.theme-kununu .label-value {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 6px 6px 0 0;
+    height: 50px;
+    border: 1px solid #e9ecec;
+    border-bottom: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2f3940;
+    letter-spacing: -1px;
+    background-color: #f8f8f8;
+}
+
+.rating.theme-kununu .star-container {
+    border-radius: 0 0 6px 6px;
+    padding: 2px 0 4px 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #99c613;
+    border: 1px solid #99c613;
+    border-bottom: 0px;
+}
+
+.rating.theme-kununu .star-container .star {
+    height: 11px;
+    width: 11px;
+}
+
+.rating.theme-kununu .star-container .star i {
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+}
+
+.rating.theme-google-places .label-value {
+    color: #e7711b;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.rating.theme-google-places .star-container {
+    width: 65px;
+    margin-left: 2px;
+}
+
+.rating.theme-google-places .star-container .star i {
+    font-size: 17px;
+    color: #e7711b !important;
+}
+
+.rating.theme-google-places .star-container .star i.star-empty {
+    opacity: 1 !important;
+    color: #e1e1e1 !important;
+}
+
+.rating.theme-google-places .star-container .star i.star-empty:before {
+    content: "\2605";
+}
+
+.rating.theme-google-places .star-container .star i.star-half {
+    width: 7px;
+    overflow: hidden;
+}
+
+.rating.theme-google-places .star-container .star i.star-half:before {
+    content: "\2605";
+}
+
+.rating.theme-google-places .star-container .star i.star-filled:before {
+    content: "\2605";
+}
+
+.rating.theme-rolling-stars .star-container .star {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.rating.theme-rolling-stars.value-1 .star-container .star:nth-child(-n+1) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-2 .star-container .star:nth-child(-n+2) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-3 .star-container .star:nth-child(-n+3) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-4 .star-container .star:nth-child(-n+4) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-5 .star-container .star:nth-child(-n+5) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-6 .star-container .star:nth-child(-n+6) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-0.half .star:nth-child(1), .rating.value-0.half .rating.theme-rolling-stars.value-0.star:nth-child(1) .star:nth-child(1), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(2) .star:nth-child(1), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(3) .star:nth-child(1), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(4) .star:nth-child(1), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(5) .star:nth-child(1), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(6) .star:nth-child(1) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-1.half .star-container .star:nth-child(2), .rating.value-0.half .rating.theme-rolling-stars.value-1.star:nth-child(1) .star-container .star:nth-child(2), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(2) .star-container .star:nth-child(2), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(3) .star-container .star:nth-child(2), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(4) .star-container .star:nth-child(2), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(5) .star-container .star:nth-child(2), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(6) .star-container .star:nth-child(2) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-2.half .star-container .star:nth-child(3), .rating.value-0.half .rating.theme-rolling-stars.value-2.star:nth-child(1) .star-container .star:nth-child(3), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(2) .star-container .star:nth-child(3), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(3) .star-container .star:nth-child(3), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(4) .star-container .star:nth-child(3), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(5) .star-container .star:nth-child(3), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(6) .star-container .star:nth-child(3) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-3.half .star-container .star:nth-child(4), .rating.value-0.half .rating.theme-rolling-stars.value-3.star:nth-child(1) .star-container .star:nth-child(4), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(2) .star-container .star:nth-child(4), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(3) .star-container .star:nth-child(4), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(4) .star-container .star:nth-child(4), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(5) .star-container .star:nth-child(4), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(6) .star-container .star:nth-child(4) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-4.half .star-container .star:nth-child(5), .rating.value-0.half .rating.theme-rolling-stars.value-4.star:nth-child(1) .star-container .star:nth-child(5), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(2) .star-container .star:nth-child(5), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(3) .star-container .star:nth-child(5), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(4) .star-container .star:nth-child(5), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(5) .star-container .star:nth-child(5), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(6) .star-container .star:nth-child(5) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rating.theme-rolling-stars.value-5.half .star-container .star:nth-child(6), .rating.value-0.half .rating.theme-rolling-stars.value-5.star:nth-child(1) .star-container .star:nth-child(6), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(2) .star-container .star:nth-child(6), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(3) .star-container .star:nth-child(6), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(4) .star-container .star:nth-child(6), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(5) .star-container .star:nth-child(6), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(6) .star-container .star:nth-child(6) {
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    -moz-transition: transform 1s, -moz-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s, -moz-transform 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+@charset "utf-8";
+/* CSS Document */
+
+body,
+td,
+th,
+p {
+  font-family: "Inter UI", sans-serif;
+  font-size: 10pt;
+  color: #333;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #f3f3f3;
+}
+
+ul,
+li {
+  font-family: "Inter UI", sans-serif;
+  font-size: 10pt;
+  color: #333;
+}
+
+a {
+  color: #3455DB;
+  text-decoration: none;
+}
+
+a img {
+  border: none 0px #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter UI", sans-serif;
+  margin: 0 0 20px;
+}
+
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+#maincontent {
+  overflow: auto;
+  background-color: #f3f3f3;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#footer {
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#footer a {
+  color: #1e90ff;
+}
+
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ====================== Navigation ====================== */
+
+.col-header {
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.col-header h1 {
+  margin: 0 0 0 0;
+}
+
+.col-header h1 a {
+  color: #FFFFFF;
+  font-size: 0.7em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#breadcrumb {
+  padding: 10px 40px 16px;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 0;
+}
+
+/* Display list items side by side */
+
+#breadcrumb li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+
+#breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\A0";
+}
+
+/* Add a color to all links inside the list */
+
+#breadcrumb li a {
+  color: #1460aa;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+
+#breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* ====================== Map ====================== */
+
+#map {
+  height: 400px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+/* ====================== Restaurant Filtering ====================== */
+
+.filter-options {
+  display: block;
+  width: 100%;
+  align-items: center;
+  padding-top: 20px;
+  margin: 0 20px;
+}
+
+.filter-options h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 16px 0;
+}
+
+.filter-options select {
+  background-color: white;
+  border: 1px solid #fff;
+  font-family: "Inter UI", sans-serif;
+  font-size: 11pt;
+  height: 35px;
+  letter-spacing: 0;
+  margin: 10px;
+  padding: 0 10px;
+  width: 200px;
+}
+
+/* ====================== Restaurant Listing ====================== */
+
+#restaurants-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  background-color: #f3f3f3;
+  list-style: outside none none;
+  justify-items: center;
+  padding: 0 20px 60px;
+}
+
+#restaurants-list li {
+  background-color: #fff;
+  border-radius: 2px;
+  font-family: "Inter UI", sans-serif;
+  min-height: 300px;
+  text-align: left;
+}
+
+#restaurants-list .restaurant-img {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+}
+
+#restaurants-list li h1 {
+  font-family: "Inter UI", sans-serif;
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 24px 16px 10px;
+}
+
+#restaurants-list p {
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0px 16px 0px;
+  font-size: 11pt;
+}
+
+#restaurants-list li a {
+  display: inline-block;
+  font-size: 10pt;
+  font-weight: 600;
+  margin: 8px 8px 16px 8px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ====================== Restaurant Details ====================== */
+
+.inside h2 {
+  margin-bottom: 0;
+  font-size: 1.3em;
+}
+
+#restaurant-img {
+  margin: 16px 0;
+  width: 100%;
+}
+
+#restaurant-container {
+  margin: 0 16px 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 100%;
+}
+
+@media all and (min-width: 40em) {
+  .item {
+    width: 50%;
+    justify-content: center;
+  }
+}
+
+#restaurant-name {
+  font-family: "Inter UI", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin: 24px 0 0;
+}
+
+#restaurant-cuisine {
+  margin: 0 0 0;
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #666;
+}
+
+#restaurant-address {
+  margin: 16px 0 16px;
+  font-size: 1.2em;
+}
+
+.inside table {
+  margin: 16px 0 24px;
+}
+
+#restaurant-hours td {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.inside #map-container {
+  background: blue none repeat scroll 0 0;
+  height: 300px;
+  margin: 0 16px;
+}
+
+.inside #map {
+  background-color: #ccc;
+  height: 100%;
+  width: 100%;
+}
+
+.inside #footer {
+  bottom: 0;
+}
+
+/* review stars */
+
+.rating {
+  justify-content: left;
+}
+
+.star-container {
+  margin: 0;
+}
+
+#reviews-container {
+  border-bottom: 1px solid #d9d9d9;
+  margin: 24px 16px 24px;
+  background-color: #f3f3f3;
+}
+
+#reviews-container h2 {
+  margin-bottom: 16px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+#reviews-list {
+  margin: 0;
+  padding: 0;
+}
+
+#reviews-list li {
+  background-color: #fff;
+  border: 2px solid #f3f3f3;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 30px;
+  overflow: hidden;
+  padding: 24px 16px 24px;
+  position: relative;
+}
+
+#reviews-list li p {
+  margin: 0 0 10px;
+}
+
+#reviews-list li p:first-child {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
