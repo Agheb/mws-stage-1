@@ -40,8 +40,7 @@
     "build": "./node_modules/.bin/webpack",
     "build:prod": "./node_modules/.bin/webpack  --config webpack.prod.js",
     "watch": "./node_modules/.bin/webpack --watch",
-    "dev":
-      "./node_modules/.bin/webpack-dev-server --open --config webpack.dev.js",
+    "dev": "./node_modules/.bin/webpack-dev-server --config webpack.dev.js",
     "review": "./node_modules/.bin/serve --p 8000 ./dist/"
   },
   "lint-staged": {
