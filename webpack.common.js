@@ -81,6 +81,6 @@ module.exports = {
     }),
 
     new ExtractTextPlugin("styles.css"),
-    new WorkboxPlugin.GenerateSW()
+    new WorkboxPlugin.GenerateSW({ ignoreUrlParametersMatching: [/./] })
   ]
 };
