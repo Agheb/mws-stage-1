@@ -10,9 +10,8 @@ export default class DBHelper {
     let port = 8000; // Change this to your server port
     let url = `http://localhost:${port}/`;
     if (location.href !== url) {
-      url = location.hostname;
+      url = "";
     }
-
     return `${url}assets/data/restaurants.json`;
   }
 
