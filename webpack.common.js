@@ -2,8 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
@@ -59,8 +60,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].[ext]",
-              outputPath: "./assets/data/"
+              name: "[name].[ext]"
             }
           }
         ]

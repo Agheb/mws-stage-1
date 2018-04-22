@@ -5,6 +5,7 @@ const common = require("./webpack.common.js");
 const webpack = require("webpack");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 const HtmlCriticalPlugin = require("html-critical-webpack-plugin");
+
 module.exports = merge(common, {
   plugins: [
     new HtmlCriticalPlugin({

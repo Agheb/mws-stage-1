@@ -3,6 +3,7 @@ import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import Data from "./assets/data/restaurants.json";
+import Manifest from "./assets/data/manifest.json";
 import DBHelper from "./assets/js/dbhelper";
 import loadGoogleMapsApi from "load-google-maps-api";
 
