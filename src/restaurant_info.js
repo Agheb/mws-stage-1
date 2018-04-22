@@ -1,9 +1,15 @@
+import Lozad from "lozad";
+import Normalize from "normalize.css/normalize.css";
+import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import DBHelper from "./assets/js/dbhelper";
 
 let restaurant;
 var map;
 var googleMap;
+
+const observer = Lozad();
+observer.observe();
 
 const loadGoogleMapsApi = require("load-google-maps-api");
 
@@ -79,6 +85,7 @@ let fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.src = img.src;
   image.srcset = img.srcSet;
   image.alt = `Image of ${restaurant.name} Restaurant`;
+  observer.observe();
   const cuisine = document.getElementById("restaurant-cuisine");
   cuisine.innerHTML = restaurant.cuisine_type;
 
