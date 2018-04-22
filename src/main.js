@@ -1,22 +1,22 @@
-import lozad from "lozad";
+import Lozad from "lozad";
+import Normalize from "normalize.css/normalize.css";
+import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import Data from "./assets/data/restaurants.json";
 import DBHelper from "./assets/js/dbhelper";
+import loadGoogleMapsApi from "load-google-maps-api";
 
 let restaurants, neighborhoods, cuisines;
 var map;
 var googleMap;
 var markers = [];
 
-const loadGoogleMapsApi = require("load-google-maps-api");
-
-const observer = lozad();
+const observer = Lozad();
 observer.observe();
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener("DOMContentLoaded", event => {
-  console.log("loaded");
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -86,6 +86,13 @@ const MapsOption = {
   libraries: ["places"]
 };
 
+const createStaticImage = () => {
+  const mapsImage = `
+  <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&zoom=12&scale=2&size=800x400&maptype=roadmap&format=png&visual_refresh=true" alt="Google Map of 40.722216, -73.987501">
+  `;
+  document.getElementById("map").innerHTML = mapsImage;
+};
+
 loadGoogleMapsApi(MapsOption)
   .then(googleMaps => {
     const loc = {
@@ -103,7 +110,7 @@ loadGoogleMapsApi(MapsOption)
     console.error(error);
   });
 
-/**
+/*
  * Update page and map for current restaurants.
  */
 
