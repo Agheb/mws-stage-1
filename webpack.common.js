@@ -2,8 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
@@ -20,7 +20,7 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader"
+          use: [{ loader: "css-loader", options: { minimize: true } }]
         })
       },
       // html-loader
@@ -68,7 +68,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "index.html",
@@ -79,7 +79,6 @@ module.exports = {
       template: "restaurant.html",
       chunks: ["restaurant"]
     }),
-
     new ExtractTextPlugin("styles.[contenthash].css")
   ]
 };
