@@ -32,6 +32,103 @@
     (t.p = ""),
     t((t.s = 17));
 })([
+  function(e, A, t) {
+    /*! lozad.js - v1.4.0 - 2018-04-22
+* https://github.com/ApoorvSaxena/lozad.js
+* Copyright (c) 2018 Apoorv Saxena; Licensed MIT */ var a;
+    (a = function() {
+      "use strict";
+      var e =
+          Object.assign ||
+          function(e) {
+            for (var A = 1; A < arguments.length; A++) {
+              var t = arguments[A];
+              for (var a in t)
+                Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a]);
+            }
+            return e;
+          },
+        A = document.documentMode,
+        t = {
+          rootMargin: "0px",
+          threshold: 0,
+          load: function(e) {
+            if ("picture" === e.nodeName.toLowerCase()) {
+              var t = document.createElement("img");
+              A &&
+                e.getAttribute("data-iesrc") &&
+                (t.src = e.getAttribute("data-iesrc")),
+                e.appendChild(t);
+            }
+            e.getAttribute("data-src") && (e.src = e.getAttribute("data-src")),
+              e.getAttribute("data-srcset") &&
+                (e.srcset = e.getAttribute("data-srcset")),
+              e.getAttribute("data-background-image") &&
+                (e.style.backgroundImage =
+                  "url('" + e.getAttribute("data-background-image") + "')");
+          },
+          loaded: function() {}
+        };
+      function a(e) {
+        e.setAttribute("data-loaded", !0);
+      }
+      var c = function(e) {
+        return "true" === e.getAttribute("data-loaded");
+      };
+      return function() {
+        var A =
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
+              : ".lozad",
+          n =
+            arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+          h = e({}, t, n),
+          r = h.rootMargin,
+          d = h.threshold,
+          i = h.load,
+          E = h.loaded,
+          o = void 0;
+        return (
+          window.IntersectionObserver &&
+            (o = new IntersectionObserver(
+              (function(e, A) {
+                return function(t, n) {
+                  t.forEach(function(t) {
+                    t.intersectionRatio > 0 &&
+                      (n.unobserve(t.target),
+                      c(t.target) || (e(t.target), a(t.target), A(t.target)));
+                  });
+                };
+              })(i, E),
+              { rootMargin: r, threshold: d }
+            )),
+          {
+            observe: function() {
+              for (
+                var e = (function(e) {
+                    return e instanceof Element
+                      ? [e]
+                      : e instanceof NodeList
+                        ? e
+                        : document.querySelectorAll(e);
+                  })(A),
+                  t = 0;
+                t < e.length;
+                t++
+              )
+                c(e[t]) || (o ? o.observe(e[t]) : (i(e[t]), a(e[t]), E(e[t])));
+            },
+            triggerLoad: function(e) {
+              c(e) || (i(e), a(e), E(e));
+            }
+          }
+        );
+      };
+    }),
+      (e.exports = a());
+  },
+  function(e, A) {},
+  function(e, A) {},
   function(e, A) {},
   function(e, A, t) {
     "use strict";
@@ -138,46 +235,46 @@
       return (
         (e = e || {}),
         new Promise(function(A, c) {
-          var h = setTimeout(function() {
+          var n = setTimeout(function() {
             (window[t] = function() {}),
               c(new Error("Could not load the Google Maps API"));
           }, e.timeout || 1e4);
           window[t] = function() {
-            null !== h && clearTimeout(h),
+            null !== n && clearTimeout(n),
               A(window.google.maps),
               delete window[t];
           };
-          var n = document.createElement("script"),
-            E = ["callback=" + t];
+          var h = document.createElement("script"),
+            r = ["callback=" + t];
           a.forEach(function(A) {
-            e[A] && E.push(A + "=" + e[A]);
+            e[A] && r.push(A + "=" + e[A]);
           }),
             e.libraries &&
               e.libraries.length &&
-              E.push("libraries=" + e.libraries.join(",")),
-            (n.src = "https://maps.googleapis.com/maps/api/js?" + E.join("&")),
-            document.body.appendChild(n);
+              r.push("libraries=" + e.libraries.join(",")),
+            (h.src = "https://maps.googleapis.com/maps/api/js?" + r.join("&")),
+            document.body.appendChild(h);
         })
       );
     };
   },
   function(e, A, t) {
     var a = {
-      "./1.jpg": 4,
-      "./10.jpg": 5,
-      "./2.jpg": 6,
-      "./3.jpg": 7,
-      "./4.jpg": 8,
-      "./5.jpg": 9,
-      "./6.jpg": 10,
-      "./7.jpg": 11,
-      "./8.jpg": 12,
-      "./9.jpg": 13
+      "./1.jpg": 7,
+      "./10.jpg": 8,
+      "./2.jpg": 9,
+      "./3.jpg": 10,
+      "./4.jpg": 11,
+      "./5.jpg": 12,
+      "./6.jpg": 13,
+      "./7.jpg": 14,
+      "./8.jpg": 15,
+      "./9.jpg": 16
     };
     function c(e) {
-      return t(h(e));
+      return t(n(e));
     }
-    function h(e) {
+    function n(e) {
       var A = a[e];
       if (!(A + 1)) throw new Error("Cannot find module '" + e + "'.");
       return A;
@@ -185,9 +282,9 @@
     (c.keys = function() {
       return Object.keys(a);
     }),
-      (c.resolve = h),
+      (c.resolve = n),
       (e.exports = c),
-      (c.id = 3);
+      (c.id = 6);
   },
   function(e, A, t) {
     e.exports = {
@@ -549,108 +646,131 @@
       height: 225
     };
   },
-  ,
-  ,
-  ,
   function(e, A, t) {
     "use strict";
     Object.defineProperty(A, "__esModule", { value: !0 });
     var a = t(0),
-      c = (t.n(a), t(1));
-    var h;
-    t(2)({
+      c = t.n(a),
+      n = t(1),
+      h = (t.n(n), t(2)),
+      r = (t.n(h), t(3)),
+      d = (t.n(r), t(18)),
+      i = (t.n(d), t(4)),
+      E = t(5),
+      o = t.n(E);
+    var p;
+    const s = c()();
+    s.observe(),
+      document.addEventListener("DOMContentLoaded", e => {
+        g(), Q();
+      });
+    let g = () => {
+        i.a.fetchNeighborhoods((e, A) => {
+          e ? console.error(e) : ((self.neighborhoods = A), f());
+        });
+      },
+      f = (e = self.neighborhoods) => {
+        const A = document.getElementById("neighborhoods-select");
+        e.forEach(e => {
+          const t = document.createElement("option");
+          (t.innerHTML = e), (t.value = e), A.append(t);
+        });
+      },
+      Q = () => {
+        i.a.fetchCuisines((e, A) => {
+          e ? console.error(e) : ((self.cuisines = A), B());
+        });
+      },
+      B = (e = self.cuisines) => {
+        const A = document.getElementById("cuisines-select");
+        e.forEach(e => {
+          const t = document.createElement("option");
+          (t.innerHTML = e), (t.value = e), A.append(t);
+        });
+      };
+    o()({
       key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
       libraries: ["places"]
     })
       .then(e => {
-        n((A, t) => {
-          A
-            ? console.error(A)
-            : ((h = new e.Map(document.getElementById("map"), {
-                zoom: 12,
-                center: t.latlng,
-                scrollwheel: !1
-              })),
-              p(),
-              c.a.mapMarkerForRestaurant(self.restaurant, h));
-        });
+        (p = new e.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: { lat: 40.722216, lng: -73.9875 },
+          scrollwheel: !1
+        })),
+          w();
       })
       .catch(e => {
         console.error(e);
       });
-    let n = e => {
-        if (self.restaurant) return void e(null, self.restaurant);
-        const A = Q("id");
-        A
-          ? c.a.fetchRestaurantById(A, (A, t) => {
-              (self.restaurant = t), t ? (E(), e(null, t)) : console.error(A);
-            })
-          : ((error = "No restaurant id in URL"), e(error, null));
+    const l = document.getElementById("neighborhoods-select"),
+      u = document.getElementById("cuisines-select");
+    l.addEventListener("change", () => {
+      w();
+    }),
+      u.addEventListener("change", () => {
+        w();
+      });
+    let w = () => {
+        const e = document.getElementById("cuisines-select"),
+          A = document.getElementById("neighborhoods-select"),
+          t = e.selectedIndex,
+          a = A.selectedIndex,
+          c = e[t].value,
+          n = A[a].value;
+        i.a.fetchRestaurantByCuisineAndNeighborhood(c, n, (e, A) => {
+          e ? console.error(e) : (H(A), b());
+        });
       },
-      E = (e = self.restaurant) => {
-        (document.getElementById("restaurant-name").innerHTML = e.name),
-          (document.getElementById("restaurant-address").innerHTML = e.address);
-        const A = document.getElementById("restaurant-img");
-        A.className = "restaurant-img";
-        const a = t(3)(`./${e.photograph}`);
-        (A.src = a.src),
-          (A.srcset = a.srcSet),
-          (A.alt = `Image of ${e.name} Restaurant`),
-          (document.getElementById("restaurant-cuisine").innerHTML =
-            e.cuisine_type),
-          e.operating_hours && d(),
-          r();
+      H = e => {
+        (self.restaurants = []),
+          (document.getElementById("restaurants-list").innerHTML = ""),
+          void 0 !== self.markers && self.markers.forEach(e => e.setMap(null)),
+          (self.markers = []),
+          (self.restaurants = e);
       },
-      d = (e = self.restaurant.operating_hours) => {
-        const A = document.getElementById("restaurant-hours");
-        for (let t in e) {
-          const a = document.createElement("tr"),
-            c = document.createElement("td");
-          (c.innerHTML = t), a.appendChild(c);
-          const h = document.createElement("td");
-          (h.innerHTML = e[t]), a.appendChild(h), A.appendChild(a);
-        }
-      },
-      r = (e = self.restaurant.reviews) => {
-        const A = document.getElementById("reviews-container"),
-          t = document.createElement("h3");
-        if (((t.innerHTML = "Reviews"), A.appendChild(t), !e)) {
-          const e = document.createElement("p");
-          return (e.innerHTML = "No reviews yet!"), void A.appendChild(e);
-        }
-        const a = document.getElementById("reviews-list");
+      b = (e = self.restaurants) => {
+        const A = document.getElementById("restaurants-list");
         e.forEach(e => {
-          a.appendChild(i(e));
+          A.append(S(e)), s.observe();
         }),
-          A.appendChild(a);
+          I();
       },
-      i = e => {
+      S = e => {
         const A = document.createElement("li"),
-          t = document.createElement("p");
-        (t.innerHTML = e.name), A.appendChild(t);
-        const a = document.createElement("p");
-        (a.innerHTML = e.date), A.appendChild(a);
-        const c = document.createElement("p");
-        (c.innerHTML = B(e.rating)), A.appendChild(c);
+          a = document.createElement("img");
+        a.className = "restaurant-img lozad";
+        const c = t(6)(`./${e.photograph}`);
+        a.setAttribute("data-src", c.src),
+          a.setAttribute("data-srcset", c.srcSet),
+          (a.alt = `Image of ${e.name} Restaurant`),
+          A.append(a);
+        const n = document.createElement("h2");
+        (n.innerHTML = e.name), A.append(n);
         const h = document.createElement("p");
-        return (h.innerHTML = e.comments), A.appendChild(h), A;
+        (h.innerHTML = e.neighborhood), A.append(h);
+        const r = document.createElement("p");
+        (r.innerHTML = e.address), A.append(r);
+        const d = document.createElement("a");
+        return (
+          (d.innerHTML = "View Details"),
+          (d.href = i.a.urlForRestaurant(e)),
+          A.append(d),
+          A
+        );
       },
-      p = (e = self.restaurant) => {
-        const A = document.getElementById("breadcrumb"),
-          t = document.createElement("li");
-        (t.innerHTML = e.name), A.appendChild(t);
-      },
-      Q = (e, A) => {
-        A || (A = window.location.href), (e = e.replace(/[\[\]]/g, "\\$&"));
-        const t = new RegExp(`[?&]${e}(=([^&#]*)|&|#|$)`).exec(A);
-        return t
-          ? t[2] ? decodeURIComponent(t[2].replace(/\+/g, " ")) : ""
-          : null;
-      },
-      B = e => {
-        return `\n  <div class="rating small star-icon value-${e} color-ok">\n   <div class="star-container">\n       ${'\n  <div class="star">\n  <i class="star-empty"></i>\n  <i class="star-half"></i>\n  <i class="star-filled"></i>\n</div>\n  '.repeat(
-          5
-        )}\n    </div>\n  </div>\n  `;
+      I = (e = self.restaurants) => {
+        e.forEach(e => {
+          const A = i.a.mapMarkerForRestaurant(e, p);
+          google.maps.event.addListener(A, "click", () => {
+            window.location.href = A.url;
+          }),
+            self.markers.push(A),
+            console.log(self.markers);
+        });
       };
+  },
+  function(e, A, t) {
+    e.exports = t.p + "assets/data/restaurants.json";
   }
 ]);

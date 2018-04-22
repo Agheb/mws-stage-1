@@ -3,21 +3,21 @@ self.__precacheManifest = [
     url: "3c3ab63c6a42d3109a662b2109c985ec-800.jpg"
   },
   {
-    revision: "a94d2147295229f69cf8141a3a1f3403",
+    revision: "7dabdd8e6434c713853f53a31e982e6a",
     url: "restaurant.html"
   },
   {
-    revision: "a132dcbb9c7bdd09d025",
-    url: "styles.9c2de39d7da4722242d6f0843a501af7.css"
+    revision: "6d65f77d8c7c2ccb8509",
+    url: "styles.36fda4b1a69410c4d51ccd2c588539a2.css"
   },
   {
     url: "acd8a661ac58d09752cd244a151f5515-400.jpg"
   },
   {
-    url: "main.bundle.953710320daedfc6e1a6.js"
+    url: "main.bundle.3217fb71f093fea501d5.js"
   },
   {
-    url: "restaurant.bundle.a132dcbb9c7bdd09d025.js"
+    url: "restaurant.bundle.6d65f77d8c7c2ccb8509.js"
   },
   {
     url: "f86d5748d95432a95d2e89fb714016db-800.jpg"
@@ -27,7 +27,7 @@ self.__precacheManifest = [
     url: "fonts/Inter-UI-Regular.woff2"
   },
   {
-    revision: "7b2906a66b8a2cf29cef778be3fee09e",
+    revision: "4ae4311e41a53445a9dc089a418e0337",
     url: "index.html"
   },
   {
