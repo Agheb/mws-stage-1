@@ -3,7 +3,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -12,9 +11,8 @@ module.exports = {
     restaurant: "./restaurant_info.js"
   },
   output: {
-    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.[chunkhash].js"
   },
   module: {
     rules: [
@@ -36,7 +34,8 @@ module.exports = {
           {
             loader: "responsive-loader",
             options: {
-              sizes: [400, 600, 800]
+              sizes: [400, 600, 800],
+              placeholder: true
             }
           }
         ]
@@ -81,7 +80,6 @@ module.exports = {
       chunks: ["restaurant"]
     }),
 
-    new ExtractTextPlugin("styles.[contenthash].css"),
-    new WorkboxPlugin.GenerateSW({ ignoreUrlParametersMatching: [/./] })
+    new ExtractTextPlugin("styles.[contenthash].css")
   ]
 };
