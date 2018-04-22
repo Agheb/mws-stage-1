@@ -1,6 +1,4 @@
 @charset "utf-8";
-@import "~normalize.css/normalize.css";
-@import "~css-star-rating/css/star-rating.css";
 
 @font-face {
   font-family: "Inter UI";
@@ -378,9 +376,4 @@ td {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 2px;
-}
-
-img[data-sizes="auto"] {
-  display: block;
-  width: 100%;
 }
