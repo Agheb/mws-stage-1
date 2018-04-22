@@ -1,4 +1,4 @@
-@import url(https://rsms.me/inter/inter-ui.css);/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
@@ -1261,6 +1261,20 @@ Rating Component
     transform: rotate(360deg);
 }
 @charset "utf-8";
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Inter-UI-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/Inter-UI-Bold.woff2) format("woff2");
+}
 /* CSS Document */
 
 body,
@@ -1469,7 +1483,7 @@ section {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-width: 100%;
+  min-width: 300px;
   height: auto;
 }
 
@@ -1624,4 +1638,9 @@ td {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 2px;
+}
+
+img[data-sizes="auto"] {
+  display: block;
+  width: 100%;
 }
