@@ -1,3 +1,4 @@
+import lozad from "lozad";
 import "./assets/css/styles.css";
 import Data from "./assets/data/restaurants.json";
 import DBHelper from "./assets/js/dbhelper";
@@ -9,6 +10,8 @@ var markers = [];
 
 const loadGoogleMapsApi = require("load-google-maps-api");
 
+const observer = lozad();
+observer.observe();
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -165,6 +168,7 @@ let fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById("restaurants-list");
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
+    observer.observe();
   });
   addMarkersToMap();
 };
@@ -176,10 +180,10 @@ let createRestaurantHTML = restaurant => {
   const li = document.createElement("li");
 
   const image = document.createElement("img");
-  image.className = "restaurant-img";
+  image.className = "restaurant-img lozad";
   const img = require(`./assets/data/img/${restaurant.photograph}`);
-  image.src = img.src;
-  image.srcset = img.srcSet;
+  image.setAttribute("data-src", img.src);
+  image.setAttribute("data-srcset", img.srcSet);
   image.alt = `Image of ${restaurant.name} Restaurant`;
   li.append(image);
 
