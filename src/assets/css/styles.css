@@ -1,7 +1,20 @@
 @charset "utf-8";
 @import "~normalize.css/normalize.css";
 @import "~css-star-rating/css/star-rating.css";
-@import url("https://rsms.me/inter/inter-ui.css");
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Inter-UI-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../font/Inter-UI-Bold.woff2") format("woff2");
+}
 /* CSS Document */
 
 body,
@@ -210,7 +223,7 @@ section {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-width: 100%;
+  min-width: 300px;
   height: auto;
 }
 
@@ -365,4 +378,9 @@ td {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 2px;
+}
+
+img[data-sizes="auto"] {
+  display: block;
+  width: 100%;
 }
