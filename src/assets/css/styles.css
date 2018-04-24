@@ -2,16 +2,18 @@
 
 @font-face {
   font-family: "Inter UI";
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("../font/Inter-UI-Regular.woff2") format("woff2");
+  src: url("../fonts/Inter-UI-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Inter UI";
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: url("../font/Inter-UI-Bold.woff2") format("woff2");
+  src: url("../fonts/Inter-UI-Bold.woff2") format("woff2");
 }
 /* CSS Document */
 
