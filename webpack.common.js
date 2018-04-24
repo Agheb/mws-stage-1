@@ -2,7 +2,6 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const WebpackPwaManifest = require("webpack-pwa-manifest");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
@@ -68,7 +67,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin("dist"),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "index.html",
