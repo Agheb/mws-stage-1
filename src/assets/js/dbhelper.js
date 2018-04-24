@@ -12,7 +12,7 @@ export default class DBHelper {
     if (location.href !== url) {
       url = "";
     }
-    return `${url}assets/data/restaurants.json`;
+    return `${url}restaurants.json`;
   }
 
   /**
