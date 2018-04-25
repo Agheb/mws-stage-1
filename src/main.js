@@ -26,7 +26,7 @@ const MapsOption = {
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener("DOMContentLoaded", event => {
-  loadGoogleMaps(400, "map");
+  initMap(400, "map");
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -39,7 +39,7 @@ MapTarget.addEventListener(
   "mouseover",
   () => {
     if (!InteractiveMapLoaded) {
-      createInteractiveMap(400, "map");
+      addInteractiveMap(400, "map");
     }
   },
   { once: true }
@@ -103,7 +103,7 @@ let fillCuisinesHTML = (cuisines = self.cuisines) => {
 };
 
 /**
- * Initialize Google map, called from HTML.
+ *  creates static map image
  */
 const createStaticMapImage = (height, element) => {
   const width =
@@ -140,7 +140,7 @@ const createStaticMapImage = (height, element) => {
   document.getElementById(`${element}`).innerHTML = mapsImage;
 };
 
-const loadGoogleMaps = (height, element) => {
+const initMap = (height, element) => {
   // load static maps image for smaller devices
   if (window.matchMedia("(max-width:600px)").matches) {
     createStaticMapImage(height, element);
@@ -153,11 +153,11 @@ const loadGoogleMaps = (height, element) => {
       }
     });
   } else {
-    createInteractiveMap(MapsOption);
+    addInteractiveMap(MapsOption);
   }
 };
 
-const createInteractiveMap = options => {
+const addInteractiveMap = options => {
   loadGoogleMapsApi(options)
     .then(googleMaps => {
       const loc = {
@@ -182,7 +182,7 @@ const createInteractiveMap = options => {
 
 const changeMap = () => {
   if (!InteractiveMapLoaded) {
-    createInteractiveMap(MapsOption);
+    addInteractiveMap(MapsOption);
   } else {
     updateRestaurants();
   }
