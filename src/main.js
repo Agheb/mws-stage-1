@@ -6,18 +6,27 @@ import Data from "./assets/data/restaurants.json";
 import Manifest from "./assets/data/manifest.json";
 import DBHelper from "./assets/js/dbhelper";
 import loadGoogleMapsApi from "load-google-maps-api";
+import { oneLineTrim } from "common-tags";
 
 let restaurants, neighborhoods, cuisines;
 var map;
 var googleMap;
 var markers = [];
+let InteractiveMapLoaded = false;
 
 const observer = Lozad();
 observer.observe();
+
+const MapsOption = {
+  key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+  libraries: ["places"]
+};
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener("DOMContentLoaded", event => {
+  loadGoogleMaps(400, "map");
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -26,6 +35,7 @@ document.addEventListener("DOMContentLoaded", event => {
  * Fetch all neighborhoods and set their HTML.
  */
 let fetchNeighborhoods = () => {
+  console.log("entering location");
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) {
       // Got an error
@@ -82,34 +92,69 @@ let fillCuisinesHTML = (cuisines = self.cuisines) => {
 /**
  * Initialize Google map, called from HTML.
  */
-const MapsOption = {
-  key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-  libraries: ["places"]
-};
+const createStaticMapImage = (height, element) => {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
 
-const createStaticImage = () => {
-  const mapsImage = `
-  <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&zoom=12&scale=2&size=800x400&maptype=roadmap&format=png&visual_refresh=true" alt="Google Map of 40.722216, -73.987501">
+  const url = oneLineTrim`
+  https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&
+  zoom=12&
+  scale=2&
+  size=${width}x${height}&
+  maptype=roadmap&format=png&
+  visual_refresh=true&
+  markers=
+  |40.683555,-73.966393|
+  |40.713829,-73.989667|
+  |40.747143,-73.985414|
+  |40.722216,-73.987501|
+  |40.705089,-73.933585|
+  |40.674925,-74.016162|
+  |40.727397,-73.983645|
+  |40.726584,-74.002082|
+  |40.743797,-73.950652|
+  |40.743394,-73.954235|
   `;
-  document.getElementById("map").innerHTML = mapsImage;
+
+  const mapsImage = `
+  <img width="${width}px"
+  src=${encodeURI(url)} alt="Google Map of 40.722216, -73.987501">
+  `;
+  document.getElementById(`${element}`).innerHTML = mapsImage;
 };
 
-loadGoogleMapsApi(MapsOption)
-  .then(googleMaps => {
-    const loc = {
-      lat: 40.722216,
-      lng: -73.9875
-    };
-    map = new googleMaps.Map(document.getElementById("map"), {
-      zoom: 12,
-      center: loc,
-      scrollwheel: false
-    });
+const loadGoogleMaps = (height, element) => {
+  // load static maps image for smaller devices
+  if (window.matchMedia("(max-width:600px)").matches) {
+    console.log("width smaller than 600px");
+    createStaticMapImage(height, element);
     updateRestaurants();
-  })
-  .catch(error => {
-    console.error(error);
-  });
+  } else {
+    console.log("width bigger than 600px");
+    createInteractiveMap(MapsOption);
+  }
+};
+
+const createInteractiveMap = options => {
+  loadGoogleMapsApi(options)
+    .then(googleMaps => {
+      const loc = {
+        lat: 40.722216,
+        lng: -73.9875
+      };
+      map = new googleMaps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: loc,
+        scrollwheel: false
+      });
+      updateRestaurants();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+};
 
 /*
  * Update page and map for current restaurants.
@@ -118,11 +163,21 @@ loadGoogleMapsApi(MapsOption)
 const NeighborhoodSelect = document.getElementById("neighborhoods-select");
 const CuisinesSelect = document.getElementById("cuisines-select");
 NeighborhoodSelect.addEventListener("change", () => {
-  updateRestaurants();
+  if (!InteractiveMapLoaded) {
+    createInteractiveMap(MapsOption);
+    InteractiveMapLoaded = true;
+  } else {
+    updateRestaurants();
+  }
 });
 
 CuisinesSelect.addEventListener("change", () => {
-  updateRestaurants();
+  if (!InteractiveMapLoaded) {
+    createInteractiveMap(MapsOption);
+    InteractiveMapLoaded = true;
+  } else {
+    updateRestaurants();
+  }
 });
 
 let updateRestaurants = () => {
