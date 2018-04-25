@@ -32,6 +32,19 @@ document.addEventListener("DOMContentLoaded", event => {
 });
 
 /**
+ * Load interactive Map if user hoovers over static image
+ */
+const MapTarget = document.getElementById("map");
+MapTarget.addEventListener(
+  "mouseover",
+  () => {
+    if (!InteractiveMapLoaded) {
+      createInteractiveMap(400, "map");
+    }
+  },
+  { once: true }
+);
+/**
  * Fetch all neighborhoods and set their HTML.
  */
 let fetchNeighborhoods = () => {
