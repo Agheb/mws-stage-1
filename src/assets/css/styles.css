@@ -21,10 +21,19 @@ body,
 td,
 th,
 p {
-  font-family: "Inter UI", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 10pt;
   color: #333;
   line-height: 1.5;
+}
+
+@media screen and (min-width: 700px) {
+  body,
+  td,
+  th,
+  p {
+    font-family: "Inter UI", sans-serif;
+  }
 }
 
 body {
@@ -33,7 +42,6 @@ body {
 
 ul,
 li {
-  font-family: "Inter UI", sans-serif;
   font-size: 10pt;
   color: #333;
 }
@@ -53,7 +61,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Inter UI", sans-serif;
   margin: 0 0 20px;
 }
 
@@ -189,7 +196,6 @@ section {
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
-  font-family: "Inter UI", sans-serif;
   font-size: 11pt;
   height: 35px;
   letter-spacing: 0;
@@ -213,7 +219,6 @@ section {
 #restaurants-list li {
   background-color: #fff;
   border-radius: 2px;
-  font-family: "Inter UI", sans-serif;
   min-height: 300px;
   text-align: left;
 }
@@ -228,7 +233,6 @@ section {
 }
 
 #restaurants-list li h2 {
-  font-family: "Inter UI", sans-serif;
   font-size: 14pt;
   font-weight: 200;
   letter-spacing: 0;
@@ -286,7 +290,6 @@ section {
 }
 
 #restaurant-name {
-  font-family: "Inter UI", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 0;
