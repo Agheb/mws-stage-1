@@ -1,7 +1,9 @@
 const path = require("path");
+const glob = require("glob-all");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const PurifyCSSPlugin = require("purifycss-webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
@@ -11,6 +13,7 @@ module.exports = {
     restaurant: "./restaurant_info.js"
   },
   output: {
+    pathinfo: true,
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.[chunkhash].js"
   },
@@ -20,7 +23,7 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: [{ loader: "css-loader", options: { minimize: true } }]
+          use: "css-loader"
         })
       },
       // html-loader
@@ -78,6 +81,13 @@ module.exports = {
       template: "restaurant.html",
       chunks: ["restaurant"]
     }),
-    new ExtractTextPlugin("styles.[contenthash].css")
+    new ExtractTextPlugin("styles.[contenthash].css"),
+    new PurifyCSSPlugin({
+      paths: glob.sync([
+        path.join(__dirname, "src/*.html"),
+        path.join(__dirname, "src/*.js")
+      ]),
+      minimize: true
+    })
   ]
 };

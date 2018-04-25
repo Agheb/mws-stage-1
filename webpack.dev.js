@@ -6,7 +6,8 @@ module.exports = merge(common, {
   devServer: {
     contentBase: "./dist",
     port: 8000,
-    quiet: true
+    quiet: true,
+    watchContentBase: true
   },
   devtool: "source-map",
   plugins: [new DashboardPlugin()]
