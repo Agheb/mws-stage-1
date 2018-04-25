@@ -105,6 +105,7 @@ const createStaticMapImage = (height, element) => {
   size=${width}x${height}&
   maptype=roadmap&format=png&
   visual_refresh=true&
+  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
   markers=
   |40.683555,-73.966393|
   |40.713829,-73.989667|
@@ -116,6 +117,7 @@ const createStaticMapImage = (height, element) => {
   |40.726584,-74.002082|
   |40.743797,-73.950652|
   |40.743394,-73.954235|
+
   `;
 
   const mapsImage = `
