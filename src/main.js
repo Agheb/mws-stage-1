@@ -105,7 +105,8 @@ const createStaticMapImage = (height, element) => {
   size=${width}x${height}&
   maptype=roadmap&format=png&
   visual_refresh=true&
-  markers=
+  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
+  markers=size:mid%7Ccolor:red%7C
   |40.683555,-73.966393|
   |40.713829,-73.989667|
   |40.747143,-73.985414|
@@ -116,6 +117,7 @@ const createStaticMapImage = (height, element) => {
   |40.726584,-74.002082|
   |40.743797,-73.950652|
   |40.743394,-73.954235|
+
   `;
 
   const mapsImage = `
@@ -128,11 +130,16 @@ const createStaticMapImage = (height, element) => {
 const loadGoogleMaps = (height, element) => {
   // load static maps image for smaller devices
   if (window.matchMedia("(max-width:600px)").matches) {
-    console.log("width smaller than 600px");
     createStaticMapImage(height, element);
-    updateRestaurants();
+    DBHelper.fetchRestaurants((error, restaurants) => {
+      if (error) {
+        console.error(error);
+      } else {
+        resetRestaurants(restaurants);
+        fillRestaurantsHTML();
+      }
+    });
   } else {
-    console.log("width bigger than 600px");
     createInteractiveMap(MapsOption);
   }
 };
@@ -149,11 +156,23 @@ const createInteractiveMap = options => {
         center: loc,
         scrollwheel: false
       });
+      InteractiveMapLoaded = true;
       updateRestaurants();
     })
     .catch(error => {
       console.error(error);
     });
+};
+
+// FIXME: Needing refactor or cleanup -@agheb at 4/25/2018, 7:22:58 PM
+// Google not found
+
+const changeMap = () => {
+  if (!InteractiveMapLoaded) {
+    createInteractiveMap(MapsOption);
+  } else {
+    updateRestaurants();
+  }
 };
 
 /*
@@ -163,21 +182,11 @@ const createInteractiveMap = options => {
 const NeighborhoodSelect = document.getElementById("neighborhoods-select");
 const CuisinesSelect = document.getElementById("cuisines-select");
 NeighborhoodSelect.addEventListener("change", () => {
-  if (!InteractiveMapLoaded) {
-    createInteractiveMap(MapsOption);
-    InteractiveMapLoaded = true;
-  } else {
-    updateRestaurants();
-  }
+  changeMap();
 });
 
 CuisinesSelect.addEventListener("change", () => {
-  if (!InteractiveMapLoaded) {
-    createInteractiveMap(MapsOption);
-    InteractiveMapLoaded = true;
-  } else {
-    updateRestaurants();
-  }
+  changeMap();
 });
 
 let updateRestaurants = () => {
@@ -189,7 +198,8 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-
+  console.log(cuisine);
+  console.log(neighborhood);
   DBHelper.fetchRestaurantByCuisineAndNeighborhood(
     cuisine,
     neighborhood,
@@ -233,7 +243,10 @@ let fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
     observer.observe();
   });
-  addMarkersToMap();
+  // Check if interactive Map was already loaded
+  if (InteractiveMapLoaded) {
+    addMarkersToMap();
+  }
 };
 
 /**
@@ -273,14 +286,13 @@ let createRestaurantHTML = restaurant => {
 /**
  * Add markers for current restaurants to the map.
  */
-let addMarkersToMap = (restaurants = self.restaurants) => {
+let addMarkersToMap = (restaurants = window.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, map);
     google.maps.event.addListener(marker, "click", () => {
       window.location.href = marker.url;
     });
-    self.markers.push(marker);
-    console.log(self.markers);
+    window.markers.push(marker);
   });
 };
