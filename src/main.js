@@ -10,9 +10,8 @@ import { oneLineTrim } from "common-tags";
 
 let restaurants, neighborhoods, cuisines;
 var map;
-var googleMap;
 var markers = [];
-let InteractiveMapLoaded = false;
+let InteractiveMapLoaded;
 
 const observer = Lozad();
 observer.observe();
@@ -211,8 +210,6 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-  console.log(cuisine);
-  console.log(neighborhood);
   DBHelper.fetchRestaurantByCuisineAndNeighborhood(
     cuisine,
     neighborhood,
