@@ -3,44 +3,115 @@ import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import DBHelper from "./assets/js/dbhelper";
+import loadGoogleMapsApi from "load-google-maps-api";
+import { oneLineTrim } from "common-tags";
 
 let restaurant;
-var map;
-var googleMap;
+let map;
+let InteractiveMapLoaded;
 
-const observer = Lozad();
-observer.observe();
-
-const loadGoogleMapsApi = require("load-google-maps-api");
-
-/**
- * Initialize Google map, called from HTML.
- */
+// FIXME: Needing refactor or cleanup -@agheb at 4/26/2018, 6:39:01 PM
+// Rename MapOption and static GMapsAPI key (same like regular key?)
 const MapsOption = {
   key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
   libraries: ["places"]
 };
 
-loadGoogleMapsApi(MapsOption)
-  .then(googleMaps => {
-    fetchRestaurantFromURL((error, restaurant) => {
-      if (error) {
-        // Got an error!
-        console.error(error);
-      } else {
-        map = new googleMaps.Map(document.getElementById("map"), {
-          zoom: 12,
-          center: restaurant.latlng,
-          scrollwheel: false
-        });
-        fillBreadcrumb();
-        DBHelper.mapMarkerForRestaurant(self.restaurant, map);
-      }
-    });
-  })
-  .catch(error => {
-    console.error(error);
+const observer = Lozad();
+observer.observe();
+
+window.addEventListener(
+  "resize",
+  () => {
+    console.log("Event fired");
+    if (!InteractiveMapLoaded) {
+      addInteractiveRestaurantMap(MapsOption);
+    }
+  },
+  { once: true }
+);
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchRestaurantFromURL((error, restaurant) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(restaurant);
+      fillBreadcrumb();
+      initRestaurantMap(restaurant, "map", 300);
+    }
   });
+});
+
+const initRestaurantMap = (restaurant, element, height) => {
+  // load static maps image for smaller devices
+  if (window.matchMedia("(max-width:600px)").matches) {
+    createRestaurantMapImage(restaurant, element, height);
+  } else {
+    addInteractiveRestaurantMap(MapsOption, restaurant);
+  }
+};
+
+/**
+ * Load interactive Map if user hoovers over static image
+ */
+const MapTarget = document.getElementById("map");
+MapTarget.addEventListener(
+  "mouseover",
+  () => {
+    if (!InteractiveMapLoaded) {
+      console.log(!InteractiveMapLoaded);
+      addInteractiveRestaurantMap(MapsOption);
+    }
+  },
+  { once: true }
+);
+
+const addInteractiveRestaurantMap = (options, restaurant = self.restaurant) => {
+  console.log(options);
+  loadGoogleMapsApi(options)
+    .then(googleMaps => {
+      map = new googleMaps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: restaurant.latlng,
+        scrollwheel: false
+      });
+      InteractiveMapLoaded = true;
+      DBHelper.mapMarkerForRestaurant(restaurant, map);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+};
+
+const createRestaurantMapImage = (restaurant, element, height) => {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  // TODO: Tasks pending completion -@agheb at 4/26/2018, 6:38:24 PM
+  // Strip out key and add to MapOptions
+  const url = oneLineTrim`
+  https://maps.googleapis.com/maps/api/staticmap?center=${
+    restaurant.latlng.lat
+  },${restaurant.latlng.lng}&
+  zoom=12&
+  scale=2&
+  size=${width}x${height}&
+  maptype=roadmap&format=png&
+  visual_refresh=true&
+  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
+  markers=size:mid%7Ccolor:red%7C
+  |${restaurant.latlng.lat},${restaurant.latlng.lng}|
+  `;
+
+  const mapsImage = `
+  <img width="${width}px"
+  src=${encodeURI(url)} alt="Map of${restaurant.name}">
+  `;
+  document.getElementById(`${element}`).innerHTML = mapsImage;
+};
 
 /**
  * Get current restaurant from page URL.
