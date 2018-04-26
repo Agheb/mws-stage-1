@@ -36,8 +36,11 @@ p {
   }
 }
 
+html,
 body {
   background-color: #f3f3f3;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 ul,
@@ -272,7 +275,6 @@ section {
 #restaurant-container {
   margin: 0 16px 0;
 }
-
 .wrapper {
   display: flex;
   flex-wrap: wrap;
