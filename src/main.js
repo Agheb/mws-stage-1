@@ -16,7 +16,7 @@ let InteractiveMapLoaded;
 const observer = Lozad();
 observer.observe();
 
-const MapsOption = {
+const MapsConfig = {
   key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
   libraries: ["places"]
 };
@@ -152,7 +152,7 @@ const initMap = (height, element) => {
       }
     });
   } else {
-    addInteractiveMap(MapsOption);
+    addInteractiveMap(MapsConfig);
   }
 };
 
@@ -181,7 +181,7 @@ const addInteractiveMap = options => {
 
 const changeMap = () => {
   if (!InteractiveMapLoaded) {
-    addInteractiveMap(MapsOption);
+    addInteractiveMap(MapsConfig);
   } else {
     updateRestaurants();
   }
