@@ -10,9 +10,7 @@ let restaurant;
 let map;
 let InteractiveMapLoaded;
 
-// FIXME: Needing refactor or cleanup -@agheb at 4/26/2018, 6:39:01 PM
-// Rename MapOption and static GMapsAPI key (same like regular key?)
-const MapsOption = {
+const MapsConfig = {
   key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
   libraries: ["places"]
 };
@@ -25,7 +23,7 @@ window.addEventListener(
   () => {
     console.log("Event fired");
     if (!InteractiveMapLoaded) {
-      addInteractiveRestaurantMap(MapsOption);
+      addInteractiveRestaurantMap(MapsConfig);
     }
   },
   { once: true }
@@ -48,7 +46,7 @@ const initRestaurantMap = (restaurant, element, height) => {
   if (window.matchMedia("(max-width:600px)").matches) {
     createRestaurantMapImage(restaurant, element, height);
   } else {
-    addInteractiveRestaurantMap(MapsOption, restaurant);
+    addInteractiveRestaurantMap(MapsConfig, restaurant);
   }
 };
 
@@ -61,7 +59,7 @@ MapTarget.addEventListener(
   () => {
     if (!InteractiveMapLoaded) {
       console.log(!InteractiveMapLoaded);
-      addInteractiveRestaurantMap(MapsOption);
+      addInteractiveRestaurantMap(MapsConfig);
     }
   },
   { once: true }
