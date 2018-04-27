@@ -268,6 +268,7 @@ let createRestaurantHTML = restaurant => {
   const image = document.createElement("img");
   image.className = "restaurant-img lozad";
   const img = require(`./assets/data/img/${restaurant.photograph}`);
+  image.src = img.placeholder;
   image.setAttribute("data-src", img.src);
   image.setAttribute("data-srcset", img.srcSet);
   image.alt = `Image of ${restaurant.name} Restaurant`;
