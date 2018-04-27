@@ -38,7 +38,7 @@ MapTarget.addEventListener(
   "mouseover",
   () => {
     if (!InteractiveMapLoaded) {
-      addInteractiveMap(400, "map");
+      addInteractiveMap(MapsConfig);
     }
   },
   { once: true }
