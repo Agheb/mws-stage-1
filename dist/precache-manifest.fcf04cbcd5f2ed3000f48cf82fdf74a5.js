@@ -3,7 +3,7 @@ self.__precacheManifest = [
     url: "3c3ab63c6a42d3109a662b2109c985ec-800.jpg"
   },
   {
-    revision: "3c1a31fd120220780493f4c7c9263e61",
+    revision: "bdde76b918f90c14eee96e70828b9277",
     url: "restaurant.html"
   },
   {
@@ -11,17 +11,17 @@ self.__precacheManifest = [
     url: "restaurants.json"
   },
   {
-    revision: "5e9756c86b7fc9285dcf",
-    url: "styles.f4949c499b1777c381c697b1e074f44c.css"
+    revision: "c9c6a384be918ddb7e7c",
+    url: "styles.38f95b38f82e3ca8950c71fe02a5521a.css"
   },
   {
     url: "d6d27e96171bf519b8db9b09dd749ae5-600.jpg"
   },
   {
-    url: "main.bundle.a695917250ecca8fbccd.js"
+    url: "main.bundle.621f470444bac08be5eb.js"
   },
   {
-    url: "restaurant.bundle.5e9756c86b7fc9285dcf.js"
+    url: "restaurant.bundle.c9c6a384be918ddb7e7c.js"
   },
   {
     url: "f86d5748d95432a95d2e89fb714016db-800.jpg"
@@ -31,7 +31,7 @@ self.__precacheManifest = [
     url: "fonts/Inter-UI-Bold.woff2"
   },
   {
-    revision: "0e13e84723fe1637a80549a60627c149",
+    revision: "7f7df95b7c6d408ce567f6a92ff6ee8a",
     url: "index.html"
   },
   {
