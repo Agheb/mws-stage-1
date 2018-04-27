@@ -2622,7 +2622,7 @@
       document.getElementById("map").addEventListener(
         "mouseover",
         () => {
-          l || x(400, "map");
+          l || x(b);
         },
         { once: !0 }
       );
