@@ -48,14 +48,9 @@ MapTarget.addEventListener(
  * Fetch all neighborhoods and set their HTML.
  */
 let fetchNeighborhoods = () => {
-  DBHelper.fetchNeighborhoods((error, neighborhoods) => {
-    if (error) {
-      // Got an error
-      console.error(error);
-    } else {
-      window.neighborhoods = neighborhoods;
-      fillNeighborhoodsHTML();
-    }
+  DB.loadRestaurants().then(restaurants => {
+    window.neighborhoods = DB.getNeighborhoods(restaurants);
+    fillNeighborhoodsHTML();
   });
 };
 
@@ -143,14 +138,15 @@ const initMap = (height, element) => {
   // load static maps image for smaller devices
   if (window.matchMedia("(max-width:600px)").matches) {
     createStaticMapImage(height, element);
-    DBHelper.fetchRestaurants((error, restaurants) => {
-      if (error) {
-        console.error(error);
-      } else {
+    DB.loadRestaurants()
+      .then(restaurants => {
+        console.log(restaurants);
         resetRestaurants(restaurants);
         fillRestaurantsHTML();
-      }
-    });
+      })
+      .catch(err => {
+        console.error(err);
+      });
   } else {
     addInteractiveMap(MapsConfig);
   }
@@ -210,9 +206,9 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-  DB.fetchRestaurants().then(response => {
+  DB.loadRestaurants().then(response => {
     console.log(response);
-    let filtered = DB.filterByCuisineNeighborhood(
+    let filtered = DB.getRestaurantByCuisineNeighborhood(
       cuisine,
       neighborhood,
       response
@@ -286,7 +282,7 @@ let createRestaurantHTML = restaurant => {
 
   const more = document.createElement("a");
   more.innerHTML = "View Details";
-  more.href = DBHelper.urlForRestaurant(restaurant);
+  more.href = DB.urlForRestaurant(restaurant);
   li.append(more);
 
   return li;
@@ -298,7 +294,7 @@ let createRestaurantHTML = restaurant => {
 let addMarkersToMap = (restaurants = window.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, map);
+    const marker = DB.mapMarkerForRestaurant(restaurant, map);
     google.maps.event.addListener(marker, "click", () => {
       window.location.href = marker.url;
     });
