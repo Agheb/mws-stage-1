@@ -15,7 +15,7 @@ importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/3.1.0/workbox-sw.js"
 );
 
-importScripts("precache-manifest.9a2979501bffd434ae1e0831a6d502d2.js");
+importScripts("precache-manifest.d977a2b32996227b39938ab45772978e.js");
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to

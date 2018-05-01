@@ -30,7 +30,7 @@
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
     (n.p = ""),
-    n((n.s = 137));
+    n((n.s = 143));
 })([
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/TemplateTag/index.js ***!
@@ -1428,11 +1428,11 @@
         v = e.prototype,
         y = v[d] || v["@@iterator"] || (g && v[g]),
         O = (!p && y) || S(g),
-        k = g ? (B ? S("entries") : O) : void 0,
-        q = ("Array" == t && v.entries) || y;
+        q = g ? (B ? S("entries") : O) : void 0,
+        k = ("Array" == t && v.entries) || y;
       if (
-        (q &&
-          (w = s(q.call(new e()))) !== Object.prototype &&
+        (k &&
+          (w = s(k.call(new e()))) !== Object.prototype &&
           w.next &&
           (f(w, x, !0), r || i(w, d) || o(w, d, h)),
         B &&
@@ -1451,7 +1451,7 @@
           ((j = {
             values: B ? O : S("values"),
             keys: b ? O : S("keys"),
-            entries: k
+            entries: q
           }),
           E)
         )
@@ -2158,38 +2158,6 @@
       a = n(/*! ../trimResultTransformer */ 1);
     new r.a(Object(c.a)("all"), a.a);
   },
-  /*!**********************************!*\
-  !*** ./assets/data/img ^\.\/.*$ ***!
-  \**********************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = {
-      "./1.jpg": 127,
-      "./10.jpg": 128,
-      "./2.jpg": 129,
-      "./3.jpg": 130,
-      "./4.jpg": 131,
-      "./5.jpg": 132,
-      "./6.jpg": 133,
-      "./7.jpg": 134,
-      "./8.jpg": 135,
-      "./9.jpg": 136
-    };
-    function c(e) {
-      return n(a(e));
-    }
-    function a(e) {
-      var t = r[e];
-      if (!(t + 1)) throw new Error("Cannot find module '" + e + "'.");
-      return t;
-    }
-    (c.keys = function() {
-      return Object.keys(r);
-    }),
-      (c.resolve = a),
-      (e.exports = c),
-      (c.id = 126);
-  },
   /*!*******************************!*\
   !*** ./assets/data/img/1.jpg ***!
   \*******************************/
@@ -2590,9 +2558,20 @@
       height: 225
     };
   },
-  /*!*****************!*\
-  !*** ./main.js ***!
-  \*****************/
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  /*!****************************!*\
+  !*** ./restaurant_info.js ***!
+  \****************************/
+  /*! no exports provided */
+  /*! all exports used */ /*!****************************!*\
+  !*** ./restaurant_info.js ***!
+  \****************************/
   /*! no exports provided */
   /*! all exports used */ function(e, t, n) {
     "use strict";
@@ -2602,188 +2581,184 @@
       a = n(/*! normalize.css/normalize.css */ 37),
       o = (n.n(a), n(/*! css-star-rating/css/star-rating.css */ 38)),
       i = (n.n(o), n(/*! ./assets/css/styles.css */ 39)),
-      u = (n.n(i), n(/*! ./assets/data/restaurants.json */ 138)),
-      A = (n.n(u), n(/*! ./assets/data/manifest.json */ 139)),
-      f = (n.n(A), n(/*! ./assets/js/dbhelper */ 40)),
-      s = n(/*! load-google-maps-api */ 41),
-      d = n.n(s),
-      p = n(/*! common-tags */ 42);
-    var h;
-    let l;
-    const g = c()();
-    g.observe();
-    const b = {
-      key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-      libraries: ["places"]
-    };
-    document.addEventListener("DOMContentLoaded", e => {
-      S(400, "map"), E(), H();
-    }),
-      document.getElementById("map").addEventListener(
-        "mouseover",
+      u = (n.n(i), n(/*! ./assets/js/dbhelper */ 40)),
+      A = n(/*! load-google-maps-api */ 41),
+      f = n.n(A),
+      s = n(/*! common-tags */ 42);
+    let d, p;
+    const h = {
+        key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+        libraries: ["places"]
+      },
+      l = c()();
+    l.observe(),
+      window.addEventListener(
+        "resize",
         () => {
-          l || x(b);
+          console.log("Event fired"), p || b(h);
         },
         { once: !0 }
-      );
-    let E = () => {
-        console.log("entering location"),
-          f.a.fetchNeighborhoods((e, t) => {
-            e ? console.error(e) : ((self.neighborhoods = t), j());
-          });
-      },
-      j = (e = self.neighborhoods) => {
-        const t = document.getElementById("neighborhoods-select");
-        e.forEach(e => {
-          const n = document.createElement("option");
-          (n.innerHTML = e), (n.value = e), t.append(n);
+      ),
+      document.addEventListener("DOMContentLoaded", () => {
+        j((e, t) => {
+          e ? console.error(e) : (console.log(t), B(), g(t, "map", 300));
         });
+      });
+    const g = (e, t, n) => {
+      window.matchMedia("(max-width:600px)").matches ? E(e, t, n) : b(h, e);
+    };
+    document.getElementById("map").addEventListener(
+      "mouseover",
+      () => {
+        p || (console.log(!p), b(h));
       },
-      H = () => {
-        f.a.fetchCuisines((e, t) => {
-          e ? console.error(e) : ((self.cuisines = t), w());
-        });
+      { once: !0 }
+    );
+    const b = (e, t = self.restaurant) => {
+        console.log(e),
+          f()(e)
+            .then(e => {
+              (d = new e.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: t.latlng,
+                scrollwheel: !1
+              })),
+                (p = !0),
+                u.a.mapMarkerForRestaurant(t, d);
+            })
+            .catch(e => {
+              console.error(e);
+            });
       },
-      w = (e = self.cuisines) => {
-        const t = document.getElementById("cuisines-select");
-        e.forEach(e => {
-          const n = document.createElement("option");
-          (n.innerHTML = e), (n.value = e), t.append(n);
-        });
-      };
-    const S = (e, t) => {
-        window.matchMedia("(max-width:600px)").matches
-          ? (((e, t) => {
-              const n =
-                  window.innerWidth ||
-                  document.documentElement.clientWidth ||
-                  document.body.clientWidth,
-                r = p["a"]`
-  https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&
+      E = (e, t, n) => {
+        const r =
+            window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth,
+          c = s["a"]`
+  https://maps.googleapis.com/maps/api/staticmap?center=${e.latlng.lat},${
+            e.latlng.lng
+          }&
   zoom=12&
   scale=2&
-  size=${n}x${e}&
+  size=${r}x${n}&
   maptype=roadmap&format=png&
   visual_refresh=true&
   key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
   markers=size:mid%7Ccolor:red%7C
-  |40.683555,-73.966393|
-  |40.713829,-73.989667|
-  |40.747143,-73.985414|
-  |40.722216,-73.987501|
-  |40.705089,-73.933585|
-  |40.674925,-74.016162|
-  |40.727397,-73.983645|
-  |40.726584,-74.002082|
-  |40.743797,-73.950652|
-  |40.743394,-73.954235|
-
+  |${e.latlng.lat},${e.latlng.lng}|
   `,
-                c = `\n  <img width="${n}px"\n  src=${encodeURI(
-                  r
-                )} alt="Google Map of 40.722216, -73.987501">\n  `;
-              document.getElementById(`${t}`).innerHTML = c;
-            })(e, t),
-            f.a.fetchRestaurants((e, t) => {
-              e ? console.error(e) : (O(t), k());
-            }))
-          : x(b);
+          a = `\n  <img width="${r}px"\n  src=${encodeURI(c)} alt="Map of${
+            e.name
+          }">\n  `;
+        document.getElementById(`${t}`).innerHTML = a;
+      };
+    let j = e => {
+        if (self.restaurant) return void e(null, self.restaurant);
+        const t = Q("id");
+        t
+          ? u.a.fetchRestaurantById(t, (t, n) => {
+              (self.restaurant = n), n ? (H(), e(null, n)) : console.error(t);
+            })
+          : ((error = "No restaurant id in URL"), e(error, null));
+      },
+      H = (e = self.restaurant) => {
+        (document.getElementById("restaurant-name").innerHTML = e.name),
+          (document.getElementById("restaurant-address").innerHTML = e.address);
+        const t = document.getElementById("restaurant-img");
+        t.className = "restaurant-img";
+        const r = n(/*! ./assets/data/img */ 144)(`./${e.photograph}`);
+        (t.src = r.src),
+          (t.srcset = r.srcSet),
+          (t.alt = `Image of ${e.name} Restaurant`),
+          l.observe(),
+          (document.getElementById("restaurant-cuisine").innerHTML =
+            e.cuisine_type),
+          e.operating_hours && w(),
+          S();
+      },
+      w = (e = self.restaurant.operating_hours) => {
+        const t = document.getElementById("restaurant-hours");
+        for (let n in e) {
+          const r = document.createElement("tr"),
+            c = document.createElement("td");
+          (c.innerHTML = n), r.appendChild(c);
+          const a = document.createElement("td");
+          (a.innerHTML = e[n]), r.appendChild(a), t.appendChild(r);
+        }
+      },
+      S = (e = self.restaurant.reviews) => {
+        const t = document.getElementById("reviews-container"),
+          n = document.createElement("h3");
+        if (((n.innerHTML = "Reviews"), t.appendChild(n), !e)) {
+          const e = document.createElement("p");
+          return (e.innerHTML = "No reviews yet!"), void t.appendChild(e);
+        }
+        const r = document.getElementById("reviews-list");
+        e.forEach(e => {
+          r.appendChild(x(e));
+        }),
+          t.appendChild(r);
       },
       x = e => {
-        d()(e)
-          .then(e => {
-            (h = new e.Map(document.getElementById("map"), {
-              zoom: 12,
-              center: { lat: 40.722216, lng: -73.9875 },
-              scrollwheel: !1
-            })),
-              (l = !0),
-              y();
-          })
-          .catch(e => {
-            console.error(e);
-          });
-      },
-      B = () => {
-        l ? y() : x(b);
-      },
-      Q = document.getElementById("neighborhoods-select"),
-      v = document.getElementById("cuisines-select");
-    Q.addEventListener("change", () => {
-      B();
-    }),
-      v.addEventListener("change", () => {
-        B();
-      });
-    let y = () => {
-        const e = document.getElementById("cuisines-select"),
-          t = document.getElementById("neighborhoods-select"),
-          n = e.selectedIndex,
-          r = t.selectedIndex,
-          c = e[n].value,
-          a = t[r].value;
-        f.a.fetchRestaurantByCuisineAndNeighborhood(c, a, (e, t) => {
-          e ? console.error(e) : (O(t), k());
-        });
-      },
-      O = e => {
-        (self.restaurants = []),
-          (document.getElementById("restaurants-list").innerHTML = ""),
-          void 0 !== self.markers && self.markers.forEach(e => e.setMap(null)),
-          (self.markers = []),
-          (self.restaurants = e);
-      },
-      k = (e = self.restaurants) => {
-        const t = document.getElementById("restaurants-list");
-        e.forEach(e => {
-          t.append(q(e)), g.observe();
-        }),
-          l && m();
-      },
-      q = e => {
         const t = document.createElement("li"),
-          r = document.createElement("img");
-        r.className = "restaurant-img lozad";
-        const c = n(/*! ./assets/data/img */ 126)(`./${e.photograph}`);
-        (r.src = c.placeholder),
-          r.setAttribute("data-src", c.src),
-          r.setAttribute("data-srcset", c.srcSet),
-          (r.alt = `Image of ${e.name} Restaurant`),
-          t.append(r);
-        const a = document.createElement("h2");
-        (a.innerHTML = e.name), t.append(a);
-        const o = document.createElement("p");
-        (o.innerHTML = e.neighborhood), t.append(o);
-        const i = document.createElement("p");
-        (i.innerHTML = e.address), t.append(i);
-        const u = document.createElement("a");
-        return (
-          (u.innerHTML = "View Details"),
-          (u.href = f.a.urlForRestaurant(e)),
-          t.append(u),
-          t
-        );
+          n = document.createElement("p");
+        (n.innerHTML = e.name), t.appendChild(n);
+        const r = document.createElement("p");
+        (r.innerHTML = e.date), t.appendChild(r);
+        const c = document.createElement("p");
+        (c.innerHTML = v(e.rating)), t.appendChild(c);
+        const a = document.createElement("p");
+        return (a.innerHTML = e.comments), t.appendChild(a), t;
       },
-      m = (e = window.restaurants) => {
-        e.forEach(e => {
-          const t = f.a.mapMarkerForRestaurant(e, h);
-          google.maps.event.addListener(t, "click", () => {
-            window.location.href = t.url;
-          }),
-            window.markers.push(t);
-        });
+      B = (e = self.restaurant) => {
+        const t = document.getElementById("breadcrumb"),
+          n = document.createElement("li");
+        (n.innerHTML = e.name), t.appendChild(n);
+      },
+      Q = (e, t) => {
+        t || (t = window.location.href), (e = e.replace(/[\[\]]/g, "\\$&"));
+        const n = new RegExp(`[?&]${e}(=([^&#]*)|&|#|$)`).exec(t);
+        return n
+          ? n[2] ? decodeURIComponent(n[2].replace(/\+/g, " ")) : ""
+          : null;
+      },
+      v = e => {
+        return `\n  <div class="rating small star-icon value-${e} color-ok">\n   <div class="star-container">\n       ${'\n  <div class="star">\n  <i class="star-empty"></i>\n  <i class="star-half"></i>\n  <i class="star-filled"></i>\n</div>\n  '.repeat(
+          5
+        )}\n    </div>\n  </div>\n  `;
       };
   },
-  /*!**************************************!*\
-  !*** ./assets/data/restaurants.json ***!
-  \**************************************/
-  /*! dynamic exports provided */ function(e, t, n) {
-    e.exports = n.p + "restaurants.json";
-  },
-  /*!***********************************!*\
-  !*** ./assets/data/manifest.json ***!
-  \***********************************/
-  /*! dynamic exports provided */ function(e, t, n) {
-    e.exports = n.p + "manifest.json";
+  /*!**********************************!*\
+  !*** ./assets/data/img ^\.\/.*$ ***!
+  \**********************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
+    var r = {
+      "./1.jpg": 126,
+      "./10.jpg": 127,
+      "./2.jpg": 128,
+      "./3.jpg": 129,
+      "./4.jpg": 130,
+      "./5.jpg": 131,
+      "./6.jpg": 132,
+      "./7.jpg": 133,
+      "./8.jpg": 134,
+      "./9.jpg": 135
+    };
+    function c(e) {
+      return n(a(e));
+    }
+    function a(e) {
+      var t = r[e];
+      if (!(t + 1)) throw new Error("Cannot find module '" + e + "'.");
+      return t;
+    }
+    (c.keys = function() {
+      return Object.keys(r);
+    }),
+      (c.resolve = a),
+      (e.exports = c),
+      (c.id = 144);
   }
 ]);
