@@ -4,7 +4,6 @@ import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import Data from "./assets/data/restaurants.json";
 import Manifest from "./assets/data/manifest.json";
-import DBHelper from "./assets/js/dbhelper";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
 import * as DB from "./assets/js/db";
@@ -48,10 +47,14 @@ MapTarget.addEventListener(
  * Fetch all neighborhoods and set their HTML.
  */
 let fetchNeighborhoods = () => {
-  DB.loadRestaurants().then(restaurants => {
-    window.neighborhoods = DB.getNeighborhoods(restaurants);
-    fillNeighborhoodsHTML();
-  });
+  DB.loadRestaurants()
+    .then(restaurants => {
+      window.neighborhoods = DB.getNeighborhoods(restaurants);
+      fillNeighborhoodsHTML();
+    })
+    .catch(err => {
+      console.error(err);
+    });
 };
 
 /**
@@ -71,10 +74,14 @@ let fillNeighborhoodsHTML = (neighborhoods = window.neighborhoods) => {
  * Fetch all cuisines and set their HTML.
  */
 let fetchCuisines = () => {
-  DB.loadRestaurants().then(restaurants => {
-    window.cuisines = DB.getCuisines(restaurants);
-    fillCuisinesHTML();
-  });
+  DB.loadRestaurants()
+    .then(restaurants => {
+      window.cuisines = DB.getCuisines(restaurants);
+      fillCuisinesHTML();
+    })
+    .catch(err => {
+      console.error(err);
+    });
 };
 
 /**
@@ -201,16 +208,20 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-  DB.loadRestaurants().then(response => {
-    console.log(response);
-    let filtered = DB.getRestaurantByCuisineNeighborhood(
-      cuisine,
-      neighborhood,
-      response
-    );
-    resetRestaurants(filtered);
-    fillRestaurantsHTML();
-  });
+  DB.loadRestaurants()
+    .then(response => {
+      console.log(response);
+      let filtered = DB.getRestaurantByCuisineNeighborhood(
+        cuisine,
+        neighborhood,
+        response
+      );
+      resetRestaurants(filtered);
+      fillRestaurantsHTML();
+    })
+    .catch(err => {
+      console.error(err);
+    });
 };
 
 /**
