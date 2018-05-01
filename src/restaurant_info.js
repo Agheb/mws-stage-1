@@ -5,6 +5,11 @@ import "./assets/css/styles.css";
 import DBHelper from "./assets/js/dbhelper";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
+import {
+  mapMarkerForRestaurant,
+  loadRestaurants,
+  getRestaurantById
+} from "./assets/js/db";
 
 let restaurant;
 let map;
@@ -30,15 +35,21 @@ window.addEventListener(
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(restaurant);
-      fillBreadcrumb();
-      initRestaurantMap(restaurant, "map", 300);
-    }
-  });
+  loadRestaurants()
+    .then(restaurants => {
+      const id = getParameterByName("id");
+      if (!id) {
+        console.error("No restaurant id in URL");
+      } else {
+        self.restaurant = getRestaurantById(id);
+        fillRestaurantHTML();
+        fillBreadcrumb();
+        initRestaurantMap(restaurant, "map", 300);
+      }
+    })
+    .catch(error => {
+      console.error(err);
+    });
 });
 
 const initRestaurantMap = (restaurant, element, height) => {
@@ -75,7 +86,7 @@ const addInteractiveRestaurantMap = (options, restaurant = self.restaurant) => {
         scrollwheel: false
       });
       InteractiveMapLoaded = true;
-      DBHelper.mapMarkerForRestaurant(restaurant, map);
+      mapMarkerForRestaurant(restaurant, map);
     })
     .catch(error => {
       console.error(error);
@@ -114,29 +125,7 @@ const createRestaurantMapImage = (restaurant, element, height) => {
 /**
  * Get current restaurant from page URL.
  */
-let fetchRestaurantFromURL = callback => {
-  if (self.restaurant) {
-    // restaurant already fetched!
-    callback(null, self.restaurant);
-    return;
-  }
-  const id = getParameterByName("id");
-  if (!id) {
-    // no id found in URL
-    error = "No restaurant id in URL";
-    callback(error, null);
-  } else {
-    DBHelper.fetchRestaurantById(id, (error, restaurant) => {
-      self.restaurant = restaurant;
-      if (!restaurant) {
-        console.error(error);
-        return;
-      }
-      fillRestaurantHTML();
-      callback(null, restaurant);
-    });
-  }
-};
+let fetchRestaurantFromURL = callback => {};
 
 /**
  * Create restaurant HTML and add it to the webpage
