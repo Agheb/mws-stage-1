@@ -2,7 +2,6 @@ import Lozad from "lozad";
 import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
-import DBHelper from "./assets/js/dbhelper";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
 import {
@@ -26,7 +25,6 @@ observer.observe();
 window.addEventListener(
   "resize",
   () => {
-    console.log("Event fired");
     if (!InteractiveMapLoaded) {
       addInteractiveRestaurantMap(MapsConfig);
     }
@@ -41,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!id) {
         console.error("No restaurant id in URL");
       } else {
-        self.restaurant = getRestaurantById(id);
+        window.restaurant = getRestaurantById(id, restaurants);
         fillRestaurantHTML();
         fillBreadcrumb();
-        initRestaurantMap(restaurant, "map", 300);
+        initRestaurantMap(window.restaurant, "map", 300);
       }
     })
-    .catch(error => {
+    .catch(err => {
       console.error(err);
     });
 });
@@ -69,15 +67,16 @@ MapTarget.addEventListener(
   "mouseover",
   () => {
     if (!InteractiveMapLoaded) {
-      console.log(!InteractiveMapLoaded);
       addInteractiveRestaurantMap(MapsConfig);
     }
   },
   { once: true }
 );
 
-const addInteractiveRestaurantMap = (options, restaurant = self.restaurant) => {
-  console.log(options);
+const addInteractiveRestaurantMap = (
+  options,
+  restaurant = window.restaurant
+) => {
   loadGoogleMapsApi(options)
     .then(googleMaps => {
       map = new googleMaps.Map(document.getElementById("map"), {
@@ -130,7 +129,7 @@ let fetchRestaurantFromURL = callback => {};
 /**
  * Create restaurant HTML and add it to the webpage
  */
-let fillRestaurantHTML = (restaurant = self.restaurant) => {
+let fillRestaurantHTML = (restaurant = window.restaurant) => {
   const name = document.getElementById("restaurant-name");
   name.innerHTML = restaurant.name;
 
@@ -139,7 +138,7 @@ let fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const image = document.getElementById("restaurant-img");
   image.className = "restaurant-img";
-  const img = require(`./assets/data/img/${restaurant.photograph}`);
+  const img = require(`./assets/data/img/${restaurant.photograph}.jpg`);
   image.src = img.src;
   image.srcset = img.srcSet;
   image.alt = `Image of ${restaurant.name} Restaurant`;
@@ -159,7 +158,7 @@ let fillRestaurantHTML = (restaurant = self.restaurant) => {
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
 let fillRestaurantHoursHTML = (
-  operatingHours = self.restaurant.operating_hours
+  operatingHours = window.restaurant.operating_hours
 ) => {
   const hours = document.getElementById("restaurant-hours");
   for (let key in operatingHours) {
@@ -180,7 +179,7 @@ let fillRestaurantHoursHTML = (
 /**
  * Create all reviews HTML and add them to the webpage.
  */
-let fillReviewsHTML = (reviews = self.restaurant.reviews) => {
+let fillReviewsHTML = (reviews = window.restaurant.reviews) => {
   const container = document.getElementById("reviews-container");
   const title = document.createElement("h3");
   title.innerHTML = "Reviews";
@@ -226,7 +225,7 @@ let createReviewHTML = review => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-let fillBreadcrumb = (restaurant = self.restaurant) => {
+let fillBreadcrumb = (restaurant = window.restaurant) => {
   const breadcrumb = document.getElementById("breadcrumb");
   const li = document.createElement("li");
   li.innerHTML = restaurant.name;
