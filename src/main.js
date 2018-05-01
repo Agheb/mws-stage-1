@@ -53,7 +53,7 @@ let fetchNeighborhoods = () => {
       // Got an error
       console.error(error);
     } else {
-      self.neighborhoods = neighborhoods;
+      window.neighborhoods = neighborhoods;
       fillNeighborhoodsHTML();
     }
   });
@@ -62,7 +62,7 @@ let fetchNeighborhoods = () => {
 /**
  * Set neighborhoods HTML.
  */
-let fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
+let fillNeighborhoodsHTML = (neighborhoods = window.neighborhoods) => {
   const select = document.getElementById("neighborhoods-select");
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement("option");
@@ -81,7 +81,7 @@ let fetchCuisines = () => {
       // Got an error!
       console.error(error);
     } else {
-      self.cuisines = cuisines;
+      window.cuisines = cuisines;
       fillCuisinesHTML();
     }
   });
@@ -90,7 +90,7 @@ let fetchCuisines = () => {
 /**
  * Set cuisines HTML.
  */
-let fillCuisinesHTML = (cuisines = self.cuisines) => {
+let fillCuisinesHTML = (cuisines = window.cuisines) => {
   const select = document.getElementById("cuisines-select");
 
   cuisines.forEach(cuisine => {
@@ -227,24 +227,24 @@ let updateRestaurants = () => {
  */
 let resetRestaurants = restaurants => {
   // Remove all restaurants
-  self.restaurants = [];
+  window.restaurants = [];
   const ul = document.getElementById("restaurants-list");
   ul.innerHTML = "";
 
   // Remove all map markers
 
-  if (typeof self.markers !== "undefined") {
-    self.markers.forEach(m => m.setMap(null));
+  if (typeof window.markers !== "undefined") {
+    window.markers.forEach(m => m.setMap(null));
   }
 
-  self.markers = [];
-  self.restaurants = restaurants;
+  window.markers = [];
+  window.restaurants = restaurants;
 };
 
 /**
  * Create all restaurants HTML and add them to the webpage.
  */
-let fillRestaurantsHTML = (restaurants = self.restaurants) => {
+let fillRestaurantsHTML = (restaurants = window.restaurants) => {
   const ul = document.getElementById("restaurants-list");
   restaurants.forEach(restaurant => {
     console.log(restaurant);
