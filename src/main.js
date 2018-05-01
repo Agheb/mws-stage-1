@@ -6,7 +6,14 @@ import Data from "./assets/data/restaurants.json";
 import Manifest from "./assets/data/manifest.json";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
-import * as DB from "./assets/js/db";
+import {
+  loadRestaurants,
+  getCuisines,
+  getNeighborhoods,
+  getRestaurantByCuisineNeighborhood,
+  urlForRestaurant,
+  mapMarkerForRestaurant
+} from "./assets/js/db";
 
 let restaurants, neighborhoods, cuisines;
 var map;
@@ -47,9 +54,9 @@ MapTarget.addEventListener(
  * Fetch all neighborhoods and set their HTML.
  */
 let fetchNeighborhoods = () => {
-  DB.loadRestaurants()
+  loadRestaurants()
     .then(restaurants => {
-      window.neighborhoods = DB.getNeighborhoods(restaurants);
+      window.neighborhoods = getNeighborhoods(restaurants);
       fillNeighborhoodsHTML();
     })
     .catch(err => {
@@ -74,9 +81,9 @@ let fillNeighborhoodsHTML = (neighborhoods = window.neighborhoods) => {
  * Fetch all cuisines and set their HTML.
  */
 let fetchCuisines = () => {
-  DB.loadRestaurants()
+  loadRestaurants()
     .then(restaurants => {
-      window.cuisines = DB.getCuisines(restaurants);
+      window.cuisines = getCuisines(restaurants);
       fillCuisinesHTML();
     })
     .catch(err => {
@@ -140,7 +147,7 @@ const initMap = (height, element) => {
   // load static maps image for smaller devices
   if (window.matchMedia("(max-width:600px)").matches) {
     createStaticMapImage(height, element);
-    DB.loadRestaurants()
+    loadRestaurants()
       .then(restaurants => {
         console.log(restaurants);
         resetRestaurants(restaurants);
@@ -208,10 +215,10 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-  DB.loadRestaurants()
+  loadRestaurants()
     .then(response => {
       console.log(response);
-      let filtered = DB.getRestaurantByCuisineNeighborhood(
+      let filtered = getRestaurantByCuisineNeighborhood(
         cuisine,
         neighborhood,
         response
@@ -288,7 +295,7 @@ let createRestaurantHTML = restaurant => {
 
   const more = document.createElement("a");
   more.innerHTML = "View Details";
-  more.href = DB.urlForRestaurant(restaurant);
+  more.href = urlForRestaurant(restaurant);
   li.append(more);
 
   return li;
@@ -300,7 +307,7 @@ let createRestaurantHTML = restaurant => {
 let addMarkersToMap = (restaurants = window.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    const marker = DB.mapMarkerForRestaurant(restaurant, map);
+    const marker = mapMarkerForRestaurant(restaurant, map);
     google.maps.event.addListener(marker, "click", () => {
       window.location.href = marker.url;
     });
