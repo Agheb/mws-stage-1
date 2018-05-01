@@ -29,6 +29,7 @@
     "jimp": "^0.2.28",
     "lint-staged": "^7.0.0",
     "load-google-maps-api": "^1.2.1",
+    "localforage": "^1.7.1",
     "lozad": "^1.4.0",
     "lqip-loader": "^2.0.2",
     "normalize.css": "^8.0.0",
