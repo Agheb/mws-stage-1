@@ -7,6 +7,7 @@ import Manifest from "./assets/data/manifest.json";
 import DBHelper from "./assets/js/dbhelper";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
+import * as DB from "./assets/js/db";
 
 let restaurants, neighborhoods, cuisines;
 var map;
@@ -47,7 +48,6 @@ MapTarget.addEventListener(
  * Fetch all neighborhoods and set their HTML.
  */
 let fetchNeighborhoods = () => {
-  console.log("entering location");
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) {
       // Got an error
@@ -210,19 +210,16 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-  DBHelper.fetchRestaurantByCuisineAndNeighborhood(
-    cuisine,
-    neighborhood,
-    (error, restaurants) => {
-      if (error) {
-        // Got an error!
-        console.error(error);
-      } else {
-        resetRestaurants(restaurants);
-        fillRestaurantsHTML();
-      }
-    }
-  );
+  DB.fetchRestaurants("http://localhost:1337/restaurants").then(response => {
+    console.log(response);
+    let filtered = DB.filterByCuisineNeighborhood(
+      cuisine,
+      neighborhood,
+      response
+    );
+    resetRestaurants(filtered);
+    fillRestaurantsHTML();
+  });
 };
 
 /**
@@ -250,6 +247,7 @@ let resetRestaurants = restaurants => {
 let fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById("restaurants-list");
   restaurants.forEach(restaurant => {
+    console.log(restaurant);
     ul.append(createRestaurantHTML(restaurant));
     observer.observe();
   });
@@ -267,7 +265,7 @@ let createRestaurantHTML = restaurant => {
 
   const image = document.createElement("img");
   image.className = "restaurant-img lozad";
-  const img = require(`./assets/data/img/${restaurant.photograph}`);
+  const img = require(`./assets/data/img/${restaurant.photograph}.jpg`);
   image.src = img.placeholder;
   image.setAttribute("data-src", img.src);
   image.setAttribute("data-srcset", img.srcSet);
