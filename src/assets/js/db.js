@@ -1,19 +1,14 @@
 import LF from "localforage";
 
 /*
-* API's server specified URL
+* API's server specified URL.
+  
 */
-export const URL = () => {
-  let port = 1337; // Change this to your server port
-  let url = `http://localhost:${port}/`;
-  if (location.href !== url) {
-    url = "";
-  }
-  return `${url}restaurants.json`;
-};
+const SERVER_URL = "https://server.amanuelg.me/restaurants";
 
-export const fetchRestaurants = (URL = this.URL) => {
-  return fetch(URL, { credentials: "omit" }).then(response => {
+export const fetchRestaurants = () => {
+  console.log(SERVER_URL);
+  return fetch(SERVER_URL, { credentials: "omit" }).then(response => {
     return response.json();
   });
 };

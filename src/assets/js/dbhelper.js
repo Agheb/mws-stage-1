@@ -26,6 +26,7 @@ export default class DBHelper {
         // Got a success response from server!
         const json = JSON.parse(xhr.responseText);
         const restaurants = json.restaurants;
+
         callback(null, restaurants);
       } else {
         // Oops!. Got an error from server.
@@ -105,6 +106,7 @@ export default class DBHelper {
         let results = restaurants;
         if (cuisine != "all") {
           // filter by cuisine
+
           results = results.filter(r => r.cuisine_type == cuisine);
         }
         if (neighborhood != "all") {

@@ -210,7 +210,7 @@ let updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-  DB.fetchRestaurants("http://localhost:1337/restaurants").then(response => {
+  DB.fetchRestaurants().then(response => {
     console.log(response);
     let filtered = DB.filterByCuisineNeighborhood(
       cuisine,
