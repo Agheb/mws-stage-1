@@ -71,14 +71,9 @@ let fillNeighborhoodsHTML = (neighborhoods = window.neighborhoods) => {
  * Fetch all cuisines and set their HTML.
  */
 let fetchCuisines = () => {
-  DBHelper.fetchCuisines((error, cuisines) => {
-    if (error) {
-      // Got an error!
-      console.error(error);
-    } else {
-      window.cuisines = cuisines;
-      fillCuisinesHTML();
-    }
+  DB.loadRestaurants().then(restaurants => {
+    window.cuisines = DB.getCuisines(restaurants);
+    fillCuisinesHTML();
   });
 };
 
