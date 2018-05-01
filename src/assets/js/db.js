@@ -16,10 +16,10 @@ export const loadRestaurants = () => {
 /**
  * get a restaurant by its ID.
  */
-export const getRestaurantById = id => {
+export const getRestaurantById = (id, restaurants) => {
   // TODO: Tasks pending completion -@agheb at 5/1/2018, 9:12:45 PM
   // Error Handling if Restaurant does not exist
-  const restaurant = restaurants.find(r => r.id == id);
+  return restaurants.find(r => r.id == id);
 };
 
 /**
