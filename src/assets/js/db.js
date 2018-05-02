@@ -5,7 +5,7 @@ import LF from "localforage";
   
 */
 const SERVER_URL = "https://server.amanuelg.me/restaurants";
-const stored = false;
+
 // Configure IndexedDB
 LF.config({
   driver: LF.INDEXEDDB, // Force INDEXEDDB
