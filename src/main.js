@@ -182,9 +182,6 @@ const addInteractiveMap = options => {
     });
 };
 
-// FIXME: Needing refactor or cleanup -@agheb at 4/25/2018, 7:22:58 PM
-// Google not found
-
 const changeMap = () => {
   if (!InteractiveMapLoaded) {
     addInteractiveMap(MapsConfig);
@@ -271,7 +268,6 @@ let fillRestaurantsHTML = (restaurants = window.restaurants) => {
  */
 let createRestaurantHTML = restaurant => {
   const li = document.createElement("li");
-
   const image = document.createElement("img");
   image.className = "restaurant-img lozad";
   const img = require(`./assets/data/img/${restaurant.photograph}.jpg`);

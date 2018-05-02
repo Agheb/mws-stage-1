@@ -99,8 +99,6 @@ const createRestaurantMapImage = (restaurant, element, height) => {
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
-  // TODO: Tasks pending completion -@agheb at 4/26/2018, 6:38:24 PM
-  // Strip out key and add to MapOptions
   const url = oneLineTrim`
   https://maps.googleapis.com/maps/api/staticmap?center=${
     restaurant.latlng.lat
@@ -247,7 +245,7 @@ let getParameterByName = (name, url) => {
 };
 
 /**
- * Create star rating in revies
+ * Create star rating in reviews
  */
 let createReviewStars = rating => {
   const star = `
