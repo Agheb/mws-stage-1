@@ -13,6 +13,7 @@ import {
   urlForRestaurant,
   mapMarkerForRestaurant
 } from "./assets/js/db";
+import { MapStyle } from "./assets/js/map";
 
 let restaurants, neighborhoods, cuisines;
 var map;
@@ -170,7 +171,8 @@ const addInteractiveMap = options => {
       map = new googleMaps.Map(document.getElementById("map"), {
         zoom: 12,
         center: loc,
-        scrollwheel: false
+        scrollwheel: false,
+        styles: MapStyle
       });
       InteractiveMapLoaded = true;
       updateRestaurants();
@@ -212,11 +214,11 @@ let updateRestaurants = () => {
   const cIndex = cSelect.selectedIndex;
   const nIndex = nSelect.selectedIndex;
 
-  const cuisine = cSelect[cIndex].value;
-  const neighborhood = nSelect[nIndex].value;
+  let cuisine = cSelect[cIndex].value;
+  let neighborhood = nSelect[nIndex].value;
+  console.log("Select" + neighborhood);
   loadRestaurants()
     .then(response => {
-      console.log(response);
       let filtered = getRestaurantByCuisineNeighborhood(
         cuisine,
         neighborhood,
@@ -255,7 +257,6 @@ let resetRestaurants = restaurants => {
 let fillRestaurantsHTML = (restaurants = window.restaurants) => {
   const ul = document.getElementById("restaurants-list");
   restaurants.forEach(restaurant => {
-    console.log(restaurant);
     ul.append(createRestaurantHTML(restaurant));
     observer.observe();
   });
