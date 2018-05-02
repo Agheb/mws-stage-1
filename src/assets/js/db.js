@@ -12,40 +12,37 @@ LF.config({
   name: "Restaurants reviews",
   version: 1.0,
   size: 4980736, // Size of database, in bytes. Used only in WebSQL.
-  storeName: "datastore_1", // Should be alphanumeric, with underscores.
+  storeName: "datastore_1",
   description: "Storing blobs"
 });
 
 export const loadRestaurants = () => {
-  if (!stored) {
-    return fetch(SERVER_URL, { credentials: "omit" })
-      .then(response => {
-        console.log("Fetching JSON was successfull");
-        return response.json();
-      })
-      .then(json => {
-        console.log(json);
-
-        return LF.setItem("restaurants", JSON.stringify(json));
-      })
-      .then(() => {
-        const stored = true;
-        console.log("Stored in IndexDB");
-        return LF.getItem("restaurants");
-      })
-      .then(restaurants => {
-        console.log("Return restaurants from IndexedDB");
-        return JSON.parse(restaurants);
-      });
-  }
-
-  console.log("Already in IndexedDB stored");
-  return LF.getItem("restaurants")
-    .then(value => {
-      return JSON.parse(value);
+  return fetch(SERVER_URL, { credentials: "omit" })
+    .then(response => {
+      console.log("Restaurants fetched");
+      return response
+        .json()
+        .then(json => {
+          return LF.setItem("restaurants", JSON.stringify(json));
+        })
+        .then(() => {
+          console.log("Stored in IndexedDB");
+          return LF.getItem("restaurants");
+        })
+        .then(restaurants => {
+          return JSON.parse(restaurants);
+        });
     })
-    .catch(error => {
-      console.log(error);
+    .catch(() => {
+      //  network failure or offline situation
+      console.log("Can not fetch data. Trying to get it from IndexedDB...");
+      return LF.getItem("restaurants")
+        .then(value => {
+          return JSON.parse(value);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     });
 };
 
@@ -53,8 +50,6 @@ export const loadRestaurants = () => {
  * get a restaurant by its ID.
  */
 export const getRestaurantById = (id, restaurants) => {
-  // TODO: Tasks pending completion -@agheb at 5/1/2018, 9:12:45 PM
-  // Error Handling if Restaurant does not exist
   return restaurants.find(r => r.id == id);
 };
 
