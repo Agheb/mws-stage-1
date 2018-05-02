@@ -9,7 +9,7 @@ import {
   loadRestaurants,
   getRestaurantById
 } from "./assets/js/db";
-
+import { MapStyle } from "./assets/js/map";
 let restaurant;
 let map;
 let InteractiveMapLoaded;
@@ -82,7 +82,8 @@ const addInteractiveRestaurantMap = (
       map = new googleMaps.Map(document.getElementById("map"), {
         zoom: 12,
         center: restaurant.latlng,
-        scrollwheel: false
+        scrollwheel: false,
+        styles: MapStyle
       });
       InteractiveMapLoaded = true;
       mapMarkerForRestaurant(restaurant, map);
