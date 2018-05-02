@@ -5,12 +5,48 @@ import LF from "localforage";
   
 */
 const SERVER_URL = "https://server.amanuelg.me/restaurants";
+const stored = false;
+// Configure IndexedDB
+LF.config({
+  driver: LF.INDEXEDDB, // Force INDEXEDDB
+  name: "Restaurants reviews",
+  version: 1.0,
+  size: 4980736, // Size of database, in bytes. Used only in WebSQL.
+  storeName: "datastore_1", // Should be alphanumeric, with underscores.
+  description: "Storing blobs"
+});
 
 export const loadRestaurants = () => {
-  console.log(SERVER_URL);
-  return fetch(SERVER_URL, { credentials: "omit" }).then(response => {
-    return response.json();
-  });
+  if (!stored) {
+    return fetch(SERVER_URL, { credentials: "omit" })
+      .then(response => {
+        console.log("Fetching JSON was successfull");
+        return response.json();
+      })
+      .then(json => {
+        console.log(json);
+
+        return LF.setItem("restaurants", JSON.stringify(json));
+      })
+      .then(() => {
+        const stored = true;
+        console.log("Stored in IndexDB");
+        return LF.getItem("restaurants");
+      })
+      .then(restaurants => {
+        console.log("Return restaurants from IndexedDB");
+        return JSON.parse(restaurants);
+      });
+  }
+
+  console.log("Already in IndexedDB stored");
+  return LF.getItem("restaurants")
+    .then(value => {
+      return JSON.parse(value);
+    })
+    .catch(error => {
+      console.log(error);
+    });
 };
 
 /**
