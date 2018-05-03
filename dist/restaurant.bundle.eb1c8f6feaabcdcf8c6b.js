@@ -4312,8 +4312,8 @@
   /*!**************************!*\
   !*** ./assets/js/map.js ***!
   \**************************/
-  /*! exports provided: MapStyle */
-  /*! exports used: MapStyle */ function(e, t, n) {
+  /*! exports provided: MapStyle, MapsConfig */
+  /*! exports used: MapStyle, MapsConfig */ function(e, t, n) {
     "use strict";
     t.a = [
       {
@@ -4440,6 +4440,10 @@
         ]
       }
     ];
+    t.b = {
+      key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+      libraries: ["places"]
+    };
   },
   /*!***************************************!*\
   !*** ./assets/data/img ^\.\/.*\.jpg$ ***!
@@ -4897,45 +4901,41 @@
       d = n(/*! ./assets/js/db */ 125),
       l = n(/*! ./assets/js/map */ 128);
     let p, h;
-    const A = {
-        key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-        libraries: ["places"]
-      },
-      v = o()();
-    v.observe(),
+    const A = o()();
+    A.observe(),
       window.addEventListener(
         "resize",
         () => {
-          h || g(A);
+          h || b(l.b);
         },
         { once: !0 }
       ),
       document.addEventListener("DOMContentLoaded", () => {
         Object(d.e)()
           .then(e => {
-            const t = x("id");
+            const t = S("id");
             t
               ? ((window.restaurant = Object(d.d)(t, e)),
-                w(),
-                S(),
-                b(window.restaurant, "map", 300))
+                y(),
+                j(),
+                v(window.restaurant, "map", 300))
               : console.error("No restaurant id in URL");
           })
           .catch(e => {
             console.error(e);
           });
       });
-    const b = (e, t, n) => {
-      window.matchMedia("(max-width:600px)").matches ? y(e, t, n) : g(A, e);
+    const v = (e, t, n) => {
+      window.matchMedia("(max-width:600px)").matches ? g(e, t, n) : b(l.b, e);
     };
     document.getElementById("map").addEventListener(
       "mouseover",
       () => {
-        h || g(A);
+        h || b(l.b);
       },
       { once: !0 }
     );
-    const g = (e, t = window.restaurant) => {
+    const b = (e, t = window.restaurant) => {
         f()(e)
           .then(e => {
             (p = new e.Map(document.getElementById("map"), {
@@ -4951,7 +4951,7 @@
             console.error(e);
           });
       },
-      y = (e, t, n) => {
+      g = (e, t, n) => {
         const r =
             window.innerWidth ||
             document.documentElement.clientWidth ||
@@ -4974,22 +4974,22 @@
           }">\n  `;
         document.getElementById(`${t}`).innerHTML = a;
       };
-    let w = (e = window.restaurant) => {
+    let y = (e = window.restaurant) => {
         (document.getElementById("restaurant-name").innerHTML = e.name),
           (document.getElementById("restaurant-address").innerHTML = e.address);
         const t = document.getElementById("restaurant-img");
         t.className = "restaurant-img";
-        const r = n(/*! ./assets/data/img */ 129)(`./${e.photograph}.jpg`);
+        const r = n(/*! ./assets/data/img */ 129)(`./${e.id}.jpg`);
         (t.src = r.src),
           (t.srcset = r.srcSet),
           (t.alt = `Image of ${e.name} Restaurant`),
-          v.observe(),
+          A.observe(),
           (document.getElementById("restaurant-cuisine").innerHTML =
             e.cuisine_type),
-          e.operating_hours && m(),
-          E();
+          e.operating_hours && w(),
+          m();
       },
-      m = (e = window.restaurant.operating_hours) => {
+      w = (e = window.restaurant.operating_hours) => {
         const t = document.getElementById("restaurant-hours");
         for (let n in e) {
           const r = document.createElement("tr"),
@@ -4999,7 +4999,7 @@
           (a.innerHTML = e[n]), r.appendChild(a), t.appendChild(r);
         }
       },
-      E = (e = window.restaurant.reviews) => {
+      m = (e = window.restaurant.reviews) => {
         const t = document.getElementById("reviews-container"),
           n = document.createElement("h3");
         if (((n.innerHTML = "Reviews"), t.appendChild(n), !e)) {
@@ -5008,34 +5008,34 @@
         }
         const r = document.getElementById("reviews-list");
         e.forEach(e => {
-          r.appendChild(j(e));
+          r.appendChild(E(e));
         }),
           t.appendChild(r);
       },
-      j = e => {
+      E = e => {
         const t = document.createElement("li"),
           n = document.createElement("p");
         (n.innerHTML = e.name), t.appendChild(n);
         const r = document.createElement("p");
         (r.innerHTML = e.date), t.appendChild(r);
         const o = document.createElement("p");
-        (o.innerHTML = H(e.rating)), t.appendChild(o);
+        (o.innerHTML = x(e.rating)), t.appendChild(o);
         const a = document.createElement("p");
         return (a.innerHTML = e.comments), t.appendChild(a), t;
       },
-      S = (e = window.restaurant) => {
+      j = (e = window.restaurant) => {
         const t = document.getElementById("breadcrumb"),
           n = document.createElement("li");
         (n.innerHTML = e.name), t.appendChild(n);
       },
-      x = (e, t) => {
+      S = (e, t) => {
         t || (t = window.location.href), (e = e.replace(/[\[\]]/g, "\\$&"));
         const n = new RegExp(`[?&]${e}(=([^&#]*)|&|#|$)`).exec(t);
         return n
           ? n[2] ? decodeURIComponent(n[2].replace(/\+/g, " ")) : ""
           : null;
       },
-      H = e => {
+      x = e => {
         return `\n  <div class="rating small star-icon value-${e} color-ok">\n   <div class="star-container">\n       ${'\n  <div class="star">\n  <i class="star-empty"></i>\n  <i class="star-half"></i>\n  <i class="star-filled"></i>\n</div>\n  '.repeat(
           5
         )}\n    </div>\n  </div>\n  `;

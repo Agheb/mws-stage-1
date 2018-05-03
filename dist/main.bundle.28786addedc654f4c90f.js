@@ -4312,8 +4312,8 @@
   /*!**************************!*\
   !*** ./assets/js/map.js ***!
   \**************************/
-  /*! exports provided: MapStyle */
-  /*! exports used: MapStyle */ function(e, t, n) {
+  /*! exports provided: MapStyle, MapsConfig */
+  /*! exports used: MapStyle, MapsConfig */ function(e, t, n) {
     "use strict";
     t.a = [
       {
@@ -4440,6 +4440,10 @@
         ]
       }
     ];
+    t.b = {
+      key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+      libraries: ["places"]
+    };
   },
   /*!***************************************!*\
   !*** ./assets/data/img ^\.\/.*\.jpg$ ***!
@@ -4894,54 +4898,50 @@
     var p;
     let A;
     const b = o()();
-    b.observe();
-    const v = {
-      key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-      libraries: ["places"]
-    };
-    document.addEventListener("DOMContentLoaded", e => {
-      m(400, "map"), g(), w();
-    }),
+    b.observe(),
+      document.addEventListener("DOMContentLoaded", e => {
+        E(400, "map"), v(), y();
+      }),
       document.getElementById("map").addEventListener(
         "mouseover",
         () => {
-          A || j(v);
+          A || m(h.b);
         },
         { once: !0 }
       );
-    let g = () => {
+    let v = () => {
         Object(l.e)()
           .then(e => {
-            (window.neighborhoods = Object(l.b)(e)), y();
+            (window.neighborhoods = Object(l.b)(e)), g();
           })
           .catch(e => {
             console.error(e);
           });
       },
-      y = (e = window.neighborhoods) => {
+      g = (e = window.neighborhoods) => {
         const t = document.getElementById("neighborhoods-select");
         e.forEach(e => {
           const n = document.createElement("option");
           (n.innerHTML = e), (n.value = e), t.append(n);
         });
       },
-      w = () => {
+      y = () => {
         Object(l.e)()
           .then(e => {
-            (window.cuisines = Object(l.a)(e)), E();
+            (window.cuisines = Object(l.a)(e)), w();
           })
           .catch(e => {
             console.error(e);
           });
       },
-      E = (e = window.cuisines) => {
+      w = (e = window.cuisines) => {
         const t = document.getElementById("cuisines-select");
         e.forEach(e => {
           const n = document.createElement("option");
           (n.innerHTML = e), (n.value = e), t.append(n);
         });
       };
-    const m = (e, t) => {
+    const E = (e, t) => {
         window.matchMedia("(max-width:600px)").matches
           ? (((e, t) => {
               const n =
@@ -4976,14 +4976,14 @@
             })(e, t),
             Object(l.e)()
               .then(e => {
-                console.log(e), O(e), Q();
+                console.log(e), B(e), O();
               })
               .catch(e => {
                 console.error(e);
               }))
-          : j(v);
+          : m(h.b);
       },
-      j = e => {
+      m = e => {
         s()(e)
           .then(e => {
             (p = new e.Map(document.getElementById("map"), {
@@ -4993,24 +4993,24 @@
               styles: h.a
             })),
               (A = !0),
-              B();
+              H();
           })
           .catch(e => {
             console.error(e);
           });
       },
-      S = () => {
-        A ? B() : j(v);
+      j = () => {
+        A ? H() : m(h.b);
       },
-      x = document.getElementById("neighborhoods-select"),
-      H = document.getElementById("cuisines-select");
-    x.addEventListener("change", () => {
-      S();
+      S = document.getElementById("neighborhoods-select"),
+      x = document.getElementById("cuisines-select");
+    S.addEventListener("change", () => {
+      j();
     }),
-      H.addEventListener("change", () => {
-        S();
+      x.addEventListener("change", () => {
+        j();
       });
-    let B = () => {
+    let H = () => {
         const e = document.getElementById("cuisines-select"),
           t = document.getElementById("neighborhoods-select"),
           n = e.selectedIndex,
@@ -5021,13 +5021,13 @@
           Object(l.e)()
             .then(e => {
               let t = Object(l.c)(o, a, e);
-              O(t), Q();
+              B(t), O();
             })
             .catch(e => {
               console.error(e);
             });
       },
-      O = e => {
+      B = e => {
         (window.restaurants = []),
           (document.getElementById("restaurants-list").innerHTML = ""),
           void 0 !== window.markers &&
@@ -5035,18 +5035,18 @@
           (window.markers = []),
           (window.restaurants = e);
       },
-      Q = (e = window.restaurants) => {
+      O = (e = window.restaurants) => {
         const t = document.getElementById("restaurants-list");
         e.forEach(e => {
-          t.append(k(e)), b.observe();
+          t.append(Q(e)), b.observe();
         }),
-          A && I();
+          A && k();
       },
-      k = e => {
+      Q = e => {
         const t = document.createElement("li"),
           r = document.createElement("img");
         r.className = "restaurant-img lozad";
-        const o = n(/*! ./assets/data/img */ 129)(`./${e.photograph}.jpg`);
+        const o = n(/*! ./assets/data/img */ 129)(`./${e.id}.jpg`);
         (r.src = o.placeholder),
           r.setAttribute("data-src", o.src),
           r.setAttribute("data-srcset", o.srcSet),
@@ -5066,7 +5066,7 @@
           t
         );
       },
-      I = (e = window.restaurants) => {
+      k = (e = window.restaurants) => {
         e.forEach(e => {
           const t = Object(l.f)(e, p);
           google.maps.event.addListener(t, "click", () => {

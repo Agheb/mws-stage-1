@@ -3,17 +3,17 @@ self.__precacheManifest = [
     url: "f86d5748d95432a95d2e89fb714016db-800.jpg"
   },
   {
-    url: "main.bundle.c2694b91db00dd2cd149.js"
+    url: "main.bundle.28786addedc654f4c90f.js"
   },
   {
-    url: "restaurant.bundle.dff1d266c8671576375d.js"
+    url: "restaurant.bundle.eb1c8f6feaabcdcf8c6b.js"
   },
   {
-    revision: "e94cd1ebc0d0d90d276172c04131ed42",
+    revision: "6ec3b7a0f1220d42b12f0292d7c50ce6",
     url: "restaurant.html"
   },
   {
-    revision: "dff1d266c8671576375d",
+    revision: "eb1c8f6feaabcdcf8c6b",
     url: "styles.38f95b38f82e3ca8950c71fe02a5521a.css"
   },
   {
@@ -34,7 +34,7 @@ self.__precacheManifest = [
     url: "fonts/Inter-UI-Regular.woff2"
   },
   {
-    revision: "d80dbc3193f6b23c0ae1cda4b0741a1a",
+    revision: "343ff290df85d34eef99eafba165a693",
     url: "index.html"
   },
   {
@@ -72,10 +72,6 @@ self.__precacheManifest = [
     url: "acd8a661ac58d09752cd244a151f5515-400.jpg"
   },
   {
-    revision: "ba4bb9447af6c8ce71ec7f2b70634209",
-    url: "assets/icons/icon-384x384.png"
-  },
-  {
     revision: "959b906a65949fba2e839039264d920a",
     url: "assets/icons/icon-72x72.png"
   },
@@ -84,8 +80,16 @@ self.__precacheManifest = [
     url: "assets/icons/icon-512x512.png"
   },
   {
+    revision: "ba4bb9447af6c8ce71ec7f2b70634209",
+    url: "assets/icons/icon-384x384.png"
+  },
+  {
     revision: "c8e0c3ad2a323dbeea8e60ba15f2a962",
     url: "assets/icons/icon-152x152.png"
+  },
+  {
+    revision: "06ec114fc6d846eae72128e947497f58",
+    url: "assets/icons/icon-192x192.png"
   },
   {
     revision: "dee82dcda95b3a01d0429d91e111e9b0",
@@ -94,10 +98,6 @@ self.__precacheManifest = [
   {
     revision: "f45ec0c00e27a609b7d0d6c9c326b002",
     url: "assets/icons/icon-128x128.png"
-  },
-  {
-    revision: "06ec114fc6d846eae72128e947497f58",
-    url: "assets/icons/icon-192x192.png"
   },
   {
     url: "af03ab7c0299ba334e3482db3a081087-400.jpg"
