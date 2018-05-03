@@ -13,7 +13,7 @@ import {
   urlForRestaurant,
   mapMarkerForRestaurant
 } from "./assets/js/db";
-import { MapStyle } from "./assets/js/map";
+import { MapStyle, MapsConfig } from "./assets/js/map";
 
 let restaurants, neighborhoods, cuisines;
 var map;
@@ -22,11 +22,6 @@ let InteractiveMapLoaded;
 
 const observer = Lozad();
 observer.observe();
-
-const MapsConfig = {
-  key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-  libraries: ["places"]
-};
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -270,7 +265,7 @@ let createRestaurantHTML = restaurant => {
   const li = document.createElement("li");
   const image = document.createElement("img");
   image.className = "restaurant-img lozad";
-  const img = require(`./assets/data/img/${restaurant.photograph}.jpg`);
+  const img = require(`./assets/data/img/${restaurant.id}.jpg`);
   image.src = img.placeholder;
   image.setAttribute("data-src", img.src);
   image.setAttribute("data-srcset", img.srcSet);

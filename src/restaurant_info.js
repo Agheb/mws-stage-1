@@ -9,15 +9,10 @@ import {
   loadRestaurants,
   getRestaurantById
 } from "./assets/js/db";
-import { MapStyle } from "./assets/js/map";
+import { MapStyle, MapsConfig } from "./assets/js/map";
 let restaurant;
 let map;
 let InteractiveMapLoaded;
-
-const MapsConfig = {
-  key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-  libraries: ["places"]
-};
 
 const observer = Lozad();
 observer.observe();
@@ -137,7 +132,7 @@ let fillRestaurantHTML = (restaurant = window.restaurant) => {
 
   const image = document.getElementById("restaurant-img");
   image.className = "restaurant-img";
-  const img = require(`./assets/data/img/${restaurant.photograph}.jpg`);
+  const img = require(`./assets/data/img/${restaurant.id}.jpg`);
   image.src = img.src;
   image.srcset = img.srcSet;
   image.alt = `Image of ${restaurant.name} Restaurant`;

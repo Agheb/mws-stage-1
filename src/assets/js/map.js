@@ -115,3 +115,8 @@ export const MapStyle = [
     stylers: [{ lightness: "-49" }, { saturation: "-53" }, { gamma: "0.79" }]
   }
 ];
+
+export const MapsConfig = {
+  key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+  libraries: ["places"]
+};
