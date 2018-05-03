@@ -327,6 +327,12 @@ td {
   margin: 0 0;
 }
 
+@media all and (min-width: 40em) {
+  .inside #map-container {
+    margin: 0 16px 0;
+  }
+}
+
 .inside #map {
   background-color: #ccc;
   height: 100%;
