@@ -1,10 +1,10 @@
 import LF from "localforage";
 
-/*
-* API's server specified URL.
-  
-*/
-const SERVER_URL = "https://server.amanuelg.me/restaurants";
+// Endpoint URL to get restaurants.
+const RESTAURANT_ENDPOINT = "https://apiserver-bsxyywmzus.now.sh/restaurants";
+// Endpoints URL for all reviews of given restaurant
+const REVIEWS_ENDPOINT =
+  "https://apiserver-bsxyywmzus.now.sh/reviews/?restaurant_id=";
 
 // Configure IndexedDB
 LF.config({
@@ -17,7 +17,7 @@ LF.config({
 });
 
 export const loadRestaurants = () => {
-  return fetch(SERVER_URL, { credentials: "omit" })
+  return fetch(RESTAURANT_ENDPOINT, { credentials: "omit" })
     .then(response => {
       console.log("Restaurants fetched");
       return response
@@ -43,6 +43,23 @@ export const loadRestaurants = () => {
         .catch(error => {
           console.log(error);
         });
+    });
+};
+
+// TODO: Tasks pending completion -@agheb at 5/4/2018, 8:24:48 PM
+// Clean up Promise Callback Chain Hell with reusable functions
+export const loadReviews = id => {
+  // Add restaurant id value
+  const reviews_endpoint = REVIEWS_ENDPOINT + id;
+  console.log(reviews_endpoint);
+
+  return fetch(reviews_endpoint, { credentials: "omit" })
+    .then(response => {
+      return response.json();
+    })
+    .catch(() => {
+      //  network failure or offline situation
+      console.log("Can not fetch data. Trying to get it from IndexedDB...");
     });
 };
 

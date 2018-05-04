@@ -7,6 +7,7 @@ import { oneLineTrim } from "common-tags";
 import {
   mapMarkerForRestaurant,
   loadRestaurants,
+  loadReviews,
   getRestaurantById
 } from "./assets/js/db";
 import { MapStyle, MapsConfig } from "./assets/js/map";
@@ -38,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         fillRestaurantHTML();
         fillBreadcrumb();
         initRestaurantMap(window.restaurant, "map", 300);
+        loadReviews(id).then(reviews => {
+          console.log(reviews);
+          fillReviewsHTML(reviews);
+        });
       }
     })
     .catch(err => {
@@ -144,8 +149,6 @@ let fillRestaurantHTML = (restaurant = window.restaurant) => {
   if (restaurant.operating_hours) {
     fillRestaurantHoursHTML();
   }
-  // fill reviews
-  fillReviewsHTML();
 };
 
 /**
