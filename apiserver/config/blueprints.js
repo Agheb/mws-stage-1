@@ -139,5 +139,5 @@ module.exports.blueprints = {
    * true.                                                                     *
    *                                                                           *
    ****************************************************************************/
-  // defaultLimit: 30
+  defaultLimit: 50
 };
