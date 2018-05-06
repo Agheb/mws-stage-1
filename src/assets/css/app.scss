@@ -1,18 +1,15 @@
 @import "@material/select/mdc-select";
 
 .material-icons.md-24 {
-  font-size: 26px;
-}
+  font-size: 24px;
 
-.material-icons.md-24.active {
-  color: rgba(253, 216, 53, 1);
+  margin: auto;
 }
 
 .container {
   display: flex;
-  margin: 24px 16px 0 16px;
+  margin: 16px 16px 16px 16px;
   justify-content: space-between;
-  align-content: center;
 }
 
 .flex-item {

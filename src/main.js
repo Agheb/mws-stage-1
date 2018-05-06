@@ -274,26 +274,9 @@ let createRestaurantHTML = restaurant => {
   image.alt = `Image of ${restaurant.name} Restaurant`;
   li.append(image);
 
-  const container = document.createElement("div");
-  container.classList.add("container");
-
-  const star = document.createElement("div");
-  star.classList.add("flex-item");
-  star.innerHTML = `<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed="false"
-  aria-label="Add to favorites" tabindex="0"
-  data-toggle-on='{"label": "Remove from favorites", "content": "star", "cssClass": "active" }'
-  data-toggle-off='{"label": "Add to favorites", "content": "star_border"}'>
- favorite_border
-</i>`;
-  MDCIconToggle.attachTo(star.querySelector(".mdc-icon-toggle"));
-
   const name = document.createElement("h2");
-  name.classList.add("flex-item");
   name.innerHTML = restaurant.name;
-
-  container.appendChild(name);
-  container.appendChild(star);
-  li.append(container);
+  li.append(name);
 
   const neighborhood = document.createElement("p");
   neighborhood.innerHTML = restaurant.neighborhood;
@@ -303,10 +286,27 @@ let createRestaurantHTML = restaurant => {
   address.innerHTML = restaurant.address;
   li.append(address);
 
+  const container = document.createElement("div");
+  container.classList.add("container");
+
   const more = document.createElement("a");
+  more.classList.add("flex-item");
   more.innerHTML = "View Details";
   more.href = urlForRestaurant(restaurant);
-  li.append(more);
+
+  const favorite = document.createElement("div");
+  favorite.classList.add("flex-item");
+  favorite.innerHTML = `<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed="false"
+  aria-label="Add to favorites" tabindex="0"
+  data-toggle-on='{"label": "Remove from favorites", "content": "favorite", "cssClass": "active" }'
+  data-toggle-off='{"label": "Add to favorites", "content": "favorite_border"}'>
+ favorite_border
+</i>`;
+  MDCIconToggle.attachTo(favorite.querySelector(".mdc-icon-toggle"));
+
+  container.appendChild(more);
+  container.appendChild(favorite);
+  li.append(container);
 
   return li;
 };
