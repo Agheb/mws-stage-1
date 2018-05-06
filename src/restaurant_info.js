@@ -205,7 +205,7 @@ let createReviewHTML = review => {
   li.appendChild(name);
 
   const date = document.createElement("p");
-  date.innerHTML = review.date;
+  date.innerHTML = review.createdAt;
   li.appendChild(date);
 
   const rating = document.createElement("p");
