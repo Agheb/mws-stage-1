@@ -1,9 +1,16 @@
-@import "@material/select/mdc-select";
+@import "~@material/ripple/mdc-ripple.scss";
+$material-icons-font-path: "~material-icons/iconfont/";
+
+@import "~material-icons/iconfont/material-icons.scss";
 
 .material-icons.md-24 {
-  font-size: 24px;
-
+  font-size: 22px;
+  color: #212121;
   margin: auto;
+  @include mdc-ripple-surface;
+  @include mdc-ripple-radius-bounded;
+  @include mdc-states;
+  @include material-icons();
 }
 
 .container {

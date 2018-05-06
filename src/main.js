@@ -16,7 +16,6 @@ import {
 } from "./assets/js/db";
 import { MapStyle, MapsConfig } from "./assets/js/map";
 import { MDCIconToggle } from "@material/icon-toggle";
-
 let restaurants, neighborhoods, cuisines;
 var map;
 var markers = [];
