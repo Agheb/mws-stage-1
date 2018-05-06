@@ -26,5 +26,10 @@ module.exports.models = {
    * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
    *                                                                          *
    ***************************************************************************/
-  migrate: "alter"
+  migrate: "alter",
+  attributes: {
+    createdAt: { type: "ref", columnType: "datetime", autoCreatedAt: true },
+    updatedAt: { type: "ref", columnType: "datetime", autoUpdatedAt: true },
+    id: { type: "number", autoIncrement: true }
+  }
 };
