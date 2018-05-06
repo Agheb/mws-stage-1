@@ -57,7 +57,8 @@ export const loadReviews = id => {
     .then(response => {
       return response.json();
     })
-    .catch(() => {
+    .catch(error => {
+      console.log(error);
       //  network failure or offline situation
       console.log("Can not fetch data. Trying to get it from IndexedDB...");
     });
