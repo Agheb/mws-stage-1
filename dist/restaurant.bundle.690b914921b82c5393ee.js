@@ -30,7 +30,7 @@
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
     (n.p = ""),
-    n((n.s = 140));
+    n((n.s = 154));
 })([
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/TemplateTag/index.js ***!
@@ -123,22 +123,22 @@
           s,
           d = e & c.F,
           l = e & c.G,
-          h = e & c.S,
-          p = e & c.P,
+          p = e & c.S,
+          h = e & c.P,
           A = e & c.B,
-          b = e & c.W,
-          v = l ? o : o[t] || (o[t] = {}),
-          g = v.prototype,
-          y = l ? r : h ? r[t] : (r[t] || {}).prototype;
+          v = e & c.W,
+          b = l ? o : o[t] || (o[t] = {}),
+          g = b.prototype,
+          y = l ? r : p ? r[t] : (r[t] || {}).prototype;
         for (u in (l && (n = t), n))
-          ((f = !d && y && void 0 !== y[u]) && u in v) ||
+          ((f = !d && y && void 0 !== y[u]) && u in b) ||
             ((s = f ? y[u] : n[u]),
-            (v[u] =
+            (b[u] =
               l && "function" != typeof y[u]
                 ? n[u]
                 : A && f
                   ? a(s, r)
-                  : b && y[u] == s
+                  : v && y[u] == s
                     ? (function(e) {
                         var t = function(t, n, r) {
                           if (this instanceof e) {
@@ -156,9 +156,9 @@
                         };
                         return (t.prototype = e.prototype), t;
                       })(s)
-                    : p && "function" == typeof s ? a(Function.call, s) : s),
-            p &&
-              (((v.virtual || (v.virtual = {}))[u] = s),
+                    : h && "function" == typeof s ? a(Function.call, s) : s),
+            h &&
+              (((b.virtual || (b.virtual = {}))[u] = s),
               e & c.R && g && !g[u] && i(g, u, s)));
       };
     (c.F = 1),
@@ -1300,17 +1300,17 @@
       s = n(/*! ./_set-to-string-tag */ 32),
       d = n(/*! ./_object-gpo */ 78),
       l = n(/*! ./_wks */ 5)("iterator"),
-      h = !([].keys && "next" in [].keys()),
-      p = function() {
+      p = !([].keys && "next" in [].keys()),
+      h = function() {
         return this;
       };
-    e.exports = function(e, t, n, A, b, v, g) {
+    e.exports = function(e, t, n, A, v, b, g) {
       f(n, t, A);
       var y,
         w,
-        E,
-        m = function(e) {
-          if (!h && e in H) return H[e];
+        m,
+        E = function(e) {
+          if (!p && e in H) return H[e];
           switch (e) {
             case "keys":
             case "values":
@@ -1323,40 +1323,40 @@
           };
         },
         j = t + " Iterator",
-        S = "values" == b,
+        S = "values" == v,
         x = !1,
         H = e.prototype,
-        B = H[l] || H["@@iterator"] || (b && H[b]),
-        O = (!h && B) || m(b),
-        Q = b ? (S ? m("entries") : O) : void 0,
+        B = H[l] || H["@@iterator"] || (v && H[v]),
+        Q = (!p && B) || E(v),
+        O = v ? (S ? E("entries") : Q) : void 0,
         k = ("Array" == t && H.entries) || B;
       if (
         (k &&
-          (E = d(k.call(new e()))) !== Object.prototype &&
-          E.next &&
-          (s(E, j, !0), r || c(E, l) || i(E, l, p)),
+          (m = d(k.call(new e()))) !== Object.prototype &&
+          m.next &&
+          (s(m, j, !0), r || c(m, l) || i(m, l, h)),
         S &&
           B &&
           "values" !== B.name &&
           ((x = !0),
-          (O = function() {
+          (Q = function() {
             return B.call(this);
           })),
-        (r && !g) || (!h && !x && H[l]) || i(H, l, O),
-        (u[t] = O),
-        (u[j] = p),
-        b)
+        (r && !g) || (!p && !x && H[l]) || i(H, l, Q),
+        (u[t] = Q),
+        (u[j] = h),
+        v)
       )
         if (
           ((y = {
-            values: S ? O : m("values"),
-            keys: v ? O : m("keys"),
-            entries: Q
+            values: S ? Q : E("values"),
+            keys: b ? Q : E("keys"),
+            entries: O
           }),
           g)
         )
           for (w in y) w in H || a(H, w, y[w]);
-        else o(o.P + o.F * (h || x), t, y);
+        else o(o.P + o.F * (p || x), t, y);
       return y;
     };
   },
@@ -1492,22 +1492,22 @@
             o,
             d,
             l = a(e),
-            h = "function" == typeof this ? this : Array,
-            p = arguments.length,
-            A = p > 1 ? arguments[1] : void 0,
-            b = void 0 !== A,
-            v = 0,
+            p = "function" == typeof this ? this : Array,
+            h = arguments.length,
+            A = h > 1 ? arguments[1] : void 0,
+            v = void 0 !== A,
+            b = 0,
             g = s(l);
           if (
-            (b && (A = r(A, p > 2 ? arguments[2] : void 0, 2)),
-            void 0 == g || (h == Array && c(g)))
+            (v && (A = r(A, h > 2 ? arguments[2] : void 0, 2)),
+            void 0 == g || (p == Array && c(g)))
           )
-            for (n = new h((t = u(l.length))); t > v; v++)
-              f(n, v, b ? A(l[v], v) : l[v]);
+            for (n = new p((t = u(l.length))); t > b; b++)
+              f(n, b, v ? A(l[b], b) : l[b]);
           else
-            for (d = g.call(l), n = new h(); !(o = d.next()).done; v++)
-              f(n, v, b ? i(d, A, [o.value, v], !0) : o.value);
-          return (n.length = v), n;
+            for (d = g.call(l), n = new p(); !(o = d.next()).done; b++)
+              f(n, b, v ? i(d, A, [o.value, b], !0) : o.value);
+          return (n.length = b), n;
         }
       }
     );
@@ -2061,8 +2061,8 @@
   /*!*************************!*\
   !*** ./assets/js/db.js ***!
   \*************************/
-  /*! exports provided: loadRestaurants, getRestaurantById, getRestaurantByCuisine, getRestaurantByNeighborhood, getRestaurantByCuisineNeighborhood, getNeighborhoods, getCuisines, urlForRestaurant, mapMarkerForRestaurant */
-  /*! exports used: getCuisines, getNeighborhoods, getRestaurantByCuisineNeighborhood, getRestaurantById, loadRestaurants, mapMarkerForRestaurant, urlForRestaurant */ function(
+  /*! exports provided: loadRestaurants, loadReviews, getRestaurantById, getRestaurantByCuisine, getRestaurantByNeighborhood, getRestaurantByCuisineNeighborhood, getNeighborhoods, getCuisines, urlForRestaurant, mapMarkerForRestaurant */
+  /*! exports used: getCuisines, getNeighborhoods, getRestaurantByCuisineNeighborhood, getRestaurantById, loadRestaurants, loadReviews, mapMarkerForRestaurant, urlForRestaurant */ function(
     e,
     t,
     n
@@ -2079,7 +2079,9 @@
       description: "Storing blobs"
     });
     t.e = () =>
-      fetch("https://server.amanuelg.me/restaurants", { credentials: "omit" })
+      fetch("https://apiserver-bsxyywmzus.now.sh/restaurants", {
+        credentials: "omit"
+      })
         .then(
           e => (
             console.log("Restaurants fetched"),
@@ -2107,6 +2109,21 @@
               })
           )
         );
+    t.f = e => {
+      const t =
+        "https://apiserver-bsxyywmzus.now.sh/reviews/?restaurant_id=" + e;
+      return (
+        console.log(t),
+        fetch(t, { credentials: "omit" })
+          .then(e => e.json())
+          .catch(e => {
+            console.log(e),
+              console.log(
+                "Can not fetch data. Trying to get it from IndexedDB..."
+              );
+          })
+      );
+    };
     t.d = (e, t) => t.find(t => t.id == e);
     t.c = (e, t, n) => {
       let r = n;
@@ -2127,8 +2144,8 @@
       return t.filter((e, n) => t.indexOf(e) == n);
     };
     const a = e => `./restaurant.html?id=${e.id}`;
-    t.g = a;
-    t.f = (e, t) => {
+    t.h = a;
+    t.g = (e, t) => {
       return new google.maps.Marker({
         position: e.latlng,
         title: e.name,
@@ -2260,7 +2277,7 @@
                   (this.state = u),
                     (this.queue = []),
                     (this.outcome = void 0),
-                    e !== o && h(this, e);
+                    e !== o && p(this, e);
                 }
                 function s(e, t, n) {
                   (this.promise = e),
@@ -2298,7 +2315,7 @@
                       t.apply(e, arguments);
                     };
                 }
-                function h(e, t) {
+                function p(e, t) {
                   var n = !1;
                   function r(t) {
                     n || ((n = !0), a.reject(e, t));
@@ -2306,12 +2323,12 @@
                   function o(t) {
                     n || ((n = !0), a.resolve(e, t));
                   }
-                  var i = p(function() {
+                  var i = h(function() {
                     t(o, r);
                   });
                   "error" === i.status && r(i.value);
                 }
-                function p(e, t) {
+                function h(e, t) {
                   var n = {};
                   try {
                     (n.value = e(t)), (n.status = "success");
@@ -2349,10 +2366,10 @@
                     d(this.promise, this.onRejected, e);
                   }),
                   (a.resolve = function(e, t) {
-                    var n = p(l, t);
+                    var n = h(l, t);
                     if ("error" === n.status) return a.reject(e, n.value);
                     var r = n.value;
-                    if (r) h(e, r);
+                    if (r) p(e, r);
                     else {
                       (e.state = c), (e.outcome = t);
                       for (var o = -1, i = e.queue.length; ++o < i; )
@@ -2527,16 +2544,16 @@
                 }
                 var d = "local-forage-detect-blob-support",
                   l = void 0,
-                  h = {},
-                  p = Object.prototype.toString,
+                  p = {},
+                  h = Object.prototype.toString,
                   A = "readonly",
-                  b = "readwrite";
-                function v(e) {
+                  v = "readwrite";
+                function b(e) {
                   return "boolean" == typeof l
                     ? i.resolve(l)
                     : (function(e) {
                         return new i(function(t) {
-                          var n = e.transaction(d, b),
+                          var n = e.transaction(d, v),
                             r = a([""]);
                           n.objectStore(d).put(r, "key"),
                             (n.onabort = function(e) {
@@ -2557,7 +2574,7 @@
                       });
                 }
                 function g(e) {
-                  var t = h[e.name],
+                  var t = p[e.name],
                     n = {};
                   (n.promise = new i(function(e, t) {
                     (n.resolve = e), (n.reject = t);
@@ -2570,17 +2587,17 @@
                       : (t.dbReady = n.promise);
                 }
                 function y(e) {
-                  var t = h[e.name].deferredOperations.pop();
+                  var t = p[e.name].deferredOperations.pop();
                   if (t) return t.resolve(), t.promise;
                 }
                 function w(e, t) {
-                  var n = h[e.name].deferredOperations.pop();
+                  var n = p[e.name].deferredOperations.pop();
                   if (n) return n.reject(t), n.promise;
                 }
-                function E(e, t) {
+                function m(e, t) {
                   return new i(function(n, r) {
                     if (
-                      ((h[e.name] = h[e.name] || {
+                      ((p[e.name] = p[e.name] || {
                         forages: [],
                         db: null,
                         dbReady: null,
@@ -2623,11 +2640,11 @@
                       });
                   });
                 }
-                function m(e) {
-                  return E(e, !1);
+                function E(e) {
+                  return m(e, !1);
                 }
                 function j(e) {
-                  return E(e, !0);
+                  return m(e, !0);
                 }
                 function S(e, t) {
                   if (!e.db) return !0;
@@ -2682,12 +2699,12 @@
                 function B(e) {
                   var t = this,
                     n = t._initReady().then(function() {
-                      var e = h[t._dbInfo.name];
+                      var e = p[t._dbInfo.name];
                       if (e && e.dbReady) return e.dbReady;
                     });
                   return u(n, e, e), n;
                 }
-                function O(e, t, n, r) {
+                function Q(e, t, n, r) {
                   void 0 === r && (r = 1);
                   try {
                     var o = e.db.transaction(e.storeName, t);
@@ -2714,7 +2731,7 @@
                           return (function(e) {
                             g(e);
                             for (
-                              var t = h[e.name], n = t.forages, r = 0;
+                              var t = p[e.name], n = t.forages, r = 0;
                               r < n.length;
                               r++
                             ) {
@@ -2724,7 +2741,7 @@
                             }
                             return (
                               (e.db = null),
-                              m(e)
+                              E(e)
                                 .then(function(t) {
                                   return (e.db = t), S(e) ? j(e) : t;
                                 })
@@ -2738,20 +2755,20 @@
                                 })
                             );
                           })(e).then(function() {
-                            O(e, t, n, r - 1);
+                            Q(e, t, n, r - 1);
                           });
                         })
                         .catch(n);
                     n(o);
                   }
                 }
-                var Q = {
+                var O = {
                   _driver: "asyncStorage",
                   _initStorage: function(e) {
                     var t = this,
                       n = { db: null };
                     if (e) for (var r in e) n[r] = e[r];
-                    var o = h[n.name];
+                    var o = p[n.name];
                     o ||
                       ((o = {
                         forages: [],
@@ -2759,7 +2776,7 @@
                         dbReady: null,
                         deferredOperations: []
                       }),
-                      (h[n.name] = o)),
+                      (p[n.name] = o)),
                       o.forages.push(t),
                       t._initReady || ((t._initReady = t.ready), (t.ready = B));
                     var a = [];
@@ -2774,7 +2791,7 @@
                     return i
                       .all(a)
                       .then(function() {
-                        return (n.db = o.db), m(n);
+                        return (n.db = o.db), E(n);
                       })
                       .then(function(e) {
                         return (
@@ -2819,7 +2836,7 @@
                         n
                           .ready()
                           .then(function() {
-                            O(n._dbInfo, A, function(o, a) {
+                            Q(n._dbInfo, A, function(o, a) {
                               if (o) return r(o);
                               try {
                                 var i = a
@@ -2854,7 +2871,7 @@
                       n
                         .ready()
                         .then(function() {
-                          O(n._dbInfo, A, function(o, a) {
+                          Q(n._dbInfo, A, function(o, a) {
                             if (o) return r(o);
                             try {
                               var i = a.objectStore(n._dbInfo.storeName).get(e);
@@ -2886,8 +2903,8 @@
                         .then(function() {
                           return (
                             (a = r._dbInfo),
-                            "[object Blob]" === p.call(t)
-                              ? v(a.db).then(function(e) {
+                            "[object Blob]" === h.call(t)
+                              ? b(a.db).then(function(e) {
                                   return e
                                     ? t
                                     : ((n = t),
@@ -2910,7 +2927,7 @@
                           );
                         })
                         .then(function(t) {
-                          O(r._dbInfo, b, function(a, i) {
+                          Q(r._dbInfo, v, function(a, i) {
                             if (a) return o(a);
                             try {
                               var c = i.objectStore(r._dbInfo.storeName);
@@ -2941,7 +2958,7 @@
                       n
                         .ready()
                         .then(function() {
-                          O(n._dbInfo, b, function(o, a) {
+                          Q(n._dbInfo, v, function(o, a) {
                             if (o) return r(o);
                             try {
                               var i = a
@@ -2974,7 +2991,7 @@
                         t
                           .ready()
                           .then(function() {
-                            O(t._dbInfo, b, function(r, o) {
+                            Q(t._dbInfo, v, function(r, o) {
                               if (r) return n(r);
                               try {
                                 var a = o
@@ -3004,7 +3021,7 @@
                         t
                           .ready()
                           .then(function() {
-                            O(t._dbInfo, A, function(r, o) {
+                            Q(t._dbInfo, A, function(r, o) {
                               if (r) return n(r);
                               try {
                                 var a = o
@@ -3033,7 +3050,7 @@
                           : n
                               .ready()
                               .then(function() {
-                                O(n._dbInfo, A, function(o, a) {
+                                Q(n._dbInfo, A, function(o, a) {
                                   if (o) return r(o);
                                   try {
                                     var i = a.objectStore(n._dbInfo.storeName),
@@ -3067,7 +3084,7 @@
                         t
                           .ready()
                           .then(function() {
-                            O(t._dbInfo, A, function(r, o) {
+                            Q(t._dbInfo, A, function(r, o) {
                               if (r) return n(r);
                               try {
                                 var a = o
@@ -3103,8 +3120,8 @@
                       var a =
                         e.name === r.name && this._dbInfo.db
                           ? i.resolve(this._dbInfo.db)
-                          : m(e).then(function(t) {
-                              var n = h[e.name],
+                          : E(e).then(function(t) {
+                              var n = p[e.name],
                                 r = n.forages;
                               n.db = t;
                               for (var o = 0; o < r.length; o++)
@@ -3116,7 +3133,7 @@
                             if (t.objectStoreNames.contains(e.storeName)) {
                               var n = t.version + 1;
                               g(e);
-                              var r = h[e.name],
+                              var r = p[e.name],
                                 a = r.forages;
                               t.close();
                               for (var c = 0; c < a.length; c++) {
@@ -3153,7 +3170,7 @@
                           })
                         : a.then(function(t) {
                             g(e);
-                            var n = h[e.name],
+                            var n = p[e.name],
                               r = n.forages;
                             t.close();
                             for (var a = 0; a < r.length; a++)
@@ -3193,10 +3210,10 @@
                   q = N.length,
                   R = "arbf",
                   P = "blob",
-                  F = "si08",
-                  G = "ui08",
-                  V = "uic8",
-                  C = "si16",
+                  C = "si08",
+                  F = "ui08",
+                  G = "uic8",
+                  V = "si16",
                   Z = "si32",
                   D = "ur16",
                   X = "ui32",
@@ -3227,7 +3244,7 @@
                       (s[u++] = ((3 & o) << 6) | (63 & a));
                   return f;
                 }
-                function U(e) {
+                function M(e) {
                   var t,
                     n = new Uint8Array(e),
                     r = "";
@@ -3244,7 +3261,7 @@
                     r
                   );
                 }
-                var M = {
+                var U = {
                   serialize: function(e, t) {
                     var n = "";
                     if (
@@ -3260,13 +3277,13 @@
                         ? ((r = e), (o += R))
                         : ((r = e.buffer),
                           "[object Int8Array]" === n
-                            ? (o += F)
+                            ? (o += C)
                             : "[object Uint8Array]" === n
-                              ? (o += G)
+                              ? (o += F)
                               : "[object Uint8ClampedArray]" === n
-                                ? (o += V)
+                                ? (o += G)
                                 : "[object Int16Array]" === n
-                                  ? (o += C)
+                                  ? (o += V)
                                   : "[object Uint16Array]" === n
                                     ? (o += D)
                                     : "[object Int32Array]" === n
@@ -3282,11 +3299,11 @@
                                                   "Failed to get type for BinaryArray"
                                                 )
                                               )),
-                        t(o + U(r));
+                        t(o + M(r));
                     } else if ("[object Blob]" === n) {
                       var a = new FileReader();
                       (a.onload = function() {
-                        var n = I + e.type + "~" + U(this.result);
+                        var n = I + e.type + "~" + M(this.result);
                         t(N + P + n);
                       }),
                         a.readAsArrayBuffer(e);
@@ -3316,13 +3333,13 @@
                         return i;
                       case P:
                         return a([i], { type: t });
-                      case F:
-                        return new Int8Array(i);
-                      case G:
-                        return new Uint8Array(i);
-                      case V:
-                        return new Uint8ClampedArray(i);
                       case C:
+                        return new Int8Array(i);
+                      case F:
+                        return new Uint8Array(i);
+                      case G:
+                        return new Uint8ClampedArray(i);
+                      case V:
                         return new Int16Array(i);
                       case D:
                         return new Uint16Array(i);
@@ -3339,7 +3356,7 @@
                     }
                   },
                   stringToBuffer: Y,
-                  bufferToString: U
+                  bufferToString: M
                 };
                 function K(e, t, n, r) {
                   e.executeSql(
@@ -3412,7 +3429,7 @@
                         );
                       }, r);
                     });
-                    return (n.serializer = M), o;
+                    return (n.serializer = U), o;
                   },
                   _support: "function" == typeof openDatabase,
                   iterate: function(e, t) {
@@ -3803,7 +3820,7 @@
                         (t.keyPrefix = ee(e, this._defaultConfig)),
                         te()
                           ? ((this._dbInfo = t),
-                            (t.serializer = M),
+                            (t.serializer = U),
                             i.resolve())
                           : i.reject()
                       );
@@ -4001,7 +4018,7 @@
                     },
                   ae = {},
                   ie = {},
-                  ce = { INDEXEDDB: Q, WEBSQL: $, LOCALSTORAGE: ne },
+                  ce = { INDEXEDDB: O, WEBSQL: $, LOCALSTORAGE: ne },
                   ue = [
                     ce.INDEXEDDB._driver,
                     ce.WEBSQL._driver,
@@ -4034,7 +4051,7 @@
                     });
                   };
                 }
-                function he() {
+                function pe() {
                   for (var e = 1; e < arguments.length; e++) {
                     var t = arguments[e];
                     if (t)
@@ -4046,7 +4063,7 @@
                   }
                   return arguments[0];
                 }
-                var pe = new ((function() {
+                var he = new ((function() {
                   function e(t) {
                     for (var n in ((function(e, t) {
                       if (!(e instanceof t))
@@ -4060,8 +4077,8 @@
                           o = r._driver;
                         (this[n] = o), ae[o] || this.defineDriver(r);
                       }
-                    (this._defaultConfig = he({}, de)),
-                      (this._config = he({}, this._defaultConfig, t)),
+                    (this._defaultConfig = pe({}, de)),
+                      (this._config = pe({}, this._defaultConfig, t)),
                       (this._driverSet = null),
                       (this._initDriver = null),
                       (this._ready = !1),
@@ -4172,7 +4189,7 @@
                       return u(r, t, n), r;
                     }),
                     (e.prototype.getSerializer = function(e) {
-                      var t = i.resolve(M);
+                      var t = i.resolve(U);
                       return u(t, e), t;
                     }),
                     (e.prototype.ready = function(e) {
@@ -4262,7 +4279,7 @@
                       return !!ie[e];
                     }),
                     (e.prototype._extend = function(e) {
-                      he(this, e);
+                      pe(this, e);
                     }),
                     (e.prototype._getSupportedDrivers = function(e) {
                       for (var t = [], n = 0, r = e.length; n < r; n++) {
@@ -4281,7 +4298,7 @@
                     e
                   );
                 })())();
-                t.exports = pe;
+                t.exports = he;
               },
               { 3: 3 }
             ]
@@ -4445,22 +4462,27 @@
       libraries: ["places"]
     };
   },
+  ,
   /*!***************************************!*\
+  !*** ./assets/data/img ^\.\/.*\.jpg$ ***!
+  \***************************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ /*!***************************************!*\
   !*** ./assets/data/img ^\.\/.*\.jpg$ ***!
   \***************************************/
   /*! dynamic exports provided */
   /*! all exports used */ function(e, t, n) {
     var r = {
-      "./1.jpg": 130,
-      "./10.jpg": 131,
-      "./2.jpg": 132,
-      "./3.jpg": 133,
-      "./4.jpg": 134,
-      "./5.jpg": 135,
-      "./6.jpg": 136,
-      "./7.jpg": 137,
-      "./8.jpg": 138,
-      "./9.jpg": 139
+      "./1.jpg": 131,
+      "./10.jpg": 132,
+      "./2.jpg": 133,
+      "./3.jpg": 134,
+      "./4.jpg": 135,
+      "./5.jpg": 136,
+      "./6.jpg": 137,
+      "./7.jpg": 138,
+      "./8.jpg": 139,
+      "./9.jpg": 140
     };
     function o(e) {
       return n(a(e));
@@ -4475,7 +4497,7 @@
     }),
       (o.resolve = a),
       (e.exports = o),
-      (o.id = 129);
+      (o.id = 130);
   },
   /*!*******************************!*\
   !*** ./assets/data/img/1.jpg ***!
@@ -4877,9 +4899,26 @@
       height: 225
     };
   },
-  /*!*****************!*\
-  !*** ./main.js ***!
-  \*****************/
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  /*!****************************!*\
+  !*** ./restaurant_info.js ***!
+  \****************************/
+  /*! no exports provided */
+  /*! all exports used */ /*!****************************!*\
+  !*** ./restaurant_info.js ***!
+  \****************************/
   /*! no exports provided */
   /*! all exports used */ function(e, t, n) {
     "use strict";
@@ -4889,197 +4928,152 @@
       a = n(/*! normalize.css/normalize.css */ 37),
       i = (n.n(a), n(/*! css-star-rating/css/star-rating.css */ 38)),
       c = (n.n(i), n(/*! ./assets/css/styles.css */ 39)),
-      u = (n.n(c), n(/*! ./assets/data/manifest.json */ 141)),
-      f = (n.n(u), n(/*! load-google-maps-api */ 40)),
-      s = n.n(f),
-      d = n(/*! common-tags */ 41),
-      l = n(/*! ./assets/js/db */ 125),
-      h = n(/*! ./assets/js/map */ 128);
-    var p;
-    let A;
-    const b = o()();
-    b.observe(),
-      document.addEventListener("DOMContentLoaded", e => {
-        E(400, "map"), v(), y();
-      }),
-      document.getElementById("map").addEventListener(
-        "mouseover",
+      u = (n.n(c), n(/*! load-google-maps-api */ 40)),
+      f = n.n(u),
+      s = n(/*! common-tags */ 41),
+      d = n(/*! ./assets/js/db */ 125),
+      l = n(/*! ./assets/js/map */ 128);
+    let p, h;
+    const A = o()();
+    A.observe(),
+      window.addEventListener(
+        "resize",
         () => {
-          A || m(h.b);
+          h || b(l.b);
         },
         { once: !0 }
-      );
-    let v = () => {
-        Object(l.e)()
+      ),
+      document.addEventListener("DOMContentLoaded", () => {
+        Object(d.e)()
           .then(e => {
-            (window.neighborhoods = Object(l.b)(e)), g();
+            const t = S("id");
+            t
+              ? ((window.restaurant = Object(d.d)(t, e)),
+                y(),
+                j(),
+                v(window.restaurant, "map", 300),
+                Object(d.f)(t).then(e => {
+                  console.log(e), m(e);
+                }))
+              : console.error("No restaurant id in URL");
+          })
+          .catch(e => {
+            console.error(e);
+          });
+      });
+    const v = (e, t, n) => {
+      window.matchMedia("(max-width:600px)").matches ? g(e, t, n) : b(l.b, e);
+    };
+    document.getElementById("map").addEventListener(
+      "mouseover",
+      () => {
+        h || b(l.b);
+      },
+      { once: !0 }
+    );
+    const b = (e, t = window.restaurant) => {
+        f()(e)
+          .then(e => {
+            (p = new e.Map(document.getElementById("map"), {
+              zoom: 12,
+              center: t.latlng,
+              scrollwheel: !1,
+              styles: l.a
+            })),
+              (h = !0),
+              Object(d.g)(t, p);
           })
           .catch(e => {
             console.error(e);
           });
       },
-      g = (e = window.neighborhoods) => {
-        const t = document.getElementById("neighborhoods-select");
-        e.forEach(e => {
-          const n = document.createElement("option");
-          (n.innerHTML = e), (n.value = e), t.append(n);
-        });
-      },
-      y = () => {
-        Object(l.e)()
-          .then(e => {
-            (window.cuisines = Object(l.a)(e)), w();
-          })
-          .catch(e => {
-            console.error(e);
-          });
-      },
-      w = (e = window.cuisines) => {
-        const t = document.getElementById("cuisines-select");
-        e.forEach(e => {
-          const n = document.createElement("option");
-          (n.innerHTML = e), (n.value = e), t.append(n);
-        });
-      };
-    const E = (e, t) => {
-        window.matchMedia("(max-width:600px)").matches
-          ? (((e, t) => {
-              const n =
-                  window.innerWidth ||
-                  document.documentElement.clientWidth ||
-                  document.body.clientWidth,
-                r = d["a"]`
-  https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&
+      g = (e, t, n) => {
+        const r =
+            window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth,
+          o = s["a"]`
+  https://maps.googleapis.com/maps/api/staticmap?center=${e.latlng.lat},${
+            e.latlng.lng
+          }&
   zoom=12&
   scale=2&
-  size=${n}x${e}&
+  size=${r}x${n}&
   maptype=roadmap&format=png&
   visual_refresh=true&
   key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
   markers=size:mid%7Ccolor:red%7C
-  |40.683555,-73.966393|
-  |40.713829,-73.989667|
-  |40.747143,-73.985414|
-  |40.722216,-73.987501|
-  |40.705089,-73.933585|
-  |40.674925,-74.016162|
-  |40.727397,-73.983645|
-  |40.726584,-74.002082|
-  |40.743797,-73.950652|
-  |40.743394,-73.954235|
-
+  |${e.latlng.lat},${e.latlng.lng}|
   `,
-                o = `\n  <img width="${n}px"\n  src=${encodeURI(
-                  r
-                )} alt="Google Map of 40.722216, -73.987501">\n  `;
-              document.getElementById(`${t}`).innerHTML = o;
-            })(e, t),
-            Object(l.e)()
-              .then(e => {
-                console.log(e), B(e), O();
-              })
-              .catch(e => {
-                console.error(e);
-              }))
-          : m(h.b);
-      },
-      m = e => {
-        s()(e)
-          .then(e => {
-            (p = new e.Map(document.getElementById("map"), {
-              zoom: 12,
-              center: { lat: 40.722216, lng: -73.9875 },
-              scrollwheel: !1,
-              styles: h.a
-            })),
-              (A = !0),
-              H();
-          })
-          .catch(e => {
-            console.error(e);
-          });
-      },
-      j = () => {
-        A ? H() : m(h.b);
-      },
-      S = document.getElementById("neighborhoods-select"),
-      x = document.getElementById("cuisines-select");
-    S.addEventListener("change", () => {
-      j();
-    }),
-      x.addEventListener("change", () => {
-        j();
-      });
-    let H = () => {
-        const e = document.getElementById("cuisines-select"),
-          t = document.getElementById("neighborhoods-select"),
-          n = e.selectedIndex,
-          r = t.selectedIndex;
-        let o = e[n].value,
-          a = t[r].value;
-        console.log("Select" + a),
-          Object(l.e)()
-            .then(e => {
-              let t = Object(l.c)(o, a, e);
-              B(t), O();
-            })
-            .catch(e => {
-              console.error(e);
-            });
-      },
-      B = e => {
-        (window.restaurants = []),
-          (document.getElementById("restaurants-list").innerHTML = ""),
-          void 0 !== window.markers &&
-            window.markers.forEach(e => e.setMap(null)),
-          (window.markers = []),
-          (window.restaurants = e);
-      },
-      O = (e = window.restaurants) => {
-        const t = document.getElementById("restaurants-list");
-        e.forEach(e => {
-          t.append(Q(e)), b.observe();
-        }),
-          A && k();
-      },
-      Q = e => {
-        const t = document.createElement("li"),
-          r = document.createElement("img");
-        r.className = "restaurant-img lozad";
-        const o = n(/*! ./assets/data/img */ 129)(`./${e.id}.jpg`);
-        (r.src = o.placeholder),
-          r.setAttribute("data-src", o.src),
-          r.setAttribute("data-srcset", o.srcSet),
-          (r.alt = `Image of ${e.name} Restaurant`),
-          t.append(r);
-        const a = document.createElement("h2");
-        (a.innerHTML = e.name), t.append(a);
-        const i = document.createElement("p");
-        (i.innerHTML = e.neighborhood), t.append(i);
-        const c = document.createElement("p");
-        (c.innerHTML = e.address), t.append(c);
-        const u = document.createElement("a");
-        return (
-          (u.innerHTML = "View Details"),
-          (u.href = Object(l.g)(e)),
-          t.append(u),
-          t
-        );
-      },
-      k = (e = window.restaurants) => {
-        e.forEach(e => {
-          const t = Object(l.f)(e, p);
-          google.maps.event.addListener(t, "click", () => {
-            window.location.href = t.url;
-          }),
-            window.markers.push(t);
-        });
+          a = `\n  <img width="${r}px"\n  src=${encodeURI(o)} alt="Map of${
+            e.name
+          }">\n  `;
+        document.getElementById(`${t}`).innerHTML = a;
       };
-  },
-  /*!***********************************!*\
-  !*** ./assets/data/manifest.json ***!
-  \***********************************/
-  /*! dynamic exports provided */ function(e, t, n) {
-    e.exports = n.p + "manifest.json";
+    let y = (e = window.restaurant) => {
+        (document.getElementById("restaurant-name").innerHTML = e.name),
+          (document.getElementById("restaurant-address").innerHTML = e.address);
+        const t = document.getElementById("restaurant-img");
+        t.className = "restaurant-img";
+        const r = n(/*! ./assets/data/img */ 130)(`./${e.id}.jpg`);
+        (t.src = r.src),
+          (t.srcset = r.srcSet),
+          (t.alt = `Image of ${e.name} Restaurant`),
+          A.observe(),
+          (document.getElementById("restaurant-cuisine").innerHTML =
+            e.cuisine_type),
+          e.operating_hours && w();
+      },
+      w = (e = window.restaurant.operating_hours) => {
+        const t = document.getElementById("restaurant-hours");
+        for (let n in e) {
+          const r = document.createElement("tr"),
+            o = document.createElement("td");
+          (o.innerHTML = n), r.appendChild(o);
+          const a = document.createElement("td");
+          (a.innerHTML = e[n]), r.appendChild(a), t.appendChild(r);
+        }
+      },
+      m = (e = window.restaurant.reviews) => {
+        const t = document.getElementById("reviews-container"),
+          n = document.createElement("h3");
+        if (((n.innerHTML = "Reviews"), t.appendChild(n), !e)) {
+          const e = document.createElement("p");
+          return (e.innerHTML = "No reviews yet!"), void t.appendChild(e);
+        }
+        const r = document.getElementById("reviews-list");
+        e.forEach(e => {
+          r.appendChild(E(e));
+        }),
+          t.appendChild(r);
+      },
+      E = e => {
+        const t = document.createElement("li"),
+          n = document.createElement("p");
+        (n.innerHTML = e.name), t.appendChild(n);
+        const r = document.createElement("p");
+        (r.innerHTML = e.createdAt), t.appendChild(r);
+        const o = document.createElement("p");
+        (o.innerHTML = x(e.rating)), t.appendChild(o);
+        const a = document.createElement("p");
+        return (a.innerHTML = e.comments), t.appendChild(a), t;
+      },
+      j = (e = window.restaurant) => {
+        const t = document.getElementById("breadcrumb"),
+          n = document.createElement("li");
+        (n.innerHTML = e.name), t.appendChild(n);
+      },
+      S = (e, t) => {
+        t || (t = window.location.href), (e = e.replace(/[\[\]]/g, "\\$&"));
+        const n = new RegExp(`[?&]${e}(=([^&#]*)|&|#|$)`).exec(t);
+        return n
+          ? n[2] ? decodeURIComponent(n[2].replace(/\+/g, " ")) : ""
+          : null;
+      },
+      x = e => {
+        return `\n  <div class="rating small star-icon value-${e} color-ok">\n   <div class="star-container">\n       ${'\n  <div class="star">\n  <i class="star-empty"></i>\n  <i class="star-half"></i>\n  <i class="star-filled"></i>\n</div>\n  '.repeat(
+          5
+        )}\n    </div>\n  </div>\n  `;
+      };
   }
 ]);
