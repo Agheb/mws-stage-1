@@ -20,6 +20,21 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            { loader: "css-loader" },
+            {
+              loader: "sass-loader",
+              options: {
+                includePaths: ["./node_modules"]
+              }
+            }
+          ]
+        })
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",

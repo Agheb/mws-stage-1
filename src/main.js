@@ -2,6 +2,7 @@ import Lozad from "lozad";
 import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
+import "./assets/css/app.scss";
 import Manifest from "./assets/data/manifest.json";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
@@ -14,6 +15,7 @@ import {
   mapMarkerForRestaurant
 } from "./assets/js/db";
 import { MapStyle, MapsConfig } from "./assets/js/map";
+import { MDCIconToggle } from "@material/icon-toggle";
 
 let restaurants, neighborhoods, cuisines;
 var map;
@@ -272,9 +274,26 @@ let createRestaurantHTML = restaurant => {
   image.alt = `Image of ${restaurant.name} Restaurant`;
   li.append(image);
 
+  const container = document.createElement("div");
+  container.classList.add("container");
+
+  const star = document.createElement("div");
+  star.classList.add("flex-item");
+  star.innerHTML = `<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed="false"
+  aria-label="Add to favorites" tabindex="0"
+  data-toggle-on='{"label": "Remove from favorites", "content": "star", "cssClass": "active" }'
+  data-toggle-off='{"label": "Add to favorites", "content": "star_border"}'>
+ favorite_border
+</i>`;
+  MDCIconToggle.attachTo(star.querySelector(".mdc-icon-toggle"));
+
   const name = document.createElement("h2");
+  name.classList.add("flex-item");
   name.innerHTML = restaurant.name;
-  li.append(name);
+
+  container.appendChild(name);
+  container.appendChild(star);
+  li.append(container);
 
   const neighborhood = document.createElement("p");
   neighborhood.innerHTML = restaurant.neighborhood;
