@@ -1,4 +1,7 @@
-@import "~@material/ripple/mdc-ripple.scss";
+@import "@material/ripple/mdc-ripple";
+@import "@material/button/mdc-button";
+@import "dialog.scss";
+
 $material-icons-font-path: "~material-icons/iconfont/";
 
 @import "~material-icons/iconfont/material-icons.scss";
@@ -21,4 +24,9 @@ $material-icons-font-path: "~material-icons/iconfont/";
 
 .flex-item {
   flex-direction: row;
+}
+
+.add-review {
+  @include mdc-button-ink-color(#3455db);
+  @include mdc-states(#3455db);
 }

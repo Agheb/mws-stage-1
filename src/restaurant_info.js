@@ -2,6 +2,7 @@ import Lozad from "lozad";
 import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
+import "./assets/css/app.scss";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
 import {
@@ -10,7 +11,11 @@ import {
   loadReviews,
   getRestaurantById
 } from "./assets/js/db";
-import { MapStyle, MapsConfig } from "./assets/js/map";
+import { MapsConfig, MapStyle } from "./assets/js/map.js";
+import MicroModal from "micromodal";
+
+MicroModal.init();
+
 let restaurant;
 let map;
 let InteractiveMapLoaded;
@@ -181,6 +186,15 @@ let fillReviewsHTML = (reviews = window.restaurant.reviews) => {
   const title = document.createElement("h3");
   title.innerHTML = "Reviews";
   container.appendChild(title);
+  const addReview = document.createElement("a");
+  addReview.innerHTML = "Add Review";
+  addReview.classList.add("mdc-button", "add-review");
+  container.appendChild(addReview);
+
+  const addReviewButton = document.querySelector(".mdc-button");
+  addReviewButton.addEventListener("click", () => {
+    MicroModal.show("modal-1");
+  });
 
   if (!reviews) {
     const noReviews = document.createElement("p");

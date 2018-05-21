@@ -1,0 +1,6 @@
+@import "~@material/textfield/mdc-text-field.scss";
+@import "~@material/floating-label/mdc-floating-label.scss";
+
+.form {
+  @include mdc-text-field-box-fill-color(white);
+}
