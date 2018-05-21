@@ -15,10 +15,22 @@ module.exports = {
   output: {
     pathinfo: true,
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.[chunkhash].js"
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].bundle.js"
   },
+
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["env"]
+          }
+        }
+      },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
@@ -28,9 +40,7 @@ module.exports = {
             {
               loader: "sass-loader",
               options: {
-                includePaths: [
-                  path.join(path.dirname(module.filename), "node_modules")
-                ]
+                includePaths: ["./node_modules"]
               }
             }
           ]
@@ -99,7 +109,8 @@ module.exports = {
       template: "restaurant.html",
       chunks: ["restaurant"]
     }),
-    new ExtractTextPlugin("styles.[contenthash].css"),
+    new ExtractTextPlugin("styles.[contenthash].css")
+    /*
     new PurifyCSSPlugin({
       paths: glob.sync([
         path.join(__dirname, "src/*.html"),
@@ -107,5 +118,6 @@ module.exports = {
       ]),
       minimize: true
     })
+    */
   ]
 };
