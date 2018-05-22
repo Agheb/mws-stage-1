@@ -14,8 +14,6 @@ import {
 import { MapsConfig, MapStyle } from "./assets/js/map.js";
 import MicroModal from "micromodal";
 
-MicroModal.init();
-
 let restaurant;
 let map;
 let InteractiveMapLoaded;
@@ -189,13 +187,18 @@ let fillReviewsHTML = (reviews = window.restaurant.reviews) => {
   const addReview = document.createElement("a");
   addReview.innerHTML = "Add Review";
   addReview.classList.add("mdc-button", "add-review");
+  addReview.setAttribute("data-micromodal-trigger", "modal-1");
   container.appendChild(addReview);
 
+  MicroModal.init({
+    debugMode: true,
+    disableScroll: true
+  });
   const addReviewButton = document.querySelector(".mdc-button");
-  addReviewButton.addEventListener("click", () => {
+  /*addReviewButton.addEventListener("click", () => {
     MicroModal.show("modal-1");
   });
-
+*/
   if (!reviews) {
     const noReviews = document.createElement("p");
     noReviews.innerHTML = "No reviews yet!";
