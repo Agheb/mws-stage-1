@@ -70,9 +70,9 @@
     "@material/animation" "^0.34.0"
     "@material/theme" "^0.4.0"
 
-"@material/floating-label@^0.35.0":
-  version "0.35.0"
-  resolved "https://registry.yarnpkg.com/@material/floating-label/-/floating-label-0.35.0.tgz#46ce1ce7df29ba03ebdc234e07bd800f293009b9"
+"@material/floating-label@^0.35.0", "@material/floating-label@^0.35.2":
+  version "0.35.2"
+  resolved "https://registry.yarnpkg.com/@material/floating-label/-/floating-label-0.35.2.tgz#e2809c4201aaed1fbe8e0c2799d2785625a3fed3"
   dependencies:
     "@material/base" "^0.35.0"
     "@material/rtl" "^0.35.0"
@@ -126,12 +126,12 @@
   resolved "https://registry.yarnpkg.com/@material/rtl/-/rtl-0.35.0.tgz#caae659e35a9bf1b9d91c734c8a3315a81bcde21"
 
 "@material/select@^0.35.1":
-  version "0.35.1"
-  resolved "https://registry.yarnpkg.com/@material/select/-/select-0.35.1.tgz#a85797b3da0161f1bcf1b8a4c9b076f198672187"
+  version "0.35.2"
+  resolved "https://registry.yarnpkg.com/@material/select/-/select-0.35.2.tgz#a5c6ed51f42cc8a264f315d78f241e928ae66c9a"
   dependencies:
     "@material/animation" "^0.34.0"
     "@material/base" "^0.35.0"
-    "@material/floating-label" "^0.35.0"
+    "@material/floating-label" "^0.35.2"
     "@material/line-ripple" "^0.35.0"
     "@material/ripple" "^0.35.0"
     "@material/rtl" "^0.35.0"

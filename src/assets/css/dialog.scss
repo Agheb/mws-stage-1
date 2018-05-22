@@ -1,8 +1,19 @@
-/**************************\
-  Basic Modal Styles
-\**************************/
-
 @import "@material/dialog/mdc-dialog.scss";
+@import "@material/textfield/mdc-text-field";
+@import "@material/line-ripple/mdc-line-ripple";
+@import "@material/select/mdc-select";
+
+.text-field-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.mdc-select__native-control {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
 .modal__overlay {
   position: fixed;
@@ -44,9 +55,6 @@
   }
 }
 
-/**************************\
-    Demo Animation Style
-  \**************************/
 @keyframes mmfadeIn {
   from {
     opacity: 0;

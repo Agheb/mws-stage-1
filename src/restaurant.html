@@ -64,7 +64,45 @@
           </h2>
         </header>
         <section class="mdc-dialog__body" id="modal-1-content">
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+
+          <div class="text-field-container">
+            <div class="mdc-text-field text-field-name  mdc-text-field--outlined">
+              <input type="text" id="text-field--outlined" class="mdc-text-field__input">
+              <label class="mdc-floating-label mdc-floating-label--float-above" for="text-field--outlined">Name</label>
+              <div class="mdc-notched-outline">
+                <svg>
+                  <path class="mdc-notched-outline__path" />
+                </svg>
+              </div>
+              <div class="mdc-notched-outline__idle"></div>
+            </div>
+            <div class="mdc-select">
+              <select class="mdc-select__native-control">
+                <option value="" disabled selected></option>
+                <option value="1">
+                  One
+                </option>
+                <option value="2">
+                  Two
+                </option>
+                <option value="3">
+                  Three
+                </option>
+                <option value="4">
+                  Four
+                </option>
+                <option value="5">
+                  Five
+                </option>
+              </select>
+              <label class="mdc-floating-label mdc-floating-label--float-above">Rating</label>
+            </div>
+          </div>
+          <div class="mdc-text-field   text-field-review mdc-text-field--textarea">
+            <textarea id="textarea" class="mdc-text-field__input" rows="4" cols="100"></textarea>
+            <label for="textarea" class="mdc-floating-label">Review</label>
+          </div>
+
         </section>
         <footer class="mdc-dialog__footer">
           <button class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Submit</button>

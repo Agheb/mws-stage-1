@@ -3,6 +3,7 @@ import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import "./assets/css/app.scss";
+import "./assets/css/dialog.scss";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
 import {
@@ -13,6 +14,15 @@ import {
 } from "./assets/js/db";
 import { MapsConfig, MapStyle } from "./assets/js/map.js";
 import MicroModal from "micromodal";
+import { MDCTextField } from "@material/textfield";
+import { MDCSelect } from "@material/select";
+
+const namefield = new MDCTextField(document.querySelector(".text-field-name"));
+const reviewtext = new MDCTextField(
+  document.querySelector(".text-field-review")
+);
+
+const select = new MDCSelect(document.querySelector(".mdc-select"));
 
 let restaurant;
 let map;
