@@ -1,6 +1,7 @@
 const path = require("path");
 const glob = require("glob-all");
 const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const PurifyCSSPlugin = require("purifycss-webpack");
@@ -37,6 +38,12 @@ module.exports = {
           fallback: "style-loader",
           use: [
             { loader: "css-loader" },
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: () => [autoprefixer()]
+              }
+            },
             {
               loader: "sass-loader",
               options: {
