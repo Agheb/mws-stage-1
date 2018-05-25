@@ -9,9 +9,6 @@ $material-icons-font-path: "~material-icons/iconfont/";
   font-size: 22px;
   color: #212121;
   margin: auto;
-  @include mdc-ripple-surface;
-  @include mdc-ripple-radius-bounded;
-  @include mdc-states;
   @include material-icons();
 }
 
