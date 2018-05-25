@@ -13,16 +13,6 @@ import {
   getRestaurantById
 } from "./assets/js/db";
 import { MapsConfig, MapStyle } from "./assets/js/map.js";
-import MicroModal from "micromodal";
-import { MDCTextField } from "@material/textfield";
-import { MDCSelect } from "@material/select";
-
-const namefield = new MDCTextField(document.querySelector(".text-field-name"));
-const reviewtext = new MDCTextField(
-  document.querySelector(".text-field-review")
-);
-
-const select = new MDCSelect(document.querySelector(".mdc-select"));
 
 let restaurant;
 let map;
@@ -197,18 +187,18 @@ let fillReviewsHTML = (reviews = window.restaurant.reviews) => {
   const addReview = document.createElement("a");
   addReview.innerHTML = "Add Review";
   addReview.classList.add("mdc-button", "add-review");
-  addReview.setAttribute("data-micromodal-trigger", "modal-1");
+
   container.appendChild(addReview);
 
-  MicroModal.init({
-    debugMode: true,
-    disableScroll: true
-  });
   const addReviewButton = document.querySelector(".mdc-button");
-  /*addReviewButton.addEventListener("click", () => {
-    MicroModal.show("modal-1");
+  addReviewButton.addEventListener("click", evt => {
+    import(/* webpackChunkName: "addReview" */ "./assets/js/dialog").then(
+      module => {
+        module.default.handleImport(evt);
+      }
+    );
   });
-*/
+
   if (!reviews) {
     const noReviews = document.createElement("p");
     noReviews.innerHTML = "No reviews yet!";
