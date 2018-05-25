@@ -29,26 +29,17 @@ export default {
           </div>
           <div class="mdc-select">
             <select class="mdc-select__native-control">
-              <option value="1">
-                ${createReviewStars(1)}
-              </option>
-              <option value="2">
-              ${createReviewStars(2)} 
-              </option>
-              <option value="3">
-              ${createReviewStars(3)}
-              </option>
-              <option value="4">
-              ${createReviewStars(4)}
-              </option>
-              <option value="5" selected>
-              ${createReviewStars(5)}
-              </option>
+            <option value="5" selected> 5 Stars (exceptional)</option>
+            <option value="4"> 4 Stars (good)</option>
+            <option value="3"> 3 Stars (acceptable) </option>
+            <option value="2"> 2 Stars (bad) </option>
+            <option value="3"> 1 Stars (avoid) </option>
             </select>
             <label class="mdc-floating-label mdc-floating-label--float-above">Rating</label>
+            <div class="mdc-line-ripple"></div>
           </div>
         </div>
-        <div class="mdc-text-field   text-field-review mdc-text-field--textarea">
+        <div class="mdc-text-field text-field-review mdc-text-field--textarea">
           <textarea id="textarea" class="mdc-text-field__input" rows="4" cols="100"></textarea>
           <label for="textarea" class="mdc-floating-label">Review</label>
         </div>
@@ -62,7 +53,6 @@ export default {
     <div class="mdc-dialog__backdrop"></div>
   </aside>`;
 
-    const dialog = new MDCDialog(document.querySelector("#my-mdc-dialog"));
     const namefield = new MDCTextField(
       document.querySelector(".text-field-name")
     );
@@ -70,26 +60,8 @@ export default {
       document.querySelector(".text-field-review")
     );
     const select = new MDCSelect(document.querySelector(".mdc-select"));
+    const dialog = new MDCDialog(document.querySelector("#my-mdc-dialog"));
     dialog.lastFocusedTarget = event.target;
     dialog.show();
   }
-};
-
-/**
- * Create star rating in reviews
- */
-let createReviewStars = rating => {
-  const star = `
-  <div class="star">
-  <i class="star-filled"></i>
-</div>
-  `;
-  const markup = `
-  <div class="rating small star-icon value-${rating} color-ok">
-   <div class="star-container">
-       ${star.repeat(rating)}
-    </div>
-  </div>
-  `;
-  return markup;
 };
