@@ -14,7 +14,11 @@ module.exports = merge(common, {
       }
     ]),
     new UglifyJSPlugin(),
-    new WorkboxPlugin.GenerateSW({ ignoreUrlParametersMatching: [/./] }),
+    new WorkboxPlugin.InjectManifest({
+      swSrc: "./src/custom-sw.js",
+      swDest: "sw.js"
+      // clientsClaim: true  //
+    }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
