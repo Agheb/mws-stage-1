@@ -46,8 +46,6 @@ export const loadRestaurants = () => {
     });
 };
 
-// TODO: Tasks pending completion -@agheb at 5/4/2018, 8:24:48 PM
-// Clean up Promise Callback Chain Hell with reusable functions
 export const loadReviews = id => {
   // Add restaurant id value
   const reviews_endpoint = REVIEWS_ENDPOINT + id;
@@ -94,7 +92,6 @@ export const getRestaurantByCuisineNeighborhood = (
   let results = restaurants;
   if (cuisine != "all") {
     // filter by cuisine
-    console.log("Ich bin hier");
     results = results.filter(r => r.cuisine_type == cuisine);
   }
   if (neighborhood != "all") {

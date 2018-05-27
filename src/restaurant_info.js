@@ -12,7 +12,8 @@ import {
   loadReviews,
   getRestaurantById
 } from "./assets/js/db";
-import { MapsConfig, MapStyle } from "./assets/js/map.js";
+import { MapsConfig, MapStyle } from "./assets/js/map";
+import { getParameterByName } from "./assets/js/util";
 
 let restaurant;
 let map;
@@ -194,7 +195,7 @@ let fillReviewsHTML = (reviews = window.restaurant.reviews) => {
   addReviewButton.addEventListener("click", evt => {
     import(/* webpackChunkName: "addReview" */ "./assets/js/dialog").then(
       module => {
-        module.default.handleImport(evt);
+        module.render(evt);
       }
     );
   });
@@ -244,19 +245,6 @@ let fillBreadcrumb = (restaurant = window.restaurant) => {
   const li = document.createElement("li");
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
-};
-
-/**
- * Get a parameter by name from page URL.
- */
-let getParameterByName = (name, url) => {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`),
-    results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return "";
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
 
 /**
