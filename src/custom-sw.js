@@ -7,14 +7,24 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {
 const bgSyncPlugin = new workbox.backgroundSync.Plugin("review-frm", {
   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
   callbacks: {
-    queueDidReplay: console.log("Background Sync success")
+    queueDidReplay: () => {
+      console.log("Background Sync success");
+    }
   }
 });
 
+const networkOnlyStrategy = workbox.strategies.networkOnly({
+  plugins: [bgSyncPlugin]
+});
+
 workbox.routing.registerRoute(
-  /\/reviews\//, //  regex to match API endpoint
-  workbox.strategies.networkOnly({
-    plugins: [bgSyncPlugin]
-  }),
-  "POST" // Network-only strategie has to be use for Non-Get requests
+  "https://server.amanuelg.me/reviews/",
+  networkOnlyStrategy,
+  "POST"
+);
+
+workbox.routing.registerRoute(
+  "https://server.amanuelg.me/reviews/",
+  networkOnlyStrategy,
+  "PUT"
 );
