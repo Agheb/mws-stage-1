@@ -10,3 +10,6 @@ export const getParameterByName = (name, url) => {
   if (!results[2]) return "";
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
+
+export const ReviewEndpoint = "https://server.amanuelg.me/reviews/";
+export const FavouriteEndpoint = "https://server.amanuelg.me/";
