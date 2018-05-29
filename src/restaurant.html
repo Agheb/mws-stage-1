@@ -55,10 +55,14 @@
     </a> All Rights Reserved.
   </footer>
   <!-- End footer -->
-  <div class="dialog-container">
-
-  </div>
+  <div class="dialog-container"></div>
 </body>
-
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js');
+    });
+  }
+</script>
 
 </html>
