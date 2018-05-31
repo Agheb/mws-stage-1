@@ -17,7 +17,6 @@ module.exports = merge(common, {
     new WorkboxPlugin.InjectManifest({
       swSrc: "./src/custom-sw.js",
       swDest: "sw.js"
-      // clientsClaim: true  //
     }),
     new webpack.DefinePlugin({
       "process.env": {
