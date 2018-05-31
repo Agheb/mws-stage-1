@@ -14,6 +14,7 @@ import {
 } from "./assets/js/db";
 import { MapsConfig, MapStyle } from "./assets/js/map";
 import { getParameterByName } from "./assets/js/util";
+import { showNotification } from "./assets/js/snackbar";
 
 let restaurant;
 let map;
@@ -21,6 +22,18 @@ let InteractiveMapLoaded;
 
 const observer = Lozad();
 observer.observe();
+
+// listen for message from SW, if BackgroundSync was a sucess
+if ("serviceWorker" in navigator) {
+  // Handler for messages coming from the service worker
+  navigator.serviceWorker.addEventListener("message", function(event) {
+    if (event.data === "server-success") {
+      console.log("Snackbar should showup here");
+    } else {
+      console.log("Client received Message: " + event.data);
+    }
+  });
+}
 
 window.addEventListener(
   "resize",
@@ -46,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadReviews(id).then(reviews => {
           console.log(reviews);
           fillReviewsHTML(reviews);
+          showNotification("Test B");
         });
       }
     })

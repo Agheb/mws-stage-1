@@ -1,9 +1,3 @@
-const showNotification = () => {
-  self.registration.showNotification("Background sync success!", {
-    body: "🎉`🎉`🎉`"
-  });
-};
-
 // Precache all files
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {
   ignoreUrlParametersMatching: [/./]
@@ -13,7 +7,12 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {
 const bgSyncPlugin = new workbox.backgroundSync.Plugin("review-frm", {
   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
   callbacks: {
-    queueDidReplay: showNotification()
+    queueDidReplay: async () => {
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage("server-success");
+      });
+    }
   }
 });
 
