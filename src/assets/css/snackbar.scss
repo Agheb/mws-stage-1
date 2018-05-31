@@ -1,2 +1,7 @@
-@import "@material/snackbar" 
+$mdc-theme-secondary: #ffffff;
 
+@import "@material/snackbar/mdc-snackbar.scss";
+
+.mdc-snackbar {
+  background: #000000;
+}

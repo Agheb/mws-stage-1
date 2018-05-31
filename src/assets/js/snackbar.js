@@ -1,4 +1,4 @@
-import "../css/dialog.scss";
+import "../css/snackbar.scss";
 import { MDCSnackbar, MDCSnackbarFoundation } from "@material/snackbar";
 
 export const showNotification = text => {
@@ -8,9 +8,7 @@ export const showNotification = text => {
 aria-live="assertive"
 aria-atomic="true"
 aria-hidden="true">
-<div class="mdc-snackbar__text">
-Hello this a test
-</div>
+<div class="mdc-snackbar__text"></div>
 <div class="mdc-snackbar__action-wrapper">
 <button type="button" class="mdc-snackbar__action-button"></button>
 </div>
@@ -19,7 +17,8 @@ Hello this a test
   const snackbarJS = new MDCSnackbar(document.querySelector(".mdc-snackbar"));
   const dataObj = {
     message: text,
-    actionText: "Refresh",
+    timeout: 5000,
+    actionText: "Reload",
     actionHandler: () => {
       window.location.reload();
     }

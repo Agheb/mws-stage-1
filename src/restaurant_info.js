@@ -28,7 +28,13 @@ if ("serviceWorker" in navigator) {
   // Handler for messages coming from the service worker
   navigator.serviceWorker.addEventListener("message", function(event) {
     if (event.data === "server-success") {
-      console.log("Snackbar should showup here");
+      import(/* webpackChunkName: "notification" */ "./assets/js/snackbar").then(
+        snackbar => {
+          snackbar.showNotification(
+            "Thank you! Your reviews has been sent successfully"
+          );
+        }
+      );
     } else {
       console.log("Client received Message: " + event.data);
     }
@@ -59,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         loadReviews(id).then(reviews => {
           console.log(reviews);
           fillReviewsHTML(reviews);
-          showNotification("Test B");
         });
       }
     })
