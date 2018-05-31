@@ -6,6 +6,7 @@
   "author": "Aman Ghebreweldi <amanuelg@me.com>",
   "license": "MIT",
   "dependencies": {
+    "node-sass": "^4.9.0",
     "serve": "^6.5.5"
   },
   "devDependencies": {
@@ -45,7 +46,6 @@
     "lqip-loader": "^2.0.2",
     "material-design-icons": "^3.0.1",
     "material-icons": "^0.2.3",
-    "node-sass": "^4.9.0",
     "normalize.css": "^8.0.0",
     "postcss-loader": "^2.1.5",
     "prettier": "^1.10.2",
