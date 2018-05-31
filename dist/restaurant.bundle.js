@@ -1,21 +1,58 @@
 !(function(e) {
-  var t = {};
-  function n(r) {
-    if (t[r]) return t[r].exports;
-    var a = (t[r] = { i: r, l: !1, exports: {} });
-    return e[r].call(a.exports, a, a.exports, n), (a.l = !0), a.exports;
+  var t = window.webpackJsonp;
+  window.webpackJsonp = function(n, a, o) {
+    for (var i, c, u = 0, f = []; u < n.length; u++)
+      (c = n[u]), r[c] && f.push(r[c][0]), (r[c] = 0);
+    for (i in a) Object.prototype.hasOwnProperty.call(a, i) && (e[i] = a[i]);
+    for (t && t(n, a, o); f.length; ) f.shift()();
+  };
+  var n = {},
+    r = { 2: 0 };
+  function a(t) {
+    if (n[t]) return n[t].exports;
+    var r = (n[t] = { i: t, l: !1, exports: {} });
+    return e[t].call(r.exports, r, r.exports, a), (r.l = !0), r.exports;
   }
-  (n.m = e),
-    (n.c = t),
-    (n.d = function(e, t, r) {
-      n.o(e, t) ||
+  (a.e = function(e) {
+    var t = r[e];
+    if (0 === t)
+      return new Promise(function(e) {
+        e();
+      });
+    if (t) return t[2];
+    var n = new Promise(function(n, a) {
+      t = r[e] = [n, a];
+    });
+    t[2] = n;
+    var o = document.getElementsByTagName("head")[0],
+      i = document.createElement("script");
+    (i.type = "text/javascript"),
+      (i.charset = "utf-8"),
+      (i.async = !0),
+      (i.timeout = 12e4),
+      a.nc && i.setAttribute("nonce", a.nc),
+      (i.src = a.p + "" + ({ 0: "addReview" }[e] || e) + ".bundle.js");
+    var c = setTimeout(u, 12e4);
+    function u() {
+      (i.onerror = i.onload = null), clearTimeout(c);
+      var t = r[e];
+      0 !== t &&
+        (t && t[1](new Error("Loading chunk " + e + " failed.")),
+        (r[e] = void 0));
+    }
+    return (i.onerror = i.onload = u), o.appendChild(i), n;
+  }),
+    (a.m = e),
+    (a.c = n),
+    (a.d = function(e, t, n) {
+      a.o(e, t) ||
         Object.defineProperty(e, t, {
           configurable: !1,
           enumerable: !0,
-          get: r
+          get: n
         });
     }),
-    (n.n = function(e) {
+    (a.n = function(e) {
       var t =
         e && e.__esModule
           ? function() {
@@ -24,13 +61,16 @@
           : function() {
               return e;
             };
-      return n.d(t, "a", t), t;
+      return a.d(t, "a", t), t;
     }),
-    (n.o = function(e, t) {
+    (a.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (n.p = ""),
-    n((n.s = 144));
+    (a.p = ""),
+    (a.oe = function(e) {
+      throw (console.error(e), e);
+    }),
+    a((a.s = 85));
 })([
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/TemplateTag/index.js ***!
@@ -38,7 +78,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./TemplateTag */ 42);
+    var r = n(/*! ./TemplateTag */ 17);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -49,7 +89,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./trimResultTransformer */ 65);
+    var r = n(/*! ./trimResultTransformer */ 18);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -60,7 +100,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./inlineArrayTransformer */ 90);
+    var r = n(/*! ./inlineArrayTransformer */ 24);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -71,31 +111,10 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./stripIndentTransformer */ 66);
+    var r = n(/*! ./stripIndentTransformer */ 19);
     n.d(t, "a", function() {
       return r.a;
     });
-  },
-  /*!********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_core.js ***!
-  \********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    var n = (e.exports = { version: "2.5.3" });
-    "number" == typeof __e && (__e = n);
-  },
-  /*!*******************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_wks.js ***!
-  \*******************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_shared */ 30)("wks"),
-      a = n(/*! ./_uid */ 20),
-      i = n(/*! ./_global */ 10).Symbol,
-      o = "function" == typeof i;
-    (e.exports = function(e) {
-      return r[e] || (r[e] = (o && i[e]) || (o ? i : a)("Symbol." + e));
-    }).store = r;
   },
   /*!************************************************************************!*\
   !*** ../node_modules/common-tags/es/replaceResultTransformer/index.js ***!
@@ -103,249 +122,10 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./replaceResultTransformer */ 86);
+    var r = n(/*! ./replaceResultTransformer */ 20);
     n.d(t, "a", function() {
       return r.a;
     });
-  },
-  /*!**********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_export.js ***!
-  \**********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_global */ 10),
-      a = n(/*! ./_core */ 4),
-      i = n(/*! ./_ctx */ 24),
-      o = n(/*! ./_hide */ 13),
-      c = function(e, t, n) {
-        var s,
-          u,
-          d,
-          f = e & c.F,
-          l = e & c.G,
-          h = e & c.S,
-          p = e & c.P,
-          A = e & c.B,
-          v = e & c.W,
-          g = l ? a : a[t] || (a[t] = {}),
-          b = g.prototype,
-          y = l ? r : h ? r[t] : (r[t] || {}).prototype;
-        for (s in (l && (n = t), n))
-          ((u = !f && y && void 0 !== y[s]) && s in g) ||
-            ((d = u ? y[s] : n[s]),
-            (g[s] =
-              l && "function" != typeof y[s]
-                ? n[s]
-                : A && u
-                  ? i(d, r)
-                  : v && y[s] == d
-                    ? (function(e) {
-                        var t = function(t, n, r) {
-                          if (this instanceof e) {
-                            switch (arguments.length) {
-                              case 0:
-                                return new e();
-                              case 1:
-                                return new e(t);
-                              case 2:
-                                return new e(t, n);
-                            }
-                            return new e(t, n, r);
-                          }
-                          return e.apply(this, arguments);
-                        };
-                        return (t.prototype = e.prototype), t;
-                      })(d)
-                    : p && "function" == typeof d ? i(Function.call, d) : d),
-            p &&
-              (((g.virtual || (g.virtual = {}))[s] = d),
-              e & c.R && b && !b[s] && o(b, s, d)));
-      };
-    (c.F = 1),
-      (c.G = 2),
-      (c.S = 4),
-      (c.P = 8),
-      (c.B = 16),
-      (c.W = 32),
-      (c.U = 64),
-      (c.R = 128),
-      (e.exports = c);
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-dp.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_an-object */ 14),
-      a = n(/*! ./_ie8-dom-define */ 48),
-      i = n(/*! ./_to-primitive */ 49),
-      o = Object.defineProperty;
-    t.f = n(/*! ./_descriptors */ 9)
-      ? Object.defineProperty
-      : function(e, t, n) {
-          if ((r(e), (t = i(t, !0)), r(n), a))
-            try {
-              return o(e, t, n);
-            } catch (e) {}
-          if ("get" in n || "set" in n)
-            throw TypeError("Accessors not supported!");
-          return "value" in n && (e[t] = n.value), e;
-        };
-  },
-  /*!***************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_descriptors.js ***!
-  \***************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = !n(/*! ./_fails */ 15)(function() {
-      return (
-        7 !=
-        Object.defineProperty({}, "a", {
-          get: function() {
-            return 7;
-          }
-        }).a
-      );
-    });
-  },
-  /*!**********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_global.js ***!
-  \**********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    var n = (e.exports =
-      "undefined" != typeof window && window.Math == Math
-        ? window
-        : "undefined" != typeof self && self.Math == Math
-          ? self
-          : Function("return this")());
-    "number" == typeof __g && (__g = n);
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_is-object.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = function(e) {
-      return "object" == typeof e ? null !== e : "function" == typeof e;
-    };
-  },
-  /*!*******************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_has.js ***!
-  \*******************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    var n = {}.hasOwnProperty;
-    e.exports = function(e, t) {
-      return n.call(e, t);
-    };
-  },
-  /*!********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_hide.js ***!
-  \********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_object-dp */ 8),
-      a = n(/*! ./_property-desc */ 16);
-    e.exports = n(/*! ./_descriptors */ 9)
-      ? function(e, t, n) {
-          return r.f(e, t, a(1, n));
-        }
-      : function(e, t, n) {
-          return (e[t] = n), e;
-        };
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_an-object.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_is-object */ 11);
-    e.exports = function(e) {
-      if (!r(e)) throw TypeError(e + " is not an object!");
-      return e;
-    };
-  },
-  /*!*********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_fails.js ***!
-  \*********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = function(e) {
-      try {
-        return !!e();
-      } catch (e) {
-        return !0;
-      }
-    };
-  },
-  /*!*****************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_property-desc.js ***!
-  \*****************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = function(e, t) {
-      return {
-        enumerable: !(1 & e),
-        configurable: !(2 & e),
-        writable: !(4 & e),
-        value: t
-      };
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_defined.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = function(e) {
-      if (void 0 == e) throw TypeError("Can't call method on  " + e);
-      return e;
-    };
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_to-integer.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    var n = Math.ceil,
-      r = Math.floor;
-    e.exports = function(e) {
-      return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
-    };
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_shared-key.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_shared */ 30)("keys"),
-      a = n(/*! ./_uid */ 20);
-    e.exports = function(e) {
-      return r[e] || (r[e] = a(e));
-    };
-  },
-  /*!*******************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_uid.js ***!
-  \*******************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    var n = 0,
-      r = Math.random();
-    e.exports = function(e) {
-      return "Symbol(".concat(
-        void 0 === e ? "" : e,
-        ")_",
-        (++n + r).toString(36)
-      );
-    };
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_iterators.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = {};
   },
   /*!**********************************************************************!*\
   !*** ../node_modules/common-tags/es/splitStringTransformer/index.js ***!
@@ -353,7 +133,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./splitStringTransformer */ 91);
+    var r = n(/*! ./splitStringTransformer */ 25);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -361,141 +141,13 @@
   /*!****************************************************!*\
   !*** ../node_modules/common-tags/es/html/index.js ***!
   \****************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./html */ 102);
-  },
-  /*!*******************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_ctx.js ***!
-  \*******************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_a-function */ 47);
-    e.exports = function(e, t, n) {
-      if ((r(e), void 0 === t)) return e;
-      switch (n) {
-        case 1:
-          return function(n) {
-            return e.call(t, n);
-          };
-        case 2:
-          return function(n, r) {
-            return e.call(t, n, r);
-          };
-        case 3:
-          return function(n, r, a) {
-            return e.call(t, n, r, a);
-          };
-      }
-      return function() {
-        return e.apply(t, arguments);
-      };
-    };
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_dom-create.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_is-object */ 11),
-      a = n(/*! ./_global */ 10).document,
-      i = r(a) && r(a.createElement);
-    e.exports = function(e) {
-      return i ? a.createElement(e) : {};
-    };
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-dps.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_object-dp */ 8),
-      a = n(/*! ./_an-object */ 14),
-      i = n(/*! ./_object-keys */ 50);
-    e.exports = n(/*! ./_descriptors */ 9)
-      ? Object.defineProperties
-      : function(e, t) {
-          a(e);
-          for (var n, o = i(t), c = o.length, s = 0; c > s; )
-            r.f(e, (n = o[s++]), t[n]);
-          return e;
-        };
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_to-iobject.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_iobject */ 52),
-      a = n(/*! ./_defined */ 17);
-    e.exports = function(e) {
-      return r(a(e));
-    };
-  },
-  /*!*******************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_cof.js ***!
-  \*******************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    var n = {}.toString;
-    e.exports = function(e) {
-      return n.call(e).slice(8, -1);
-    };
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_to-length.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_to-integer */ 18),
-      a = Math.min;
-    e.exports = function(e) {
-      return e > 0 ? a(r(e), 9007199254740991) : 0;
-    };
-  },
-  /*!**********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_shared.js ***!
-  \**********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_global */ 10),
-      a = r["__core-js_shared__"] || (r["__core-js_shared__"] = {});
-    e.exports = function(e) {
-      return a[e] || (a[e] = {});
-    };
-  },
-  /*!*****************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_enum-bug-keys.js ***!
-  \*****************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(
-      ","
-    );
-  },
-  /*!*********************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_set-to-string-tag.js ***!
-  \*********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_object-dp */ 8).f,
-      a = n(/*! ./_has */ 12),
-      i = n(/*! ./_wks */ 5)("toStringTag");
-    e.exports = function(e, t, n) {
-      e &&
-        !a((e = n ? e : e.prototype), i) &&
-        r(e, i, { configurable: !0, value: t });
-    };
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_to-object.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_defined */ 17);
-    e.exports = function(e) {
-      return Object(r(e));
-    };
+    var r = n(/*! ./html */ 33);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!******************************************************************************!*\
   !*** ../node_modules/common-tags/es/replaceSubstitutionTransformer/index.js ***!
@@ -503,7 +155,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./replaceSubstitutionTransformer */ 87);
+    var r = n(/*! ./replaceSubstitutionTransformer */ 21);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -514,16 +166,21 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./removeNonPrintingValuesTransformer */ 92);
+    var r = n(/*! ./removeNonPrintingValuesTransformer */ 26);
     n.d(t, "a", function() {
       return r.a;
     });
   },
+  ,
   /*!*******************************************!*\
   !*** ../node_modules/lozad/dist/lozad.js ***!
   \*******************************************/
   /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
+  /*! all exports used */ /*!*******************************************!*\
+  !*** ../node_modules/lozad/dist/lozad.js ***!
+  \*******************************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
     /*! lozad.js - v1.4.0 - 2018-04-22
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2018 Apoorv Saxena; Licensed MIT */ var r;
@@ -571,27 +228,27 @@
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
               : ".lozad",
-          i =
+          o =
             arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-          o = e({}, n, i),
-          c = o.rootMargin,
-          s = o.threshold,
-          u = o.load,
-          d = o.loaded,
-          f = void 0;
+          i = e({}, n, o),
+          c = i.rootMargin,
+          u = i.threshold,
+          f = i.load,
+          s = i.loaded,
+          d = void 0;
         return (
           window.IntersectionObserver &&
-            (f = new IntersectionObserver(
+            (d = new IntersectionObserver(
               (function(e, t) {
-                return function(n, i) {
+                return function(n, o) {
                   n.forEach(function(n) {
                     n.intersectionRatio > 0 &&
-                      (i.unobserve(n.target),
+                      (o.unobserve(n.target),
                       a(n.target) || (e(n.target), r(n.target), t(n.target)));
                   });
                 };
-              })(u, d),
-              { rootMargin: c, threshold: s }
+              })(f, s),
+              { rootMargin: c, threshold: u }
             )),
           {
             observe: function() {
@@ -607,10 +264,10 @@
                 n < e.length;
                 n++
               )
-                a(e[n]) || (f ? f.observe(e[n]) : (u(e[n]), r(e[n]), d(e[n])));
+                a(e[n]) || (d ? d.observe(e[n]) : (f(e[n]), r(e[n]), s(e[n])));
             },
             triggerLoad: function(e) {
-              a(e) || (u(e), r(e), d(e));
+              a(e) || (f(e), r(e), s(e));
             }
           }
         );
@@ -621,46 +278,58 @@
   /*!***************************************************!*\
   !*** ../node_modules/normalize.css/normalize.css ***!
   \***************************************************/
-  /*! dynamic exports provided */ function(e, t) {},
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t) {},
   /*!***********************************************************!*\
   !*** ../node_modules/css-star-rating/css/star-rating.css ***!
   \***********************************************************/
-  /*! dynamic exports provided */ function(e, t) {},
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t) {},
   /*!*******************************!*\
   !*** ./assets/css/styles.css ***!
   \*******************************/
-  /*! dynamic exports provided */ function(e, t) {},
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t) {},
+  /*!*****************************!*\
+  !*** ./assets/css/app.scss ***!
+  \*****************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t) {},
   /*!*****************************************************!*\
   !*** ../node_modules/load-google-maps-api/index.js ***!
   \*****************************************************/
   /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t) {
+  /*! all exports used */ function(e, t) {
     var n = "__googleMapsApiOnLoadCallback",
-      r = ["channel", "client", "key", "language", "region", "v"];
+      r = ["channel", "client", "key", "language", "region", "v"],
+      a = null;
     e.exports = function(e) {
       return (
         (e = e || {}),
-        new Promise(function(t, a) {
-          var i = setTimeout(function() {
-            (window[n] = function() {}),
-              a(new Error("Could not load the Google Maps API"));
-          }, e.timeout || 1e4);
-          window[n] = function() {
-            null !== i && clearTimeout(i),
-              t(window.google.maps),
-              delete window[n];
-          };
-          var o = document.createElement("script"),
-            c = ["callback=" + n];
-          r.forEach(function(t) {
-            e[t] && c.push(t + "=" + e[t]);
-          }),
-            e.libraries &&
-              e.libraries.length &&
-              c.push("libraries=" + e.libraries.join(",")),
-            (o.src = "https://maps.googleapis.com/maps/api/js?" + c.join("&")),
-            document.body.appendChild(o);
-        })
+        a ||
+          (a = new Promise(function(t, a) {
+            var o = setTimeout(function() {
+              (window[n] = function() {}),
+                a(new Error("Could not load the Google Maps API"));
+            }, e.timeout || 1e4);
+            window[n] = function() {
+              null !== o && clearTimeout(o),
+                t(window.google.maps),
+                delete window[n];
+            };
+            var i = document.createElement("script"),
+              c = ["callback=" + n];
+            r.forEach(function(t) {
+              e[t] && c.push(t + "=" + e[t]);
+            }),
+              e.libraries &&
+                e.libraries.length &&
+                c.push("libraries=" + e.libraries.join(",")),
+              (i.src =
+                "https://maps.googleapis.com/maps/api/js?" + c.join("&")),
+              document.body.appendChild(i);
+          })),
+        a
       );
     };
   },
@@ -668,36 +337,109 @@
   !*** ../node_modules/common-tags/es/index.js ***!
   \***********************************************/
   /*! exports provided: TemplateTag, trimResultTransformer, stripIndentTransformer, replaceResultTransformer, replaceSubstitutionTransformer, replaceStringTransformer, inlineArrayTransformer, splitStringTransformer, removeNonPrintingValuesTransformer, commaLists, commaListsAnd, commaListsOr, html, codeBlock, source, safeHtml, oneLine, oneLineTrim, oneLineCommaLists, oneLineCommaListsOr, oneLineCommaListsAnd, inlineLists, oneLineInlineLists, stripIndent, stripIndents */
-  /*! exports used: oneLineTrim */ function(e, t, n) {
+  /*! all exports used */ function(e, t, n) {
     "use strict";
-    n(/*! ./TemplateTag */ 0),
-      n(/*! ./trimResultTransformer */ 1),
-      n(/*! ./stripIndentTransformer */ 3),
-      n(/*! ./replaceResultTransformer */ 6),
-      n(/*! ./replaceSubstitutionTransformer */ 34),
-      n(/*! ./replaceStringTransformer */ 88),
-      n(/*! ./inlineArrayTransformer */ 2),
-      n(/*! ./splitStringTransformer */ 22),
-      n(/*! ./removeNonPrintingValuesTransformer */ 35),
-      n(/*! ./commaLists */ 96),
-      n(/*! ./commaListsAnd */ 98),
-      n(/*! ./commaListsOr */ 100),
-      n(/*! ./html */ 23),
-      n(/*! ./codeBlock */ 103),
-      n(/*! ./source */ 104),
-      n(/*! ./safeHtml */ 105),
-      n(/*! ./oneLine */ 107);
-    var r = n(/*! ./oneLineTrim */ 109);
-    n.d(t, "a", function() {
+    Object.defineProperty(t, "__esModule", { value: !0 });
+    var r = n(/*! ./TemplateTag */ 0);
+    n.d(t, "TemplateTag", function() {
       return r.a;
     });
-    n(/*! ./oneLineCommaLists */ 111),
-      n(/*! ./oneLineCommaListsOr */ 113),
-      n(/*! ./oneLineCommaListsAnd */ 115),
-      n(/*! ./inlineLists */ 117),
-      n(/*! ./oneLineInlineLists */ 119),
-      n(/*! ./stripIndent */ 121),
-      n(/*! ./stripIndents */ 123);
+    var a = n(/*! ./trimResultTransformer */ 1);
+    n.d(t, "trimResultTransformer", function() {
+      return a.a;
+    });
+    var o = n(/*! ./stripIndentTransformer */ 3);
+    n.d(t, "stripIndentTransformer", function() {
+      return o.a;
+    });
+    var i = n(/*! ./replaceResultTransformer */ 4);
+    n.d(t, "replaceResultTransformer", function() {
+      return i.a;
+    });
+    var c = n(/*! ./replaceSubstitutionTransformer */ 7);
+    n.d(t, "replaceSubstitutionTransformer", function() {
+      return c.a;
+    });
+    var u = n(/*! ./replaceStringTransformer */ 22);
+    n.d(t, "replaceStringTransformer", function() {
+      return u.a;
+    });
+    var f = n(/*! ./inlineArrayTransformer */ 2);
+    n.d(t, "inlineArrayTransformer", function() {
+      return f.a;
+    });
+    var s = n(/*! ./splitStringTransformer */ 5);
+    n.d(t, "splitStringTransformer", function() {
+      return s.a;
+    });
+    var d = n(/*! ./removeNonPrintingValuesTransformer */ 8);
+    n.d(t, "removeNonPrintingValuesTransformer", function() {
+      return d.a;
+    });
+    var l = n(/*! ./commaLists */ 27);
+    n.d(t, "commaLists", function() {
+      return l.a;
+    });
+    var h = n(/*! ./commaListsAnd */ 29);
+    n.d(t, "commaListsAnd", function() {
+      return h.a;
+    });
+    var A = n(/*! ./commaListsOr */ 31);
+    n.d(t, "commaListsOr", function() {
+      return A.a;
+    });
+    var p = n(/*! ./html */ 6);
+    n.d(t, "html", function() {
+      return p.a;
+    });
+    var v = n(/*! ./codeBlock */ 34);
+    n.d(t, "codeBlock", function() {
+      return v.a;
+    });
+    var g = n(/*! ./source */ 35);
+    n.d(t, "source", function() {
+      return g.a;
+    });
+    var b = n(/*! ./safeHtml */ 36);
+    n.d(t, "safeHtml", function() {
+      return b.a;
+    });
+    var y = n(/*! ./oneLine */ 38);
+    n.d(t, "oneLine", function() {
+      return y.a;
+    });
+    var m = n(/*! ./oneLineTrim */ 40);
+    n.d(t, "oneLineTrim", function() {
+      return m.a;
+    });
+    var w = n(/*! ./oneLineCommaLists */ 42);
+    n.d(t, "oneLineCommaLists", function() {
+      return w.a;
+    });
+    var E = n(/*! ./oneLineCommaListsOr */ 44);
+    n.d(t, "oneLineCommaListsOr", function() {
+      return E.a;
+    });
+    var S = n(/*! ./oneLineCommaListsAnd */ 46);
+    n.d(t, "oneLineCommaListsAnd", function() {
+      return S.a;
+    });
+    var j = n(/*! ./inlineLists */ 48);
+    n.d(t, "inlineLists", function() {
+      return j.a;
+    });
+    var B = n(/*! ./oneLineInlineLists */ 50);
+    n.d(t, "oneLineInlineLists", function() {
+      return B.a;
+    });
+    var H = n(/*! ./stripIndent */ 52);
+    n.d(t, "stripIndent", function() {
+      return H.a;
+    });
+    var x = n(/*! ./stripIndents */ 54);
+    n.d(t, "stripIndents", function() {
+      return x.a;
+    });
   },
   /*!*****************************************************************!*\
   !*** ../node_modules/common-tags/es/TemplateTag/TemplateTag.js ***!
@@ -705,439 +447,113 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! babel-runtime/helpers/taggedTemplateLiteral */ 43),
-      a = n.n(r),
-      i = n(/*! babel-runtime/helpers/classCallCheck */ 60),
-      o = n.n(i),
-      c = n(/*! babel-runtime/helpers/createClass */ 61),
-      s = n.n(c),
-      u = a()(["", ""], ["", ""]),
-      d = (function() {
-        function e() {
-          for (
-            var t = this, n = arguments.length, r = Array(n), a = 0;
-            a < n;
-            a++
-          )
-            r[a] = arguments[a];
-          return (
-            o()(this, e),
-            (this.tag = function(e) {
+    var r,
+      a,
+      o = (function() {
+        function e(e, t) {
+          for (var n = 0; n < t.length; n++) {
+            var r = t[n];
+            (r.enumerable = r.enumerable || !1),
+              (r.configurable = !0),
+              "value" in r && (r.writable = !0),
+              Object.defineProperty(e, r.key, r);
+          }
+        }
+        return function(t, n, r) {
+          return n && e(t.prototype, n), r && e(t, r), t;
+        };
+      })(),
+      i = ((r = ["", ""]),
+      (a = ["", ""]),
+      Object.freeze(
+        Object.defineProperties(r, { raw: { value: Object.freeze(a) } })
+      ));
+    var c = (function() {
+      function e() {
+        for (
+          var t = this, n = arguments.length, r = Array(n), a = 0;
+          a < n;
+          a++
+        )
+          r[a] = arguments[a];
+        return (
+          (function(e, t) {
+            if (!(e instanceof t))
+              throw new TypeError("Cannot call a class as a function");
+          })(this, e),
+          (this.tag = function(e) {
+            for (
+              var n = arguments.length, r = Array(n > 1 ? n - 1 : 0), a = 1;
+              a < n;
+              a++
+            )
+              r[a - 1] = arguments[a];
+            return "function" == typeof e
+              ? t.interimTag.bind(t, e)
+              : "string" == typeof e
+                ? t.transformEndResult(e)
+                : ((e = e.map(t.transformString.bind(t))),
+                  t.transformEndResult(
+                    e.reduce(t.processSubstitutions.bind(t, r))
+                  ));
+          }),
+          r.length > 0 && Array.isArray(r[0]) && (r = r[0]),
+          (this.transformers = r.map(function(e) {
+            return "function" == typeof e ? e() : e;
+          })),
+          this.tag
+        );
+      }
+      return (
+        o(e, [
+          {
+            key: "interimTag",
+            value: function(e, t) {
               for (
-                var n = arguments.length, r = Array(n > 1 ? n - 1 : 0), a = 1;
+                var n = arguments.length, r = Array(n > 2 ? n - 2 : 0), a = 2;
                 a < n;
                 a++
               )
-                r[a - 1] = arguments[a];
-              return "function" == typeof e
-                ? t.interimTag.bind(t, e)
-                : "string" == typeof e
-                  ? t.transformEndResult(e)
-                  : ((e = e.map(t.transformString.bind(t))),
-                    t.transformEndResult(
-                      e.reduce(t.processSubstitutions.bind(t, r))
-                    ));
-            }),
-            r.length > 0 && Array.isArray(r[0]) && (r = r[0]),
-            (this.transformers = r.map(function(e) {
-              return "function" == typeof e ? e() : e;
-            })),
-            this.tag
-          );
-        }
-        return (
-          s()(e, [
-            {
-              key: "interimTag",
-              value: function(e, t) {
-                for (
-                  var n = arguments.length, r = Array(n > 2 ? n - 2 : 0), a = 2;
-                  a < n;
-                  a++
-                )
-                  r[a - 2] = arguments[a];
-                return this.tag(u, e.apply(void 0, [t].concat(r)));
-              }
-            },
-            {
-              key: "processSubstitutions",
-              value: function(e, t, n) {
-                return t + this.transformSubstitution(e.shift(), t) + n;
-              }
-            },
-            {
-              key: "transformString",
-              value: function(e) {
-                return this.transformers.reduce(function(e, t) {
-                  return t.onString ? t.onString(e) : e;
-                }, e);
-              }
-            },
-            {
-              key: "transformSubstitution",
-              value: function(e, t) {
-                return this.transformers.reduce(function(e, n) {
-                  return n.onSubstitution ? n.onSubstitution(e, t) : e;
-                }, e);
-              }
-            },
-            {
-              key: "transformEndResult",
-              value: function(e) {
-                return this.transformers.reduce(function(e, t) {
-                  return t.onEndResult ? t.onEndResult(e) : e;
-                }, e);
-              }
+                r[a - 2] = arguments[a];
+              return this.tag(i, e.apply(void 0, [t].concat(r)));
             }
-          ]),
-          e
-        );
-      })();
-    t.a = d;
-  },
-  /*!**********************************************************************!*\
-  !*** ../node_modules/babel-runtime/helpers/taggedTemplateLiteral.js ***!
-  \**********************************************************************/
-  /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    t.__esModule = !0;
-    var r = i(n(/*! ../core-js/object/define-properties */ 44)),
-      a = i(n(/*! ../core-js/object/freeze */ 55));
-    function i(e) {
-      return e && e.__esModule ? e : { default: e };
-    }
-    t.default = function(e, t) {
-      return (0, a.default)(
-        (0, r.default)(e, { raw: { value: (0, a.default)(t) } })
+          },
+          {
+            key: "processSubstitutions",
+            value: function(e, t, n) {
+              var r = this.transformSubstitution(e.shift(), t);
+              return "".concat(t, r, n);
+            }
+          },
+          {
+            key: "transformString",
+            value: function(e) {
+              return this.transformers.reduce(function(e, t) {
+                return t.onString ? t.onString(e) : e;
+              }, e);
+            }
+          },
+          {
+            key: "transformSubstitution",
+            value: function(e, t) {
+              return this.transformers.reduce(function(e, n) {
+                return n.onSubstitution ? n.onSubstitution(e, t) : e;
+              }, e);
+            }
+          },
+          {
+            key: "transformEndResult",
+            value: function(e) {
+              return this.transformers.reduce(function(e, t) {
+                return t.onEndResult ? t.onEndResult(e) : e;
+              }, e);
+            }
+          }
+        ]),
+        e
       );
-    };
-  },
-  /*!*************************************************************************!*\
-  !*** ../node_modules/babel-runtime/core-js/object/define-properties.js ***!
-  \*************************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = {
-      default: n(/*! core-js/library/fn/object/define-properties */ 45),
-      __esModule: !0
-    };
-  },
-  /*!**********************************************************************!*\
-  !*** ../node_modules/core-js/library/fn/object/define-properties.js ***!
-  \**********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    n(/*! ../../modules/es6.object.define-properties */ 46);
-    var r = n(/*! ../../modules/_core */ 4).Object;
-    e.exports = function(e, t) {
-      return r.defineProperties(e, t);
-    };
-  },
-  /*!*******************************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/es6.object.define-properties.js ***!
-  \*******************************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_export */ 7);
-    r(r.S + r.F * !n(/*! ./_descriptors */ 9), "Object", {
-      defineProperties: n(/*! ./_object-dps */ 26)
-    });
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_a-function.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = function(e) {
-      if ("function" != typeof e) throw TypeError(e + " is not a function!");
-      return e;
-    };
-  },
-  /*!******************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_ie8-dom-define.js ***!
-  \******************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports =
-      !n(/*! ./_descriptors */ 9) &&
-      !n(/*! ./_fails */ 15)(function() {
-        return (
-          7 !=
-          Object.defineProperty(n(/*! ./_dom-create */ 25)("div"), "a", {
-            get: function() {
-              return 7;
-            }
-          }).a
-        );
-      });
-  },
-  /*!****************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_to-primitive.js ***!
-  \****************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_is-object */ 11);
-    e.exports = function(e, t) {
-      if (!r(e)) return e;
-      var n, a;
-      if (t && "function" == typeof (n = e.toString) && !r((a = n.call(e))))
-        return a;
-      if ("function" == typeof (n = e.valueOf) && !r((a = n.call(e)))) return a;
-      if (!t && "function" == typeof (n = e.toString) && !r((a = n.call(e))))
-        return a;
-      throw TypeError("Can't convert object to primitive value");
-    };
-  },
-  /*!***************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-keys.js ***!
-  \***************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_object-keys-internal */ 51),
-      a = n(/*! ./_enum-bug-keys */ 31);
-    e.exports =
-      Object.keys ||
-      function(e) {
-        return r(e, a);
-      };
-  },
-  /*!************************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-keys-internal.js ***!
-  \************************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_has */ 12),
-      a = n(/*! ./_to-iobject */ 27),
-      i = n(/*! ./_array-includes */ 53)(!1),
-      o = n(/*! ./_shared-key */ 19)("IE_PROTO");
-    e.exports = function(e, t) {
-      var n,
-        c = a(e),
-        s = 0,
-        u = [];
-      for (n in c) n != o && r(c, n) && u.push(n);
-      for (; t.length > s; ) r(c, (n = t[s++])) && (~i(u, n) || u.push(n));
-      return u;
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_iobject.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_cof */ 28);
-    e.exports = Object("z").propertyIsEnumerable(0)
-      ? Object
-      : function(e) {
-          return "String" == r(e) ? e.split("") : Object(e);
-        };
-  },
-  /*!******************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_array-includes.js ***!
-  \******************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_to-iobject */ 27),
-      a = n(/*! ./_to-length */ 29),
-      i = n(/*! ./_to-absolute-index */ 54);
-    e.exports = function(e) {
-      return function(t, n, o) {
-        var c,
-          s = r(t),
-          u = a(s.length),
-          d = i(o, u);
-        if (e && n != n) {
-          for (; u > d; ) if ((c = s[d++]) != c) return !0;
-        } else
-          for (; u > d; d++)
-            if ((e || d in s) && s[d] === n) return e || d || 0;
-        return !e && -1;
-      };
-    };
-  },
-  /*!*********************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_to-absolute-index.js ***!
-  \*********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_to-integer */ 18),
-      a = Math.max,
-      i = Math.min;
-    e.exports = function(e, t) {
-      return (e = r(e)) < 0 ? a(e + t, 0) : i(e, t);
-    };
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/babel-runtime/core-js/object/freeze.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = {
-      default: n(/*! core-js/library/fn/object/freeze */ 56),
-      __esModule: !0
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/core-js/library/fn/object/freeze.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    n(/*! ../../modules/es6.object.freeze */ 57),
-      (e.exports = n(/*! ../../modules/_core */ 4).Object.freeze);
-  },
-  /*!********************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/es6.object.freeze.js ***!
-  \********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_is-object */ 11),
-      a = n(/*! ./_meta */ 58).onFreeze;
-    n(/*! ./_object-sap */ 59)("freeze", function(e) {
-      return function(t) {
-        return e && r(t) ? e(a(t)) : t;
-      };
-    });
-  },
-  /*!********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_meta.js ***!
-  \********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_uid */ 20)("meta"),
-      a = n(/*! ./_is-object */ 11),
-      i = n(/*! ./_has */ 12),
-      o = n(/*! ./_object-dp */ 8).f,
-      c = 0,
-      s =
-        Object.isExtensible ||
-        function() {
-          return !0;
-        },
-      u = !n(/*! ./_fails */ 15)(function() {
-        return s(Object.preventExtensions({}));
-      }),
-      d = function(e) {
-        o(e, r, { value: { i: "O" + ++c, w: {} } });
-      },
-      f = (e.exports = {
-        KEY: r,
-        NEED: !1,
-        fastKey: function(e, t) {
-          if (!a(e))
-            return "symbol" == typeof e
-              ? e
-              : ("string" == typeof e ? "S" : "P") + e;
-          if (!i(e, r)) {
-            if (!s(e)) return "F";
-            if (!t) return "E";
-            d(e);
-          }
-          return e[r].i;
-        },
-        getWeak: function(e, t) {
-          if (!i(e, r)) {
-            if (!s(e)) return !0;
-            if (!t) return !1;
-            d(e);
-          }
-          return e[r].w;
-        },
-        onFreeze: function(e) {
-          return u && f.NEED && s(e) && !i(e, r) && d(e), e;
-        }
-      });
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-sap.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_export */ 7),
-      a = n(/*! ./_core */ 4),
-      i = n(/*! ./_fails */ 15);
-    e.exports = function(e, t) {
-      var n = (a.Object || {})[e] || Object[e],
-        o = {};
-      (o[e] = t(n)),
-        r(
-          r.S +
-            r.F *
-              i(function() {
-                n(1);
-              }),
-          "Object",
-          o
-        );
-    };
-  },
-  /*!***************************************************************!*\
-  !*** ../node_modules/babel-runtime/helpers/classCallCheck.js ***!
-  \***************************************************************/
-  /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    (t.__esModule = !0),
-      (t.default = function(e, t) {
-        if (!(e instanceof t))
-          throw new TypeError("Cannot call a class as a function");
-      });
-  },
-  /*!************************************************************!*\
-  !*** ../node_modules/babel-runtime/helpers/createClass.js ***!
-  \************************************************************/
-  /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    t.__esModule = !0;
-    var r,
-      a = n(/*! ../core-js/object/define-property */ 62),
-      i = (r = a) && r.__esModule ? r : { default: r };
-    t.default = (function() {
-      function e(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var r = t[n];
-          (r.enumerable = r.enumerable || !1),
-            (r.configurable = !0),
-            "value" in r && (r.writable = !0),
-            (0, i.default)(e, r.key, r);
-        }
-      }
-      return function(t, n, r) {
-        return n && e(t.prototype, n), r && e(t, r), t;
-      };
     })();
-  },
-  /*!***********************************************************************!*\
-  !*** ../node_modules/babel-runtime/core-js/object/define-property.js ***!
-  \***********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = {
-      default: n(/*! core-js/library/fn/object/define-property */ 63),
-      __esModule: !0
-    };
-  },
-  /*!********************************************************************!*\
-  !*** ../node_modules/core-js/library/fn/object/define-property.js ***!
-  \********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    n(/*! ../../modules/es6.object.define-property */ 64);
-    var r = n(/*! ../../modules/_core */ 4).Object;
-    e.exports = function(e, t, n) {
-      return r.defineProperty(e, t, n);
-    };
-  },
-  /*!*****************************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/es6.object.define-property.js ***!
-  \*****************************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_export */ 7);
-    r(r.S + r.F * !n(/*! ./_descriptors */ 9), "Object", {
-      defineProperty: n(/*! ./_object-dp */ 8).f
-    });
+    t.a = c;
   },
   /*!*************************************************************************************!*\
   !*** ../node_modules/common-tags/es/trimResultTransformer/trimResultTransformer.js ***!
@@ -1165,8 +581,6 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! babel-runtime/helpers/toConsumableArray */ 67),
-      a = n.n(r);
     t.a = function() {
       var e =
         arguments.length > 0 && void 0 !== arguments[0]
@@ -1180,15 +594,22 @@
                 n &&
                 Math.min.apply(
                   Math,
-                  a()(
+                  (function(e) {
+                    if (Array.isArray(e)) {
+                      for (var t = 0, n = Array(e.length); t < e.length; t++)
+                        n[t] = e[t];
+                      return n;
+                    }
+                    return Array.from(e);
+                  })(
                     n.map(function(e) {
                       return e.length;
                     })
                   )
                 );
             if (r) {
-              var i = new RegExp("^.{" + r + "}", "gm");
-              return t.replace(i, "");
+              var a = new RegExp("^.{" + r + "}", "gm");
+              return t.replace(a, "");
             }
             return t;
           }
@@ -1196,438 +617,6 @@
           throw new Error("Unknown type: " + e);
         }
       };
-    };
-  },
-  /*!******************************************************************!*\
-  !*** ../node_modules/babel-runtime/helpers/toConsumableArray.js ***!
-  \******************************************************************/
-  /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    t.__esModule = !0;
-    var r,
-      a = n(/*! ../core-js/array/from */ 68),
-      i = (r = a) && r.__esModule ? r : { default: r };
-    t.default = function(e) {
-      if (Array.isArray(e)) {
-        for (var t = 0, n = Array(e.length); t < e.length; t++) n[t] = e[t];
-        return n;
-      }
-      return (0, i.default)(e);
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/babel-runtime/core-js/array/from.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = {
-      default: n(/*! core-js/library/fn/array/from */ 69),
-      __esModule: !0
-    };
-  },
-  /*!********************************************************!*\
-  !*** ../node_modules/core-js/library/fn/array/from.js ***!
-  \********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    n(/*! ../../modules/es6.string.iterator */ 70),
-      n(/*! ../../modules/es6.array.from */ 79),
-      (e.exports = n(/*! ../../modules/_core */ 4).Array.from);
-  },
-  /*!**********************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/es6.string.iterator.js ***!
-  \**********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./_string-at */ 71)(!0);
-    n(/*! ./_iter-define */ 72)(
-      String,
-      "String",
-      function(e) {
-        (this._t = String(e)), (this._i = 0);
-      },
-      function() {
-        var e,
-          t = this._t,
-          n = this._i;
-        return n >= t.length
-          ? { value: void 0, done: !0 }
-          : ((e = r(t, n)), (this._i += e.length), { value: e, done: !1 });
-      }
-    );
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_string-at.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_to-integer */ 18),
-      a = n(/*! ./_defined */ 17);
-    e.exports = function(e) {
-      return function(t, n) {
-        var i,
-          o,
-          c = String(a(t)),
-          s = r(n),
-          u = c.length;
-        return s < 0 || s >= u
-          ? e ? "" : void 0
-          : (i = c.charCodeAt(s)) < 55296 ||
-            i > 56319 ||
-            s + 1 === u ||
-            (o = c.charCodeAt(s + 1)) < 56320 ||
-            o > 57343
-            ? e ? c.charAt(s) : i
-            : e ? c.slice(s, s + 2) : o - 56320 + ((i - 55296) << 10) + 65536;
-      };
-    };
-  },
-  /*!***************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_iter-define.js ***!
-  \***************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./_library */ 73),
-      a = n(/*! ./_export */ 7),
-      i = n(/*! ./_redefine */ 74),
-      o = n(/*! ./_hide */ 13),
-      c = n(/*! ./_has */ 12),
-      s = n(/*! ./_iterators */ 21),
-      u = n(/*! ./_iter-create */ 75),
-      d = n(/*! ./_set-to-string-tag */ 32),
-      f = n(/*! ./_object-gpo */ 78),
-      l = n(/*! ./_wks */ 5)("iterator"),
-      h = !([].keys && "next" in [].keys()),
-      p = function() {
-        return this;
-      };
-    e.exports = function(e, t, n, A, v, g, b) {
-      u(n, t, A);
-      var y,
-        m,
-        E,
-        w = function(e) {
-          if (!h && e in x) return x[e];
-          switch (e) {
-            case "keys":
-            case "values":
-              return function() {
-                return new n(this, e);
-              };
-          }
-          return function() {
-            return new n(this, e);
-          };
-        },
-        S = t + " Iterator",
-        j = "values" == v,
-        H = !1,
-        x = e.prototype,
-        B = x[l] || x["@@iterator"] || (v && x[v]),
-        O = (!h && B) || w(v),
-        I = v ? (j ? w("entries") : O) : void 0,
-        T = ("Array" == t && x.entries) || B;
-      if (
-        (T &&
-          (E = f(T.call(new e()))) !== Object.prototype &&
-          E.next &&
-          (d(E, S, !0), r || c(E, l) || o(E, l, p)),
-        j &&
-          B &&
-          "values" !== B.name &&
-          ((H = !0),
-          (O = function() {
-            return B.call(this);
-          })),
-        (r && !b) || (!h && !H && x[l]) || o(x, l, O),
-        (s[t] = O),
-        (s[S] = p),
-        v)
-      )
-        if (
-          ((y = {
-            values: j ? O : w("values"),
-            keys: g ? O : w("keys"),
-            entries: I
-          }),
-          b)
-        )
-          for (m in y) m in x || i(x, m, y[m]);
-        else a(a.P + a.F * (h || H), t, y);
-      return y;
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_library.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t) {
-    e.exports = !0;
-  },
-  /*!************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_redefine.js ***!
-  \************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = n(/*! ./_hide */ 13);
-  },
-  /*!***************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_iter-create.js ***!
-  \***************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./_object-create */ 76),
-      a = n(/*! ./_property-desc */ 16),
-      i = n(/*! ./_set-to-string-tag */ 32),
-      o = {};
-    n(/*! ./_hide */ 13)(o, n(/*! ./_wks */ 5)("iterator"), function() {
-      return this;
-    }),
-      (e.exports = function(e, t, n) {
-        (e.prototype = r(o, { next: a(1, n) })), i(e, t + " Iterator");
-      });
-  },
-  /*!*****************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-create.js ***!
-  \*****************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_an-object */ 14),
-      a = n(/*! ./_object-dps */ 26),
-      i = n(/*! ./_enum-bug-keys */ 31),
-      o = n(/*! ./_shared-key */ 19)("IE_PROTO"),
-      c = function() {},
-      s = function() {
-        var e,
-          t = n(/*! ./_dom-create */ 25)("iframe"),
-          r = i.length;
-        for (
-          t.style.display = "none",
-            n(/*! ./_html */ 77).appendChild(t),
-            t.src = "javascript:",
-            (e = t.contentWindow.document).open(),
-            e.write("<script>document.F=Object</script>"),
-            e.close(),
-            s = e.F;
-          r--;
-
-        )
-          delete s.prototype[i[r]];
-        return s();
-      };
-    e.exports =
-      Object.create ||
-      function(e, t) {
-        var n;
-        return (
-          null !== e
-            ? ((c.prototype = r(e)),
-              (n = new c()),
-              (c.prototype = null),
-              (n[o] = e))
-            : (n = s()),
-          void 0 === t ? n : a(n, t)
-        );
-      };
-  },
-  /*!********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_html.js ***!
-  \********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_global */ 10).document;
-    e.exports = r && r.documentElement;
-  },
-  /*!**************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_object-gpo.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_has */ 12),
-      a = n(/*! ./_to-object */ 33),
-      i = n(/*! ./_shared-key */ 19)("IE_PROTO"),
-      o = Object.prototype;
-    e.exports =
-      Object.getPrototypeOf ||
-      function(e) {
-        return (
-          (e = a(e)),
-          r(e, i)
-            ? e[i]
-            : "function" == typeof e.constructor && e instanceof e.constructor
-              ? e.constructor.prototype
-              : e instanceof Object ? o : null
-        );
-      };
-  },
-  /*!*****************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/es6.array.from.js ***!
-  \*****************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./_ctx */ 24),
-      a = n(/*! ./_export */ 7),
-      i = n(/*! ./_to-object */ 33),
-      o = n(/*! ./_iter-call */ 80),
-      c = n(/*! ./_is-array-iter */ 81),
-      s = n(/*! ./_to-length */ 29),
-      u = n(/*! ./_create-property */ 82),
-      d = n(/*! ./core.get-iterator-method */ 83);
-    a(
-      a.S +
-        a.F *
-          !n(/*! ./_iter-detect */ 85)(function(e) {
-            Array.from(e);
-          }),
-      "Array",
-      {
-        from: function(e) {
-          var t,
-            n,
-            a,
-            f,
-            l = i(e),
-            h = "function" == typeof this ? this : Array,
-            p = arguments.length,
-            A = p > 1 ? arguments[1] : void 0,
-            v = void 0 !== A,
-            g = 0,
-            b = d(l);
-          if (
-            (v && (A = r(A, p > 2 ? arguments[2] : void 0, 2)),
-            void 0 == b || (h == Array && c(b)))
-          )
-            for (n = new h((t = s(l.length))); t > g; g++)
-              u(n, g, v ? A(l[g], g) : l[g]);
-          else
-            for (f = b.call(l), n = new h(); !(a = f.next()).done; g++)
-              u(n, g, v ? o(f, A, [a.value, g], !0) : a.value);
-          return (n.length = g), n;
-        }
-      }
-    );
-  },
-  /*!*************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_iter-call.js ***!
-  \*************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_an-object */ 14);
-    e.exports = function(e, t, n, a) {
-      try {
-        return a ? t(r(n)[0], n[1]) : t(n);
-      } catch (t) {
-        var i = e.return;
-        throw (void 0 !== i && r(i.call(e)), t);
-      }
-    };
-  },
-  /*!*****************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_is-array-iter.js ***!
-  \*****************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_iterators */ 21),
-      a = n(/*! ./_wks */ 5)("iterator"),
-      i = Array.prototype;
-    e.exports = function(e) {
-      return void 0 !== e && (r.Array === e || i[a] === e);
-    };
-  },
-  /*!*******************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_create-property.js ***!
-  \*******************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./_object-dp */ 8),
-      a = n(/*! ./_property-desc */ 16);
-    e.exports = function(e, t, n) {
-      t in e ? r.f(e, t, a(0, n)) : (e[t] = n);
-    };
-  },
-  /*!***************************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/core.get-iterator-method.js ***!
-  \***************************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_classof */ 84),
-      a = n(/*! ./_wks */ 5)("iterator"),
-      i = n(/*! ./_iterators */ 21);
-    e.exports = n(/*! ./_core */ 4).getIteratorMethod = function(e) {
-      if (void 0 != e) return e[a] || e["@@iterator"] || i[r(e)];
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_classof.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_cof */ 28),
-      a = n(/*! ./_wks */ 5)("toStringTag"),
-      i =
-        "Arguments" ==
-        r(
-          (function() {
-            return arguments;
-          })()
-        );
-    e.exports = function(e) {
-      var t, n, o;
-      return void 0 === e
-        ? "Undefined"
-        : null === e
-          ? "Null"
-          : "string" ==
-            typeof (n = (function(e, t) {
-              try {
-                return e[t];
-              } catch (e) {}
-            })((t = Object(e)), a))
-            ? n
-            : i
-              ? r(t)
-              : "Object" == (o = r(t)) && "function" == typeof t.callee
-                ? "Arguments"
-                : o;
-    };
-  },
-  /*!***************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/_iter-detect.js ***!
-  \***************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_wks */ 5)("iterator"),
-      a = !1;
-    try {
-      var i = [7][r]();
-      (i.return = function() {
-        a = !0;
-      }),
-        Array.from(i, function() {
-          throw 2;
-        });
-    } catch (e) {}
-    e.exports = function(e, t) {
-      if (!t && !a) return !1;
-      var n = !1;
-      try {
-        var i = [7],
-          o = i[r]();
-        (o.next = function() {
-          return { done: (n = !0) };
-        }),
-          (i[r] = function() {
-            return o;
-          }),
-          e(i);
-      } catch (e) {}
-      return n;
     };
   },
   /*!*******************************************************************************************!*\
@@ -1669,15 +658,31 @@
   /*!************************************************************************!*\
   !*** ../node_modules/common-tags/es/replaceStringTransformer/index.js ***!
   \************************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./replaceStringTransformer */ 89);
+    var r = n(/*! ./replaceStringTransformer */ 23);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*******************************************************************************************!*\
   !*** ../node_modules/common-tags/es/replaceStringTransformer/replaceStringTransformer.js ***!
   \*******************************************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
+    t.a = function(e, t) {
+      return {
+        onString: function(n) {
+          if (null == e || null == t)
+            throw new Error(
+              "replaceStringTransformer requires at least 2 arguments."
+            );
+          return n.replace(e, t);
+        }
+      };
+    };
   },
   /*!***************************************************************************************!*\
   !*** ../node_modules/common-tags/es/inlineArrayTransformer/inlineArrayTransformer.js ***!
@@ -1694,12 +699,12 @@
           if (Array.isArray(t)) {
             var r = t.length,
               a = e.separator,
-              i = e.conjunction,
-              o = e.serial,
+              o = e.conjunction,
+              i = e.serial,
               c = n.match(/(\n?[^\S\n]+)$/);
-            if (((t = c ? t.join(a + c[1]) : t.join(a + " ")), i && r > 1)) {
-              var s = t.lastIndexOf(a);
-              t = t.slice(0, s) + (o ? a : "") + " " + i + t.slice(s + 1);
+            if (((t = c ? t.join(a + c[1]) : t.join(a + " ")), o && r > 1)) {
+              var u = t.lastIndexOf(a);
+              t = t.slice(0, u) + (i ? a : "") + " " + o + t.slice(u + 1);
             }
           }
           return t;
@@ -1731,177 +736,189 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! babel-runtime/core-js/number/is-nan */ 93),
-      a = n.n(r),
-      i = function(e) {
-        return null != e && !a()(e) && "boolean" != typeof e;
-      };
+    var r = function(e) {
+      return null != e && !Number.isNaN(e) && "boolean" != typeof e;
+    };
     t.a = function() {
       return {
         onSubstitution: function(e) {
-          return Array.isArray(e) ? e.filter(i) : i(e) ? e : "";
+          return Array.isArray(e) ? e.filter(r) : r(e) ? e : "";
         }
       };
     };
   },
-  /*!**************************************************************!*\
-  !*** ../node_modules/babel-runtime/core-js/number/is-nan.js ***!
-  \**************************************************************/
-  /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
-    e.exports = {
-      default: n(/*! core-js/library/fn/number/is-nan */ 94),
-      __esModule: !0
-    };
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/core-js/library/fn/number/is-nan.js ***!
-  \***********************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    n(/*! ../../modules/es6.number.is-nan */ 95),
-      (e.exports = n(/*! ../../modules/_core */ 4).Number.isNaN);
-  },
-  /*!********************************************************************!*\
-  !*** ../node_modules/core-js/library/modules/es6.number.is-nan.js ***!
-  \********************************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    var r = n(/*! ./_export */ 7);
-    r(r.S, "Number", {
-      isNaN: function(e) {
-        return e != e;
-      }
-    });
-  },
   /*!**********************************************************!*\
   !*** ../node_modules/common-tags/es/commaLists/index.js ***!
   \**********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./commaLists */ 97);
+    var r = n(/*! ./commaLists */ 28);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!***************************************************************!*\
   !*** ../node_modules/common-tags/es/commaLists/commaLists.js ***!
   \***************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../inlineArrayTransformer */ 2),
-      o = n(/*! ../trimResultTransformer */ 1);
-    new r.a(Object(i.a)({ separator: "," }), a.a, o.a);
+      o = n(/*! ../inlineArrayTransformer */ 2),
+      i = n(/*! ../trimResultTransformer */ 1),
+      c = new r.a(Object(o.a)({ separator: "," }), a.a, i.a);
+    t.a = c;
   },
   /*!*************************************************************!*\
   !*** ../node_modules/common-tags/es/commaListsAnd/index.js ***!
   \*************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./commaListsAnd */ 99);
+    var r = n(/*! ./commaListsAnd */ 30);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*********************************************************************!*\
   !*** ../node_modules/common-tags/es/commaListsAnd/commaListsAnd.js ***!
   \*********************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../inlineArrayTransformer */ 2),
-      o = n(/*! ../trimResultTransformer */ 1);
-    new r.a(Object(i.a)({ separator: ",", conjunction: "and" }), a.a, o.a);
+      o = n(/*! ../inlineArrayTransformer */ 2),
+      i = n(/*! ../trimResultTransformer */ 1),
+      c = new r.a(
+        Object(o.a)({ separator: ",", conjunction: "and" }),
+        a.a,
+        i.a
+      );
+    t.a = c;
   },
   /*!************************************************************!*\
   !*** ../node_modules/common-tags/es/commaListsOr/index.js ***!
   \************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./commaListsOr */ 101);
+    var r = n(/*! ./commaListsOr */ 32);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*******************************************************************!*\
   !*** ../node_modules/common-tags/es/commaListsOr/commaListsOr.js ***!
   \*******************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../inlineArrayTransformer */ 2),
-      o = n(/*! ../trimResultTransformer */ 1);
-    new r.a(Object(i.a)({ separator: ",", conjunction: "or" }), a.a, o.a);
+      o = n(/*! ../inlineArrayTransformer */ 2),
+      i = n(/*! ../trimResultTransformer */ 1),
+      c = new r.a(Object(o.a)({ separator: ",", conjunction: "or" }), a.a, i.a);
+    t.a = c;
   },
   /*!***************************************************!*\
   !*** ../node_modules/common-tags/es/html/html.js ***!
   \***************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../inlineArrayTransformer */ 2),
-      o = n(/*! ../trimResultTransformer */ 1),
-      c = n(/*! ../splitStringTransformer */ 22),
-      s = n(/*! ../removeNonPrintingValuesTransformer */ 35);
-    new r.a(Object(c.a)("\n"), s.a, i.a, a.a, o.a);
+      o = n(/*! ../inlineArrayTransformer */ 2),
+      i = n(/*! ../trimResultTransformer */ 1),
+      c = n(/*! ../splitStringTransformer */ 5),
+      u = n(/*! ../removeNonPrintingValuesTransformer */ 8),
+      f = new r.a(Object(c.a)("\n"), u.a, o.a, a.a, i.a);
+    t.a = f;
   },
   /*!*********************************************************!*\
   !*** ../node_modules/common-tags/es/codeBlock/index.js ***!
   \*********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ../html */ 23);
+    var r = n(/*! ../html */ 6);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!******************************************************!*\
   !*** ../node_modules/common-tags/es/source/index.js ***!
   \******************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ../html */ 23);
+    var r = n(/*! ../html */ 6);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!********************************************************!*\
   !*** ../node_modules/common-tags/es/safeHtml/index.js ***!
   \********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./safeHtml */ 106);
+    var r = n(/*! ./safeHtml */ 37);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/safeHtml/safeHtml.js ***!
   \***********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../inlineArrayTransformer */ 2),
-      o = n(/*! ../trimResultTransformer */ 1),
-      c = n(/*! ../splitStringTransformer */ 22),
-      s = n(/*! ../replaceSubstitutionTransformer */ 34);
-    new r.a(
-      Object(c.a)("\n"),
-      i.a,
-      a.a,
-      o.a,
-      Object(s.a)(/&/g, "&amp;"),
-      Object(s.a)(/</g, "&lt;"),
-      Object(s.a)(/>/g, "&gt;"),
-      Object(s.a)(/"/g, "&quot;"),
-      Object(s.a)(/'/g, "&#x27;"),
-      Object(s.a)(/`/g, "&#x60;")
-    );
+      o = n(/*! ../inlineArrayTransformer */ 2),
+      i = n(/*! ../trimResultTransformer */ 1),
+      c = n(/*! ../splitStringTransformer */ 5),
+      u = n(/*! ../replaceSubstitutionTransformer */ 7),
+      f = new r.a(
+        Object(c.a)("\n"),
+        o.a,
+        a.a,
+        i.a,
+        Object(u.a)(/&/g, "&amp;"),
+        Object(u.a)(/</g, "&lt;"),
+        Object(u.a)(/>/g, "&gt;"),
+        Object(u.a)(/"/g, "&quot;"),
+        Object(u.a)(/'/g, "&#x27;"),
+        Object(u.a)(/`/g, "&#x60;")
+      );
+    t.a = f;
   },
   /*!*******************************************************!*\
   !*** ../node_modules/common-tags/es/oneLine/index.js ***!
   \*******************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./oneLine */ 108);
+    var r = n(/*! ./oneLine */ 39);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*********************************************************!*\
   !*** ../node_modules/common-tags/es/oneLine/oneLine.js ***!
   \*********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../trimResultTransformer */ 1),
-      i = n(/*! ../replaceResultTransformer */ 6);
-    new r.a(Object(i.a)(/(?:\n(?:\s*))+/g, " "), a.a);
+      o = n(/*! ../replaceResultTransformer */ 4),
+      i = new r.a(Object(o.a)(/(?:\n(?:\s*))+/g, " "), a.a);
+    t.a = i;
   },
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineTrim/index.js ***!
@@ -1909,7 +926,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLineTrim */ 110);
+    var r = n(/*! ./oneLineTrim */ 41);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1922,230 +939,312 @@
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../trimResultTransformer */ 1),
-      i = n(/*! ../replaceResultTransformer */ 6),
-      o = new r.a(Object(i.a)(/(?:\n\s*)/g, ""), a.a);
-    t.a = o;
+      o = n(/*! ../replaceResultTransformer */ 4),
+      i = new r.a(Object(o.a)(/(?:\n\s*)/g, ""), a.a);
+    t.a = i;
   },
   /*!*****************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineCommaLists/index.js ***!
   \*****************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./oneLineCommaLists */ 112);
+    var r = n(/*! ./oneLineCommaLists */ 43);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*****************************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineCommaLists/oneLineCommaLists.js ***!
   \*****************************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../inlineArrayTransformer */ 2),
-      i = n(/*! ../trimResultTransformer */ 1),
-      o = n(/*! ../replaceResultTransformer */ 6);
-    new r.a(Object(a.a)({ separator: "," }), Object(o.a)(/(?:\s+)/g, " "), i.a);
+      o = n(/*! ../trimResultTransformer */ 1),
+      i = n(/*! ../replaceResultTransformer */ 4),
+      c = new r.a(
+        Object(a.a)({ separator: "," }),
+        Object(i.a)(/(?:\s+)/g, " "),
+        o.a
+      );
+    t.a = c;
   },
   /*!*******************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineCommaListsOr/index.js ***!
   \*******************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./oneLineCommaListsOr */ 114);
+    var r = n(/*! ./oneLineCommaListsOr */ 45);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*********************************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineCommaListsOr/oneLineCommaListsOr.js ***!
   \*********************************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../inlineArrayTransformer */ 2),
-      i = n(/*! ../trimResultTransformer */ 1),
-      o = n(/*! ../replaceResultTransformer */ 6);
-    new r.a(
-      Object(a.a)({ separator: ",", conjunction: "or" }),
-      Object(o.a)(/(?:\s+)/g, " "),
-      i.a
-    );
+      o = n(/*! ../trimResultTransformer */ 1),
+      i = n(/*! ../replaceResultTransformer */ 4),
+      c = new r.a(
+        Object(a.a)({ separator: ",", conjunction: "or" }),
+        Object(i.a)(/(?:\s+)/g, " "),
+        o.a
+      );
+    t.a = c;
   },
   /*!********************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineCommaListsAnd/index.js ***!
   \********************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./oneLineCommaListsAnd */ 116);
+    var r = n(/*! ./oneLineCommaListsAnd */ 47);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!***********************************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineCommaListsAnd/oneLineCommaListsAnd.js ***!
   \***********************************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../inlineArrayTransformer */ 2),
-      i = n(/*! ../trimResultTransformer */ 1),
-      o = n(/*! ../replaceResultTransformer */ 6);
-    new r.a(
-      Object(a.a)({ separator: ",", conjunction: "and" }),
-      Object(o.a)(/(?:\s+)/g, " "),
-      i.a
-    );
+      o = n(/*! ../trimResultTransformer */ 1),
+      i = n(/*! ../replaceResultTransformer */ 4),
+      c = new r.a(
+        Object(a.a)({ separator: ",", conjunction: "and" }),
+        Object(i.a)(/(?:\s+)/g, " "),
+        o.a
+      );
+    t.a = c;
   },
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/inlineLists/index.js ***!
   \***********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./inlineLists */ 118);
+    var r = n(/*! ./inlineLists */ 49);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*****************************************************************!*\
   !*** ../node_modules/common-tags/es/inlineLists/inlineLists.js ***!
   \*****************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../inlineArrayTransformer */ 2),
-      o = n(/*! ../trimResultTransformer */ 1);
-    new r.a(i.a, a.a, o.a);
+      o = n(/*! ../inlineArrayTransformer */ 2),
+      i = n(/*! ../trimResultTransformer */ 1),
+      c = new r.a(o.a, a.a, i.a);
+    t.a = c;
   },
   /*!******************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineInlineLists/index.js ***!
   \******************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./oneLineInlineLists */ 120);
+    var r = n(/*! ./oneLineInlineLists */ 51);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*******************************************************************************!*\
   !*** ../node_modules/common-tags/es/oneLineInlineLists/oneLineInlineLists.js ***!
   \*******************************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../inlineArrayTransformer */ 2),
-      i = n(/*! ../trimResultTransformer */ 1),
-      o = n(/*! ../replaceResultTransformer */ 6);
-    new r.a(a.a, Object(o.a)(/(?:\s+)/g, " "), i.a);
+      o = n(/*! ../trimResultTransformer */ 1),
+      i = n(/*! ../replaceResultTransformer */ 4),
+      c = new r.a(a.a, Object(i.a)(/(?:\s+)/g, " "), o.a);
+    t.a = c;
   },
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/stripIndent/index.js ***!
   \***********************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./stripIndent */ 122);
+    var r = n(/*! ./stripIndent */ 53);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*****************************************************************!*\
   !*** ../node_modules/common-tags/es/stripIndent/stripIndent.js ***!
   \*****************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../trimResultTransformer */ 1);
-    new r.a(a.a, i.a);
+      o = n(/*! ../trimResultTransformer */ 1),
+      i = new r.a(a.a, o.a);
+    t.a = i;
   },
   /*!************************************************************!*\
   !*** ../node_modules/common-tags/es/stripIndents/index.js ***!
   \************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
-    n(/*! ./stripIndents */ 124);
+    var r = n(/*! ./stripIndents */ 55);
+    n.d(t, "a", function() {
+      return r.a;
+    });
   },
   /*!*******************************************************************!*\
   !*** ../node_modules/common-tags/es/stripIndents/stripIndents.js ***!
   \*******************************************************************/
-  /*! exports provided: default */ function(e, t, n) {
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
     "use strict";
     var r = n(/*! ../TemplateTag */ 0),
       a = n(/*! ../stripIndentTransformer */ 3),
-      i = n(/*! ../trimResultTransformer */ 1);
-    new r.a(Object(a.a)("all"), i.a);
+      o = n(/*! ../trimResultTransformer */ 1),
+      i = new r.a(Object(a.a)("all"), o.a);
+    t.a = i;
   },
   /*!*************************!*\
   !*** ./assets/js/db.js ***!
   \*************************/
-  /*! exports provided: loadRestaurants, loadReviews, getRestaurantById, getRestaurantByCuisine, getRestaurantByNeighborhood, getRestaurantByCuisineNeighborhood, getNeighborhoods, getCuisines, urlForRestaurant, mapMarkerForRestaurant */
-  /*! exports used: getCuisines, getNeighborhoods, getRestaurantByCuisineNeighborhood, getRestaurantById, loadRestaurants, loadReviews, mapMarkerForRestaurant, urlForRestaurant */ function(
-    e,
-    t,
-    n
-  ) {
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
     "use strict";
-    var r = n(/*! localforage */ 126),
-      a = n.n(r);
-    a.a.config({
-      driver: a.a.INDEXEDDB,
+    Object.defineProperty(t, "__esModule", { value: !0 }),
+      (t.mapMarkerForRestaurant = t.urlForRestaurant = t.getCuisines = t.getNeighborhoods = t.getRestaurantByCuisineNeighborhood = t.getRestaurantByNeighborhood = t.getRestaurantByCuisine = t.getRestaurantById = t.loadReviews = t.loadRestaurants = void 0);
+    var r,
+      a = n(/*! localforage */ 57),
+      o = (r = a) && r.__esModule ? r : { default: r };
+    o.default.config({
+      driver: o.default.INDEXEDDB,
       name: "Restaurants reviews",
       version: 1,
       size: 4980736,
       storeName: "datastore_1",
       description: "Storing blobs"
     });
-    t.e = () =>
-      fetch("https://apiserver-bsxyywmzus.now.sh/restaurants", {
+    (t.loadRestaurants = function() {
+      return fetch("https://apiserver-bsxyywmzus.now.sh/restaurants", {
         credentials: "omit"
       })
-        .then(
-          e => (
+        .then(function(e) {
+          return (
             console.log("Restaurants fetched"),
             e
               .json()
-              .then(e => a.a.setItem("restaurants", JSON.stringify(e)))
-              .then(
-                () => (
-                  console.log("Stored in IndexedDB"), a.a.getItem("restaurants")
-                )
-              )
-              .then(e => JSON.parse(e))
-          )
-        )
-        .catch(
-          () => (
+              .then(function(e) {
+                return o.default.setItem("restaurants", JSON.stringify(e));
+              })
+              .then(function() {
+                return (
+                  console.log("Stored in IndexedDB"),
+                  o.default.getItem("restaurants")
+                );
+              })
+              .then(function(e) {
+                return JSON.parse(e);
+              })
+          );
+        })
+        .catch(function() {
+          return (
             console.log(
               "Can not fetch data. Trying to get it from IndexedDB..."
             ),
-            a.a
+            o.default
               .getItem("restaurants")
-              .then(e => JSON.parse(e))
-              .catch(e => {
+              .then(function(e) {
+                return JSON.parse(e);
+              })
+              .catch(function(e) {
                 console.log(e);
               })
-          )
+          );
+        });
+    }),
+      (t.loadReviews = function(e) {
+        var t =
+          "https://apiserver-bsxyywmzus.now.sh/reviews/?restaurant_id=" + e;
+        return (
+          console.log(t),
+          fetch(t, { credentials: "omit" })
+            .then(function(e) {
+              return e.json();
+            })
+            .catch(function(e) {
+              console.log(e),
+                console.log(
+                  "Can not fetch data. Trying to get it from IndexedDB..."
+                );
+            })
         );
-    t.f = e => {
-      const t =
-        "https://apiserver-bsxyywmzus.now.sh/reviews/?restaurant_id=" + e;
-      return (
-        console.log(t),
-        fetch(t, { credentials: "omit" })
-          .then(e => e.json())
-          .catch(e => {
-            console.log(e),
-              console.log(
-                "Can not fetch data. Trying to get it from IndexedDB..."
-              );
-          })
-      );
-    };
-    t.d = (e, t) => t.find(t => t.id == e);
-    t.c = (e, t, n) => {
-      let r = n;
-      return (
-        "all" != e &&
-          (console.log("Ich bin hier"),
-          (r = r.filter(t => t.cuisine_type == e))),
-        "all" != t && (r = r.filter(e => e.neighborhood == t)),
-        r
-      );
-    };
-    t.b = e => {
-      const t = e.map((t, n) => e[n].neighborhood);
-      return t.filter((e, n) => t.indexOf(e) == n);
-    };
-    t.a = e => {
-      const t = e.map((t, n) => e[n].cuisine_type);
-      return t.filter((e, n) => t.indexOf(e) == n);
-    };
-    const i = e => `./restaurant.html?id=${e.id}`;
-    t.h = i;
-    t.g = (e, t) => {
+      }),
+      (t.getRestaurantById = function(e, t) {
+        return t.find(function(t) {
+          return t.id == e;
+        });
+      }),
+      (t.getRestaurantByCuisine = function(e) {
+        return restaurants.filter(function(t) {
+          return t.cuisine_type == e;
+        });
+      }),
+      (t.getRestaurantByNeighborhood = function(e) {
+        return restaurants.filter(function(t) {
+          return t.neighborhood == e;
+        });
+      }),
+      (t.getRestaurantByCuisineNeighborhood = function(e, t, n) {
+        var r = n;
+        return (
+          "all" != e &&
+            (r = r.filter(function(t) {
+              return t.cuisine_type == e;
+            })),
+          "all" != t &&
+            (r = r.filter(function(e) {
+              return e.neighborhood == t;
+            })),
+          r
+        );
+      }),
+      (t.getNeighborhoods = function(e) {
+        var t = e.map(function(t, n) {
+          return e[n].neighborhood;
+        });
+        return t.filter(function(e, n) {
+          return t.indexOf(e) == n;
+        });
+      }),
+      (t.getCuisines = function(e) {
+        var t = e.map(function(t, n) {
+          return e[n].cuisine_type;
+        });
+        return t.filter(function(e, n) {
+          return t.indexOf(e) == n;
+        });
+      });
+    var i = (t.urlForRestaurant = function(e) {
+      return "./restaurant.html?id=" + e.id;
+    });
+    t.mapMarkerForRestaurant = function(e, t) {
       return new google.maps.Marker({
         position: e.latlng,
         title: e.name,
@@ -2158,7 +1257,7 @@
   !*** ../node_modules/localforage/dist/localforage.js ***!
   \*******************************************************/
   /*! dynamic exports provided */
-  /*! exports used: default */ function(e, t, n) {
+  /*! all exports used */ function(e, t, n) {
     (function(t) {
       var n, r;
       /*!
@@ -2169,23 +1268,23 @@
 */
       (r = function() {
         return (function e(t, r, a) {
-          function i(c, s) {
+          function o(c, u) {
             if (!r[c]) {
               if (!t[c]) {
-                if (!s && ("function" == typeof n && n)) return n(c, !0);
-                if (o) return o(c, !0);
-                var u = new Error("Cannot find module '" + c + "'");
-                throw ((u.code = "MODULE_NOT_FOUND"), u);
+                if (!u && ("function" == typeof n && n)) return n(c, !0);
+                if (i) return i(c, !0);
+                var f = new Error("Cannot find module '" + c + "'");
+                throw ((f.code = "MODULE_NOT_FOUND"), f);
               }
-              var d = (r[c] = { exports: {} });
+              var s = (r[c] = { exports: {} });
               t[c][0].call(
-                d.exports,
+                s.exports,
                 function(e) {
                   var n = t[c][1][e];
-                  return i(n || e);
+                  return o(n || e);
                 },
-                d,
-                d.exports,
+                s,
+                s.exports,
                 e,
                 t,
                 r,
@@ -2194,9 +1293,9 @@
             }
             return r[c].exports;
           }
-          for (var o = "function" == typeof n && n, c = 0; c < a.length; c++)
-            i(a[c]);
-          return i;
+          for (var i = "function" == typeof n && n, c = 0; c < a.length; c++)
+            o(a[c]);
+          return o;
         })(
           {
             1: [
@@ -2207,12 +1306,12 @@
                     r,
                     a = e.MutationObserver || e.WebKitMutationObserver;
                   if (a) {
-                    var i = 0,
-                      o = new a(d),
+                    var o = 0,
+                      i = new a(s),
                       c = e.document.createTextNode("");
-                    o.observe(c, { characterData: !0 }),
+                    i.observe(c, { characterData: !0 }),
                       (t = function() {
-                        c.data = i = ++i % 2;
+                        c.data = o = ++o % 2;
                       });
                   } else if (e.setImmediate || void 0 === e.MessageChannel)
                     t =
@@ -2221,7 +1320,7 @@
                         ? function() {
                             var t = e.document.createElement("script");
                             (t.onreadystatechange = function() {
-                              d(),
+                              s(),
                                 (t.onreadystatechange = null),
                                 t.parentNode.removeChild(t),
                                 (t = null);
@@ -2229,27 +1328,27 @@
                               e.document.documentElement.appendChild(t);
                           }
                         : function() {
-                            setTimeout(d, 0);
+                            setTimeout(s, 0);
                           };
                   else {
-                    var s = new e.MessageChannel();
-                    (s.port1.onmessage = d),
+                    var u = new e.MessageChannel();
+                    (u.port1.onmessage = s),
                       (t = function() {
-                        s.port2.postMessage(0);
+                        u.port2.postMessage(0);
                       });
                   }
-                  var u = [];
-                  function d() {
+                  var f = [];
+                  function s() {
                     var e, t;
                     r = !0;
-                    for (var n = u.length; n; ) {
-                      for (t = u, u = [], e = -1; ++e < n; ) t[e]();
-                      n = u.length;
+                    for (var n = f.length; n; ) {
+                      for (t = f, f = [], e = -1; ++e < n; ) t[e]();
+                      n = f.length;
                     }
                     r = !1;
                   }
                   n.exports = function(e) {
-                    1 !== u.push(e) || r || t();
+                    1 !== f.push(e) || r || t();
                   };
                 }.call(
                   this,
@@ -2257,7 +1356,9 @@
                     ? t
                     : "undefined" != typeof self
                       ? self
-                      : "undefined" != typeof window ? window : {}
+                      : "undefined" != typeof window
+                        ? window
+                        : {}
                 ));
               },
               {}
@@ -2267,19 +1368,19 @@
                 "use strict";
                 var r = e(1);
                 function a() {}
-                var i = {},
-                  o = ["REJECTED"],
+                var o = {},
+                  i = ["REJECTED"],
                   c = ["FULFILLED"],
-                  s = ["PENDING"];
-                function u(e) {
+                  u = ["PENDING"];
+                function f(e) {
                   if ("function" != typeof e)
                     throw new TypeError("resolver must be a function");
-                  (this.state = s),
+                  (this.state = u),
                     (this.queue = []),
                     (this.outcome = void 0),
                     e !== a && h(this, e);
                 }
-                function d(e, t, n) {
+                function s(e, t, n) {
                   (this.promise = e),
                     "function" == typeof t &&
                       ((this.onFulfilled = t),
@@ -2288,20 +1389,20 @@
                       ((this.onRejected = n),
                       (this.callRejected = this.otherCallRejected));
                 }
-                function f(e, t, n) {
+                function d(e, t, n) {
                   r(function() {
                     var r;
                     try {
                       r = t(n);
                     } catch (t) {
-                      return i.reject(e, t);
+                      return o.reject(e, t);
                     }
                     r === e
-                      ? i.reject(
+                      ? o.reject(
                           e,
                           new TypeError("Cannot resolve promise with itself")
                         )
-                      : i.resolve(e, r);
+                      : o.resolve(e, r);
                   });
                 }
                 function l(e) {
@@ -2318,17 +1419,17 @@
                 function h(e, t) {
                   var n = !1;
                   function r(t) {
-                    n || ((n = !0), i.reject(e, t));
+                    n || ((n = !0), o.reject(e, t));
                   }
                   function a(t) {
-                    n || ((n = !0), i.resolve(e, t));
+                    n || ((n = !0), o.resolve(e, t));
                   }
-                  var o = p(function() {
+                  var i = A(function() {
                     t(a, r);
                   });
-                  "error" === o.status && r(o.value);
+                  "error" === i.status && r(i.value);
                 }
-                function p(e, t) {
+                function A(e, t) {
                   var n = {};
                   try {
                     (n.value = e(t)), (n.status = "success");
@@ -2337,105 +1438,105 @@
                   }
                   return n;
                 }
-                (t.exports = u),
-                  (u.prototype.catch = function(e) {
+                (t.exports = f),
+                  (f.prototype.catch = function(e) {
                     return this.then(null, e);
                   }),
-                  (u.prototype.then = function(e, t) {
+                  (f.prototype.then = function(e, t) {
                     if (
                       ("function" != typeof e && this.state === c) ||
-                      ("function" != typeof t && this.state === o)
+                      ("function" != typeof t && this.state === i)
                     )
                       return this;
                     var n = new this.constructor(a);
-                    this.state !== s
-                      ? f(n, this.state === c ? e : t, this.outcome)
-                      : this.queue.push(new d(n, e, t));
+                    this.state !== u
+                      ? d(n, this.state === c ? e : t, this.outcome)
+                      : this.queue.push(new s(n, e, t));
                     return n;
                   }),
-                  (d.prototype.callFulfilled = function(e) {
-                    i.resolve(this.promise, e);
+                  (s.prototype.callFulfilled = function(e) {
+                    o.resolve(this.promise, e);
                   }),
-                  (d.prototype.otherCallFulfilled = function(e) {
-                    f(this.promise, this.onFulfilled, e);
+                  (s.prototype.otherCallFulfilled = function(e) {
+                    d(this.promise, this.onFulfilled, e);
                   }),
-                  (d.prototype.callRejected = function(e) {
-                    i.reject(this.promise, e);
+                  (s.prototype.callRejected = function(e) {
+                    o.reject(this.promise, e);
                   }),
-                  (d.prototype.otherCallRejected = function(e) {
-                    f(this.promise, this.onRejected, e);
+                  (s.prototype.otherCallRejected = function(e) {
+                    d(this.promise, this.onRejected, e);
                   }),
-                  (i.resolve = function(e, t) {
-                    var n = p(l, t);
-                    if ("error" === n.status) return i.reject(e, n.value);
+                  (o.resolve = function(e, t) {
+                    var n = A(l, t);
+                    if ("error" === n.status) return o.reject(e, n.value);
                     var r = n.value;
                     if (r) h(e, r);
                     else {
                       (e.state = c), (e.outcome = t);
-                      for (var a = -1, o = e.queue.length; ++a < o; )
+                      for (var a = -1, i = e.queue.length; ++a < i; )
                         e.queue[a].callFulfilled(t);
                     }
                     return e;
                   }),
-                  (i.reject = function(e, t) {
-                    (e.state = o), (e.outcome = t);
+                  (o.reject = function(e, t) {
+                    (e.state = i), (e.outcome = t);
                     for (var n = -1, r = e.queue.length; ++n < r; )
                       e.queue[n].callRejected(t);
                     return e;
                   }),
-                  (u.resolve = function(e) {
+                  (f.resolve = function(e) {
                     if (e instanceof this) return e;
-                    return i.resolve(new this(a), e);
+                    return o.resolve(new this(a), e);
                   }),
-                  (u.reject = function(e) {
+                  (f.reject = function(e) {
                     var t = new this(a);
-                    return i.reject(t, e);
+                    return o.reject(t, e);
                   }),
-                  (u.all = function(e) {
+                  (f.all = function(e) {
                     var t = this;
                     if ("[object Array]" !== Object.prototype.toString.call(e))
                       return this.reject(new TypeError("must be an array"));
                     var n = e.length,
                       r = !1;
                     if (!n) return this.resolve([]);
-                    var o = new Array(n),
+                    var i = new Array(n),
                       c = 0,
-                      s = -1,
-                      u = new this(a);
-                    for (; ++s < n; ) d(e[s], s);
-                    return u;
-                    function d(e, a) {
+                      u = -1,
+                      f = new this(a);
+                    for (; ++u < n; ) s(e[u], u);
+                    return f;
+                    function s(e, a) {
                       t.resolve(e).then(
                         function(e) {
-                          (o[a] = e),
-                            ++c !== n || r || ((r = !0), i.resolve(u, o));
+                          (i[a] = e),
+                            ++c !== n || r || ((r = !0), o.resolve(f, i));
                         },
                         function(e) {
-                          r || ((r = !0), i.reject(u, e));
+                          r || ((r = !0), o.reject(f, e));
                         }
                       );
                     }
                   }),
-                  (u.race = function(e) {
+                  (f.race = function(e) {
                     var t = this;
                     if ("[object Array]" !== Object.prototype.toString.call(e))
                       return this.reject(new TypeError("must be an array"));
                     var n = e.length,
                       r = !1;
                     if (!n) return this.resolve([]);
-                    var o = -1,
+                    var i = -1,
                       c = new this(a);
-                    for (; ++o < n; )
-                      (s = e[o]),
-                        t.resolve(s).then(
+                    for (; ++i < n; )
+                      (u = e[i]),
+                        t.resolve(u).then(
                           function(e) {
-                            r || ((r = !0), i.resolve(c, e));
+                            r || ((r = !0), o.resolve(c, e));
                           },
                           function(e) {
-                            r || ((r = !0), i.reject(c, e));
+                            r || ((r = !0), o.reject(c, e));
                           }
                         );
-                    var s;
+                    var u;
                     return c;
                   });
               },
@@ -2452,7 +1553,9 @@
                     ? t
                     : "undefined" != typeof self
                       ? self
-                      : "undefined" != typeof window ? window : {}
+                      : "undefined" != typeof window
+                        ? window
+                        : {}
                 ));
               },
               { 2: 2 }
@@ -2486,7 +1589,7 @@
                     return;
                   }
                 })();
-                function i(e, t) {
+                function o(e, t) {
                   (e = e || []), (t = t || {});
                   try {
                     return new Blob(e, t);
@@ -2509,7 +1612,7 @@
                   }
                 }
                 "undefined" == typeof Promise && e(3);
-                var o = Promise;
+                var i = Promise;
                 function c(e, t) {
                   t &&
                     e.then(
@@ -2521,11 +1624,11 @@
                       }
                     );
                 }
-                function s(e, t, n) {
+                function u(e, t, n) {
                   "function" == typeof t && e.then(t),
                     "function" == typeof n && e.catch(n);
                 }
-                function u(e) {
+                function f(e) {
                   return (
                     "string" != typeof e &&
                       (console.warn(
@@ -2535,27 +1638,27 @@
                     e
                   );
                 }
-                function d() {
+                function s() {
                   if (
                     arguments.length &&
                     "function" == typeof arguments[arguments.length - 1]
                   )
                     return arguments[arguments.length - 1];
                 }
-                var f = "local-forage-detect-blob-support",
+                var d = "local-forage-detect-blob-support",
                   l = void 0,
                   h = {},
-                  p = Object.prototype.toString,
-                  A = "readonly",
+                  A = Object.prototype.toString,
+                  p = "readonly",
                   v = "readwrite";
                 function g(e) {
                   return "boolean" == typeof l
-                    ? o.resolve(l)
+                    ? i.resolve(l)
                     : (function(e) {
-                        return new o(function(t) {
-                          var n = e.transaction(f, v),
-                            r = i([""]);
-                          n.objectStore(f).put(r, "key"),
+                        return new i(function(t) {
+                          var n = e.transaction(d, v),
+                            r = o([""]);
+                          n.objectStore(d).put(r, "key"),
                             (n.onabort = function(e) {
                               e.preventDefault(), e.stopPropagation(), t(!1);
                             }),
@@ -2576,7 +1679,7 @@
                 function b(e) {
                   var t = h[e.name],
                     n = {};
-                  (n.promise = new o(function(e, t) {
+                  (n.promise = new i(function(e, t) {
                     (n.resolve = e), (n.reject = t);
                   })),
                     t.deferredOperations.push(n),
@@ -2594,8 +1697,8 @@
                   var n = h[e.name].deferredOperations.pop();
                   if (n) return n.reject(t), n.promise;
                 }
-                function E(e, t) {
-                  return new o(function(n, r) {
+                function w(e, t) {
+                  return new i(function(n, r) {
                     if (
                       ((h[e.name] = h[e.name] || {
                         forages: [],
@@ -2608,15 +1711,15 @@
                       if (!t) return n(e.db);
                       b(e), e.db.close();
                     }
-                    var i = [e.name];
-                    t && i.push(e.version);
-                    var o = a.open.apply(a, i);
+                    var o = [e.name];
+                    t && o.push(e.version);
+                    var i = a.open.apply(a, o);
                     t &&
-                      (o.onupgradeneeded = function(t) {
-                        var n = o.result;
+                      (i.onupgradeneeded = function(t) {
+                        var n = i.result;
                         try {
                           n.createObjectStore(e.storeName),
-                            t.oldVersion <= 1 && n.createObjectStore(f);
+                            t.oldVersion <= 1 && n.createObjectStore(d);
                         } catch (n) {
                           if ("ConstraintError" !== n.name) throw n;
                           console.warn(
@@ -2632,19 +1735,19 @@
                           );
                         }
                       }),
-                      (o.onerror = function(e) {
-                        e.preventDefault(), r(o.error);
+                      (i.onerror = function(e) {
+                        e.preventDefault(), r(i.error);
                       }),
-                      (o.onsuccess = function() {
-                        n(o.result), y(e);
+                      (i.onsuccess = function() {
+                        n(i.result), y(e);
                       });
                   });
                 }
-                function w(e) {
-                  return E(e, !1);
+                function E(e) {
+                  return w(e, !1);
                 }
                 function S(e) {
-                  return E(e, !0);
+                  return w(e, !0);
                 }
                 function j(e, t) {
                   if (!e.db) return !0;
@@ -2667,15 +1770,15 @@
                     a || n)
                   ) {
                     if (n) {
-                      var i = e.db.version + 1;
-                      i > e.version && (e.version = i);
+                      var o = e.db.version + 1;
+                      o > e.version && (e.version = o);
                     }
                     return !0;
                   }
                   return !1;
                 }
-                function H(e) {
-                  return i(
+                function B(e) {
+                  return o(
                     [
                       (function(e) {
                         for (
@@ -2693,18 +1796,18 @@
                     { type: e.type }
                   );
                 }
-                function x(e) {
+                function H(e) {
                   return e && e.__local_forage_encoded_blob;
                 }
-                function B(e) {
+                function x(e) {
                   var t = this,
                     n = t._initReady().then(function() {
                       var e = h[t._dbInfo.name];
                       if (e && e.dbReady) return e.dbReady;
                     });
-                  return s(n, e, e), n;
+                  return u(n, e, e), n;
                 }
-                function O(e, t, n, r) {
+                function Q(e, t, n, r) {
                   void 0 === r && (r = 1);
                   try {
                     var a = e.db.transaction(e.storeName, t);
@@ -2716,7 +1819,7 @@
                         "InvalidStateError" === a.name ||
                         "NotFoundError" === a.name)
                     )
-                      return o
+                      return i
                         .resolve()
                         .then(function() {
                           if (
@@ -2741,7 +1844,7 @@
                             }
                             return (
                               (e.db = null),
-                              w(e)
+                              E(e)
                                 .then(function(t) {
                                   return (e.db = t), j(e) ? S(e) : t;
                                 })
@@ -2755,14 +1858,14 @@
                                 })
                             );
                           })(e).then(function() {
-                            O(e, t, n, r - 1);
+                            Q(e, t, n, r - 1);
                           });
                         })
                         .catch(n);
                     n(a);
                   }
                 }
-                var I = {
+                var O = {
                   _driver: "asyncStorage",
                   _initStorage: function(e) {
                     var t = this,
@@ -2778,20 +1881,20 @@
                       }),
                       (h[n.name] = a)),
                       a.forages.push(t),
-                      t._initReady || ((t._initReady = t.ready), (t.ready = B));
-                    var i = [];
+                      t._initReady || ((t._initReady = t.ready), (t.ready = x));
+                    var o = [];
                     function c() {
-                      return o.resolve();
+                      return i.resolve();
                     }
-                    for (var s = 0; s < a.forages.length; s++) {
-                      var u = a.forages[s];
-                      u !== t && i.push(u._initReady().catch(c));
+                    for (var u = 0; u < a.forages.length; u++) {
+                      var f = a.forages[u];
+                      f !== t && o.push(f._initReady().catch(c));
                     }
-                    var d = a.forages.slice(0);
-                    return o
-                      .all(i)
+                    var s = a.forages.slice(0);
+                    return i
+                      .all(o)
                       .then(function() {
-                        return (n.db = a.db), w(n);
+                        return (n.db = a.db), E(n);
                       })
                       .then(function(e) {
                         return (
@@ -2800,11 +1903,11 @@
                       })
                       .then(function(e) {
                         (n.db = a.db = e), (t._dbInfo = n);
-                        for (var r = 0; r < d.length; r++) {
-                          var i = d[r];
-                          i !== t &&
-                            ((i._dbInfo.db = n.db),
-                            (i._dbInfo.version = n.version));
+                        for (var r = 0; r < s.length; r++) {
+                          var o = s[r];
+                          o !== t &&
+                            ((o._dbInfo.db = n.db),
+                            (o._dbInfo.version = n.version));
                         }
                       });
                   },
@@ -2832,28 +1935,27 @@
                   })(),
                   iterate: function(e, t) {
                     var n = this,
-                      r = new o(function(t, r) {
-                        n
-                          .ready()
+                      r = new i(function(t, r) {
+                        n.ready()
                           .then(function() {
-                            O(n._dbInfo, A, function(a, i) {
+                            Q(n._dbInfo, p, function(a, o) {
                               if (a) return r(a);
                               try {
-                                var o = i
+                                var i = o
                                     .objectStore(n._dbInfo.storeName)
                                     .openCursor(),
                                   c = 1;
-                                (o.onsuccess = function() {
-                                  var n = o.result;
+                                (i.onsuccess = function() {
+                                  var n = i.result;
                                   if (n) {
                                     var r = n.value;
-                                    x(r) && (r = H(r));
+                                    H(r) && (r = B(r));
                                     var a = e(r, n.key, c++);
                                     void 0 !== a ? t(a) : n.continue();
                                   } else t();
                                 }),
-                                  (o.onerror = function() {
-                                    r(o.error);
+                                  (i.onerror = function() {
+                                    r(i.error);
                                   });
                               } catch (e) {
                                 r(e);
@@ -2866,23 +1968,22 @@
                   },
                   getItem: function(e, t) {
                     var n = this;
-                    e = u(e);
-                    var r = new o(function(t, r) {
-                      n
-                        .ready()
+                    e = f(e);
+                    var r = new i(function(t, r) {
+                      n.ready()
                         .then(function() {
-                          O(n._dbInfo, A, function(a, i) {
+                          Q(n._dbInfo, p, function(a, o) {
                             if (a) return r(a);
                             try {
-                              var o = i.objectStore(n._dbInfo.storeName).get(e);
-                              (o.onsuccess = function() {
-                                var e = o.result;
+                              var i = o.objectStore(n._dbInfo.storeName).get(e);
+                              (i.onsuccess = function() {
+                                var e = i.result;
                                 void 0 === e && (e = null),
-                                  x(e) && (e = H(e)),
+                                  H(e) && (e = B(e)),
                                   t(e);
                               }),
-                                (o.onerror = function() {
-                                  r(o.error);
+                                (i.onerror = function() {
+                                  r(i.error);
                                 });
                             } catch (e) {
                               r(e);
@@ -2895,20 +1996,19 @@
                   },
                   setItem: function(e, t, n) {
                     var r = this;
-                    e = u(e);
-                    var a = new o(function(n, a) {
-                      var i;
-                      r
-                        .ready()
+                    e = f(e);
+                    var a = new i(function(n, a) {
+                      var o;
+                      r.ready()
                         .then(function() {
                           return (
-                            (i = r._dbInfo),
-                            "[object Blob]" === p.call(t)
-                              ? g(i.db).then(function(e) {
+                            (o = r._dbInfo),
+                            "[object Blob]" === A.call(t)
+                              ? g(o.db).then(function(e) {
                                   return e
                                     ? t
                                     : ((n = t),
-                                      new o(function(e, t) {
+                                      new i(function(e, t) {
                                         var r = new FileReader();
                                         (r.onerror = t),
                                           (r.onloadend = function(t) {
@@ -2927,19 +2027,19 @@
                           );
                         })
                         .then(function(t) {
-                          O(r._dbInfo, v, function(i, o) {
-                            if (i) return a(i);
+                          Q(r._dbInfo, v, function(o, i) {
+                            if (o) return a(o);
                             try {
-                              var c = o.objectStore(r._dbInfo.storeName);
+                              var c = i.objectStore(r._dbInfo.storeName);
                               null === t && (t = void 0);
-                              var s = c.put(t, e);
-                              (o.oncomplete = function() {
+                              var u = c.put(t, e);
+                              (i.oncomplete = function() {
                                 void 0 === t && (t = null), n(t);
                               }),
-                                (o.onabort = o.onerror = function() {
-                                  var e = s.error
-                                    ? s.error
-                                    : s.transaction.error;
+                                (i.onabort = i.onerror = function() {
+                                  var e = u.error
+                                    ? u.error
+                                    : u.transaction.error;
                                   a(e);
                                 });
                             } catch (e) {
@@ -2953,27 +2053,26 @@
                   },
                   removeItem: function(e, t) {
                     var n = this;
-                    e = u(e);
-                    var r = new o(function(t, r) {
-                      n
-                        .ready()
+                    e = f(e);
+                    var r = new i(function(t, r) {
+                      n.ready()
                         .then(function() {
-                          O(n._dbInfo, v, function(a, i) {
+                          Q(n._dbInfo, v, function(a, o) {
                             if (a) return r(a);
                             try {
-                              var o = i
+                              var i = o
                                 .objectStore(n._dbInfo.storeName)
                                 .delete(e);
-                              (i.oncomplete = function() {
+                              (o.oncomplete = function() {
                                 t();
                               }),
-                                (i.onerror = function() {
-                                  r(o.error);
+                                (o.onerror = function() {
+                                  r(i.error);
                                 }),
-                                (i.onabort = function() {
-                                  var e = o.error
-                                    ? o.error
-                                    : o.transaction.error;
+                                (o.onabort = function() {
+                                  var e = i.error
+                                    ? i.error
+                                    : i.transaction.error;
                                   r(e);
                                 });
                             } catch (e) {
@@ -2987,23 +2086,22 @@
                   },
                   clear: function(e) {
                     var t = this,
-                      n = new o(function(e, n) {
-                        t
-                          .ready()
+                      n = new i(function(e, n) {
+                        t.ready()
                           .then(function() {
-                            O(t._dbInfo, v, function(r, a) {
+                            Q(t._dbInfo, v, function(r, a) {
                               if (r) return n(r);
                               try {
-                                var i = a
+                                var o = a
                                   .objectStore(t._dbInfo.storeName)
                                   .clear();
                                 (a.oncomplete = function() {
                                   e();
                                 }),
                                   (a.onabort = a.onerror = function() {
-                                    var e = i.error
-                                      ? i.error
-                                      : i.transaction.error;
+                                    var e = o.error
+                                      ? o.error
+                                      : o.transaction.error;
                                     n(e);
                                   });
                               } catch (e) {
@@ -3017,21 +2115,20 @@
                   },
                   length: function(e) {
                     var t = this,
-                      n = new o(function(e, n) {
-                        t
-                          .ready()
+                      n = new i(function(e, n) {
+                        t.ready()
                           .then(function() {
-                            O(t._dbInfo, A, function(r, a) {
+                            Q(t._dbInfo, p, function(r, a) {
                               if (r) return n(r);
                               try {
-                                var i = a
+                                var o = a
                                   .objectStore(t._dbInfo.storeName)
                                   .count();
-                                (i.onsuccess = function() {
-                                  e(i.result);
+                                (o.onsuccess = function() {
+                                  e(o.result);
                                 }),
-                                  (i.onerror = function() {
-                                    n(i.error);
+                                  (o.onerror = function() {
+                                    n(o.error);
                                   });
                               } catch (e) {
                                 n(e);
@@ -3044,20 +2141,20 @@
                   },
                   key: function(e, t) {
                     var n = this,
-                      r = new o(function(t, r) {
+                      r = new i(function(t, r) {
                         e < 0
                           ? t(null)
                           : n
                               .ready()
                               .then(function() {
-                                O(n._dbInfo, A, function(a, i) {
+                                Q(n._dbInfo, p, function(a, o) {
                                   if (a) return r(a);
                                   try {
-                                    var o = i.objectStore(n._dbInfo.storeName),
+                                    var i = o.objectStore(n._dbInfo.storeName),
                                       c = !1,
-                                      s = o.openCursor();
-                                    (s.onsuccess = function() {
-                                      var n = s.result;
+                                      u = i.openCursor();
+                                    (u.onsuccess = function() {
+                                      var n = u.result;
                                       n
                                         ? 0 === e
                                           ? t(n.key)
@@ -3066,8 +2163,8 @@
                                             : ((c = !0), n.advance(e))
                                         : t(null);
                                     }),
-                                      (s.onerror = function() {
-                                        r(s.error);
+                                      (u.onerror = function() {
+                                        r(u.error);
                                       });
                                   } catch (e) {
                                     r(e);
@@ -3080,23 +2177,22 @@
                   },
                   keys: function(e) {
                     var t = this,
-                      n = new o(function(e, n) {
-                        t
-                          .ready()
+                      n = new i(function(e, n) {
+                        t.ready()
                           .then(function() {
-                            O(t._dbInfo, A, function(r, a) {
+                            Q(t._dbInfo, p, function(r, a) {
                               if (r) return n(r);
                               try {
-                                var i = a
+                                var o = a
                                     .objectStore(t._dbInfo.storeName)
                                     .openCursor(),
-                                  o = [];
-                                (i.onsuccess = function() {
-                                  var t = i.result;
-                                  t ? (o.push(t.key), t.continue()) : e(o);
+                                  i = [];
+                                (o.onsuccess = function() {
+                                  var t = o.result;
+                                  t ? (i.push(t.key), t.continue()) : e(i);
                                 }),
-                                  (i.onerror = function() {
-                                    n(i.error);
+                                  (o.onerror = function() {
+                                    n(o.error);
                                   });
                               } catch (e) {
                                 n(e);
@@ -3108,7 +2204,7 @@
                     return c(n, e), n;
                   },
                   dropInstance: function(e, t) {
-                    t = d.apply(this, arguments);
+                    t = s.apply(this, arguments);
                     var n,
                       r = this.config();
                     if (
@@ -3117,10 +2213,10 @@
                         (e.storeName = e.storeName || r.storeName)),
                       e.name)
                     ) {
-                      var i =
+                      var o =
                         e.name === r.name && this._dbInfo.db
-                          ? o.resolve(this._dbInfo.db)
-                          : w(e).then(function(t) {
+                          ? i.resolve(this._dbInfo.db)
+                          : E(e).then(function(t) {
                               var n = h[e.name],
                                 r = n.forages;
                               n.db = t;
@@ -3129,53 +2225,53 @@
                               return t;
                             });
                       n = e.storeName
-                        ? i.then(function(t) {
+                        ? o.then(function(t) {
                             if (t.objectStoreNames.contains(e.storeName)) {
                               var n = t.version + 1;
                               b(e);
                               var r = h[e.name],
-                                i = r.forages;
+                                o = r.forages;
                               t.close();
-                              for (var c = 0; c < i.length; c++) {
-                                var s = i[c];
-                                (s._dbInfo.db = null), (s._dbInfo.version = n);
+                              for (var c = 0; c < o.length; c++) {
+                                var u = o[c];
+                                (u._dbInfo.db = null), (u._dbInfo.version = n);
                               }
-                              return new o(function(t, r) {
-                                var i = a.open(e.name, n);
-                                (i.onerror = function(e) {
-                                  i.result.close(), r(e);
+                              return new i(function(t, r) {
+                                var o = a.open(e.name, n);
+                                (o.onerror = function(e) {
+                                  o.result.close(), r(e);
                                 }),
-                                  (i.onupgradeneeded = function() {
-                                    i.result.deleteObjectStore(e.storeName);
+                                  (o.onupgradeneeded = function() {
+                                    o.result.deleteObjectStore(e.storeName);
                                   }),
-                                  (i.onsuccess = function() {
-                                    var e = i.result;
+                                  (o.onsuccess = function() {
+                                    var e = o.result;
                                     e.close(), t(e);
                                   });
                               })
                                 .then(function(e) {
                                   r.db = e;
-                                  for (var t = 0; t < i.length; t++) {
-                                    var n = i[t];
+                                  for (var t = 0; t < o.length; t++) {
+                                    var n = o[t];
                                     (n._dbInfo.db = e), y(n._dbInfo);
                                   }
                                 })
                                 .catch(function(t) {
-                                  throw ((m(e, t) || o.resolve()).catch(
+                                  throw ((m(e, t) || i.resolve()).catch(
                                     function() {}
                                   ),
                                   t);
                                 });
                             }
                           })
-                        : i.then(function(t) {
+                        : o.then(function(t) {
                             b(e);
                             var n = h[e.name],
                               r = n.forages;
                             t.close();
-                            for (var i = 0; i < r.length; i++)
-                              r[i]._dbInfo.db = null;
-                            return new o(function(t, n) {
+                            for (var o = 0; o < r.length; o++)
+                              r[o]._dbInfo.db = null;
+                            return new i(function(t, n) {
                               var r = a.deleteDatabase(e.name);
                               (r.onerror = r.onblocked = function(e) {
                                 var t = r.result;
@@ -3192,67 +2288,67 @@
                                   y(r[t]._dbInfo);
                               })
                               .catch(function(t) {
-                                throw ((m(e, t) || o.resolve()).catch(
+                                throw ((m(e, t) || i.resolve()).catch(
                                   function() {}
                                 ),
                                 t);
                               });
                           });
-                    } else n = o.reject("Invalid arguments");
+                    } else n = i.reject("Invalid arguments");
                     return c(n, t), n;
                   }
                 };
-                var T =
+                var k =
                     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
-                  k = "~~local_forage_type~",
-                  Q = /^~~local_forage_type~([^~]+)~/,
+                  I = "~~local_forage_type~",
+                  T = /^~~local_forage_type~([^~]+)~/,
                   N = "__lfsc__:",
-                  R = N.length,
-                  C = "arbf",
-                  q = "blob",
-                  D = "si08",
+                  q = N.length,
+                  R = "arbf",
+                  C = "blob",
+                  P = "si08",
                   F = "ui08",
-                  P = "uic8",
+                  G = "uic8",
                   V = "si16",
-                  G = "si32",
-                  L = "ur16",
-                  z = "ui32",
-                  Z = "fl32",
-                  X = "fl64",
-                  W = R + C.length,
+                  Z = "si32",
+                  z = "ur16",
+                  D = "ui32",
+                  X = "fl32",
+                  L = "fl64",
+                  W = q + R.length,
                   J = Object.prototype.toString;
-                function U(e) {
+                function Y(e) {
                   var t,
                     n,
                     r,
                     a,
-                    i,
-                    o = 0.75 * e.length,
+                    o,
+                    i = 0.75 * e.length,
                     c = e.length,
-                    s = 0;
+                    u = 0;
                   "=" === e[e.length - 1] &&
-                    (o--, "=" === e[e.length - 2] && o--);
-                  var u = new ArrayBuffer(o),
-                    d = new Uint8Array(u);
+                    (i--, "=" === e[e.length - 2] && i--);
+                  var f = new ArrayBuffer(i),
+                    s = new Uint8Array(f);
                   for (t = 0; t < c; t += 4)
-                    (n = T.indexOf(e[t])),
-                      (r = T.indexOf(e[t + 1])),
-                      (a = T.indexOf(e[t + 2])),
-                      (i = T.indexOf(e[t + 3])),
-                      (d[s++] = (n << 2) | (r >> 4)),
-                      (d[s++] = ((15 & r) << 4) | (a >> 2)),
-                      (d[s++] = ((3 & a) << 6) | (63 & i));
-                  return u;
+                    (n = k.indexOf(e[t])),
+                      (r = k.indexOf(e[t + 1])),
+                      (a = k.indexOf(e[t + 2])),
+                      (o = k.indexOf(e[t + 3])),
+                      (s[u++] = (n << 2) | (r >> 4)),
+                      (s[u++] = ((15 & r) << 4) | (a >> 2)),
+                      (s[u++] = ((3 & a) << 6) | (63 & o));
+                  return f;
                 }
-                function M(e) {
+                function U(e) {
                   var t,
                     n = new Uint8Array(e),
                     r = "";
                   for (t = 0; t < n.length; t += 3)
-                    (r += T[n[t] >> 2]),
-                      (r += T[((3 & n[t]) << 4) | (n[t + 1] >> 4)]),
-                      (r += T[((15 & n[t + 1]) << 2) | (n[t + 2] >> 6)]),
-                      (r += T[63 & n[t + 2]]);
+                    (r += k[n[t] >> 2]),
+                      (r += k[((3 & n[t]) << 4) | (n[t + 1] >> 4)]),
+                      (r += k[((15 & n[t + 1]) << 2) | (n[t + 2] >> 6)]),
+                      (r += k[63 & n[t + 2]]);
                   return (
                     n.length % 3 == 2
                       ? (r = r.substring(0, r.length - 1) + "=")
@@ -3261,7 +2357,7 @@
                     r
                   );
                 }
-                var Y = {
+                var M = {
                   serialize: function(e, t) {
                     var n = "";
                     if (
@@ -3274,39 +2370,39 @@
                       var r,
                         a = N;
                       e instanceof ArrayBuffer
-                        ? ((r = e), (a += C))
+                        ? ((r = e), (a += R))
                         : ((r = e.buffer),
                           "[object Int8Array]" === n
-                            ? (a += D)
+                            ? (a += P)
                             : "[object Uint8Array]" === n
                               ? (a += F)
                               : "[object Uint8ClampedArray]" === n
-                                ? (a += P)
+                                ? (a += G)
                                 : "[object Int16Array]" === n
                                   ? (a += V)
                                   : "[object Uint16Array]" === n
-                                    ? (a += L)
+                                    ? (a += z)
                                     : "[object Int32Array]" === n
-                                      ? (a += G)
+                                      ? (a += Z)
                                       : "[object Uint32Array]" === n
-                                        ? (a += z)
+                                        ? (a += D)
                                         : "[object Float32Array]" === n
-                                          ? (a += Z)
+                                          ? (a += X)
                                           : "[object Float64Array]" === n
-                                            ? (a += X)
+                                            ? (a += L)
                                             : t(
                                                 new Error(
                                                   "Failed to get type for BinaryArray"
                                                 )
                                               )),
-                        t(a + M(r));
+                        t(a + U(r));
                     } else if ("[object Blob]" === n) {
-                      var i = new FileReader();
-                      (i.onload = function() {
-                        var n = k + e.type + "~" + M(this.result);
-                        t(N + q + n);
+                      var o = new FileReader();
+                      (o.onload = function() {
+                        var n = I + e.type + "~" + U(this.result);
+                        t(N + C + n);
                       }),
-                        i.readAsArrayBuffer(e);
+                        o.readAsArrayBuffer(e);
                     } else
                       try {
                         t(JSON.stringify(e));
@@ -3319,44 +2415,44 @@
                       }
                   },
                   deserialize: function(e) {
-                    if (e.substring(0, R) !== N) return JSON.parse(e);
+                    if (e.substring(0, q) !== N) return JSON.parse(e);
                     var t,
                       n = e.substring(W),
-                      r = e.substring(R, W);
-                    if (r === q && Q.test(n)) {
-                      var a = n.match(Q);
+                      r = e.substring(q, W);
+                    if (r === C && T.test(n)) {
+                      var a = n.match(T);
                       (t = a[1]), (n = n.substring(a[0].length));
                     }
-                    var o = U(n);
+                    var i = Y(n);
                     switch (r) {
+                      case R:
+                        return i;
                       case C:
-                        return o;
-                      case q:
-                        return i([o], { type: t });
-                      case D:
-                        return new Int8Array(o);
-                      case F:
-                        return new Uint8Array(o);
+                        return o([i], { type: t });
                       case P:
-                        return new Uint8ClampedArray(o);
-                      case V:
-                        return new Int16Array(o);
-                      case L:
-                        return new Uint16Array(o);
+                        return new Int8Array(i);
+                      case F:
+                        return new Uint8Array(i);
                       case G:
-                        return new Int32Array(o);
+                        return new Uint8ClampedArray(i);
+                      case V:
+                        return new Int16Array(i);
                       case z:
-                        return new Uint32Array(o);
+                        return new Uint16Array(i);
                       case Z:
-                        return new Float32Array(o);
+                        return new Int32Array(i);
+                      case D:
+                        return new Uint32Array(i);
                       case X:
-                        return new Float64Array(o);
+                        return new Float32Array(i);
+                      case L:
+                        return new Float64Array(i);
                       default:
                         throw new Error("Unkown type: " + r);
                     }
                   },
-                  stringToBuffer: U,
-                  bufferToString: M
+                  stringToBuffer: Y,
+                  bufferToString: U
                 };
                 function K(e, t, n, r) {
                   e.executeSql(
@@ -3368,33 +2464,33 @@
                     r
                   );
                 }
-                function _(e, t, n, r, a, i) {
+                function _(e, t, n, r, a, o) {
                   e.executeSql(
                     n,
                     r,
                     a,
-                    function(e, o) {
-                      o.code === o.SYNTAX_ERR
+                    function(e, i) {
+                      i.code === i.SYNTAX_ERR
                         ? e.executeSql(
                             "SELECT name FROM sqlite_master WHERE type='table' AND name = ?",
                             [name],
                             function(e, c) {
                               c.rows.length
-                                ? i(e, o)
+                                ? o(e, i)
                                 : K(
                                     e,
                                     t,
                                     function() {
-                                      e.executeSql(n, r, a, i);
+                                      e.executeSql(n, r, a, o);
                                     },
-                                    i
+                                    o
                                   );
                             },
-                            i
+                            o
                           )
-                        : i(e, o);
+                        : o(e, i);
                     },
-                    i
+                    o
                   );
                 }
                 var $ = {
@@ -3405,7 +2501,7 @@
                     if (e)
                       for (var r in e)
                         n[r] = "string" != typeof e[r] ? e[r].toString() : e[r];
-                    var a = new o(function(e, r) {
+                    var a = new i(function(e, r) {
                       try {
                         n.db = openDatabase(
                           n.name,
@@ -3429,14 +2525,13 @@
                         );
                       }, r);
                     });
-                    return (n.serializer = Y), a;
+                    return (n.serializer = M), a;
                   },
                   _support: "function" == typeof openDatabase,
                   iterate: function(e, t) {
                     var n = this,
-                      r = new o(function(t, r) {
-                        n
-                          .ready()
+                      r = new i(function(t, r) {
+                        n.ready()
                           .then(function() {
                             var a = n._dbInfo;
                             a.db.transaction(function(n) {
@@ -3447,17 +2542,17 @@
                                 [],
                                 function(n, r) {
                                   for (
-                                    var i = r.rows, o = i.length, c = 0;
-                                    c < o;
+                                    var o = r.rows, i = o.length, c = 0;
+                                    c < i;
                                     c++
                                   ) {
-                                    var s = i.item(c),
-                                      u = s.value;
+                                    var u = o.item(c),
+                                      f = u.value;
                                     if (
-                                      (u && (u = a.serializer.deserialize(u)),
-                                      void 0 !== (u = e(u, s.key, c + 1)))
+                                      (f && (f = a.serializer.deserialize(f)),
+                                      void 0 !== (f = e(f, u.key, c + 1)))
                                     )
-                                      return void t(u);
+                                      return void t(f);
                                   }
                                   t();
                                 },
@@ -3473,10 +2568,9 @@
                   },
                   getItem: function(e, t) {
                     var n = this;
-                    e = u(e);
-                    var r = new o(function(t, r) {
-                      n
-                        .ready()
+                    e = f(e);
+                    var r = new i(function(t, r) {
+                      n.ready()
                         .then(function() {
                           var a = n._dbInfo;
                           a.db.transaction(function(n) {
@@ -3505,29 +2599,28 @@
                   },
                   setItem: function(e, t, n) {
                     return function e(t, n, r, a) {
-                      var i = this;
-                      t = u(t);
-                      var s = new o(function(o, c) {
-                        i
-                          .ready()
+                      var o = this;
+                      t = f(t);
+                      var u = new i(function(i, c) {
+                        o.ready()
                           .then(function() {
                             void 0 === n && (n = null);
-                            var s = n,
-                              u = i._dbInfo;
-                            u.serializer.serialize(n, function(n, d) {
-                              d
-                                ? c(d)
-                                : u.db.transaction(
+                            var u = n,
+                              f = o._dbInfo;
+                            f.serializer.serialize(n, function(n, s) {
+                              s
+                                ? c(s)
+                                : f.db.transaction(
                                     function(e) {
                                       _(
                                         e,
-                                        u,
+                                        f,
                                         "INSERT OR REPLACE INTO " +
-                                          u.storeName +
+                                          f.storeName +
                                           " (key, value) VALUES (?, ?)",
                                         [t, n],
                                         function() {
-                                          o(s);
+                                          i(u);
                                         },
                                         function(e, t) {
                                           c(t);
@@ -3537,8 +2630,8 @@
                                     function(n) {
                                       if (n.code === n.QUOTA_ERR) {
                                         if (a > 0)
-                                          return void o(
-                                            e.apply(i, [t, s, r, a - 1])
+                                          return void i(
+                                            e.apply(o, [t, u, r, a - 1])
                                           );
                                         c(n);
                                       }
@@ -3548,15 +2641,14 @@
                           })
                           .catch(c);
                       });
-                      return c(s, r), s;
+                      return c(u, r), u;
                     }.apply(this, [e, t, n, 1]);
                   },
                   removeItem: function(e, t) {
                     var n = this;
-                    e = u(e);
-                    var r = new o(function(t, r) {
-                      n
-                        .ready()
+                    e = f(e);
+                    var r = new i(function(t, r) {
+                      n.ready()
                         .then(function() {
                           var a = n._dbInfo;
                           a.db.transaction(function(n) {
@@ -3580,9 +2672,8 @@
                   },
                   clear: function(e) {
                     var t = this,
-                      n = new o(function(e, n) {
-                        t
-                          .ready()
+                      n = new i(function(e, n) {
+                        t.ready()
                           .then(function() {
                             var r = t._dbInfo;
                             r.db.transaction(function(t) {
@@ -3606,9 +2697,8 @@
                   },
                   length: function(e) {
                     var t = this,
-                      n = new o(function(e, n) {
-                        t
-                          .ready()
+                      n = new i(function(e, n) {
+                        t.ready()
                           .then(function() {
                             var r = t._dbInfo;
                             r.db.transaction(function(t) {
@@ -3633,9 +2723,8 @@
                   },
                   key: function(e, t) {
                     var n = this,
-                      r = new o(function(t, r) {
-                        n
-                          .ready()
+                      r = new i(function(t, r) {
+                        n.ready()
                           .then(function() {
                             var a = n._dbInfo;
                             a.db.transaction(function(n) {
@@ -3664,9 +2753,8 @@
                   },
                   keys: function(e) {
                     var t = this,
-                      n = new o(function(e, n) {
-                        t
-                          .ready()
+                      n = new i(function(e, n) {
+                        t.ready()
                           .then(function() {
                             var r = t._dbInfo;
                             r.db.transaction(function(t) {
@@ -3695,7 +2783,7 @@
                     return c(n, e), n;
                   },
                   dropInstance: function(e, t) {
-                    t = d.apply(this, arguments);
+                    t = s.apply(this, arguments);
                     var n = this.config();
                     (e = ("function" != typeof e && e) || {}).name ||
                       ((e.name = e.name || n.name),
@@ -3705,7 +2793,7 @@
                     return (
                       c(
                         (r = e.name
-                          ? new o(function(t) {
+                          ? new i(function(t) {
                               var r;
                               (r =
                                 e.name === n.name
@@ -3715,7 +2803,7 @@
                                   ? t({ db: r, storeNames: [e.storeName] })
                                   : t(
                                       (function(e) {
-                                        return new o(function(t, n) {
+                                        return new i(function(t, n) {
                                           e.transaction(
                                             function(r) {
                                               r.executeSql(
@@ -3723,11 +2811,11 @@
                                                 [],
                                                 function(n, r) {
                                                   for (
-                                                    var a = [], i = 0;
-                                                    i < r.rows.length;
-                                                    i++
+                                                    var a = [], o = 0;
+                                                    o < r.rows.length;
+                                                    o++
                                                   )
-                                                    a.push(r.rows.item(i).name);
+                                                    a.push(r.rows.item(o).name);
                                                   t({ db: e, storeNames: a });
                                                 },
                                                 function(e, t) {
@@ -3743,11 +2831,11 @@
                                       })(r)
                                     );
                             }).then(function(e) {
-                              return new o(function(t, n) {
+                              return new i(function(t, n) {
                                 e.db.transaction(
                                   function(r) {
                                     function a(e) {
-                                      return new o(function(t, n) {
+                                      return new i(function(t, n) {
                                         r.executeSql(
                                           "DROP TABLE IF EXISTS " + e,
                                           [],
@@ -3761,15 +2849,14 @@
                                       });
                                     }
                                     for (
-                                      var i = [],
+                                      var o = [],
                                         c = 0,
-                                        s = e.storeNames.length;
-                                      c < s;
+                                        u = e.storeNames.length;
+                                      c < u;
                                       c++
                                     )
-                                      i.push(a(e.storeNames[c]));
-                                    o
-                                      .all(i)
+                                      o.push(a(e.storeNames[c]));
+                                    i.all(o)
                                       .then(function() {
                                         t();
                                       })
@@ -3783,7 +2870,7 @@
                                 );
                               });
                             })
-                          : o.reject("Invalid arguments")),
+                          : i.reject("Invalid arguments")),
                         t
                       ),
                       r
@@ -3820,9 +2907,9 @@
                         (t.keyPrefix = ee(e, this._defaultConfig)),
                         te()
                           ? ((this._dbInfo = t),
-                            (t.serializer = Y),
-                            o.resolve())
-                          : o.reject()
+                            (t.serializer = M),
+                            i.resolve())
+                          : i.reject()
                       );
                     },
                     _support: (function() {
@@ -3843,20 +2930,20 @@
                             var t = n._dbInfo,
                               r = t.keyPrefix,
                               a = r.length,
-                              i = localStorage.length,
-                              o = 1,
+                              o = localStorage.length,
+                              i = 1,
                               c = 0;
-                            c < i;
+                            c < o;
                             c++
                           ) {
-                            var s = localStorage.key(c);
-                            if (0 === s.indexOf(r)) {
-                              var u = localStorage.getItem(s);
+                            var u = localStorage.key(c);
+                            if (0 === u.indexOf(r)) {
+                              var f = localStorage.getItem(u);
                               if (
-                                (u && (u = t.serializer.deserialize(u)),
-                                void 0 !== (u = e(u, s.substring(a), o++)))
+                                (f && (f = t.serializer.deserialize(f)),
+                                void 0 !== (f = e(f, u.substring(a), i++)))
                               )
-                                return u;
+                                return f;
                             }
                           }
                         });
@@ -3864,7 +2951,7 @@
                     },
                     getItem: function(e, t) {
                       var n = this;
-                      e = u(e);
+                      e = f(e);
                       var r = n.ready().then(function() {
                         var t = n._dbInfo,
                           r = localStorage.getItem(t.keyPrefix + e);
@@ -3874,22 +2961,22 @@
                     },
                     setItem: function(e, t, n) {
                       var r = this;
-                      e = u(e);
+                      e = f(e);
                       var a = r.ready().then(function() {
                         void 0 === t && (t = null);
                         var n = t;
-                        return new o(function(a, i) {
-                          var o = r._dbInfo;
-                          o.serializer.serialize(t, function(t, r) {
-                            if (r) i(r);
+                        return new i(function(a, o) {
+                          var i = r._dbInfo;
+                          i.serializer.serialize(t, function(t, r) {
+                            if (r) o(r);
                             else
                               try {
-                                localStorage.setItem(o.keyPrefix + e, t), a(n);
+                                localStorage.setItem(i.keyPrefix + e, t), a(n);
                               } catch (e) {
                                 ("QuotaExceededError" !== e.name &&
                                   "NS_ERROR_DOM_QUOTA_REACHED" !== e.name) ||
-                                  i(e),
-                                  i(e);
+                                  o(e),
+                                  o(e);
                               }
                           });
                         });
@@ -3898,7 +2985,7 @@
                     },
                     removeItem: function(e, t) {
                       var n = this;
-                      e = u(e);
+                      e = f(e);
                       var r = n.ready().then(function() {
                         var t = n._dbInfo;
                         localStorage.removeItem(t.keyPrefix + e);
@@ -3951,9 +3038,9 @@
                             a < n;
                             a++
                           ) {
-                            var i = localStorage.key(a);
-                            0 === i.indexOf(e.keyPrefix) &&
-                              r.push(i.substring(e.keyPrefix.length));
+                            var o = localStorage.key(a);
+                            0 === o.indexOf(e.keyPrefix) &&
+                              r.push(o.substring(e.keyPrefix.length));
                           }
                           return r;
                         });
@@ -3961,7 +3048,7 @@
                     },
                     dropInstance: function(e, t) {
                       if (
-                        ((t = d.apply(this, arguments)),
+                        ((t = s.apply(this, arguments)),
                         !(e = ("function" != typeof e && e) || {}).name)
                       ) {
                         var n = this.config();
@@ -3973,7 +3060,7 @@
                       return (
                         c(
                           (r = e.name
-                            ? new o(function(t) {
+                            ? new i(function(t) {
                                 e.storeName
                                   ? t(ee(e, a._defaultConfig))
                                   : t(e.name + "/");
@@ -3988,7 +3075,7 @@
                                     localStorage.removeItem(n);
                                 }
                               })
-                            : o.reject("Invalid arguments")),
+                            : i.reject("Invalid arguments")),
                           t
                         ),
                         r
@@ -3996,16 +3083,16 @@
                     }
                   },
                   re = function(e, t) {
-                    for (var n, r, a = e.length, i = 0; i < a; ) {
+                    for (var n, r, a = e.length, o = 0; o < a; ) {
                       if (
-                        (n = e[i]) === (r = t) ||
+                        (n = e[o]) === (r = t) ||
                         ("number" == typeof n &&
                           "number" == typeof r &&
                           isNaN(n) &&
                           isNaN(r))
                       )
                         return !0;
-                      i++;
+                      o++;
                     }
                     return !1;
                   },
@@ -4016,16 +3103,16 @@
                         "[object Array]" === Object.prototype.toString.call(e)
                       );
                     },
-                  ie = {},
                   oe = {},
-                  ce = { INDEXEDDB: I, WEBSQL: $, LOCALSTORAGE: ne },
-                  se = [
+                  ie = {},
+                  ce = { INDEXEDDB: O, WEBSQL: $, LOCALSTORAGE: ne },
+                  ue = [
                     ce.INDEXEDDB._driver,
                     ce.WEBSQL._driver,
                     ce.LOCALSTORAGE._driver
                   ],
-                  ue = ["dropInstance"],
-                  de = [
+                  fe = ["dropInstance"],
+                  se = [
                     "clear",
                     "getItem",
                     "iterate",
@@ -4034,10 +3121,10 @@
                     "length",
                     "removeItem",
                     "setItem"
-                  ].concat(ue),
-                  fe = {
+                  ].concat(fe),
+                  de = {
                     description: "",
-                    driver: se.slice(),
+                    driver: ue.slice(),
                     name: "localforage",
                     size: 4980736,
                     storeName: "keyvaluepairs",
@@ -4063,7 +3150,7 @@
                   }
                   return arguments[0];
                 }
-                var pe = new ((function() {
+                var Ae = new ((function() {
                   function e(t) {
                     for (var n in ((function(e, t) {
                       if (!(e instanceof t))
@@ -4075,9 +3162,9 @@
                       if (ce.hasOwnProperty(n)) {
                         var r = ce[n],
                           a = r._driver;
-                        (this[n] = a), ie[a] || this.defineDriver(r);
+                        (this[n] = a), oe[a] || this.defineDriver(r);
                       }
-                    (this._defaultConfig = he({}, fe)),
+                    (this._defaultConfig = he({}, de)),
                       (this._config = he({}, this._defaultConfig, t)),
                       (this._driverSet = null),
                       (this._initDriver = null),
@@ -4114,7 +3201,7 @@
                         : this._config;
                     }),
                     (e.prototype.defineDriver = function(e, t, n) {
-                      var r = new o(function(t, n) {
+                      var r = new i(function(t, n) {
                         try {
                           var r = e._driver,
                             a = new Error(
@@ -4122,16 +3209,16 @@
                             );
                           if (!e._driver) return void n(a);
                           for (
-                            var i = de.concat("_initStorage"),
-                              s = 0,
-                              u = i.length;
-                            s < u;
-                            s++
+                            var o = se.concat("_initStorage"),
+                              u = 0,
+                              f = o.length;
+                            u < f;
+                            u++
                           ) {
-                            var d = i[s];
+                            var s = o[u];
                             if (
-                              (!re(ue, d) || e[d]) &&
-                              "function" != typeof e[d]
+                              (!re(fe, s) || e[s]) &&
+                              "function" != typeof e[s]
                             )
                               return void n(a);
                           }
@@ -4144,53 +3231,53 @@
                                           e +
                                           " is not implemented by the current driver"
                                       ),
-                                      n = o.reject(t);
+                                      n = i.reject(t);
                                     return (
                                       c(n, arguments[arguments.length - 1]), n
                                     );
                                   };
                                 },
                                 n = 0,
-                                r = ue.length;
+                                r = fe.length;
                               n < r;
                               n++
                             ) {
-                              var a = ue[n];
+                              var a = fe[n];
                               e[a] || (e[a] = t(a));
                             }
                           })();
-                          var f = function(n) {
-                            ie[r] &&
+                          var d = function(n) {
+                            oe[r] &&
                               console.info(
                                 "Redefining LocalForage driver: " + r
                               ),
-                              (ie[r] = e),
-                              (oe[r] = n),
+                              (oe[r] = e),
+                              (ie[r] = n),
                               t();
                           };
                           "_support" in e
                             ? e._support && "function" == typeof e._support
-                              ? e._support().then(f, n)
-                              : f(!!e._support)
-                            : f(!0);
+                              ? e._support().then(d, n)
+                              : d(!!e._support)
+                            : d(!0);
                         } catch (e) {
                           n(e);
                         }
                       });
-                      return s(r, t, n), r;
+                      return u(r, t, n), r;
                     }),
                     (e.prototype.driver = function() {
                       return this._driver || null;
                     }),
                     (e.prototype.getDriver = function(e, t, n) {
-                      var r = ie[e]
-                        ? o.resolve(ie[e])
-                        : o.reject(new Error("Driver not found."));
-                      return s(r, t, n), r;
+                      var r = oe[e]
+                        ? i.resolve(oe[e])
+                        : i.reject(new Error("Driver not found."));
+                      return u(r, t, n), r;
                     }),
                     (e.prototype.getSerializer = function(e) {
-                      var t = o.resolve(Y);
-                      return s(t, e), t;
+                      var t = i.resolve(M);
+                      return u(t, e), t;
                     }),
                     (e.prototype.ready = function(e) {
                       var t = this,
@@ -4200,31 +3287,31 @@
                             t._ready
                           );
                         });
-                      return s(n, e, e), n;
+                      return u(n, e, e), n;
                     }),
                     (e.prototype.setDriver = function(e, t, n) {
                       var r = this;
                       ae(e) || (e = [e]);
                       var a = this._getSupportedDrivers(e);
-                      function i() {
+                      function o() {
                         r._config.driver = r.driver();
                       }
                       function c(e) {
                         return (
                           r._extend(e),
-                          i(),
+                          o(),
                           (r._ready = r._initStorage(r._config)),
                           r._ready
                         );
                       }
-                      var u =
+                      var f =
                         null !== this._driverSet
                           ? this._driverSet.catch(function() {
-                              return o.resolve();
+                              return i.resolve();
                             })
-                          : o.resolve();
+                          : i.resolve();
                       return (
-                        (this._driverSet = u
+                        (this._driverSet = f
                           .then(function() {
                             var e = a[0];
                             return (
@@ -4232,7 +3319,7 @@
                               (r._ready = null),
                               r.getDriver(e).then(function(e) {
                                 (r._driver = e._driver),
-                                  i(),
+                                  o(),
                                   r._wrapLibraryMethodsWithReady(),
                                   (r._initDriver = (function(e) {
                                     return function() {
@@ -4250,12 +3337,12 @@
                                               .catch(n)
                                           );
                                         }
-                                        i();
-                                        var s = new Error(
+                                        o();
+                                        var u = new Error(
                                           "No available storage method found."
                                         );
                                         return (
-                                          (r._driverSet = o.reject(s)),
+                                          (r._driverSet = i.reject(u)),
                                           r._driverSet
                                         );
                                       })();
@@ -4265,18 +3352,18 @@
                             );
                           })
                           .catch(function() {
-                            i();
+                            o();
                             var e = new Error(
                               "No available storage method found."
                             );
-                            return (r._driverSet = o.reject(e)), r._driverSet;
+                            return (r._driverSet = i.reject(e)), r._driverSet;
                           })),
-                        s(this._driverSet, t, n),
+                        u(this._driverSet, t, n),
                         this._driverSet
                       );
                     }),
                     (e.prototype.supports = function(e) {
-                      return !!oe[e];
+                      return !!ie[e];
                     }),
                     (e.prototype._extend = function(e) {
                       he(this, e);
@@ -4289,8 +3376,8 @@
                       return t;
                     }),
                     (e.prototype._wrapLibraryMethodsWithReady = function() {
-                      for (var e = 0, t = de.length; e < t; e++)
-                        le(this, de[e]);
+                      for (var e = 0, t = se.length; e < t; e++)
+                        le(this, se[e]);
                     }),
                     (e.prototype.createInstance = function(t) {
                       return new e(t);
@@ -4298,7 +3385,7 @@
                     e
                   );
                 })())();
-                t.exports = pe;
+                t.exports = Ae;
               },
               { 3: 3 }
             ]
@@ -4308,7 +3395,7 @@
         )(4);
       }),
         (e.exports = r());
-    }.call(t, n(/*! ./../../webpack/buildin/global.js */ 127)));
+    }.call(t, n(/*! ./../../webpack/buildin/global.js */ 58)));
   },
   /*!*************************************************!*\
   !*** ../node_modules/webpack/buildin/global.js ***!
@@ -4329,10 +3416,11 @@
   /*!**************************!*\
   !*** ./assets/js/map.js ***!
   \**************************/
-  /*! exports provided: MapStyle, MapsConfig */
-  /*! exports used: MapStyle, MapsConfig */ function(e, t, n) {
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
     "use strict";
-    t.a = [
+    Object.defineProperty(t, "__esModule", { value: !0 });
+    (t.MapStyle = [
       {
         featureType: "administrative",
         elementType: "labels.text.fill",
@@ -4456,52 +3544,11 @@
           { gamma: "0.79" }
         ]
       }
-    ];
-    t.b = {
-      key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-      libraries: ["places"]
-    };
-  },
-  /*!****************************************************!*\
-  !*** ../node_modules/@material/base/foundation.js ***!
-  \****************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    /**
-     * @license
-     * Copyright 2016 Google Inc.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *   http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */ t.a = class {
-      static get cssClasses() {
-        return {};
-      }
-      static get strings() {
-        return {};
-      }
-      static get numbers() {
-        return {};
-      }
-      static get defaultAdapter() {
-        return {};
-      }
-      constructor(e = {}) {
-        this.adapter_ = e;
-      }
-      init() {}
-      destroy() {}
-    };
+    ]),
+      (t.MapsConfig = {
+        key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
+        libraries: ["places"]
+      });
   },
   /*!***************************************!*\
   !*** ./assets/data/img ^\.\/.*\.jpg$ ***!
@@ -4509,21 +3556,21 @@
   /*! dynamic exports provided */
   /*! all exports used */ function(e, t, n) {
     var r = {
-      "./1.jpg": 131,
-      "./10.jpg": 132,
-      "./2.jpg": 133,
-      "./3.jpg": 134,
-      "./4.jpg": 135,
-      "./5.jpg": 136,
-      "./6.jpg": 137,
-      "./7.jpg": 138,
-      "./8.jpg": 139,
-      "./9.jpg": 140
+      "./1.jpg": 61,
+      "./10.jpg": 62,
+      "./2.jpg": 63,
+      "./3.jpg": 64,
+      "./4.jpg": 65,
+      "./5.jpg": 66,
+      "./6.jpg": 67,
+      "./7.jpg": 68,
+      "./8.jpg": 69,
+      "./9.jpg": 70
     };
     function a(e) {
-      return n(i(e));
+      return n(o(e));
     }
-    function i(e) {
+    function o(e) {
       var t = r[e];
       if (!(t + 1)) throw new Error("Cannot find module '" + e + "'.");
       return t;
@@ -4531,9 +3578,9 @@
     (a.keys = function() {
       return Object.keys(r);
     }),
-      (a.resolve = i),
+      (a.resolve = o),
       (e.exports = a),
-      (a.id = 130);
+      (a.id = 60);
   },
   /*!*******************************!*\
   !*** ./assets/data/img/1.jpg ***!
@@ -4935,1214 +3982,273 @@
       height: 225
     };
   },
-  /*!***************************************************!*\
-  !*** ../node_modules/@material/base/component.js ***!
-  \***************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./foundation */ 129);
-    /**
-     * @license
-     * Copyright 2016 Google Inc.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *   http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */ class a {
-      static attachTo(e) {
-        return new a(e, new r.a());
-      }
-      constructor(e, t, ...n) {
-        (this.root_ = e),
-          this.initialize(...n),
-          (this.foundation_ = void 0 === t ? this.getDefaultFoundation() : t),
-          this.foundation_.init(),
-          this.initialSyncWithDOM();
-      }
-      initialize() {}
-      getDefaultFoundation() {
-        throw new Error(
-          "Subclasses must override getDefaultFoundation to return a properly configured foundation class"
-        );
-      }
-      initialSyncWithDOM() {}
-      destroy() {
-        this.foundation_.destroy();
-      }
-      listen(e, t) {
-        this.root_.addEventListener(e, t);
-      }
-      unlisten(e, t) {
-        this.root_.removeEventListener(e, t);
-      }
-      emit(e, t, n = !1) {
-        let r;
-        "function" == typeof CustomEvent
-          ? (r = new CustomEvent(e, { detail: t, bubbles: n }))
-          : (r = document.createEvent("CustomEvent")).initCustomEvent(
-              e,
-              n,
-              !1,
-              t
-            ),
-          this.root_.dispatchEvent(r);
-      }
-    }
-    t.a = a;
-  },
-  /*!***************************************************!*\
-  !*** ../node_modules/@material/ripple/adapter.js ***!
-  \***************************************************/
-  /*! exports provided: default */ function(e, t, n) {
-    "use strict";
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-  },
-  /*!************************************************!*\
-  !*** ../node_modules/@material/ripple/util.js ***!
-  \************************************************/
-  /*! exports provided: supportsCssVariables, applyPassive, getMatchesProperty, getNormalizedEventCoords */
-  /*! exports used: applyPassive, getMatchesProperty, getNormalizedEventCoords, supportsCssVariables */ function(
-    e,
-    t,
-    n
-  ) {
-    "use strict";
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    let r, a;
-    function i(e, t = !1) {
-      let n = r;
-      if ("boolean" == typeof r && !t) return n;
-      if (!(e.CSS && "function" == typeof e.CSS.supports)) return;
-      const a = e.CSS.supports("--css-vars", "yes"),
-        i =
-          e.CSS.supports("(--css-vars: yes)") &&
-          e.CSS.supports("color", "#00000000");
-      return (
-        (n =
-          !(!a && !i) &&
-          !(function(e) {
-            const t = e.document,
-              n = t.createElement("div");
-            (n.className = "mdc-ripple-surface--test-edge-var-bug"),
-              t.body.appendChild(n);
-            const r = e.getComputedStyle(n),
-              a = null !== r && "solid" === r.borderTopStyle;
-            return n.remove(), a;
-          })(e)),
-        t || (r = n),
-        n
-      );
-    }
-    function o(e = window, t = !1) {
-      if (void 0 === a || t) {
-        let t = !1;
-        try {
-          e.document.addEventListener("test", null, {
-            get passive() {
-              t = !0;
-            }
-          });
-        } catch (e) {}
-        a = t;
-      }
-      return !!a && { passive: !0 };
-    }
-    function c(e) {
-      return ["webkitMatchesSelector", "msMatchesSelector", "matches"]
-        .filter(t => t in e)
-        .pop();
-    }
-    function s(e, t, n) {
-      const { x: r, y: a } = t,
-        i = r + n.left,
-        o = a + n.top;
-      let c, s;
-      return (
-        "touchstart" === e.type
-          ? ((c = e.changedTouches[0].pageX - i),
-            (s = e.changedTouches[0].pageY - o))
-          : ((c = e.pageX - i), (s = e.pageY - o)),
-        { x: c, y: s }
-      );
-    }
-    n.d(t, "d", function() {
-      return i;
-    }),
-      n.d(t, "a", function() {
-        return o;
-      }),
-      n.d(t, "b", function() {
-        return c;
-      }),
-      n.d(t, "c", function() {
-        return s;
-      });
-  },
-  /*!*****************!*\
-  !*** ./main.js ***!
-  \*****************/
-  /*! no exports provided */
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  /*!********************************!*\
+  !*** ./assets/css/dialog.scss ***!
+  \********************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ /*!********************************!*\
+  !*** ./assets/css/dialog.scss ***!
+  \********************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t) {},
+  /*!***************************!*\
+  !*** ./assets/js/util.js ***!
+  \***************************/
+  /*! dynamic exports provided */
   /*! all exports used */ function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", { value: !0 });
-    var r = n(/*! lozad */ 36),
-      a = n.n(r),
-      i = n(/*! normalize.css/normalize.css */ 37),
-      o = (n.n(i), n(/*! css-star-rating/css/star-rating.css */ 38)),
-      c = (n.n(o), n(/*! ./assets/css/styles.css */ 39)),
-      s = (n.n(c), n(/*! ./assets/css/app.scss */ 145)),
-      u = (n.n(s), n(/*! ./assets/data/manifest.json */ 146)),
-      d = (n.n(u), n(/*! load-google-maps-api */ 40)),
-      f = n.n(d),
-      l = n(/*! common-tags */ 41),
-      h = n(/*! ./assets/js/db */ 125),
-      p = n(/*! ./assets/js/map */ 128),
-      A = n(/*! @material/icon-toggle */ 147);
-    var v;
-    let g;
-    const b = a()();
-    b.observe(),
-      document.addEventListener("DOMContentLoaded", e => {
-        S(400, "map"), y(), E();
-      }),
-      document.getElementById("map").addEventListener(
-        "mouseover",
-        () => {
-          g || j(p.b);
+    (t.getParameterByName = function(e, t) {
+      t || (t = window.location.href), (e = e.replace(/[\[\]]/g, "\\$&"));
+      var n = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)").exec(t);
+      return n
+        ? n[2]
+          ? decodeURIComponent(n[2].replace(/\+/g, " "))
+          : ""
+        : null;
+    }),
+      (t.ReviewEndpoint = "https://server.amanuelg.me/reviews/"),
+      (t.FavouriteEndpoint = "https://server.amanuelg.me/");
+  },
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  /*!****************************!*\
+  !*** ./restaurant_info.js ***!
+  \****************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ /*!****************************!*\
+  !*** ./restaurant_info.js ***!
+  \****************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
+    "use strict";
+    var r,
+      a,
+      o = ((r = [
+        "\n  https://maps.googleapis.com/maps/api/staticmap?center=",
+        ",",
+        "&\n  zoom=12&\n  scale=2&\n  size=",
+        "x",
+        "&\n  maptype=roadmap&format=png&\n  visual_refresh=true&\n  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&\n  markers=size:mid%7Ccolor:red%7C\n  |",
+        ",",
+        "|\n  "
+      ]),
+      (a = [
+        "\n  https://maps.googleapis.com/maps/api/staticmap?center=",
+        ",",
+        "&\n  zoom=12&\n  scale=2&\n  size=",
+        "x",
+        "&\n  maptype=roadmap&format=png&\n  visual_refresh=true&\n  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&\n  markers=size:mid%7Ccolor:red%7C\n  |",
+        ",",
+        "|\n  "
+      ]),
+      Object.freeze(
+        Object.defineProperties(r, { raw: { value: Object.freeze(a) } })
+      )),
+      i = l(n(/*! lozad */ 10));
+    l(n(/*! normalize.css/normalize.css */ 11)),
+      l(n(/*! css-star-rating/css/star-rating.css */ 12));
+    n(/*! ./assets/css/styles.css */ 13),
+      n(/*! ./assets/css/app.scss */ 14),
+      n(/*! ./assets/css/dialog.scss */ 77);
+    var c = l(n(/*! load-google-maps-api */ 15)),
+      u = n(/*! common-tags */ 16),
+      f = n(/*! ./assets/js/db */ 56),
+      s = n(/*! ./assets/js/map */ 59),
+      d = n(/*! ./assets/js/util */ 78);
+    function l(e) {
+      return e && e.__esModule ? e : { default: e };
+    }
+    var h = void 0,
+      A = void 0,
+      p = (0, i.default)();
+    p.observe(),
+      window.addEventListener(
+        "resize",
+        function() {
+          A || g(s.MapsConfig);
         },
         { once: !0 }
-      );
-    let y = () => {
-        Object(h.e)()
-          .then(e => {
-            (window.neighborhoods = Object(h.b)(e)), m();
+      ),
+      document.addEventListener("DOMContentLoaded", function() {
+        (0, f.loadRestaurants)()
+          .then(function(e) {
+            var t = (0, d.getParameterByName)("id");
+            t
+              ? ((window.restaurant = (0, f.getRestaurantById)(t, e)),
+                y(),
+                S(),
+                v(window.restaurant, "map", 300),
+                (0, f.loadReviews)(t).then(function(e) {
+                  console.log(e), w(e);
+                }))
+              : console.error("No restaurant id in URL");
           })
-          .catch(e => {
+          .catch(function(e) {
             console.error(e);
           });
+      });
+    var v = function(e, t, n) {
+      window.matchMedia("(max-width:600px)").matches
+        ? b(e, t, n)
+        : g(s.MapsConfig, e);
+    };
+    document.getElementById("map").addEventListener(
+      "mouseover",
+      function() {
+        A || g(s.MapsConfig);
       },
-      m = (e = window.neighborhoods) => {
-        const t = document.getElementById("neighborhoods-select");
-        e.forEach(e => {
-          const n = document.createElement("option");
-          (n.innerHTML = e), (n.value = e), t.append(n);
-        });
-      },
-      E = () => {
-        Object(h.e)()
-          .then(e => {
-            (window.cuisines = Object(h.a)(e)), w();
-          })
-          .catch(e => {
-            console.error(e);
-          });
-      },
-      w = (e = window.cuisines) => {
-        const t = document.getElementById("cuisines-select");
-        e.forEach(e => {
-          const n = document.createElement("option");
-          (n.innerHTML = e), (n.value = e), t.append(n);
-        });
-      };
-    const S = (e, t) => {
-        window.matchMedia("(max-width:600px)").matches
-          ? (((e, t) => {
-              const n =
-                  window.innerWidth ||
-                  document.documentElement.clientWidth ||
-                  document.body.clientWidth,
-                r = l["a"]`
-  https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&
-  zoom=12&
-  scale=2&
-  size=${n}x${e}&
-  maptype=roadmap&format=png&
-  visual_refresh=true&
-  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
-  markers=size:mid%7Ccolor:red%7C
-  |40.683555,-73.966393|
-  |40.713829,-73.989667|
-  |40.747143,-73.985414|
-  |40.722216,-73.987501|
-  |40.705089,-73.933585|
-  |40.674925,-74.016162|
-  |40.727397,-73.983645|
-  |40.726584,-74.002082|
-  |40.743797,-73.950652|
-  |40.743394,-73.954235|
-
-  `,
-                a = `\n  <img width="${n}px"\n  src=${encodeURI(
-                  r
-                )} alt="Google Map of 40.722216, -73.987501">\n  `;
-              document.getElementById(`${t}`).innerHTML = a;
-            })(e, t),
-            Object(h.e)()
-              .then(e => {
-                console.log(e), I(e), T();
-              })
-              .catch(e => {
-                console.error(e);
-              }))
-          : j(p.b);
-      },
-      j = e => {
-        f()(e)
-          .then(e => {
-            (v = new e.Map(document.getElementById("map"), {
+      { once: !0 }
+    );
+    var g = function(e) {
+        var t =
+          arguments.length > 1 && void 0 !== arguments[1]
+            ? arguments[1]
+            : window.restaurant;
+        (0, c.default)(e)
+          .then(function(e) {
+            (h = new e.Map(document.getElementById("map"), {
               zoom: 12,
-              center: { lat: 40.722216, lng: -73.9875 },
+              center: t.latlng,
               scrollwheel: !1,
-              styles: p.a
+              styles: s.MapStyle
             })),
-              (g = !0),
-              O();
+              (A = !0),
+              (0, f.mapMarkerForRestaurant)(t, h);
           })
-          .catch(e => {
+          .catch(function(e) {
             console.error(e);
           });
       },
-      H = () => {
-        g ? O() : j(p.b);
-      },
-      x = document.getElementById("neighborhoods-select"),
-      B = document.getElementById("cuisines-select");
-    x.addEventListener("change", () => {
-      H();
-    }),
-      B.addEventListener("change", () => {
-        H();
-      });
-    let O = () => {
-        const e = document.getElementById("cuisines-select"),
-          t = document.getElementById("neighborhoods-select"),
-          n = e.selectedIndex,
-          r = t.selectedIndex;
-        let a = e[n].value,
-          i = t[r].value;
-        console.log("Select" + i),
-          Object(h.e)()
-            .then(e => {
-              let t = Object(h.c)(a, i, e);
-              I(t), T();
-            })
-            .catch(e => {
-              console.error(e);
-            });
-      },
-      I = e => {
-        (window.restaurants = []),
-          (document.getElementById("restaurants-list").innerHTML = ""),
-          void 0 !== window.markers &&
-            window.markers.forEach(e => e.setMap(null)),
-          (window.markers = []),
-          (window.restaurants = e);
-      },
-      T = (e = window.restaurants) => {
-        const t = document.getElementById("restaurants-list");
-        e.forEach(e => {
-          t.append(k(e)), b.observe();
-        }),
-          g && Q();
-      },
-      k = e => {
-        const t = document.createElement("li"),
-          r = document.createElement("img");
-        r.className = "restaurant-img lozad";
-        const a = n(/*! ./assets/data/img */ 130)(`./${e.id}.jpg`);
-        (r.src = a.placeholder),
-          r.setAttribute("data-src", a.src),
-          r.setAttribute("data-srcset", a.srcSet),
-          (r.alt = `Image of ${e.name} Restaurant`),
-          t.append(r);
-        const i = document.createElement("h2");
-        (i.innerHTML = e.name), t.append(i);
-        const o = document.createElement("p");
-        (o.innerHTML = e.neighborhood), t.append(o);
-        const c = document.createElement("p");
-        (c.innerHTML = e.address), t.append(c);
-        const s = document.createElement("div");
-        s.classList.add("container");
-        const u = document.createElement("a");
-        u.classList.add("flex-item"),
-          (u.innerHTML = "View Details"),
-          (u.href = Object(h.h)(e));
-        const d = document.createElement("div");
-        return (
-          d.classList.add("flex-item"),
-          (d.innerHTML =
-            '<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed="false"\n  aria-label="Add to favorites" tabindex="0"\n  data-toggle-on=\'{"label": "Remove from favorites", "content": "favorite", "cssClass": "active" }\'\n  data-toggle-off=\'{"label": "Add to favorites", "content": "favorite_border"}\'>\n favorite_border\n</i>'),
-          A.a.attachTo(d.querySelector(".mdc-icon-toggle")),
-          s.appendChild(u),
-          s.appendChild(d),
-          t.append(s),
-          t
-        );
-      },
-      Q = (e = window.restaurants) => {
-        e.forEach(e => {
-          const t = Object(h.g)(e, v);
-          google.maps.event.addListener(t, "click", () => {
-            window.location.href = t.url;
-          }),
-            window.markers.push(t);
-        });
-      };
-  },
-  /*!*****************************!*\
-  !*** ./assets/css/app.scss ***!
-  \*****************************/
-  /*! dynamic exports provided */ function(e, t) {},
-  /*!***********************************!*\
-  !*** ./assets/data/manifest.json ***!
-  \***********************************/
-  /*! dynamic exports provided */ function(e, t, n) {
-    e.exports = n.p + "manifest.json";
-  },
-  /*!******************************************************!*\
-  !*** ../node_modules/@material/icon-toggle/index.js ***!
-  \******************************************************/
-  /*! exports provided: MDCIconToggle, MDCIconToggleFoundation */
-  /*! exports used: MDCIconToggle */ function(e, t, n) {
-    "use strict";
-    n.d(t, "a", function() {
-      return o;
-    });
-    var r = n(/*! @material/base/component */ 141),
-      a = n(/*! ./foundation */ 148),
-      i = n(/*! @material/ripple/index */ 151);
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    class o extends r.a {
-      static attachTo(e) {
-        return new o(e);
-      }
-      constructor(...e) {
-        super(...e), (this.ripple_ = this.initRipple_());
-      }
-      get iconEl_() {
-        const { iconInnerSelector: e } = this.root_.dataset;
-        return e ? this.root_.querySelector(e) : this.root_;
-      }
-      initRipple_() {
-        const e = Object.assign(i.a.createAdapter(this), {
-            isUnbounded: () => !0,
-            isSurfaceActive: () => this.foundation_.isKeyboardActivated()
-          }),
-          t = new i.b(e);
-        return new i.a(this.root_, t);
-      }
-      destroy() {
-        this.ripple_.destroy(), super.destroy();
-      }
-      getDefaultFoundation() {
-        return new a.a({
-          addClass: e => this.iconEl_.classList.add(e),
-          removeClass: e => this.iconEl_.classList.remove(e),
-          registerInteractionHandler: (e, t) =>
-            this.root_.addEventListener(e, t),
-          deregisterInteractionHandler: (e, t) =>
-            this.root_.removeEventListener(e, t),
-          setText: e => (this.iconEl_.textContent = e),
-          getTabIndex: () => this.root_.tabIndex,
-          setTabIndex: e => (this.root_.tabIndex = e),
-          getAttr: (e, t) => this.root_.getAttribute(e, t),
-          setAttr: (e, t) => this.root_.setAttribute(e, t),
-          rmAttr: e => this.root_.removeAttribute(e),
-          notifyChange: e => this.emit(a.a.strings.CHANGE_EVENT, e)
-        });
-      }
-      initialSyncWithDOM() {
-        (this.on =
-          "true" === this.root_.getAttribute(a.a.strings.ARIA_PRESSED)),
-          (this.disabled =
-            "true" === this.root_.getAttribute(a.a.strings.ARIA_DISABLED));
-      }
-      get ripple() {
-        return this.ripple_;
-      }
-      get on() {
-        return this.foundation_.isOn();
-      }
-      set on(e) {
-        this.foundation_.toggle(e);
-      }
-      get disabled() {
-        return this.foundation_.isDisabled();
-      }
-      set disabled(e) {
-        this.foundation_.setDisabled(e);
-      }
-      refreshToggleData() {
-        this.foundation_.refreshToggleData();
-      }
-    }
-  },
-  /*!***********************************************************!*\
-  !*** ../node_modules/@material/icon-toggle/foundation.js ***!
-  \***********************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! @material/base/foundation */ 129),
-      a = (n(/*! ./adapter */ 149), n(/*! ./constants */ 150));
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    class i extends r.a {
-      static get cssClasses() {
-        return a.a;
-      }
-      static get strings() {
-        return a.b;
-      }
-      static get defaultAdapter() {
-        return {
-          addClass: () => {},
-          removeClass: () => {},
-          registerInteractionHandler: () => {},
-          deregisterInteractionHandler: () => {},
-          setText: () => {},
-          getTabIndex: () => 0,
-          setTabIndex: () => {},
-          getAttr: () => "",
-          setAttr: () => {},
-          rmAttr: () => {},
-          notifyChange: () => {}
-        };
-      }
-      constructor(e) {
-        super(Object.assign(i.defaultAdapter, e)),
-          (this.on_ = !1),
-          (this.disabled_ = !1),
-          (this.savedTabIndex_ = -1),
-          (this.toggleOnData_ = null),
-          (this.toggleOffData_ = null),
-          (this.clickHandler_ = () => this.toggleFromEvt_()),
-          (this.isHandlingKeydown_ = !1),
-          (this.keydownHandler_ = e => {
-            if (o(e)) return (this.isHandlingKeydown_ = !0), e.preventDefault();
-          }),
-          (this.keyupHandler_ = e => {
-            o(e) && ((this.isHandlingKeydown_ = !1), this.toggleFromEvt_());
-          });
-      }
-      init() {
-        this.refreshToggleData(),
-          (this.savedTabIndex_ = this.adapter_.getTabIndex()),
-          this.adapter_.registerInteractionHandler("click", this.clickHandler_),
-          this.adapter_.registerInteractionHandler(
-            "keydown",
-            this.keydownHandler_
+      b = function(e, t, n) {
+        var r =
+            window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth,
+          a = (0, u.oneLineTrim)(
+            o,
+            e.latlng.lat,
+            e.latlng.lng,
+            r,
+            n,
+            e.latlng.lat,
+            e.latlng.lng
           ),
-          this.adapter_.registerInteractionHandler("keyup", this.keyupHandler_);
-      }
-      refreshToggleData() {
-        const { DATA_TOGGLE_ON: e, DATA_TOGGLE_OFF: t } = i.strings;
-        (this.toggleOnData_ = this.parseJsonDataAttr_(e)),
-          (this.toggleOffData_ = this.parseJsonDataAttr_(t));
-      }
-      destroy() {
-        this.adapter_.deregisterInteractionHandler("click", this.clickHandler_),
-          this.adapter_.deregisterInteractionHandler(
-            "keydown",
-            this.keydownHandler_
-          ),
-          this.adapter_.deregisterInteractionHandler(
-            "keyup",
-            this.keyupHandler_
-          );
-      }
-      toggleFromEvt_() {
-        this.toggle();
-        const { on_: e } = this;
-        this.adapter_.notifyChange({ isOn: e });
-      }
-      isOn() {
-        return this.on_;
-      }
-      toggle(e = !this.on_) {
-        this.on_ = e;
-        const { ARIA_LABEL: t, ARIA_PRESSED: n } = i.strings;
-        this.on_
-          ? this.adapter_.setAttr(n, "true")
-          : this.adapter_.setAttr(n, "false");
-        const { cssClass: r } = this.on_
-          ? this.toggleOffData_
-          : this.toggleOnData_;
-        r && this.adapter_.removeClass(r);
-        const { content: a, label: o, cssClass: c } = this.on_
-          ? this.toggleOnData_
-          : this.toggleOffData_;
-        c && this.adapter_.addClass(c),
-          a && this.adapter_.setText(a),
-          o && this.adapter_.setAttr(t, o);
-      }
-      parseJsonDataAttr_(e) {
-        const t = this.adapter_.getAttr(e);
-        return t ? JSON.parse(t) : {};
-      }
-      isDisabled() {
-        return this.disabled_;
-      }
-      setDisabled(e) {
-        this.disabled_ = e;
-        const { DISABLED: t } = i.cssClasses,
-          { ARIA_DISABLED: n } = i.strings;
-        this.disabled_
-          ? ((this.savedTabIndex_ = this.adapter_.getTabIndex()),
-            this.adapter_.setTabIndex(-1),
-            this.adapter_.setAttr(n, "true"),
-            this.adapter_.addClass(t))
-          : (this.adapter_.setTabIndex(this.savedTabIndex_),
-            this.adapter_.rmAttr(n),
-            this.adapter_.removeClass(t));
-      }
-      isKeyboardActivated() {
-        return this.isHandlingKeydown_;
-      }
-    }
-    function o(e) {
-      return "Space" === e.key || 32 === e.keyCode;
-    }
-    class c {}
-    c.prototype.label, c.prototype.content, c.prototype.cssClass, (t.a = i);
-  },
-  /*!********************************************************!*\
-  !*** ../node_modules/@material/icon-toggle/adapter.js ***!
-  \********************************************************/
-  /*! exports provided: MDCIconToggleAdapter, IconToggleEvent */ function(
-    e,
-    t,
-    n
-  ) {
-    "use strict";
-    /**
-     * @license
-     * Copyright 2017 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-  },
-  /*!**********************************************************!*\
-  !*** ../node_modules/@material/icon-toggle/constants.js ***!
-  \**********************************************************/
-  /*! exports provided: cssClasses, strings */
-  /*! exports used: cssClasses, strings */ function(e, t, n) {
-    "use strict";
-    n.d(t, "a", function() {
-      return r;
-    }),
-      n.d(t, "b", function() {
-        return a;
-      });
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    const r = {
-        ROOT: "mdc-icon-toggle",
-        DISABLED: "mdc-icon-toggle--disabled"
+          i =
+            '\n  <img width="' +
+            r +
+            'px"\n  src=' +
+            encodeURI(a) +
+            ' alt="Map of' +
+            e.name +
+            '">\n  ';
+        document.getElementById("" + t).innerHTML = i;
       },
-      a = {
-        DATA_TOGGLE_ON: "data-toggle-on",
-        DATA_TOGGLE_OFF: "data-toggle-off",
-        ARIA_PRESSED: "aria-pressed",
-        ARIA_DISABLED: "aria-disabled",
-        ARIA_LABEL: "aria-label",
-        CHANGE_EVENT: "MDCIconToggle:change"
-      };
-  },
-  /*!*************************************************!*\
-  !*** ../node_modules/@material/ripple/index.js ***!
-  \*************************************************/
-  /*! exports provided: MDCRipple, MDCRippleFoundation, RippleCapableSurface, util */
-  /*! exports used: MDCRipple, MDCRippleFoundation */ function(e, t, n) {
-    "use strict";
-    n.d(t, "a", function() {
-      return o;
-    });
-    var r = n(/*! @material/base/component */ 141),
-      a = (n(/*! ./adapter */ 142), n(/*! ./foundation */ 152)),
-      i = n(/*! ./util */ 143);
-    n.d(t, "b", function() {
-      return a.a;
-    });
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    class o extends r.a {
-      constructor(...e) {
-        super(...e), (this.disabled = !1), this.unbounded_;
-      }
-      static attachTo(e, { isUnbounded: t } = {}) {
-        const n = new o(e);
-        return void 0 !== t && (n.unbounded = t), n;
-      }
-      static createAdapter(e) {
-        const t = i.b(HTMLElement.prototype);
-        return {
-          browserSupportsCssVars: () => i.d(window),
-          isUnbounded: () => e.unbounded,
-          isSurfaceActive: () => e.root_[t](":active"),
-          isSurfaceDisabled: () => e.disabled,
-          addClass: t => e.root_.classList.add(t),
-          removeClass: t => e.root_.classList.remove(t),
-          containsEventTarget: t => e.root_.contains(t),
-          registerInteractionHandler: (t, n) =>
-            e.root_.addEventListener(t, n, i.a()),
-          deregisterInteractionHandler: (t, n) =>
-            e.root_.removeEventListener(t, n, i.a()),
-          registerDocumentInteractionHandler: (e, t) =>
-            document.documentElement.addEventListener(e, t, i.a()),
-          deregisterDocumentInteractionHandler: (e, t) =>
-            document.documentElement.removeEventListener(e, t, i.a()),
-          registerResizeHandler: e => window.addEventListener("resize", e),
-          deregisterResizeHandler: e => window.removeEventListener("resize", e),
-          updateCssVariable: (t, n) => e.root_.style.setProperty(t, n),
-          computeBoundingRect: () => e.root_.getBoundingClientRect(),
-          getWindowPageOffset: () => ({
-            x: window.pageXOffset,
-            y: window.pageYOffset
-          })
-        };
-      }
-      get unbounded() {
-        return this.unbounded_;
-      }
-      set unbounded(e) {
-        (this.unbounded_ = Boolean(e)), this.setUnbounded_();
-      }
-      setUnbounded_() {
-        this.foundation_.setUnbounded(this.unbounded_);
-      }
-      activate() {
-        this.foundation_.activate();
-      }
-      deactivate() {
-        this.foundation_.deactivate();
-      }
-      layout() {
-        this.foundation_.layout();
-      }
-      getDefaultFoundation() {
-        return new a.a(o.createAdapter(this));
-      }
-      initialSyncWithDOM() {
-        this.unbounded = "mdcRippleIsUnbounded" in this.root_.dataset;
-      }
-    }
-    class c {}
-    c.prototype.root_, c.prototype.unbounded, c.prototype.disabled;
-  },
-  /*!******************************************************!*\
-  !*** ../node_modules/@material/ripple/foundation.js ***!
-  \******************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! @material/base/foundation */ 129),
-      a = (n(/*! ./adapter */ 142), n(/*! ./constants */ 153)),
-      i = n(/*! ./util */ 143);
-    const o = ["touchstart", "pointerdown", "mousedown", "keydown"],
-      c = ["touchend", "pointerup", "mouseup"];
-    let s = [];
-    class u extends r.a {
-      static get cssClasses() {
-        return a.a;
-      }
-      static get strings() {
-        return a.c;
-      }
-      static get numbers() {
-        return a.b;
-      }
-      static get defaultAdapter() {
-        return {
-          browserSupportsCssVars: () => {},
-          isUnbounded: () => {},
-          isSurfaceActive: () => {},
-          isSurfaceDisabled: () => {},
-          addClass: () => {},
-          removeClass: () => {},
-          containsEventTarget: () => {},
-          registerInteractionHandler: () => {},
-          deregisterInteractionHandler: () => {},
-          registerDocumentInteractionHandler: () => {},
-          deregisterDocumentInteractionHandler: () => {},
-          registerResizeHandler: () => {},
-          deregisterResizeHandler: () => {},
-          updateCssVariable: () => {},
-          computeBoundingRect: () => {},
-          getWindowPageOffset: () => {}
-        };
-      }
-      constructor(e) {
-        super(Object.assign(u.defaultAdapter, e)),
-          (this.layoutFrame_ = 0),
-          (this.frame_ = { width: 0, height: 0 }),
-          (this.activationState_ = this.defaultActivationState_()),
-          (this.initialSize_ = 0),
-          (this.maxRadius_ = 0),
-          (this.activateHandler_ = e => this.activate_(e)),
-          (this.deactivateHandler_ = e => this.deactivate_(e)),
-          (this.focusHandler_ = () =>
-            requestAnimationFrame(() =>
-              this.adapter_.addClass(u.cssClasses.BG_FOCUSED)
-            )),
-          (this.blurHandler_ = () =>
-            requestAnimationFrame(() =>
-              this.adapter_.removeClass(u.cssClasses.BG_FOCUSED)
-            )),
-          (this.resizeHandler_ = () => this.layout()),
-          (this.unboundedCoords_ = { left: 0, top: 0 }),
-          (this.fgScale_ = 0),
-          (this.activationTimer_ = 0),
-          (this.fgDeactivationRemovalTimer_ = 0),
-          (this.activationAnimationHasEnded_ = !1),
-          (this.activationTimerCallback_ = () => {
-            (this.activationAnimationHasEnded_ = !0),
-              this.runDeactivationUXLogicIfReady_();
-          }),
-          (this.previousActivationEvent_ = null);
-      }
-      isSupported_() {
-        return this.adapter_.browserSupportsCssVars();
-      }
-      defaultActivationState_() {
-        return {
-          isActivated: !1,
-          hasDeactivationUXRun: !1,
-          wasActivatedByPointer: !1,
-          wasElementMadeActive: !1,
-          activationEvent: null,
-          isProgrammatic: !1
-        };
-      }
-      init() {
-        if (!this.isSupported_()) return;
-        this.registerRootHandlers_();
-        const { ROOT: e, UNBOUNDED: t } = u.cssClasses;
-        requestAnimationFrame(() => {
-          this.adapter_.addClass(e),
-            this.adapter_.isUnbounded() &&
-              (this.adapter_.addClass(t), this.layoutInternal_());
-        });
-      }
-      destroy() {
-        if (!this.isSupported_()) return;
-        if (this.activationTimer_) {
-          clearTimeout(this.activationTimer_), (this.activationTimer_ = 0);
-          const { FG_ACTIVATION: e } = u.cssClasses;
-          this.adapter_.removeClass(e);
+      y = function() {
+        var e =
+          arguments.length > 0 && void 0 !== arguments[0]
+            ? arguments[0]
+            : window.restaurant;
+        (document.getElementById("restaurant-name").innerHTML = e.name),
+          (document.getElementById("restaurant-address").innerHTML = e.address);
+        var t = document.getElementById("restaurant-img");
+        t.className = "restaurant-img";
+        var r = n(/*! ./assets/data/img */ 60)("./" + e.id + ".jpg");
+        (t.src = r.src),
+          (t.srcset = r.srcSet),
+          (t.alt = "Image of " + e.name + " Restaurant"),
+          p.observe(),
+          (document.getElementById("restaurant-cuisine").innerHTML =
+            e.cuisine_type),
+          e.operating_hours && m();
+      },
+      m = function() {
+        var e =
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
+              : window.restaurant.operating_hours,
+          t = document.getElementById("restaurant-hours");
+        for (var n in e) {
+          var r = document.createElement("tr"),
+            a = document.createElement("td");
+          (a.innerHTML = n), r.appendChild(a);
+          var o = document.createElement("td");
+          (o.innerHTML = e[n]), r.appendChild(o), t.appendChild(r);
         }
-        this.deregisterRootHandlers_(), this.deregisterDeactivationHandlers_();
-        const { ROOT: e, UNBOUNDED: t } = u.cssClasses;
-        requestAnimationFrame(() => {
-          this.adapter_.removeClass(e),
-            this.adapter_.removeClass(t),
-            this.removeCssVars_();
-        });
-      }
-      registerRootHandlers_() {
-        o.forEach(e => {
-          this.adapter_.registerInteractionHandler(e, this.activateHandler_);
-        }),
-          this.adapter_.registerInteractionHandler("focus", this.focusHandler_),
-          this.adapter_.registerInteractionHandler("blur", this.blurHandler_),
-          this.adapter_.isUnbounded() &&
-            this.adapter_.registerResizeHandler(this.resizeHandler_);
-      }
-      registerDeactivationHandlers_(e) {
-        "keydown" === e.type
-          ? this.adapter_.registerInteractionHandler(
-              "keyup",
-              this.deactivateHandler_
-            )
-          : c.forEach(e => {
-              this.adapter_.registerDocumentInteractionHandler(
-                e,
-                this.deactivateHandler_
-              );
-            });
-      }
-      deregisterRootHandlers_() {
-        o.forEach(e => {
-          this.adapter_.deregisterInteractionHandler(e, this.activateHandler_);
-        }),
-          this.adapter_.deregisterInteractionHandler(
-            "focus",
-            this.focusHandler_
-          ),
-          this.adapter_.deregisterInteractionHandler("blur", this.blurHandler_),
-          this.adapter_.isUnbounded() &&
-            this.adapter_.deregisterResizeHandler(this.resizeHandler_);
-      }
-      deregisterDeactivationHandlers_() {
-        this.adapter_.deregisterInteractionHandler(
-          "keyup",
-          this.deactivateHandler_
-        ),
-          c.forEach(e => {
-            this.adapter_.deregisterDocumentInteractionHandler(
-              e,
-              this.deactivateHandler_
-            );
-          });
-      }
-      removeCssVars_() {
-        const { strings: e } = u;
-        Object.keys(e).forEach(t => {
-          0 === t.indexOf("VAR_") &&
-            this.adapter_.updateCssVariable(e[t], null);
-        });
-      }
-      activate_(e) {
-        if (this.adapter_.isSurfaceDisabled()) return;
-        const t = this.activationState_;
-        if (t.isActivated) return;
-        const n = this.previousActivationEvent_;
-        (n && e && n.type !== e.type) ||
-          ((t.isActivated = !0),
-          (t.isProgrammatic = null === e),
-          (t.activationEvent = e),
-          (t.wasActivatedByPointer =
-            !t.isProgrammatic &&
-            ("mousedown" === e.type ||
-              "touchstart" === e.type ||
-              "pointerdown" === e.type)),
-          e && s.length > 0 && s.some(e => this.adapter_.containsEventTarget(e))
-            ? this.resetActivationState_()
-            : (e && (s.push(e.target), this.registerDeactivationHandlers_(e)),
-              (t.wasElementMadeActive = this.checkElementMadeActive_(e)),
-              t.wasElementMadeActive && this.animateActivation_(),
-              requestAnimationFrame(() => {
-                (s = []),
-                  t.wasElementMadeActive ||
-                    (" " !== e.key && 32 !== e.keyCode) ||
-                    ((t.wasElementMadeActive = this.checkElementMadeActive_(e)),
-                    t.wasElementMadeActive && this.animateActivation_()),
-                  t.wasElementMadeActive ||
-                    (this.activationState_ = this.defaultActivationState_());
-              })));
-      }
-      checkElementMadeActive_(e) {
-        return !e || "keydown" !== e.type || this.adapter_.isSurfaceActive();
-      }
-      activate(e = null) {
-        this.activate_(e);
-      }
-      animateActivation_() {
-        const {
-            VAR_FG_TRANSLATE_START: e,
-            VAR_FG_TRANSLATE_END: t
-          } = u.strings,
-          { FG_DEACTIVATION: n, FG_ACTIVATION: r } = u.cssClasses,
-          { DEACTIVATION_TIMEOUT_MS: a } = u.numbers;
-        this.layoutInternal_();
-        let i = "",
-          o = "";
-        if (!this.adapter_.isUnbounded()) {
-          const {
-            startPoint: e,
-            endPoint: t
-          } = this.getFgTranslationCoordinates_();
-          (i = `${e.x}px, ${e.y}px`), (o = `${t.x}px, ${t.y}px`);
-        }
-        this.adapter_.updateCssVariable(e, i),
-          this.adapter_.updateCssVariable(t, o),
-          clearTimeout(this.activationTimer_),
-          clearTimeout(this.fgDeactivationRemovalTimer_),
-          this.rmBoundedActivationClasses_(),
-          this.adapter_.removeClass(n),
-          this.adapter_.computeBoundingRect(),
-          this.adapter_.addClass(r),
-          (this.activationTimer_ = setTimeout(
-            () => this.activationTimerCallback_(),
-            a
-          ));
-      }
-      getFgTranslationCoordinates_() {
-        const {
-          activationEvent: e,
-          wasActivatedByPointer: t
-        } = this.activationState_;
-        let n;
-        return {
-          startPoint: (n = {
-            x:
-              (n = t
-                ? Object(i.c)(
-                    e,
-                    this.adapter_.getWindowPageOffset(),
-                    this.adapter_.computeBoundingRect()
-                  )
-                : { x: this.frame_.width / 2, y: this.frame_.height / 2 }).x -
-              this.initialSize_ / 2,
-            y: n.y - this.initialSize_ / 2
-          }),
-          endPoint: {
-            x: this.frame_.width / 2 - this.initialSize_ / 2,
-            y: this.frame_.height / 2 - this.initialSize_ / 2
-          }
-        };
-      }
-      runDeactivationUXLogicIfReady_() {
-        const { FG_DEACTIVATION: e } = u.cssClasses,
-          { hasDeactivationUXRun: t, isActivated: n } = this.activationState_;
-        (t || !n) &&
-          this.activationAnimationHasEnded_ &&
-          (this.rmBoundedActivationClasses_(),
-          this.adapter_.addClass(e),
-          (this.fgDeactivationRemovalTimer_ = setTimeout(() => {
-            this.adapter_.removeClass(e);
-          }, a.b.FG_DEACTIVATION_MS)));
-      }
-      rmBoundedActivationClasses_() {
-        const { FG_ACTIVATION: e } = u.cssClasses;
-        this.adapter_.removeClass(e),
-          (this.activationAnimationHasEnded_ = !1),
-          this.adapter_.computeBoundingRect();
-      }
-      resetActivationState_() {
-        (this.previousActivationEvent_ = this.activationState_.activationEvent),
-          (this.activationState_ = this.defaultActivationState_()),
-          setTimeout(
-            () => (this.previousActivationEvent_ = null),
-            u.numbers.TAP_DELAY_MS
-          );
-      }
-      deactivate_(e) {
-        const t = this.activationState_;
-        if (!t.isActivated) return;
-        const n = Object.assign({}, t);
-        if (t.isProgrammatic) {
-          const e = null;
-          requestAnimationFrame(() => this.animateDeactivation_(e, n)),
-            this.resetActivationState_();
-        } else
-          this.deregisterDeactivationHandlers_(),
-            requestAnimationFrame(() => {
-              (this.activationState_.hasDeactivationUXRun = !0),
-                this.animateDeactivation_(e, n),
-                this.resetActivationState_();
-            });
-      }
-      deactivate(e = null) {
-        this.deactivate_(e);
-      }
-      animateDeactivation_(
-        e,
-        { wasActivatedByPointer: t, wasElementMadeActive: n }
-      ) {
-        (t || n) && this.runDeactivationUXLogicIfReady_();
-      }
-      layout() {
-        this.layoutFrame_ && cancelAnimationFrame(this.layoutFrame_),
-          (this.layoutFrame_ = requestAnimationFrame(() => {
-            this.layoutInternal_(), (this.layoutFrame_ = 0);
-          }));
-      }
-      layoutInternal_() {
-        this.frame_ = this.adapter_.computeBoundingRect();
-        const e = Math.max(this.frame_.height, this.frame_.width);
-        (this.maxRadius_ = this.adapter_.isUnbounded()
-          ? e
-          : (() => {
-              return (
-                Math.sqrt(
-                  Math.pow(this.frame_.width, 2) +
-                    Math.pow(this.frame_.height, 2)
-                ) + u.numbers.PADDING
-              );
-            })()),
-          (this.initialSize_ = e * u.numbers.INITIAL_ORIGIN_SCALE),
-          (this.fgScale_ = this.maxRadius_ / this.initialSize_),
-          this.updateLayoutCssVars_();
-      }
-      updateLayoutCssVars_() {
-        const {
-          VAR_FG_SIZE: e,
-          VAR_LEFT: t,
-          VAR_TOP: n,
-          VAR_FG_SCALE: r
-        } = u.strings;
-        this.adapter_.updateCssVariable(e, `${this.initialSize_}px`),
-          this.adapter_.updateCssVariable(r, this.fgScale_),
-          this.adapter_.isUnbounded() &&
-            ((this.unboundedCoords_ = {
-              left: Math.round(this.frame_.width / 2 - this.initialSize_ / 2),
-              top: Math.round(this.frame_.height / 2 - this.initialSize_ / 2)
+      },
+      w = function() {
+        var e =
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
+              : window.restaurant.reviews,
+          t = document.getElementById("reviews-container"),
+          r = document.createElement("h3");
+        (r.innerHTML = "Reviews"), t.appendChild(r);
+        var a = document.createElement("a");
+        if (
+          ((a.innerHTML = "Add Review"),
+          a.classList.add("mdc-button", "add-review"),
+          t.appendChild(a),
+          document
+            .querySelector(".mdc-button")
+            .addEventListener("click", function(e) {
+              n.e(0 /*! addReview */)
+                .then(n.bind(null, /*! ./assets/js/dialog */ 86))
+                .then(function(t) {
+                  t.render(e);
+                });
             }),
-            this.adapter_.updateCssVariable(
-              t,
-              `${this.unboundedCoords_.left}px`
-            ),
-            this.adapter_.updateCssVariable(
-              n,
-              `${this.unboundedCoords_.top}px`
-            ));
-      }
-      setUnbounded(e) {
-        const { UNBOUNDED: t } = u.cssClasses;
-        e ? this.adapter_.addClass(t) : this.adapter_.removeClass(t);
-      }
-    }
-    t.a = u;
-  },
-  /*!*****************************************************!*\
-  !*** ../node_modules/@material/ripple/constants.js ***!
-  \*****************************************************/
-  /*! exports provided: cssClasses, strings, numbers */
-  /*! exports used: cssClasses, numbers, strings */ function(e, t, n) {
-    "use strict";
-    n.d(t, "a", function() {
-      return r;
-    }),
-      n.d(t, "c", function() {
-        return a;
-      }),
-      n.d(t, "b", function() {
-        return i;
-      });
-    /**
-     * @license
-     * Copyright 2016 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    const r = {
-        ROOT: "mdc-ripple-upgraded",
-        UNBOUNDED: "mdc-ripple-upgraded--unbounded",
-        BG_FOCUSED: "mdc-ripple-upgraded--background-focused",
-        FG_ACTIVATION: "mdc-ripple-upgraded--foreground-activation",
-        FG_DEACTIVATION: "mdc-ripple-upgraded--foreground-deactivation"
+          !e)
+        ) {
+          var o = document.createElement("p");
+          return (o.innerHTML = "No reviews yet!"), void t.appendChild(o);
+        }
+        var i = document.getElementById("reviews-list");
+        e.forEach(function(e) {
+          i.appendChild(E(e));
+        }),
+          t.appendChild(i);
       },
-      a = {
-        VAR_LEFT: "--mdc-ripple-left",
-        VAR_TOP: "--mdc-ripple-top",
-        VAR_FG_SIZE: "--mdc-ripple-fg-size",
-        VAR_FG_SCALE: "--mdc-ripple-fg-scale",
-        VAR_FG_TRANSLATE_START: "--mdc-ripple-fg-translate-start",
-        VAR_FG_TRANSLATE_END: "--mdc-ripple-fg-translate-end"
+      E = function(e) {
+        var t = document.createElement("li"),
+          n = document.createElement("p");
+        (n.innerHTML = e.name), t.appendChild(n);
+        var r = document.createElement("p");
+        (r.innerHTML = e.createdAt), t.appendChild(r);
+        var a = document.createElement("p");
+        (a.innerHTML = j(e.rating)), t.appendChild(a);
+        var o = document.createElement("p");
+        return (o.innerHTML = e.comments), t.appendChild(o), t;
       },
-      i = {
-        PADDING: 10,
-        INITIAL_ORIGIN_SCALE: 0.6,
-        DEACTIVATION_TIMEOUT_MS: 225,
-        FG_DEACTIVATION_MS: 150,
-        TAP_DELAY_MS: 300
+      S = function() {
+        var e =
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
+              : window.restaurant,
+          t = document.getElementById("breadcrumb"),
+          n = document.createElement("li");
+        (n.innerHTML = e.name), t.appendChild(n);
+      },
+      j = function(e) {
+        return (
+          '\n  <div class="rating small star-icon value-' +
+          e +
+          ' color-ok">\n   <div class="star-container">\n       ' +
+          '\n  <div class="star">\n  <i class="star-empty"></i>\n  <i class="star-half"></i>\n  <i class="star-filled"></i>\n</div>\n  '.repeat(
+            5
+          ) +
+          "\n    </div>\n  </div>\n  "
+        );
       };
   }
 ]);

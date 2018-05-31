@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
   <title>Restaurant Info</title>
-<link href="styles.9d0a49f308daa9d1937a08b00586576c.css" rel="stylesheet"></head>
+<link href="styles.d778f500dae82e0891ca0cc49013100d.css" rel="stylesheet"></head>
 
 <body class="inside">
   <header>
@@ -20,10 +20,8 @@
         </li>
       </ul>
     </nav>
-
   </header>
   <!-- End header -->
-
   <main id="maincontent">
     <section id="restaurant-container">
       <h2 id="restaurant-name"></h2>
@@ -43,11 +41,11 @@
       <div aria-hidden="true" role="application" id="map"></div>
     </section>
     <section id="reviews-container">
+
       <ul id="reviews-list"></ul>
     </section>
-
-
   </main>
+
 
   <!-- Beginning footer -->
   <footer id="footer">
@@ -57,11 +55,15 @@
     </a> All Rights Reserved.
   </footer>
   <!-- End footer -->
-
-  <!-- Beginning scripts -->
-  <!-- Database helpers -->
-  <!-- End scripts -->
-
-<script type="text/javascript" src="restaurant.bundle.690b914921b82c5393ee.js"></script></body>
+  <aside class="dialog-container"></aside>
+  <aside class="snackbar-container"></aside>
+<script type="text/javascript" src="restaurant.bundle.js"></script></body>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js');
+    });
+  }
+</script>
 
 </html>
