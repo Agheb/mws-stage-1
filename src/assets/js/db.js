@@ -37,14 +37,10 @@ export const loadRestaurants = () => {
     })
     .catch(() => {
       //  network failure or offline situation
-      console.log("Can not fetch data. Trying to get it from IndexedDB...");
-      return LF.getItem("restaurants")
-        .then(value => {
-          return JSON.parse(value);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      console.log(
+        "Can not fetch restaurant data. Trying to get it from IndexedDB..."
+      );
+      return getFromIndexeDB("restaurants");
     });
 };
 
@@ -55,15 +51,43 @@ export const loadReviews = id => {
 
   return fetch(reviews_endpoint, { credentials: "omit" })
     .then(response => {
-      return response.json();
+      console.log("Reviews fetched");
+      return response
+        .json()
+        .then(json => {
+          return LF.setItem(`reviews-${id}`, JSON.stringify(json));
+        })
+        .then(() => {
+          console.log("Reviews stored in IndexedDB");
+          return LF.getItem(`reviews-${id}`);
+        })
+        .then(reviews => {
+          return JSON.parse(reviews);
+        });
     })
     .catch(error => {
       console.log(error);
       //  network failure or offline situation
-      console.log("Can not fetch data. Trying to get it from IndexedDB...");
+      console.log(
+        "Can not fetch  reviews data Trying to get it from IndexedDB..."
+      );
+      return getFromIndexeDB(`reviews-${id}`);
     });
 };
 
+/*
+* Get data from IndexedDB
+* IremName:  String
+*/
+const getFromIndexeDB = ItemName => {
+  return LF.getItem(ItemName)
+    .then(value => {
+      return JSON.parse(value);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};
 /**
  * get a restaurant by its ID.
  */
