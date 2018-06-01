@@ -1,5 +1,7 @@
 import LF from "localforage";
 
+// FIXME: Needing refactor or cleanup -@agheb at 6/1/2018, 10:46:27 PM
+// Endpoints from util.js
 // Endpoint URL to get restaurants.
 const RESTAURANT_ENDPOINT = "https://apiserver-bsxyywmzus.now.sh/restaurants";
 // Endpoints URL for all reviews of given restaurant
