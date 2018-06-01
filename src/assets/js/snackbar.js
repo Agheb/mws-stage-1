@@ -1,10 +1,9 @@
-import "../css/snackbar.scss";
 import { MDCSnackbar, MDCSnackbarFoundation } from "@material/snackbar";
 
 export const showNotification = text => {
   let snackbar = document.querySelector(".snackbar-container");
   snackbar.innerHTML = `
-<div class="mdc-snackbar mdc-snackbar--align-start"
+<div class="mdc-snackbar "
 aria-live="assertive"
 aria-atomic="true"
 aria-hidden="true">
@@ -18,6 +17,7 @@ aria-hidden="true">
   const dataObj = {
     message: text,
     timeout: 5000,
+    multiline: true,
     actionText: "Reload",
     actionHandler: () => {
       window.location.reload();

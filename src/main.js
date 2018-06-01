@@ -3,6 +3,7 @@ import Normalize from "normalize.css/normalize.css";
 import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import "./assets/css/app.scss";
+import "./assets/css/snackbar.scss";
 import Manifest from "./assets/data/manifest.json";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
@@ -30,16 +31,16 @@ observer.observe();
 if ("serviceWorker" in navigator) {
   // Handler for messages coming from the service worker
   navigator.serviceWorker.addEventListener("message", function(event) {
-    if (event.data === "favourite-success") {
+    if (event.data === "favorite-success") {
       import(/* webpackChunkName: "notification" */ "./assets/js/snackbar").then(
         snackbar => {
           snackbar.showNotification(
-            "Your Favourites has been sent successfully"
+            "Your favourite restaurants were sent successfully"
           );
         }
       );
     } else {
-      console.log("Client received Message: " + event.data);
+      console.log("Client received unknown message: " + event.data);
     }
   });
 }
@@ -165,7 +166,6 @@ const initMap = (height, element) => {
     createStaticMapImage(height, element);
     loadRestaurants()
       .then(restaurants => {
-        console.log(restaurants);
         resetRestaurants(restaurants);
         fillRestaurantsHTML();
       })
@@ -279,7 +279,9 @@ let fillRestaurantsHTML = (restaurants = window.restaurants) => {
   }
 };
 
-/**
+// FIXME: Needing refactor or cleanup -@agheb at 6/1/2018, 7:54:20 PM
+// create module for restaurant card view
+/*
  * Create restaurant HTML.
  */
 let createRestaurantHTML = restaurant => {
@@ -329,7 +331,10 @@ let createRestaurantHTML = restaurant => {
   MDCIconToggle.attachTo(favouriteIcon);
   favouriteIcon.addEventListener("click", e => {
     const state = e.target.getAttribute("aria-pressed");
-    console.log(state);
+
+    // FIXME: Needing refactor or cleanup -@agheb at 6/1/2018, 7:53:44 PM
+    // delete console statements
+
     sendFavorite(FavouriteEndpoint, e.target.dataset.id, state)
       .then(response => {
         return response.json();
@@ -370,7 +375,7 @@ const sendFavorite = (URL, r_id, r_bool) => {
   return fetch(`${URL}${r_id}/`, {
     method: "PUT",
     headers: new Headers({
-      "Content-Type": "application/x-www-form-urlencoded" // <-- Specifying the Content-Type
+      "Content-Type": "application/x-www-form-urlencoded"
     }),
     body: `is_favorite=${r_bool}`
   });
