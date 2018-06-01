@@ -1,10 +1,14 @@
+// Skip usual SW lifecycle. Helpful for debugging, but should not be used in Production
+workbox.skipWaiting();
+workbox.clientsClaim();
+
 // Precache all files
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {
   ignoreUrlParametersMatching: [/./]
 });
 
-// Background Sync for form submission
-const bgSyncPlugin = new workbox.backgroundSync.Plugin("review-frm", {
+// options object for main
+const mainOptions = {
   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
   callbacks: {
     queueDidReplay: async () => {
@@ -14,20 +18,35 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin("review-frm", {
       });
     }
   }
-});
+};
 
-const networkOnlyStrategy = workbox.strategies.networkOnly({
-  plugins: [bgSyncPlugin]
-});
+// options object for restaurrant details
+const restaurantOptions = {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
+  callbacks: {
+    queueDidReplay: async () => {
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage("favorite-success");
+      });
+    }
+  }
+};
 
 workbox.routing.registerRoute(
   "https://server.amanuelg.me/reviews/",
-  networkOnlyStrategy,
+  workbox.strategies.networkOnly({
+    plugins: [new workbox.backgroundSync.Plugin("review-frm", mainOptions)]
+  }),
   "POST"
 );
 
 workbox.routing.registerRoute(
-  "https://server.amanuelg.me/reviews/",
-  networkOnlyStrategy,
+  new RegExp("https://server.amanuelg.me/restaurants/.*"),
+  workbox.strategies.networkOnly({
+    plugins: [
+      new workbox.backgroundSync.Plugin("restaurant-frm", restaurantOptions)
+    ]
+  }),
   "PUT"
 );
