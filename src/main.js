@@ -16,6 +16,8 @@ import {
 } from "./assets/js/db";
 import { MapStyle, MapsConfig } from "./assets/js/map";
 import { MDCIconToggle } from "@material/icon-toggle";
+import { getParameterByName, FavouriteEndpoint } from "./assets/js/util";
+
 let restaurants, neighborhoods, cuisines;
 var map;
 var markers = [];
@@ -23,6 +25,24 @@ let InteractiveMapLoaded;
 
 const observer = Lozad();
 observer.observe();
+
+// listen for message from SW, if BackgroundSync was a sucess
+if ("serviceWorker" in navigator) {
+  // Handler for messages coming from the service worker
+  navigator.serviceWorker.addEventListener("message", function(event) {
+    if (event.data === "favourite-success") {
+      import(/* webpackChunkName: "notification" */ "./assets/js/snackbar").then(
+        snackbar => {
+          snackbar.showNotification(
+            "Your Favourites has been sent successfully"
+          );
+        }
+      );
+    } else {
+      console.log("Client received Message: " + event.data);
+    }
+  });
+}
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -288,6 +308,7 @@ let createRestaurantHTML = restaurant => {
   const container = document.createElement("div");
   container.classList.add("container");
 
+  console.log(restaurant.id);
   const more = document.createElement("a");
   more.classList.add("flex-item");
   more.innerHTML = "View Details";
@@ -295,14 +316,31 @@ let createRestaurantHTML = restaurant => {
 
   const favorite = document.createElement("div");
   favorite.classList.add("flex-item");
-  favorite.innerHTML = `<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed="false"
+  favorite.innerHTML = `<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed=${
+    restaurant.is_favorite
+  }
   aria-label="Add to favorites" tabindex="0"
+  data-id=${restaurant.id}
   data-toggle-on='{"label": "Remove from favorites", "content": "favorite", "cssClass": "active" }'
   data-toggle-off='{"label": "Add to favorites", "content": "favorite_border"}'>
  favorite_border
 </i>`;
-  MDCIconToggle.attachTo(favorite.querySelector(".mdc-icon-toggle"));
-
+  const favouriteIcon = favorite.querySelector(".mdc-icon-toggle");
+  MDCIconToggle.attachTo(favouriteIcon);
+  favouriteIcon.addEventListener("click", e => {
+    const state = e.target.getAttribute("aria-pressed");
+    console.log(state);
+    sendFavorite(FavouriteEndpoint, e.target.dataset.id, state)
+      .then(response => {
+        return response.json();
+      })
+      .then(text => {
+        console.log(text);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
   container.appendChild(more);
   container.appendChild(favorite);
   li.append(container);
@@ -321,5 +359,19 @@ let addMarkersToMap = (restaurants = window.restaurants) => {
       window.location.href = marker.url;
     });
     window.markers.push(marker);
+  });
+};
+
+/*
+* PUT request  favorite/unfavorite restaurant
+*/
+
+const sendFavorite = (URL, r_id, r_bool) => {
+  return fetch(`${URL}${r_id}/`, {
+    method: "PUT",
+    headers: new Headers({
+      "Content-Type": "application/x-www-form-urlencoded" // <-- Specifying the Content-Type
+    }),
+    body: `is_favorite=${r_bool}`
   });
 };

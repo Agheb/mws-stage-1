@@ -12,4 +12,4 @@ export const getParameterByName = (name, url) => {
 };
 
 export const ReviewEndpoint = "https://server.amanuelg.me/reviews/";
-export const FavouriteEndpoint = "https://server.amanuelg.me/";
+export const FavouriteEndpoint = "https://server.amanuelg.me/restaurants/";
