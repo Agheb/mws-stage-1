@@ -310,7 +310,6 @@ let createRestaurantHTML = restaurant => {
   const container = document.createElement("div");
   container.classList.add("container");
 
-  console.log(restaurant.id);
   const more = document.createElement("a");
   more.classList.add("flex-item");
   more.innerHTML = "View Details";
@@ -332,19 +331,9 @@ let createRestaurantHTML = restaurant => {
   favouriteIcon.addEventListener("click", e => {
     const state = e.target.getAttribute("aria-pressed");
 
-    // FIXME: Needing refactor or cleanup -@agheb at 6/1/2018, 7:53:44 PM
-    // delete console statements
-
-    sendFavorite(FavouriteEndpoint, e.target.dataset.id, state)
-      .then(response => {
-        return response.json();
-      })
-      .then(text => {
-        console.log(text);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    sendFavorite(FavouriteEndpoint, e.target.dataset.id, state).catch(error => {
+      console.error(error);
+    });
   });
   container.appendChild(more);
   container.appendChild(favorite);
@@ -368,9 +357,8 @@ let addMarkersToMap = (restaurants = window.restaurants) => {
 };
 
 /*
-* PUT request  favorite/unfavorite restaurant
+* PUT request  tofavorite/unfavorite restaurant
 */
-
 const sendFavorite = (URL, r_id, r_bool) => {
   return fetch(`${URL}${r_id}/`, {
     method: "PUT",
