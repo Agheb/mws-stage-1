@@ -4,6 +4,8 @@ import StarRating from "css-star-rating/css/star-rating.css";
 import "./assets/css/styles.css";
 import "./assets/css/app.scss";
 import "./assets/css/dialog.scss";
+import "./assets/css/snackbar.scss";
+import Manifest from "./assets/data/manifest.json";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
 import {
@@ -36,7 +38,7 @@ if ("serviceWorker" in navigator) {
         }
       );
     } else {
-      console.log("Client received Message: " + event.data);
+      console.log("Client received unknown message: " + event.data);
     }
   });
 }
