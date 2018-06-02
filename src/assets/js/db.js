@@ -21,14 +21,12 @@ LF.config({
 export const loadRestaurants = () => {
   return fetch(RESTAURANT_ENDPOINT, { credentials: "omit" })
     .then(response => {
-      console.log("Restaurants fetched");
       return response
         .json()
         .then(json => {
           return LF.setItem("restaurants", JSON.stringify(json));
         })
         .then(() => {
-          console.log("Stored in IndexedDB");
           return LF.getItem("restaurants");
         })
         .then(restaurants => {
