@@ -1,4 +1,8 @@
+$mdc-theme-primary: #3455db;
+$mdc-theme--on-surface: #3455db;
+
 @import "@material/dialog/mdc-dialog";
+@import "@material/button/mdc-button";
 @import "@material/textfield/mdc-text-field";
 @import "@material/line-ripple/mdc-line-ripple";
 @import "@material/select/mdc-select";

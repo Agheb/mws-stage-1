@@ -89,8 +89,8 @@ const DialogHTML = `
       <label for="textarea" class="mdc-floating-label">Review</label>
     </div>
   <footer class="mdc-dialog__footer">
-    <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
-    <button type="submit" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Submit</button>
+    <button type="button" class="mdc-button buttons mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
+    <button type="submit" class="mdc-button buttons mdc-dialog__footer__button mdc-dialog__footer__button--accept">Submit</button>
   </footer>
 </form>
 
