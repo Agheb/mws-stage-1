@@ -48,6 +48,7 @@ export const render = event => {
         console.log(text);
       })
       .catch(console.error);
+    window.location.reload();
   });
 };
 
