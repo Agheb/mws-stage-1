@@ -1,189 +1,6 @@
 webpackJsonp(
   [0],
-  [
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    /*!****************************************************!*\
-  !*** ../node_modules/@material/base/foundation.js ***!
-  \****************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ /*!****************************************************!*\
-  !*** ../node_modules/@material/base/foundation.js ***!
-  \****************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ function(t, e, i) {
-      "use strict";
-      /**
-       * @license
-       * Copyright 2016 Google Inc.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *   http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */ e.a = class {
-        static get cssClasses() {
-          return {};
-        }
-        static get strings() {
-          return {};
-        }
-        static get numbers() {
-          return {};
-        }
-        static get defaultAdapter() {
-          return {};
-        }
-        constructor(t = {}) {
-          this.adapter_ = t;
-        }
-        init() {}
-        destroy() {}
-      };
-    },
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    /*!***************************************************!*\
-  !*** ../node_modules/@material/base/component.js ***!
-  \***************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ /*!***************************************************!*\
-  !*** ../node_modules/@material/base/component.js ***!
-  \***************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ function(t, e, i) {
-      "use strict";
-      var a = i(/*! ./foundation */ 9);
-      /**
-       * @license
-       * Copyright 2016 Google Inc.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *   http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */ class s {
-        static attachTo(t) {
-          return new s(t, new a.a());
-        }
-        constructor(t, e, ...i) {
-          (this.root_ = t),
-            this.initialize(...i),
-            (this.foundation_ = void 0 === e ? this.getDefaultFoundation() : e),
-            this.foundation_.init(),
-            this.initialSyncWithDOM();
-        }
-        initialize() {}
-        getDefaultFoundation() {
-          throw new Error(
-            "Subclasses must override getDefaultFoundation to return a properly configured foundation class"
-          );
-        }
-        initialSyncWithDOM() {}
-        destroy() {
-          this.foundation_.destroy();
-        }
-        listen(t, e) {
-          this.root_.addEventListener(t, e);
-        }
-        unlisten(t, e) {
-          this.root_.removeEventListener(t, e);
-        }
-        emit(t, e, i = !1) {
-          let a;
-          "function" == typeof CustomEvent
-            ? (a = new CustomEvent(t, { detail: e, bubbles: i }))
-            : (a = document.createEvent("CustomEvent")).initCustomEvent(
-                t,
-                i,
-                !1,
-                e
-              ),
-            this.root_.dispatchEvent(a);
-        }
-      }
-      e.a = s;
-    },
+  Array(77).concat([
     /*!************************************************!*\
   !*** ../node_modules/@material/ripple/util.js ***!
   \************************************************/
@@ -311,9 +128,9 @@ webpackJsonp(
       i.d(e, "a", function() {
         return r;
       });
-      var a = i(/*! @material/base/component */ 71),
-        s = (i(/*! ./adapter */ 73), i(/*! ./foundation */ 75)),
-        n = i(/*! ./util */ 72);
+      var a = i(/*! @material/base/component */ 10),
+        s = (i(/*! ./adapter */ 78), i(/*! ./foundation */ 80)),
+        n = i(/*! ./util */ 77);
       i.d(e, "b", function() {
         return s.a;
       });
@@ -404,9 +221,9 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./adapter */ 73), i(/*! ./constants */ 76)),
-        n = i(/*! ./util */ 72);
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./adapter */ 78), i(/*! ./constants */ 81)),
+        n = i(/*! ./util */ 77);
       const r = ["touchstart", "pointerdown", "mousedown", "keydown"],
         o = ["touchend", "pointerup", "mouseup"];
       let d = [];
@@ -830,6 +647,8 @@ webpackJsonp(
     ,
     ,
     ,
+    ,
+    ,
     /*!*****************************!*\
   !*** ./assets/js/dialog.js ***!
   \*****************************/
@@ -842,11 +661,11 @@ webpackJsonp(
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 }),
         (e.render = void 0),
-        i(/*! ../css/dialog.scss */ 77);
-      var a = i(/*! @material/textfield */ 101),
-        s = i(/*! @material/select */ 113),
-        n = i(/*! @material/dialog */ 115),
-        r = i(/*! ./util */ 78),
+        i(/*! ../css/dialog.scss */ 86);
+      var a = i(/*! @material/textfield */ 107),
+        s = i(/*! @material/select */ 119),
+        n = i(/*! @material/dialog */ 121),
+        r = i(/*! ./util */ 11),
         o = ((e.render = function(t) {
           document.querySelector(".dialog-container").innerHTML = o;
           new a.MDCTextField(document.querySelector(".text-field-name")),
@@ -876,25 +695,11 @@ webpackJsonp(
               .then(function(t) {
                 console.log(t);
               })
-              .catch(console.error);
+              .catch(console.error),
+              window.location.reload();
           });
         }),
-        '\n<aside id="my-mdc-dialog" class="mdc-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n<div class="mdc-dialog__surface">\n  <header class="mdc-dialog__header">\n    <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">\n      Add Review\n    </h2>\n  </header>\n<form id="review-form" class="mdc-dialog__body">\n    <div class="text-field-container">\n      <div class="mdc-text-field text-field-name  mdc-text-field--outlined">\n      <input type="text" id="text-field--outlined" class="mdc-text-field__input" name="cname">\n        <label class="mdc-floating-label" for="text-field--outlined">Name</label>\n        <div class="mdc-notched-outline">\n          <svg>\n            <path class="mdc-notched-outline__path" />\n          </svg>\n        </div>\n        <div class="mdc-notched-outline__idle"></div>\n      </div>\n      <div class="mdc-select">\n      <select class="mdc-select__native-control" name="rating">\n        <option value="5" selected> 5 Stars (exceptional)</option>\n        <option value="4"> 4 Stars (good)</option>\n        <option value="3"> 3 Stars (acceptable) </option>\n        <option value="2"> 2 Stars (bad) </option>\n        <option value="1"> 1 Stars (avoid) </option>\n        </select>\n        <label class="mdc-floating-label mdc-floating-label--float-above">Rating</label>\n        <div class="mdc-line-ripple"></div>\n      </div>\n    </div>\n    <div class="mdc-text-field text-field-review mdc-text-field--textarea">\n    <textarea id="textarea" class="mdc-text-field__input" rows="4" cols="100" name="comments"></textarea>\n      <label for="textarea" class="mdc-floating-label">Review</label>\n    </div>\n  <footer class="mdc-dialog__footer">\n    <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>\n    <button type="submit" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Submit</button>\n  </footer>\n</form>\n\n</div>\n<div class="mdc-dialog__backdrop"></div>\n</aside>');
-    },
-    /*!***********************************************!*\
-  !*** ../node_modules/@material/base/index.js ***!
-  \***********************************************/
-    /*! exports provided: MDCFoundation, MDCComponent */
-    /*! exports used: MDCComponent, MDCFoundation */ function(t, e, i) {
-      "use strict";
-      var a = i(/*! ./foundation */ 9),
-        s = i(/*! ./component */ 71);
-      i.d(e, "b", function() {
-        return a.a;
-      }),
-        i.d(e, "a", function() {
-          return s.a;
-        });
+        '\n<aside id="my-mdc-dialog" class="mdc-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">\n<div class="mdc-dialog__surface">\n  <header class="mdc-dialog__header">\n    <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">\n      Add Review\n    </h2>\n  </header>\n<form id="review-form" class="mdc-dialog__body">\n    <div class="text-field-container">\n      <div class="mdc-text-field text-field-name  mdc-text-field--outlined">\n      <input type="text" id="text-field--outlined" class="mdc-text-field__input" name="cname">\n        <label class="mdc-floating-label" for="text-field--outlined">Name</label>\n        <div class="mdc-notched-outline">\n          <svg>\n            <path class="mdc-notched-outline__path" />\n          </svg>\n        </div>\n        <div class="mdc-notched-outline__idle"></div>\n      </div>\n      <div class="mdc-select">\n      <select class="mdc-select__native-control" name="rating">\n        <option value="5" selected> 5 Stars (exceptional)</option>\n        <option value="4"> 4 Stars (good)</option>\n        <option value="3"> 3 Stars (acceptable) </option>\n        <option value="2"> 2 Stars (bad) </option>\n        <option value="1"> 1 Stars (avoid) </option>\n        </select>\n        <label class="mdc-floating-label mdc-floating-label--float-above">Rating</label>\n        <div class="mdc-line-ripple"></div>\n      </div>\n    </div>\n    <div class="mdc-text-field text-field-review mdc-text-field--textarea">\n    <textarea id="textarea" class="mdc-text-field__input" rows="4" cols="100" name="comments"></textarea>\n      <label for="textarea" class="mdc-floating-label">Review</label>\n    </div>\n  <footer class="mdc-dialog__footer">\n    <button type="button" class="mdc-button buttons mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>\n    <button type="submit" class="mdc-button buttons mdc-dialog__footer__button mdc-dialog__footer__button--accept">Submit</button>\n  </footer>\n</form>\n\n</div>\n<div class="mdc-dialog__backdrop"></div>\n</aside>');
     },
     /*!*********************************************************************!*\
   !*** ../node_modules/@material/textfield/helper-text/foundation.js ***!
@@ -902,8 +707,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./adapter */ 92), i(/*! ./constants */ 102));
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./adapter */ 98), i(/*! ./constants */ 108));
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -976,8 +781,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./adapter */ 93), i(/*! ./constants */ 103));
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./adapter */ 99), i(/*! ./constants */ 109));
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -1105,7 +910,7 @@ webpackJsonp(
       i
     ) {
       "use strict";
-      i(/*! ./helper-text/foundation */ 88), i(/*! ./icon/foundation */ 89);
+      i(/*! ./helper-text/foundation */ 94), i(/*! ./icon/foundation */ 95);
     },
     /*!******************************************************************!*\
   !*** ../node_modules/@material/textfield/helper-text/adapter.js ***!
@@ -1160,8 +965,8 @@ webpackJsonp(
       i.d(e, "a", function() {
         return n;
       });
-      var a = i(/*! @material/base/component */ 71),
-        s = (i(/*! ./adapter */ 95), i(/*! ./foundation */ 105));
+      var a = i(/*! @material/base/component */ 10),
+        s = (i(/*! ./adapter */ 101), i(/*! ./foundation */ 111));
       /**
        * @license
        * Copyright 2018 Google Inc. All Rights Reserved.
@@ -1237,8 +1042,8 @@ webpackJsonp(
       i.d(e, "a", function() {
         return n;
       });
-      var a = i(/*! @material/base/component */ 71),
-        s = (i(/*! ./adapter */ 97), i(/*! ./foundation */ 109));
+      var a = i(/*! @material/base/component */ 10),
+        s = (i(/*! ./adapter */ 103), i(/*! ./foundation */ 115));
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -1387,16 +1192,16 @@ webpackJsonp(
         i.d(e, "MDCTextField", function() {
           return _;
         });
-      var a = i(/*! @material/base/component */ 71),
-        s = i(/*! @material/ripple/index */ 74),
-        n = i(/*! @material/ripple/util */ 72),
-        r = i(/*! ./constants */ 90),
-        o = (i(/*! ./adapter */ 91), i(/*! ./foundation */ 104)),
-        d = i(/*! @material/line-ripple/index */ 94),
-        l = i(/*! ./helper-text/index */ 107),
-        c = i(/*! ./icon/index */ 108),
-        u = i(/*! @material/floating-label/index */ 96),
-        h = i(/*! @material/notched-outline/index */ 111);
+      var a = i(/*! @material/base/component */ 10),
+        s = i(/*! @material/ripple/index */ 79),
+        n = i(/*! @material/ripple/util */ 77),
+        r = i(/*! ./constants */ 96),
+        o = (i(/*! ./adapter */ 97), i(/*! ./foundation */ 110)),
+        d = i(/*! @material/line-ripple/index */ 100),
+        l = i(/*! ./helper-text/index */ 113),
+        c = i(/*! ./icon/index */ 114),
+        u = i(/*! @material/floating-label/index */ 102),
+        h = i(/*! @material/notched-outline/index */ 117);
       i.d(e, "MDCTextFieldFoundation", function() {
         return o.a;
       }),
@@ -1711,11 +1516,11 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./helper-text/foundation */ 88),
-        i(/*! ./icon/foundation */ 89),
-        i(/*! ./adapter */ 91),
-        i(/*! ./constants */ 90));
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./helper-text/foundation */ 94),
+        i(/*! ./icon/foundation */ 95),
+        i(/*! ./adapter */ 97),
+        i(/*! ./constants */ 96));
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -1992,8 +1797,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./adapter */ 95), i(/*! ./constants */ 106));
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./adapter */ 101), i(/*! ./constants */ 112));
       /**
        * @license
        * Copyright 2018 Google Inc. All Rights Reserved.
@@ -2103,8 +1908,8 @@ webpackJsonp(
       i.d(e, "a", function() {
         return n;
       });
-      var a = i(/*! @material/base/component */ 71),
-        s = (i(/*! ./adapter */ 92), i(/*! ./foundation */ 88));
+      var a = i(/*! @material/base/component */ 10),
+        s = (i(/*! ./adapter */ 98), i(/*! ./foundation */ 94));
       i.d(e, "b", function() {
         return s.a;
       });
@@ -2160,8 +1965,8 @@ webpackJsonp(
       i.d(e, "a", function() {
         return n;
       });
-      var a = i(/*! @material/base/component */ 71),
-        s = (i(/*! ./adapter */ 93), i(/*! ./foundation */ 89));
+      var a = i(/*! @material/base/component */ 10),
+        s = (i(/*! ./adapter */ 99), i(/*! ./foundation */ 95));
       i.d(e, "b", function() {
         return s.a;
       });
@@ -2210,8 +2015,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./adapter */ 97), i(/*! ./constants */ 110));
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./adapter */ 103), i(/*! ./constants */ 116));
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -2317,9 +2122,9 @@ webpackJsonp(
       i.d(e, "a", function() {
         return r;
       });
-      var a = i(/*! @material/base/component */ 71),
-        s = (i(/*! ./adapter */ 98), i(/*! ./foundation */ 112)),
-        n = i(/*! ./constants */ 99);
+      var a = i(/*! @material/base/component */ 10),
+        s = (i(/*! ./adapter */ 104), i(/*! ./foundation */ 118)),
+        n = i(/*! ./constants */ 105);
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -2371,8 +2176,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 9),
-        s = (i(/*! ./adapter */ 98), i(/*! ./constants */ 99));
+      var a = i(/*! @material/base/foundation */ 7),
+        s = (i(/*! ./adapter */ 104), i(/*! ./constants */ 105));
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -2482,12 +2287,12 @@ webpackJsonp(
     /*! all exports used */ function(t, e, i) {
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 });
-      var a = i(/*! @material/base/index */ 87),
-        s = i(/*! @material/floating-label/index */ 96),
-        n = i(/*! @material/line-ripple/index */ 94),
-        r = i(/*! @material/ripple/index */ 74),
-        o = i(/*! ./foundation */ 114),
-        d = i(/*! ./constants */ 100);
+      var a = i(/*! @material/base/index */ 76),
+        s = i(/*! @material/floating-label/index */ 102),
+        n = i(/*! @material/line-ripple/index */ 100),
+        r = i(/*! @material/ripple/index */ 79),
+        o = i(/*! ./foundation */ 120),
+        d = i(/*! ./constants */ 106);
       i.d(e, "MDCSelectFoundation", function() {
         return o.a;
       });
@@ -2574,8 +2379,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/index */ 87),
-        s = i(/*! ./constants */ 100);
+      var a = i(/*! @material/base/index */ 76),
+        s = i(/*! ./constants */ 106);
       class n extends a.b {
         static get cssClasses() {
           return s.a;
@@ -2662,10 +2467,10 @@ webpackJsonp(
     /*! all exports used */ function(t, e, i) {
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 });
-      var a = i(/*! @material/base/index */ 87),
-        s = i(/*! @material/ripple/index */ 74),
-        n = i(/*! ./foundation */ 116),
-        r = i(/*! ./util */ 118);
+      var a = i(/*! @material/base/index */ 76),
+        s = i(/*! @material/ripple/index */ 79),
+        n = i(/*! ./foundation */ 122),
+        r = i(/*! ./util */ 124);
       i.d(e, "MDCDialogFoundation", function() {
         return n.a;
       }),
@@ -2743,8 +2548,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/index */ 87),
-        s = i(/*! ./constants */ 117);
+      var a = i(/*! @material/base/index */ 76),
+        s = i(/*! ./constants */ 123);
       class n extends a.b {
         static get cssClasses() {
           return s.a;
@@ -2916,7 +2721,7 @@ webpackJsonp(
         (e.createFocusTrapInstance = function(t, e, i = s.a) {
           return i(t, { initialFocus: e, clickOutsideDeactivates: !0 });
         });
-      var a = i(/*! focus-trap */ 119),
+      var a = i(/*! focus-trap */ 125),
         s = i.n(a);
     },
     /*!*******************************************!*\
@@ -2924,7 +2729,7 @@ webpackJsonp(
   \*******************************************/
     /*! dynamic exports provided */
     /*! exports used: default */ function(t, e, i) {
-      var a = i(/*! tabbable */ 120),
+      var a = i(/*! tabbable */ 126),
         s = null;
       function n(t) {
         t &&
@@ -3177,5 +2982,5 @@ webpackJsonp(
         return Array.prototype.push.apply(p, r), p;
       };
     }
-  ]
+  ])
 );

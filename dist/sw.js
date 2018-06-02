@@ -1,39 +1,57 @@
 importScripts(
-  "precache-manifest.847e184fa9d410d6ea85aeeeafe75e1b.js",
+  "precache-manifest.97f4ab5c12d140bff410e765808f452c.js",
   "https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js"
 );
 
-const showNotification = () => {
-  self.registration.showNotification("Background sync success!", {
-    body: "🎉`🎉`🎉`"
-  });
-};
+// Skip usual SW lifecycle. Helpful for debugging, but should not be used in Production
+workbox.skipWaiting();
+workbox.clientsClaim();
 
 // Precache all files
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {
   ignoreUrlParametersMatching: [/./]
 });
 
-// Background Sync for form submission
-const bgSyncPlugin = new workbox.backgroundSync.Plugin("review-frm", {
+// options object for main
+const mainOptions = {
   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
   callbacks: {
-    queueDidReplay: showNotification()
+    queueDidReplay: async () => {
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage("server-success");
+      });
+    }
   }
-});
+};
 
-const networkOnlyStrategy = workbox.strategies.networkOnly({
-  plugins: [bgSyncPlugin]
-});
+// options object for restaurrant details
+const restaurantOptions = {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
+  callbacks: {
+    queueDidReplay: async () => {
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage("favorite-success");
+      });
+    }
+  }
+};
 
 workbox.routing.registerRoute(
   "https://server.amanuelg.me/reviews/",
-  networkOnlyStrategy,
+  workbox.strategies.networkOnly({
+    plugins: [new workbox.backgroundSync.Plugin("review-frm", mainOptions)]
+  }),
   "POST"
 );
 
 workbox.routing.registerRoute(
-  "https://server.amanuelg.me/reviews/",
-  networkOnlyStrategy,
+  new RegExp("https://server.amanuelg.me/restaurants/.*"),
+  workbox.strategies.networkOnly({
+    plugins: [
+      new workbox.backgroundSync.Plugin("restaurant-frm", restaurantOptions)
+    ]
+  }),
   "PUT"
 );

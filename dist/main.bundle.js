@@ -1,21 +1,58 @@
 !(function(e) {
-  var t = {};
-  function n(r) {
-    if (t[r]) return t[r].exports;
-    var a = (t[r] = { i: r, l: !1, exports: {} });
-    return e[r].call(a.exports, a, a.exports, n), (a.l = !0), a.exports;
+  var t = window.webpackJsonp;
+  window.webpackJsonp = function(n, a, i) {
+    for (var o, c, s = 0, u = []; s < n.length; s++)
+      (c = n[s]), r[c] && u.push(r[c][0]), (r[c] = 0);
+    for (o in a) Object.prototype.hasOwnProperty.call(a, o) && (e[o] = a[o]);
+    for (t && t(n, a, i); u.length; ) u.shift()();
+  };
+  var n = {},
+    r = { 2: 0 };
+  function a(t) {
+    if (n[t]) return n[t].exports;
+    var r = (n[t] = { i: t, l: !1, exports: {} });
+    return e[t].call(r.exports, r, r.exports, a), (r.l = !0), r.exports;
   }
-  (n.m = e),
-    (n.c = t),
-    (n.d = function(e, t, r) {
-      n.o(e, t) ||
+  (a.e = function(e) {
+    var t = r[e];
+    if (0 === t)
+      return new Promise(function(e) {
+        e();
+      });
+    if (t) return t[2];
+    var n = new Promise(function(n, a) {
+      t = r[e] = [n, a];
+    });
+    t[2] = n;
+    var i = document.getElementsByTagName("head")[0],
+      o = document.createElement("script");
+    (o.type = "text/javascript"),
+      (o.charset = "utf-8"),
+      (o.async = !0),
+      (o.timeout = 12e4),
+      a.nc && o.setAttribute("nonce", a.nc),
+      (o.src = a.p + "" + ({ 1: "notification" }[e] || e) + ".bundle.js");
+    var c = setTimeout(s, 12e4);
+    function s() {
+      (o.onerror = o.onload = null), clearTimeout(c);
+      var t = r[e];
+      0 !== t &&
+        (t && t[1](new Error("Loading chunk " + e + " failed.")),
+        (r[e] = void 0));
+    }
+    return (o.onerror = o.onload = s), i.appendChild(o), n;
+  }),
+    (a.m = e),
+    (a.c = n),
+    (a.d = function(e, t, n) {
+      a.o(e, t) ||
         Object.defineProperty(e, t, {
           configurable: !1,
           enumerable: !0,
-          get: r
+          get: n
         });
     }),
-    (n.n = function(e) {
+    (a.n = function(e) {
       var t =
         e && e.__esModule
           ? function() {
@@ -24,13 +61,16 @@
           : function() {
               return e;
             };
-      return n.d(t, "a", t), t;
+      return a.d(t, "a", t), t;
     }),
-    (n.o = function(e, t) {
+    (a.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (n.p = ""),
-    n((n.s = 79));
+    (a.p = ""),
+    (a.oe = function(e) {
+      throw (console.error(e), e);
+    }),
+    a((a.s = 87));
 })([
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/TemplateTag/index.js ***!
@@ -38,7 +78,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./TemplateTag */ 17);
+    var r = n(/*! ./TemplateTag */ 22);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -49,7 +89,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./trimResultTransformer */ 18);
+    var r = n(/*! ./trimResultTransformer */ 23);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -60,7 +100,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./inlineArrayTransformer */ 24);
+    var r = n(/*! ./inlineArrayTransformer */ 29);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -71,7 +111,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./stripIndentTransformer */ 19);
+    var r = n(/*! ./stripIndentTransformer */ 24);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -82,7 +122,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./replaceResultTransformer */ 20);
+    var r = n(/*! ./replaceResultTransformer */ 25);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -93,7 +133,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./splitStringTransformer */ 25);
+    var r = n(/*! ./splitStringTransformer */ 30);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -104,29 +144,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./html */ 33);
-    n.d(t, "a", function() {
-      return r.a;
-    });
-  },
-  /*!******************************************************************************!*\
-  !*** ../node_modules/common-tags/es/replaceSubstitutionTransformer/index.js ***!
-  \******************************************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./replaceSubstitutionTransformer */ 21);
-    n.d(t, "a", function() {
-      return r.a;
-    });
-  },
-  /*!**********************************************************************************!*\
-  !*** ../node_modules/common-tags/es/removeNonPrintingValuesTransformer/index.js ***!
-  \**********************************************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./removeNonPrintingValuesTransformer */ 26);
+    var r = n(/*! ./html */ 38);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -172,7 +190,117 @@
       destroy() {}
     };
   },
+  /*!******************************************************************************!*\
+  !*** ../node_modules/common-tags/es/replaceSubstitutionTransformer/index.js ***!
+  \******************************************************************************/
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
+    "use strict";
+    var r = n(/*! ./replaceSubstitutionTransformer */ 26);
+    n.d(t, "a", function() {
+      return r.a;
+    });
+  },
+  /*!**********************************************************************************!*\
+  !*** ../node_modules/common-tags/es/removeNonPrintingValuesTransformer/index.js ***!
+  \**********************************************************************************/
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
+    "use strict";
+    var r = n(/*! ./removeNonPrintingValuesTransformer */ 31);
+    n.d(t, "a", function() {
+      return r.a;
+    });
+  },
+  /*!***************************************************!*\
+  !*** ../node_modules/@material/base/component.js ***!
+  \***************************************************/
+  /*! exports provided: default */
+  /*! exports used: default */ function(e, t, n) {
+    "use strict";
+    var r = n(/*! ./foundation */ 7);
+    /**
+     * @license
+     * Copyright 2016 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */ class a {
+      static attachTo(e) {
+        return new a(e, new r.a());
+      }
+      constructor(e, t, ...n) {
+        (this.root_ = e),
+          this.initialize(...n),
+          (this.foundation_ = void 0 === t ? this.getDefaultFoundation() : t),
+          this.foundation_.init(),
+          this.initialSyncWithDOM();
+      }
+      initialize() {}
+      getDefaultFoundation() {
+        throw new Error(
+          "Subclasses must override getDefaultFoundation to return a properly configured foundation class"
+        );
+      }
+      initialSyncWithDOM() {}
+      destroy() {
+        this.foundation_.destroy();
+      }
+      listen(e, t) {
+        this.root_.addEventListener(e, t);
+      }
+      unlisten(e, t) {
+        this.root_.removeEventListener(e, t);
+      }
+      emit(e, t, n = !1) {
+        let r;
+        "function" == typeof CustomEvent
+          ? (r = new CustomEvent(e, { detail: t, bubbles: n }))
+          : (r = document.createEvent("CustomEvent")).initCustomEvent(
+              e,
+              n,
+              !1,
+              t
+            ),
+          this.root_.dispatchEvent(r);
+      }
+    }
+    t.a = a;
+  },
+  /*!***************************!*\
+  !*** ./assets/js/util.js ***!
+  \***************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", { value: !0 });
+    (t.getParameterByName = function(e, t) {
+      t || (t = window.location.href), (e = e.replace(/[\[\]]/g, "\\$&"));
+      var n = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)").exec(t);
+      return n
+        ? n[2]
+          ? decodeURIComponent(n[2].replace(/\+/g, " "))
+          : ""
+        : null;
+    }),
+      (t.ReviewEndpoint = "https://server.amanuelg.me/reviews/"),
+      (t.FavouriteEndpoint = "https://server.amanuelg.me/restaurants/");
+  },
+  ,
   /*!*******************************************!*\
+  !*** ../node_modules/lozad/dist/lozad.js ***!
+  \*******************************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ /*!*******************************************!*\
   !*** ../node_modules/lozad/dist/lozad.js ***!
   \*******************************************/
   /*! dynamic exports provided */
@@ -291,6 +419,18 @@
   \*****************************/
   /*! dynamic exports provided */
   /*! all exports used */ function(e, t) {},
+  /*!**********************************!*\
+  !*** ./assets/css/snackbar.scss ***!
+  \**********************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t) {},
+  /*!***********************************!*\
+  !*** ./assets/data/manifest.json ***!
+  \***********************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ function(e, t, n) {
+    e.exports = n.p + "manifest.json";
+  },
   /*!*****************************************************!*\
   !*** ../node_modules/load-google-maps-api/index.js ***!
   \*****************************************************/
@@ -352,11 +492,11 @@
     n.d(t, "replaceResultTransformer", function() {
       return o.a;
     });
-    var c = n(/*! ./replaceSubstitutionTransformer */ 7);
+    var c = n(/*! ./replaceSubstitutionTransformer */ 8);
     n.d(t, "replaceSubstitutionTransformer", function() {
       return c.a;
     });
-    var s = n(/*! ./replaceStringTransformer */ 22);
+    var s = n(/*! ./replaceStringTransformer */ 27);
     n.d(t, "replaceStringTransformer", function() {
       return s.a;
     });
@@ -368,19 +508,19 @@
     n.d(t, "splitStringTransformer", function() {
       return d.a;
     });
-    var f = n(/*! ./removeNonPrintingValuesTransformer */ 8);
+    var f = n(/*! ./removeNonPrintingValuesTransformer */ 9);
     n.d(t, "removeNonPrintingValuesTransformer", function() {
       return f.a;
     });
-    var l = n(/*! ./commaLists */ 27);
+    var l = n(/*! ./commaLists */ 32);
     n.d(t, "commaLists", function() {
       return l.a;
     });
-    var h = n(/*! ./commaListsAnd */ 29);
+    var h = n(/*! ./commaListsAnd */ 34);
     n.d(t, "commaListsAnd", function() {
       return h.a;
     });
-    var p = n(/*! ./commaListsOr */ 31);
+    var p = n(/*! ./commaListsOr */ 36);
     n.d(t, "commaListsOr", function() {
       return p.a;
     });
@@ -388,51 +528,51 @@
     n.d(t, "html", function() {
       return A.a;
     });
-    var g = n(/*! ./codeBlock */ 34);
+    var g = n(/*! ./codeBlock */ 39);
     n.d(t, "codeBlock", function() {
       return g.a;
     });
-    var v = n(/*! ./source */ 35);
+    var v = n(/*! ./source */ 40);
     n.d(t, "source", function() {
       return v.a;
     });
-    var b = n(/*! ./safeHtml */ 36);
+    var b = n(/*! ./safeHtml */ 41);
     n.d(t, "safeHtml", function() {
       return b.a;
     });
-    var m = n(/*! ./oneLine */ 38);
+    var m = n(/*! ./oneLine */ 43);
     n.d(t, "oneLine", function() {
       return m.a;
     });
-    var y = n(/*! ./oneLineTrim */ 40);
+    var y = n(/*! ./oneLineTrim */ 45);
     n.d(t, "oneLineTrim", function() {
       return y.a;
     });
-    var E = n(/*! ./oneLineCommaLists */ 42);
+    var E = n(/*! ./oneLineCommaLists */ 47);
     n.d(t, "oneLineCommaLists", function() {
       return E.a;
     });
-    var w = n(/*! ./oneLineCommaListsOr */ 44);
+    var w = n(/*! ./oneLineCommaListsOr */ 49);
     n.d(t, "oneLineCommaListsOr", function() {
       return w.a;
     });
-    var S = n(/*! ./oneLineCommaListsAnd */ 46);
+    var S = n(/*! ./oneLineCommaListsAnd */ 51);
     n.d(t, "oneLineCommaListsAnd", function() {
       return S.a;
     });
-    var H = n(/*! ./inlineLists */ 48);
+    var H = n(/*! ./inlineLists */ 53);
     n.d(t, "inlineLists", function() {
       return H.a;
     });
-    var j = n(/*! ./oneLineInlineLists */ 50);
+    var j = n(/*! ./oneLineInlineLists */ 55);
     n.d(t, "oneLineInlineLists", function() {
       return j.a;
     });
-    var B = n(/*! ./stripIndent */ 52);
+    var B = n(/*! ./stripIndent */ 57);
     n.d(t, "stripIndent", function() {
       return B.a;
     });
-    var I = n(/*! ./stripIndents */ 54);
+    var I = n(/*! ./stripIndents */ 59);
     n.d(t, "stripIndents", function() {
       return I.a;
     });
@@ -657,7 +797,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./replaceStringTransformer */ 23);
+    var r = n(/*! ./replaceStringTransformer */ 28);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -749,7 +889,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./commaLists */ 28);
+    var r = n(/*! ./commaLists */ 33);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -773,7 +913,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./commaListsAnd */ 30);
+    var r = n(/*! ./commaListsAnd */ 35);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -801,7 +941,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./commaListsOr */ 32);
+    var r = n(/*! ./commaListsOr */ 37);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -830,7 +970,7 @@
       i = n(/*! ../inlineArrayTransformer */ 2),
       o = n(/*! ../trimResultTransformer */ 1),
       c = n(/*! ../splitStringTransformer */ 5),
-      s = n(/*! ../removeNonPrintingValuesTransformer */ 8),
+      s = n(/*! ../removeNonPrintingValuesTransformer */ 9),
       u = new r.a(Object(c.a)("\n"), s.a, i.a, a.a, o.a);
     t.a = u;
   },
@@ -862,7 +1002,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./safeHtml */ 37);
+    var r = n(/*! ./safeHtml */ 42);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -878,7 +1018,7 @@
       i = n(/*! ../inlineArrayTransformer */ 2),
       o = n(/*! ../trimResultTransformer */ 1),
       c = n(/*! ../splitStringTransformer */ 5),
-      s = n(/*! ../replaceSubstitutionTransformer */ 7),
+      s = n(/*! ../replaceSubstitutionTransformer */ 8),
       u = new r.a(
         Object(c.a)("\n"),
         i.a,
@@ -899,7 +1039,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLine */ 39);
+    var r = n(/*! ./oneLine */ 44);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -922,7 +1062,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLineTrim */ 41);
+    var r = n(/*! ./oneLineTrim */ 46);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -945,7 +1085,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLineCommaLists */ 43);
+    var r = n(/*! ./oneLineCommaLists */ 48);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -973,7 +1113,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLineCommaListsOr */ 45);
+    var r = n(/*! ./oneLineCommaListsOr */ 50);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1001,7 +1141,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLineCommaListsAnd */ 47);
+    var r = n(/*! ./oneLineCommaListsAnd */ 52);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1029,7 +1169,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./inlineLists */ 49);
+    var r = n(/*! ./inlineLists */ 54);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1053,7 +1193,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./oneLineInlineLists */ 51);
+    var r = n(/*! ./oneLineInlineLists */ 56);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1077,7 +1217,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./stripIndent */ 53);
+    var r = n(/*! ./stripIndent */ 58);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1100,7 +1240,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! ./stripIndents */ 55);
+    var r = n(/*! ./stripIndents */ 60);
     n.d(t, "a", function() {
       return r.a;
     });
@@ -1126,7 +1266,7 @@
     Object.defineProperty(t, "__esModule", { value: !0 }),
       (t.mapMarkerForRestaurant = t.urlForRestaurant = t.getCuisines = t.getNeighborhoods = t.getRestaurantByCuisineNeighborhood = t.getRestaurantByNeighborhood = t.getRestaurantByCuisine = t.getRestaurantById = t.loadReviews = t.loadRestaurants = void 0);
     var r,
-      a = n(/*! localforage */ 57),
+      a = n(/*! localforage */ 62),
       i = (r = a) && r.__esModule ? r : { default: r };
     i.default.config({
       driver: i.default.INDEXEDDB,
@@ -1141,37 +1281,24 @@
         credentials: "omit"
       })
         .then(function(e) {
-          return (
-            console.log("Restaurants fetched"),
-            e
-              .json()
-              .then(function(e) {
-                return i.default.setItem("restaurants", JSON.stringify(e));
-              })
-              .then(function() {
-                return (
-                  console.log("Stored in IndexedDB"),
-                  i.default.getItem("restaurants")
-                );
-              })
-              .then(function(e) {
-                return JSON.parse(e);
-              })
-          );
+          return e
+            .json()
+            .then(function(e) {
+              return i.default.setItem("restaurants", JSON.stringify(e));
+            })
+            .then(function() {
+              return i.default.getItem("restaurants");
+            })
+            .then(function(e) {
+              return JSON.parse(e);
+            });
         })
         .catch(function() {
           return (
             console.log(
-              "Can not fetch data. Trying to get it from IndexedDB..."
+              "Can not fetch restaurant data. Trying to get it from IndexedDB..."
             ),
-            i.default
-              .getItem("restaurants")
-              .then(function(e) {
-                return JSON.parse(e);
-              })
-              .catch(function(e) {
-                console.log(e);
-              })
+            o("restaurants")
           );
         });
     }),
@@ -1181,18 +1308,47 @@
         return (
           console.log(t),
           fetch(t, { credentials: "omit" })
-            .then(function(e) {
-              return e.json();
+            .then(function(t) {
+              return (
+                console.log("Reviews fetched"),
+                t
+                  .json()
+                  .then(function(t) {
+                    return i.default.setItem("reviews-" + e, JSON.stringify(t));
+                  })
+                  .then(function() {
+                    return (
+                      console.log("Reviews stored in IndexedDB"),
+                      i.default.getItem("reviews-" + e)
+                    );
+                  })
+                  .then(function(e) {
+                    return JSON.parse(e);
+                  })
+              );
             })
-            .catch(function(e) {
-              console.log(e),
+            .catch(function(t) {
+              return (
+                console.log(t),
                 console.log(
-                  "Can not fetch data. Trying to get it from IndexedDB..."
-                );
+                  "Can not fetch  reviews data Trying to get it from IndexedDB..."
+                ),
+                o("reviews-" + e)
+              );
             })
         );
-      }),
-      (t.getRestaurantById = function(e, t) {
+      });
+    var o = function(e) {
+        return i.default
+          .getItem(e)
+          .then(function(e) {
+            return JSON.parse(e);
+          })
+          .catch(function(e) {
+            console.log(e);
+          });
+      },
+      c = ((t.getRestaurantById = function(e, t) {
         return t.find(function(t) {
           return t.id == e;
         });
@@ -1236,15 +1392,15 @@
         return t.filter(function(e, n) {
           return t.indexOf(e) == n;
         });
-      });
-    var o = (t.urlForRestaurant = function(e) {
-      return "./restaurant.html?id=" + e.id;
-    });
+      }),
+      (t.urlForRestaurant = function(e) {
+        return "./restaurant.html?id=" + e.id;
+      }));
     t.mapMarkerForRestaurant = function(e, t) {
       return new google.maps.Marker({
         position: e.latlng,
         title: e.name,
-        url: o(e),
+        url: c(e),
         map: t
       });
     };
@@ -2296,22 +2452,22 @@
                 };
                 var O =
                     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
-                  Q = "~~local_forage_type~",
-                  k = /^~~local_forage_type~([^~]+)~/,
+                  k = "~~local_forage_type~",
+                  Q = /^~~local_forage_type~([^~]+)~/,
                   R = "__lfsc__:",
-                  C = R.length,
-                  N = "arbf",
+                  N = R.length,
+                  C = "arbf",
                   q = "blob",
                   D = "si08",
                   F = "ui08",
                   V = "uic8",
-                  G = "si16",
-                  P = "si32",
+                  P = "si16",
+                  G = "si32",
                   L = "ur16",
                   z = "ui32",
                   Z = "fl32",
                   X = "fl64",
-                  W = C + N.length,
+                  W = N + C.length,
                   J = Object.prototype.toString;
                 function U(e) {
                   var t,
@@ -2366,7 +2522,7 @@
                       var r,
                         a = R;
                       e instanceof ArrayBuffer
-                        ? ((r = e), (a += N))
+                        ? ((r = e), (a += C))
                         : ((r = e.buffer),
                           "[object Int8Array]" === n
                             ? (a += D)
@@ -2375,11 +2531,11 @@
                               : "[object Uint8ClampedArray]" === n
                                 ? (a += V)
                                 : "[object Int16Array]" === n
-                                  ? (a += G)
+                                  ? (a += P)
                                   : "[object Uint16Array]" === n
                                     ? (a += L)
                                     : "[object Int32Array]" === n
-                                      ? (a += P)
+                                      ? (a += G)
                                       : "[object Uint32Array]" === n
                                         ? (a += z)
                                         : "[object Float32Array]" === n
@@ -2395,7 +2551,7 @@
                     } else if ("[object Blob]" === n) {
                       var i = new FileReader();
                       (i.onload = function() {
-                        var n = Q + e.type + "~" + M(this.result);
+                        var n = k + e.type + "~" + M(this.result);
                         t(R + q + n);
                       }),
                         i.readAsArrayBuffer(e);
@@ -2411,17 +2567,17 @@
                       }
                   },
                   deserialize: function(e) {
-                    if (e.substring(0, C) !== R) return JSON.parse(e);
+                    if (e.substring(0, N) !== R) return JSON.parse(e);
                     var t,
                       n = e.substring(W),
-                      r = e.substring(C, W);
-                    if (r === q && k.test(n)) {
-                      var a = n.match(k);
+                      r = e.substring(N, W);
+                    if (r === q && Q.test(n)) {
+                      var a = n.match(Q);
                       (t = a[1]), (n = n.substring(a[0].length));
                     }
                     var o = U(n);
                     switch (r) {
-                      case N:
+                      case C:
                         return o;
                       case q:
                         return i([o], { type: t });
@@ -2431,11 +2587,11 @@
                         return new Uint8Array(o);
                       case V:
                         return new Uint8ClampedArray(o);
-                      case G:
+                      case P:
                         return new Int16Array(o);
                       case L:
                         return new Uint16Array(o);
-                      case P:
+                      case G:
                         return new Int32Array(o);
                       case z:
                         return new Uint32Array(o);
@@ -3391,7 +3547,7 @@
         )(4);
       }),
         (e.exports = r());
-    }.call(t, n(/*! ./../../webpack/buildin/global.js */ 58)));
+    }.call(t, n(/*! ./../../webpack/buildin/global.js */ 63)));
   },
   /*!*************************************************!*\
   !*** ../node_modules/webpack/buildin/global.js ***!
@@ -3552,16 +3708,16 @@
   /*! dynamic exports provided */
   /*! all exports used */ function(e, t, n) {
     var r = {
-      "./1.jpg": 61,
-      "./10.jpg": 62,
-      "./2.jpg": 63,
-      "./3.jpg": 64,
-      "./4.jpg": 65,
-      "./5.jpg": 66,
-      "./6.jpg": 67,
-      "./7.jpg": 68,
-      "./8.jpg": 69,
-      "./9.jpg": 70
+      "./1.jpg": 66,
+      "./10.jpg": 67,
+      "./2.jpg": 68,
+      "./3.jpg": 69,
+      "./4.jpg": 70,
+      "./5.jpg": 71,
+      "./6.jpg": 72,
+      "./7.jpg": 73,
+      "./8.jpg": 74,
+      "./9.jpg": 75
     };
     function a(e) {
       return n(i(e));
@@ -3576,7 +3732,7 @@
     }),
       (a.resolve = i),
       (e.exports = a),
-      (a.id = 60);
+      (a.id = 65);
   },
   /*!*******************************!*\
   !*** ./assets/data/img/1.jpg ***!
@@ -3978,71 +4134,12 @@
       height: 225
     };
   },
-  /*!***************************************************!*\
-  !*** ../node_modules/@material/base/component.js ***!
-  \***************************************************/
-  /*! exports provided: default */
-  /*! exports used: default */ function(e, t, n) {
-    "use strict";
-    var r = n(/*! ./foundation */ 9);
-    /**
-     * @license
-     * Copyright 2016 Google Inc.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *   http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */ class a {
-      static attachTo(e) {
-        return new a(e, new r.a());
-      }
-      constructor(e, t, ...n) {
-        (this.root_ = e),
-          this.initialize(...n),
-          (this.foundation_ = void 0 === t ? this.getDefaultFoundation() : t),
-          this.foundation_.init(),
-          this.initialSyncWithDOM();
-      }
-      initialize() {}
-      getDefaultFoundation() {
-        throw new Error(
-          "Subclasses must override getDefaultFoundation to return a properly configured foundation class"
-        );
-      }
-      initialSyncWithDOM() {}
-      destroy() {
-        this.foundation_.destroy();
-      }
-      listen(e, t) {
-        this.root_.addEventListener(e, t);
-      }
-      unlisten(e, t) {
-        this.root_.removeEventListener(e, t);
-      }
-      emit(e, t, n = !1) {
-        let r;
-        "function" == typeof CustomEvent
-          ? (r = new CustomEvent(e, { detail: t, bubbles: n }))
-          : (r = document.createEvent("CustomEvent")).initCustomEvent(
-              e,
-              n,
-              !1,
-              t
-            ),
-          this.root_.dispatchEvent(r);
-      }
-    }
-    t.a = a;
-  },
+  ,
   /*!************************************************!*\
+  !*** ../node_modules/@material/ripple/util.js ***!
+  \************************************************/
+  /*! exports provided: supportsCssVariables, applyPassive, getMatchesProperty, getNormalizedEventCoords */
+  /*! exports used: applyPassive, getMatchesProperty, getNormalizedEventCoords, supportsCssVariables */ /*!************************************************!*\
   !*** ../node_modules/@material/ripple/util.js ***!
   \************************************************/
   /*! exports provided: supportsCssVariables, applyPassive, getMatchesProperty, getNormalizedEventCoords */
@@ -4169,9 +4266,9 @@
     n.d(t, "a", function() {
       return o;
     });
-    var r = n(/*! @material/base/component */ 71),
-      a = (n(/*! ./adapter */ 73), n(/*! ./foundation */ 75)),
-      i = n(/*! ./util */ 72);
+    var r = n(/*! @material/base/component */ 10),
+      a = (n(/*! ./adapter */ 78), n(/*! ./foundation */ 80)),
+      i = n(/*! ./util */ 77);
     n.d(t, "b", function() {
       return a.a;
     });
@@ -4261,9 +4358,9 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! @material/base/foundation */ 9),
-      a = (n(/*! ./adapter */ 73), n(/*! ./constants */ 76)),
-      i = n(/*! ./util */ 72);
+    var r = n(/*! @material/base/foundation */ 7),
+      a = (n(/*! ./adapter */ 78), n(/*! ./constants */ 81)),
+      i = n(/*! ./util */ 77);
     const o = ["touchstart", "pointerdown", "mousedown", "keydown"],
       c = ["touchend", "pointerup", "mouseup"];
     let s = [];
@@ -4666,6 +4763,9 @@
   },
   ,
   ,
+  ,
+  ,
+  ,
   /*!*****************!*\
   !*** ./main.js ***!
   \*****************/
@@ -4691,43 +4791,59 @@
       Object.freeze(
         Object.defineProperties(r, { raw: { value: Object.freeze(a) } })
       )),
-      o = l(n(/*! lozad */ 10));
-    l(n(/*! normalize.css/normalize.css */ 11)),
-      l(n(/*! css-star-rating/css/star-rating.css */ 12));
-    n(/*! ./assets/css/styles.css */ 13), n(/*! ./assets/css/app.scss */ 14);
-    l(n(/*! ./assets/data/manifest.json */ 80));
-    var c = l(n(/*! load-google-maps-api */ 15)),
-      s = n(/*! common-tags */ 16),
-      u = n(/*! ./assets/js/db */ 56),
-      d = n(/*! ./assets/js/map */ 59),
-      f = n(/*! @material/icon-toggle */ 81);
-    function l(e) {
+      o = h(n(/*! lozad */ 13));
+    h(n(/*! normalize.css/normalize.css */ 14)),
+      h(n(/*! css-star-rating/css/star-rating.css */ 15));
+    n(/*! ./assets/css/styles.css */ 16),
+      n(/*! ./assets/css/app.scss */ 17),
+      n(/*! ./assets/css/snackbar.scss */ 18);
+    h(n(/*! ./assets/data/manifest.json */ 19));
+    var c = h(n(/*! load-google-maps-api */ 20)),
+      s = n(/*! common-tags */ 21),
+      u = n(/*! ./assets/js/db */ 61),
+      d = n(/*! ./assets/js/map */ 64),
+      f = n(/*! @material/icon-toggle */ 88),
+      l = n(/*! ./assets/js/util */ 11);
+    function h(e) {
       return e && e.__esModule ? e : { default: e };
     }
-    var h,
-      p = void 0,
-      A = (0, o.default)();
-    A.observe(),
+    var p,
+      A = void 0,
+      g = (0, o.default)();
+    g.observe(),
+      "serviceWorker" in navigator &&
+        navigator.serviceWorker.addEventListener("message", function(e) {
+          "favorite-success" === e.data
+            ? n
+                .e(1 /*! notification */)
+                .then(n.bind(null, /*! ./assets/js/snackbar */ 12))
+                .then(function(e) {
+                  e.showNotification(
+                    "Your favourite restaurants were sent successfully"
+                  );
+                })
+            : console.log("Client received unknown message: " + e.data);
+        }),
       document.addEventListener("DOMContentLoaded", function(e) {
-        y(400, "map"), g(), b();
+        E(400, "map"), v(), m();
       }),
       document.getElementById("map").addEventListener(
         "mouseover",
         function() {
-          p || E(d.MapsConfig);
+          A || w(d.MapsConfig);
         },
         { once: !0 }
       );
-    var g = function() {
+    var v = function() {
         (0, u.loadRestaurants)()
           .then(function(e) {
-            (window.neighborhoods = (0, u.getNeighborhoods)(e)), v();
+            (window.neighborhoods = (0, u.getNeighborhoods)(e)), b();
           })
           .catch(function(e) {
             console.error(e);
           });
       },
-      v = function() {
+      b = function() {
         var e =
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
@@ -4738,16 +4854,16 @@
           (n.innerHTML = e), (n.value = e), t.append(n);
         });
       },
-      b = function() {
+      m = function() {
         (0, u.loadRestaurants)()
           .then(function(e) {
-            (window.cuisines = (0, u.getCuisines)(e)), m();
+            (window.cuisines = (0, u.getCuisines)(e)), y();
           })
           .catch(function(e) {
             console.error(e);
           });
       },
-      m = function() {
+      y = function() {
         var e =
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
@@ -4758,7 +4874,7 @@
           (n.innerHTML = e), (n.value = e), t.append(n);
         });
       },
-      y = function(e, t) {
+      E = function(e, t) {
         window.matchMedia("(max-width:600px)").matches
           ? (!(function(e, t) {
               var n =
@@ -4776,41 +4892,41 @@
             })(e, t),
             (0, u.loadRestaurants)()
               .then(function(e) {
-                console.log(e), B(e), I();
+                I(e), T();
               })
               .catch(function(e) {
                 console.error(e);
               }))
-          : E(d.MapsConfig);
+          : w(d.MapsConfig);
       },
-      E = function(e) {
+      w = function(e) {
         (0, c.default)(e)
           .then(function(e) {
-            (h = new e.Map(document.getElementById("map"), {
+            (p = new e.Map(document.getElementById("map"), {
               zoom: 12,
               center: { lat: 40.722216, lng: -73.9875 },
               scrollwheel: !1,
               styles: d.MapStyle
             })),
-              (p = !0),
-              j();
+              (A = !0),
+              B();
           })
           .catch(function(e) {
             console.error(e);
           });
       },
-      w = function() {
-        p ? j() : E(d.MapsConfig);
+      S = function() {
+        A ? B() : w(d.MapsConfig);
       },
-      S = document.getElementById("neighborhoods-select"),
-      H = document.getElementById("cuisines-select");
-    S.addEventListener("change", function() {
-      w();
+      H = document.getElementById("neighborhoods-select"),
+      j = document.getElementById("cuisines-select");
+    H.addEventListener("change", function() {
+      S();
     }),
-      H.addEventListener("change", function() {
-        w();
+      j.addEventListener("change", function() {
+        S();
       });
-    var j = function() {
+    var B = function() {
         var e = document.getElementById("cuisines-select"),
           t = document.getElementById("neighborhoods-select"),
           n = e.selectedIndex,
@@ -4821,13 +4937,13 @@
           (0, u.loadRestaurants)()
             .then(function(e) {
               var t = (0, u.getRestaurantByCuisineNeighborhood)(a, i, e);
-              B(t), I();
+              I(t), T();
             })
             .catch(function(e) {
               console.error(e);
             });
       },
-      B = function(e) {
+      I = function(e) {
         (window.restaurants = []),
           (document.getElementById("restaurants-list").innerHTML = ""),
           void 0 !== window.markers &&
@@ -4837,22 +4953,22 @@
           (window.markers = []),
           (window.restaurants = e);
       },
-      I = function() {
+      T = function() {
         var e =
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
               : window.restaurants,
           t = document.getElementById("restaurants-list");
         e.forEach(function(e) {
-          t.append(T(e)), A.observe();
+          t.append(x(e)), g.observe();
         }),
-          p && x();
+          A && O();
       },
-      T = function(e) {
+      x = function(e) {
         var t = document.createElement("li"),
           r = document.createElement("img");
         r.className = "restaurant-img lozad";
-        var a = n(/*! ./assets/data/img */ 60)("./" + e.id + ".jpg");
+        var a = n(/*! ./assets/data/img */ 65)("./" + e.id + ".jpg");
         (r.src = a.placeholder),
           r.setAttribute("data-src", a.src),
           r.setAttribute("data-srcset", a.srcSet),
@@ -4870,37 +4986,50 @@
         d.classList.add("flex-item"),
           (d.innerHTML = "View Details"),
           (d.href = (0, u.urlForRestaurant)(e));
-        var l = document.createElement("div");
+        var h = document.createElement("div");
+        h.classList.add("flex-item"),
+          (h.innerHTML =
+            '<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed=' +
+            e.is_favorite +
+            '\n  aria-label="Add to favorites" tabindex="0"\n  data-id=' +
+            e.id +
+            '\n  data-toggle-on=\'{"label": "Remove from favorites", "content": "favorite", "cssClass": "active" }\'\n  data-toggle-off=\'{"label": "Add to favorites", "content": "favorite_border"}\'>\n favorite_border\n</i>');
+        var p = h.querySelector(".mdc-icon-toggle");
         return (
-          l.classList.add("flex-item"),
-          (l.innerHTML =
-            '<i class="mdc-icon-toggle material-icons md-24" role="button" aria-pressed="false"\n  aria-label="Add to favorites" tabindex="0"\n  data-toggle-on=\'{"label": "Remove from favorites", "content": "favorite", "cssClass": "active" }\'\n  data-toggle-off=\'{"label": "Add to favorites", "content": "favorite_border"}\'>\n favorite_border\n</i>'),
-          f.MDCIconToggle.attachTo(l.querySelector(".mdc-icon-toggle")),
+          f.MDCIconToggle.attachTo(p),
+          p.addEventListener("click", function(e) {
+            var t = e.target.getAttribute("aria-pressed");
+            k(l.FavouriteEndpoint, e.target.dataset.id, t).catch(function(e) {
+              console.error(e);
+            });
+          }),
           s.appendChild(d),
-          s.appendChild(l),
+          s.appendChild(h),
           t.append(s),
           t
         );
       },
-      x = function() {
+      O = function() {
         (arguments.length > 0 && void 0 !== arguments[0]
           ? arguments[0]
           : window.restaurants
         ).forEach(function(e) {
-          var t = (0, u.mapMarkerForRestaurant)(e, h);
+          var t = (0, u.mapMarkerForRestaurant)(e, p);
           google.maps.event.addListener(t, "click", function() {
             window.location.href = t.url;
           }),
             window.markers.push(t);
         });
+      },
+      k = function(e, t, n) {
+        return fetch("" + e + t + "/", {
+          method: "PUT",
+          headers: new Headers({
+            "Content-Type": "application/x-www-form-urlencoded"
+          }),
+          body: "is_favorite=" + n
+        });
       };
-  },
-  /*!***********************************!*\
-  !*** ./assets/data/manifest.json ***!
-  \***********************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(e, t, n) {
-    e.exports = n.p + "manifest.json";
   },
   /*!******************************************************!*\
   !*** ../node_modules/@material/icon-toggle/index.js ***!
@@ -4912,9 +5041,9 @@
       n.d(t, "MDCIconToggle", function() {
         return o;
       });
-    var r = n(/*! @material/base/component */ 71),
-      a = n(/*! ./foundation */ 82),
-      i = n(/*! @material/ripple/index */ 74);
+    var r = n(/*! @material/base/component */ 10),
+      a = n(/*! ./foundation */ 89),
+      i = n(/*! @material/ripple/index */ 79);
     n.d(t, "MDCIconToggleFoundation", function() {
       return a.a;
     });
@@ -5005,8 +5134,8 @@
   /*! exports provided: default */
   /*! exports used: default */ function(e, t, n) {
     "use strict";
-    var r = n(/*! @material/base/foundation */ 9),
-      a = (n(/*! ./adapter */ 83), n(/*! ./constants */ 84));
+    var r = n(/*! @material/base/foundation */ 7),
+      a = (n(/*! ./adapter */ 90), n(/*! ./constants */ 91));
     /**
      * @license
      * Copyright 2016 Google Inc. All Rights Reserved.
