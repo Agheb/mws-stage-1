@@ -33,7 +33,7 @@ if ("serviceWorker" in navigator) {
       import(/* webpackChunkName: "notification" */ "./assets/js/snackbar").then(
         snackbar => {
           snackbar.showNotification(
-            "Thank you! Your reviews has been sent successfully"
+            "Thank you! Your reviews has been sent successfully.Please reload the page."
           );
         }
       );

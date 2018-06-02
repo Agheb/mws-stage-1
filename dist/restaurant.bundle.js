@@ -4618,7 +4618,7 @@
                 .then(n.bind(null, /*! ./assets/js/snackbar */ 12))
                 .then(function(e) {
                   e.showNotification(
-                    "Thank you! Your reviews has been sent successfully"
+                    "Thank you! Your reviews has been sent successfully.Please reload the page."
                   );
                 })
             : console.log("Client received unknown message: " + e.data);
