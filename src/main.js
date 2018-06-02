@@ -279,8 +279,6 @@ let fillRestaurantsHTML = (restaurants = window.restaurants) => {
   }
 };
 
-// FIXME: Needing refactor or cleanup -@agheb at 6/1/2018, 7:54:20 PM
-// create module for restaurant card view
 /*
  * Create restaurant HTML.
  */
