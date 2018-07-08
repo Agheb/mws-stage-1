@@ -142,7 +142,7 @@ const createStaticMapImage = (height, element) => {
     document.body.clientWidth;
 
   const url = oneLineTrim`
-   https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/
+   https://api.mapbox.com/styles/v1/mapbox/light-v9/static/
    pin-l+3455d9(-73.966393,40.68355),
    pin-l+3455d9(-73.989667,40.713829),
    pin-l+3455d9(-73.985414,40.747143),
@@ -154,7 +154,7 @@ const createStaticMapImage = (height, element) => {
    pin-l+3455d9(-73.950652,40.743797),
    pin-l+3455d9(-73.954235,40.743394)/
    -73.987501,40.722216,11/
-   ${width}x${height}@2x?
+   ${width}x${height}?
    access_token=pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg
    `;
 
@@ -196,7 +196,7 @@ const addInteractiveMap = options => {
     center: [-73.9875, 40.722216],
     zoom: 11,
     container: "map",
-    style: "mapbox://styles/agheb/cjincsidz13122sq8lvfgmn1t?optimize=true"
+    style: "mapbox://styles/agheb/cjjddhl0w3qu22sp5gmnlffum?optimize=true"
   });
   InteractiveMapLoaded = true;
   updateRestaurants();

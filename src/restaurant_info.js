@@ -119,7 +119,7 @@ const addInteractiveRestaurantMap = (
     center: ll,
     zoom: 14,
     container: "mapbox",
-    style: "mapbox://styles/agheb/cjincsidz13122sq8lvfgmn1t?optimize=true"
+    style: "mapbox://styles/agheb/cjjddhl0w3qu22sp5gmnlffum?optimize=true"
   });
   InteractiveMapLoaded = true;
 
@@ -139,7 +139,7 @@ const createRestaurantMapImage = (restaurant, element, height) => {
   // TODO: Change Markercolor to black -@agheb at 6/18/2018, 2:41:25 PM
 
   const url2 = oneLineTrim`
-   https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/
+   https://api.mapbox.com/styles/v1/mapbox/light-v9/static/
    pin-l+3455d9(${restaurant.latlng.lng},${restaurant.latlng.lat})/
    ${restaurant.latlng.lng},${restaurant.latlng.lat},17/
    ${width}x${height}@2x?
