@@ -1,6 +1,102 @@
 webpackJsonp(
   [0],
-  Array(77).concat([
+  Array(78).concat([
+    /*!*************************************************!*\
+  !*** ../node_modules/@material/ripple/index.js ***!
+  \*************************************************/
+    /*! exports provided: MDCRipple, MDCRippleFoundation, RippleCapableSurface, util */
+    /*! exports used: MDCRipple, MDCRippleFoundation */ function(t, e, i) {
+      "use strict";
+      i.d(e, "a", function() {
+        return r;
+      });
+      var a = i(/*! @material/base/component */ 6),
+        s = (i(/*! ./adapter */ 80), i(/*! ./foundation */ 86)),
+        n = i(/*! ./util */ 79);
+      i.d(e, "b", function() {
+        return s.a;
+      });
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      class r extends a.a {
+        constructor(...t) {
+          super(...t), (this.disabled = !1), this.unbounded_;
+        }
+        static attachTo(t, { isUnbounded: e } = {}) {
+          const i = new r(t);
+          return void 0 !== e && (i.unbounded = e), i;
+        }
+        static createAdapter(t) {
+          const e = n.b(HTMLElement.prototype);
+          return {
+            browserSupportsCssVars: () => n.d(window),
+            isUnbounded: () => t.unbounded,
+            isSurfaceActive: () => t.root_[e](":active"),
+            isSurfaceDisabled: () => t.disabled,
+            addClass: e => t.root_.classList.add(e),
+            removeClass: e => t.root_.classList.remove(e),
+            containsEventTarget: e => t.root_.contains(e),
+            registerInteractionHandler: (e, i) =>
+              t.root_.addEventListener(e, i, n.a()),
+            deregisterInteractionHandler: (e, i) =>
+              t.root_.removeEventListener(e, i, n.a()),
+            registerDocumentInteractionHandler: (t, e) =>
+              document.documentElement.addEventListener(t, e, n.a()),
+            deregisterDocumentInteractionHandler: (t, e) =>
+              document.documentElement.removeEventListener(t, e, n.a()),
+            registerResizeHandler: t => window.addEventListener("resize", t),
+            deregisterResizeHandler: t =>
+              window.removeEventListener("resize", t),
+            updateCssVariable: (e, i) => t.root_.style.setProperty(e, i),
+            computeBoundingRect: () => t.root_.getBoundingClientRect(),
+            getWindowPageOffset: () => ({
+              x: window.pageXOffset,
+              y: window.pageYOffset
+            })
+          };
+        }
+        get unbounded() {
+          return this.unbounded_;
+        }
+        set unbounded(t) {
+          (this.unbounded_ = Boolean(t)), this.setUnbounded_();
+        }
+        setUnbounded_() {
+          this.foundation_.setUnbounded(this.unbounded_);
+        }
+        activate() {
+          this.foundation_.activate();
+        }
+        deactivate() {
+          this.foundation_.deactivate();
+        }
+        layout() {
+          this.foundation_.layout();
+        }
+        getDefaultFoundation() {
+          return new s.a(r.createAdapter(this));
+        }
+        initialSyncWithDOM() {
+          this.unbounded = "mdcRippleIsUnbounded" in this.root_.dataset;
+        }
+      }
+      class o {}
+      o.prototype.root_, o.prototype.unbounded, o.prototype.disabled;
+    },
     /*!************************************************!*\
   !*** ../node_modules/@material/ripple/util.js ***!
   \************************************************/
@@ -119,21 +215,79 @@ webpackJsonp(
        * limitations under the License.
        */
     },
-    /*!*************************************************!*\
-  !*** ../node_modules/@material/ripple/index.js ***!
-  \*************************************************/
-    /*! exports provided: MDCRipple, MDCRippleFoundation, RippleCapableSurface, util */
-    /*! exports used: MDCRipple, MDCRippleFoundation */ function(t, e, i) {
+    /*!***********************************************************!*\
+  !*** ../node_modules/@material/floating-label/adapter.js ***!
+  \***********************************************************/
+    /*! exports provided: default */ function(t, e, i) {
+      "use strict";
+      /**
+       * @license
+       * Copyright 2017 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+    },
+    /*!********************************************************!*\
+  !*** ../node_modules/@material/line-ripple/adapter.js ***!
+  \********************************************************/
+    /*! exports provided: default */ function(t, e, i) {
+      "use strict";
+      /**
+       * @license
+       * Copyright 2018 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+    },
+    /*!*****************************************************!*\
+  !*** ../node_modules/@material/select/constants.js ***!
+  \*****************************************************/
+    /*! exports provided: cssClasses, strings */
+    /*! exports used: cssClasses, strings */ function(t, e, i) {
+      "use strict";
+      e.a = {
+        BOX: "mdc-select--box",
+        DISABLED: "mdc-select--disabled",
+        ROOT: "mdc-select"
+      };
+      e.b = {
+        CHANGE_EVENT: "MDCSelect:change",
+        LINE_RIPPLE_SELECTOR: ".mdc-line-ripple",
+        LABEL_SELECTOR: ".mdc-floating-label",
+        NATIVE_CONTROL_SELECTOR: ".mdc-select__native-control"
+      };
+    },
+    /*!*********************************************************!*\
+  !*** ../node_modules/@material/floating-label/index.js ***!
+  \*********************************************************/
+    /*! exports provided: MDCFloatingLabel, MDCFloatingLabelFoundation */
+    /*! exports used: MDCFloatingLabel */ function(t, e, i) {
       "use strict";
       i.d(e, "a", function() {
-        return r;
+        return n;
       });
-      var a = i(/*! @material/base/component */ 10),
-        s = (i(/*! ./adapter */ 78), i(/*! ./foundation */ 80)),
-        n = i(/*! ./util */ 77);
-      i.d(e, "b", function() {
-        return s.a;
-      });
+      var a = i(/*! @material/base/component */ 6),
+        s = (i(/*! ./adapter */ 81), i(/*! ./foundation */ 89));
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -150,51 +304,62 @@ webpackJsonp(
        * See the License for the specific language governing permissions and
        * limitations under the License.
        */
-      class r extends a.a {
-        constructor(...t) {
-          super(...t), (this.disabled = !1), this.unbounded_;
+      class n extends a.a {
+        static attachTo(t) {
+          return new n(t);
         }
-        static attachTo(t, { isUnbounded: e } = {}) {
-          const i = new r(t);
-          return void 0 !== e && (i.unbounded = e), i;
+        shake(t) {
+          this.foundation_.shake(t);
         }
-        static createAdapter(t) {
-          const e = n.b(HTMLElement.prototype);
-          return {
-            browserSupportsCssVars: () => n.d(window),
-            isUnbounded: () => t.unbounded,
-            isSurfaceActive: () => t.root_[e](":active"),
-            isSurfaceDisabled: () => t.disabled,
-            addClass: e => t.root_.classList.add(e),
-            removeClass: e => t.root_.classList.remove(e),
-            containsEventTarget: e => t.root_.contains(e),
-            registerInteractionHandler: (e, i) =>
-              t.root_.addEventListener(e, i, n.a()),
-            deregisterInteractionHandler: (e, i) =>
-              t.root_.removeEventListener(e, i, n.a()),
-            registerDocumentInteractionHandler: (t, e) =>
-              document.documentElement.addEventListener(t, e, n.a()),
-            deregisterDocumentInteractionHandler: (t, e) =>
-              document.documentElement.removeEventListener(t, e, n.a()),
-            registerResizeHandler: t => window.addEventListener("resize", t),
-            deregisterResizeHandler: t =>
-              window.removeEventListener("resize", t),
-            updateCssVariable: (e, i) => t.root_.style.setProperty(e, i),
-            computeBoundingRect: () => t.root_.getBoundingClientRect(),
-            getWindowPageOffset: () => ({
-              x: window.pageXOffset,
-              y: window.pageYOffset
-            })
-          };
+        float(t) {
+          this.foundation_.float(t);
         }
-        get unbounded() {
-          return this.unbounded_;
+        getWidth() {
+          return this.foundation_.getWidth();
         }
-        set unbounded(t) {
-          (this.unbounded_ = Boolean(t)), this.setUnbounded_();
+        getDefaultFoundation() {
+          return new s.a({
+            addClass: t => this.root_.classList.add(t),
+            removeClass: t => this.root_.classList.remove(t),
+            getWidth: () => this.root_.offsetWidth,
+            registerInteractionHandler: (t, e) =>
+              this.root_.addEventListener(t, e),
+            deregisterInteractionHandler: (t, e) =>
+              this.root_.removeEventListener(t, e)
+          });
         }
-        setUnbounded_() {
-          this.foundation_.setUnbounded(this.unbounded_);
+      }
+    },
+    /*!******************************************************!*\
+  !*** ../node_modules/@material/line-ripple/index.js ***!
+  \******************************************************/
+    /*! exports provided: MDCLineRipple, MDCLineRippleFoundation */
+    /*! exports used: MDCLineRipple */ function(t, e, i) {
+      "use strict";
+      i.d(e, "a", function() {
+        return n;
+      });
+      var a = i(/*! @material/base/component */ 6),
+        s = (i(/*! ./adapter */ 82), i(/*! ./foundation */ 91));
+      /**
+       * @license
+       * Copyright 2018 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      class n extends a.a {
+        static attachTo(t) {
+          return new n(t);
         }
         activate() {
           this.foundation_.activate();
@@ -202,18 +367,23 @@ webpackJsonp(
         deactivate() {
           this.foundation_.deactivate();
         }
-        layout() {
-          this.foundation_.layout();
+        setRippleCenter(t) {
+          this.foundation_.setRippleCenter(t);
         }
         getDefaultFoundation() {
-          return new s.a(r.createAdapter(this));
-        }
-        initialSyncWithDOM() {
-          this.unbounded = "mdcRippleIsUnbounded" in this.root_.dataset;
+          return new s.a(
+            Object.assign({
+              addClass: t => this.root_.classList.add(t),
+              removeClass: t => this.root_.classList.remove(t),
+              hasClass: t => this.root_.classList.contains(t),
+              setStyle: (t, e) => (this.root_.style[t] = e),
+              registerEventHandler: (t, e) => this.root_.addEventListener(t, e),
+              deregisterEventHandler: (t, e) =>
+                this.root_.removeEventListener(t, e)
+            })
+          );
         }
       }
-      class o {}
-      o.prototype.root_, o.prototype.unbounded, o.prototype.disabled;
     },
     /*!******************************************************!*\
   !*** ../node_modules/@material/ripple/foundation.js ***!
@@ -221,9 +391,9 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./adapter */ 78), i(/*! ./constants */ 81)),
-        n = i(/*! ./util */ 77);
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./adapter */ 80), i(/*! ./constants */ 87)),
+        n = i(/*! ./util */ 79);
       const r = ["touchstart", "pointerdown", "mousedown", "keydown"],
         o = ["touchend", "pointerup", "mouseup"];
       let d = [];
@@ -638,6 +808,395 @@ webpackJsonp(
           TAP_DELAY_MS: 300
         };
     },
+    /*!*************************************************!*\
+  !*** ../node_modules/@material/select/index.js ***!
+  \*************************************************/
+    /*! exports provided: MDCSelectFoundation, MDCSelect */
+    /*! all exports used */ function(t, e, i) {
+      "use strict";
+      Object.defineProperty(e, "__esModule", { value: !0 });
+      var a = i(/*! @material/base/index */ 9),
+        s = i(/*! @material/floating-label/index */ 84),
+        n = i(/*! @material/line-ripple/index */ 85),
+        r = i(/*! @material/ripple/index */ 78),
+        o = i(/*! ./foundation */ 93),
+        d = i(/*! ./constants */ 83);
+      i.d(e, "MDCSelectFoundation", function() {
+        return o.a;
+      });
+      class l extends a.a {
+        static attachTo(t) {
+          return new l(t);
+        }
+        get value() {
+          return this.nativeControl_.value;
+        }
+        set value(t) {
+          this.foundation_.setValue(t);
+        }
+        get selectedIndex() {
+          return this.nativeControl_.selectedIndex;
+        }
+        set selectedIndex(t) {
+          this.foundation_.setSelectedIndex(t);
+        }
+        get disabled() {
+          return this.nativeControl_.disabled;
+        }
+        set disabled(t) {
+          this.foundation_.setDisabled(t);
+        }
+        initialize(t = t => new s.a(t), e = t => new n.a(t)) {
+          this.nativeControl_ = this.root_.querySelector(
+            d.b.NATIVE_CONTROL_SELECTOR
+          );
+          const i = this.root_.querySelector(d.b.LABEL_SELECTOR);
+          i && (this.label_ = t(i));
+          const a = this.root_.querySelector(d.b.LINE_RIPPLE_SELECTOR);
+          a && (this.lineRipple_ = e(a)),
+            this.root_.classList.contains(d.a.BOX) &&
+              (this.ripple = this.initRipple_());
+        }
+        initRipple_() {
+          const t = Object.assign(r.a.createAdapter(this), {
+              registerInteractionHandler: (t, e) =>
+                this.nativeControl_.addEventListener(t, e),
+              deregisterInteractionHandler: (t, e) =>
+                this.nativeControl_.removeEventListener(t, e)
+            }),
+            e = new r.b(t);
+          return new r.a(this.root_, e);
+        }
+        getDefaultFoundation() {
+          return new o.a({
+            addClass: t => this.root_.classList.add(t),
+            removeClass: t => this.root_.classList.remove(t),
+            floatLabel: t => {
+              this.label_ && this.label_.float(t);
+            },
+            activateBottomLine: () => {
+              this.lineRipple_ && this.lineRipple_.activate();
+            },
+            deactivateBottomLine: () => {
+              this.lineRipple_ && this.lineRipple_.deactivate();
+            },
+            setDisabled: t => (this.nativeControl_.disabled = t),
+            registerInteractionHandler: (t, e) =>
+              this.nativeControl_.addEventListener(t, e),
+            deregisterInteractionHandler: (t, e) =>
+              this.nativeControl_.removeEventListener(t, e),
+            getSelectedIndex: () => this.nativeControl_.selectedIndex,
+            setSelectedIndex: t => (this.nativeControl_.selectedIndex = t),
+            getValue: () => this.nativeControl_.value,
+            setValue: t => (this.nativeControl_.value = t)
+          });
+        }
+        initialSyncWithDOM() {
+          (this.selectedIndex = this.nativeControl_.selectedIndex),
+            this.nativeControl_.disabled && (this.disabled = !0);
+        }
+        destroy() {
+          this.ripple && this.ripple.destroy(), super.destroy();
+        }
+      }
+      e.MDCSelect = l;
+    },
+    /*!**************************************************************!*\
+  !*** ../node_modules/@material/floating-label/foundation.js ***!
+  \**************************************************************/
+    /*! exports provided: default */
+    /*! exports used: default */ function(t, e, i) {
+      "use strict";
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./adapter */ 81), i(/*! ./constants */ 90));
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      class n extends a.a {
+        static get cssClasses() {
+          return s.a;
+        }
+        static get defaultAdapter() {
+          return {
+            addClass: () => {},
+            removeClass: () => {},
+            getWidth: () => {},
+            registerInteractionHandler: () => {},
+            deregisterInteractionHandler: () => {}
+          };
+        }
+        constructor(t) {
+          super(Object.assign(n.defaultAdapter, t)),
+            (this.shakeAnimationEndHandler_ = () =>
+              this.handleShakeAnimationEnd_());
+        }
+        init() {
+          this.adapter_.registerInteractionHandler(
+            "animationend",
+            this.shakeAnimationEndHandler_
+          );
+        }
+        destroy() {
+          this.adapter_.deregisterInteractionHandler(
+            "animationend",
+            this.shakeAnimationEndHandler_
+          );
+        }
+        getWidth() {
+          return this.adapter_.getWidth();
+        }
+        shake(t) {
+          const { LABEL_SHAKE: e } = n.cssClasses;
+          t ? this.adapter_.addClass(e) : this.adapter_.removeClass(e);
+        }
+        float(t) {
+          const { LABEL_FLOAT_ABOVE: e, LABEL_SHAKE: i } = n.cssClasses;
+          t
+            ? this.adapter_.addClass(e)
+            : (this.adapter_.removeClass(e), this.adapter_.removeClass(i));
+        }
+        handleShakeAnimationEnd_() {
+          const { LABEL_SHAKE: t } = n.cssClasses;
+          this.adapter_.removeClass(t);
+        }
+      }
+      e.a = n;
+    },
+    /*!*************************************************************!*\
+  !*** ../node_modules/@material/floating-label/constants.js ***!
+  \*************************************************************/
+    /*! exports provided: cssClasses */
+    /*! exports used: cssClasses */ function(t, e, i) {
+      "use strict";
+      i.d(e, "a", function() {
+        return a;
+      });
+      /**
+       * @license
+       * Copyright 2016 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      const a = {
+        LABEL_FLOAT_ABOVE: "mdc-floating-label--float-above",
+        LABEL_SHAKE: "mdc-floating-label--shake"
+      };
+    },
+    /*!***********************************************************!*\
+  !*** ../node_modules/@material/line-ripple/foundation.js ***!
+  \***********************************************************/
+    /*! exports provided: default */
+    /*! exports used: default */ function(t, e, i) {
+      "use strict";
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./adapter */ 82), i(/*! ./constants */ 92));
+      /**
+       * @license
+       * Copyright 2018 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      class n extends a.a {
+        static get cssClasses() {
+          return s.a;
+        }
+        static get defaultAdapter() {
+          return {
+            addClass: () => {},
+            removeClass: () => {},
+            hasClass: () => {},
+            setStyle: () => {},
+            registerEventHandler: () => {},
+            deregisterEventHandler: () => {}
+          };
+        }
+        constructor(t = {}) {
+          super(Object.assign(n.defaultAdapter, t)),
+            (this.transitionEndHandler_ = t => this.handleTransitionEnd(t));
+        }
+        init() {
+          this.adapter_.registerEventHandler(
+            "transitionend",
+            this.transitionEndHandler_
+          );
+        }
+        destroy() {
+          this.adapter_.deregisterEventHandler(
+            "transitionend",
+            this.transitionEndHandler_
+          );
+        }
+        activate() {
+          this.adapter_.removeClass(s.a.LINE_RIPPLE_DEACTIVATING),
+            this.adapter_.addClass(s.a.LINE_RIPPLE_ACTIVE);
+        }
+        setRippleCenter(t) {
+          this.adapter_.setStyle("transform-origin", `${t}px center`);
+        }
+        deactivate() {
+          this.adapter_.addClass(s.a.LINE_RIPPLE_DEACTIVATING);
+        }
+        handleTransitionEnd(t) {
+          const e = this.adapter_.hasClass(s.a.LINE_RIPPLE_DEACTIVATING);
+          "opacity" === t.propertyName &&
+            e &&
+            (this.adapter_.removeClass(s.a.LINE_RIPPLE_ACTIVE),
+            this.adapter_.removeClass(s.a.LINE_RIPPLE_DEACTIVATING));
+        }
+      }
+      e.a = n;
+    },
+    /*!**********************************************************!*\
+  !*** ../node_modules/@material/line-ripple/constants.js ***!
+  \**********************************************************/
+    /*! exports provided: cssClasses */
+    /*! exports used: cssClasses */ function(t, e, i) {
+      "use strict";
+      i.d(e, "a", function() {
+        return a;
+      });
+      /**
+       * @license
+       * Copyright 2018 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+      const a = {
+        LINE_RIPPLE_ACTIVE: "mdc-line-ripple--active",
+        LINE_RIPPLE_DEACTIVATING: "mdc-line-ripple--deactivating"
+      };
+    },
+    /*!******************************************************!*\
+  !*** ../node_modules/@material/select/foundation.js ***!
+  \******************************************************/
+    /*! exports provided: default */
+    /*! exports used: default */ function(t, e, i) {
+      "use strict";
+      var a = i(/*! @material/base/index */ 9),
+        s = i(/*! ./constants */ 83);
+      class n extends a.b {
+        static get cssClasses() {
+          return s.a;
+        }
+        static get strings() {
+          return s.b;
+        }
+        static get defaultAdapter() {
+          return {
+            addClass: () => {},
+            removeClass: () => {},
+            floatLabel: () => {},
+            activateBottomLine: () => {},
+            deactivateBottomLine: () => {},
+            registerInteractionHandler: () => {},
+            deregisterInteractionHandler: () => {},
+            getSelectedIndex: () => -1,
+            setSelectedIndex: () => {},
+            setDisabled: () => {},
+            getValue: () => "",
+            setValue: () => {}
+          };
+        }
+        constructor(t) {
+          super(Object.assign(n.defaultAdapter, t)),
+            (this.focusHandler_ = t => this.handleFocus_(t)),
+            (this.blurHandler_ = t => this.handleBlur_(t)),
+            (this.selectionHandler_ = t => this.handleSelect_(t));
+        }
+        init() {
+          this.adapter_.registerInteractionHandler("focus", this.focusHandler_),
+            this.adapter_.registerInteractionHandler("blur", this.blurHandler_),
+            this.adapter_.registerInteractionHandler(
+              "change",
+              this.selectionHandler_
+            );
+        }
+        destroy() {
+          this.adapter_.deregisterInteractionHandler(
+            "focus",
+            this.focusHandler_
+          ),
+            this.adapter_.deregisterInteractionHandler(
+              "blur",
+              this.blurHandler_
+            ),
+            this.adapter_.deregisterInteractionHandler(
+              "change",
+              this.selectionHandler_
+            );
+        }
+        setSelectedIndex(t) {
+          this.adapter_.setSelectedIndex(t), this.floatLabelWithValue_();
+        }
+        setValue(t) {
+          this.adapter_.setValue(t),
+            this.setSelectedIndex(this.adapter_.getSelectedIndex());
+        }
+        setDisabled(t) {
+          const { DISABLED: e } = n.cssClasses;
+          this.adapter_.setDisabled(t),
+            t ? this.adapter_.addClass(e) : this.adapter_.removeClass(e);
+        }
+        floatLabelWithValue_() {
+          const t = this.adapter_.getValue().length > 0;
+          this.adapter_.floatLabel(t);
+        }
+        handleFocus_() {
+          this.adapter_.floatLabel(!0), this.adapter_.activateBottomLine();
+        }
+        handleBlur_() {
+          this.floatLabelWithValue_(), this.adapter_.deactivateBottomLine();
+        }
+        handleSelect_() {
+          this.setSelectedIndex(this.adapter_.getSelectedIndex());
+        }
+      }
+      e.a = n;
+    },
+    ,
     ,
     ,
     ,
@@ -661,11 +1220,11 @@ webpackJsonp(
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 }),
         (e.render = void 0),
-        i(/*! ../css/dialog.scss */ 86);
-      var a = i(/*! @material/textfield */ 107),
-        s = i(/*! @material/select */ 119),
-        n = i(/*! @material/dialog */ 121),
-        r = i(/*! ./util */ 11),
+        i(/*! ../css/dialog.scss */ 98);
+      var a = i(/*! @material/textfield */ 115),
+        s = i(/*! @material/select */ 88),
+        n = i(/*! @material/dialog */ 123),
+        r = i(/*! ./util */ 13),
         o = ((e.render = function(t) {
           document.querySelector(".dialog-container").innerHTML = o;
           new a.MDCTextField(document.querySelector(".text-field-name")),
@@ -707,8 +1266,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./adapter */ 98), i(/*! ./constants */ 108));
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./adapter */ 111), i(/*! ./constants */ 116));
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -781,8 +1340,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./adapter */ 99), i(/*! ./constants */ 109));
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./adapter */ 112), i(/*! ./constants */ 117));
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -910,7 +1469,7 @@ webpackJsonp(
       i
     ) {
       "use strict";
-      i(/*! ./helper-text/foundation */ 94), i(/*! ./icon/foundation */ 95);
+      i(/*! ./helper-text/foundation */ 107), i(/*! ./icon/foundation */ 108);
     },
     /*!******************************************************************!*\
   !*** ../node_modules/@material/textfield/helper-text/adapter.js ***!
@@ -936,158 +1495,6 @@ webpackJsonp(
     },
     /*!***********************************************************!*\
   !*** ../node_modules/@material/textfield/icon/adapter.js ***!
-  \***********************************************************/
-    /*! exports provided: default */ function(t, e, i) {
-      "use strict";
-      /**
-       * @license
-       * Copyright 2017 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-    },
-    /*!******************************************************!*\
-  !*** ../node_modules/@material/line-ripple/index.js ***!
-  \******************************************************/
-    /*! exports provided: MDCLineRipple, MDCLineRippleFoundation */
-    /*! exports used: MDCLineRipple */ function(t, e, i) {
-      "use strict";
-      i.d(e, "a", function() {
-        return n;
-      });
-      var a = i(/*! @material/base/component */ 10),
-        s = (i(/*! ./adapter */ 101), i(/*! ./foundation */ 111));
-      /**
-       * @license
-       * Copyright 2018 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-      class n extends a.a {
-        static attachTo(t) {
-          return new n(t);
-        }
-        activate() {
-          this.foundation_.activate();
-        }
-        deactivate() {
-          this.foundation_.deactivate();
-        }
-        setRippleCenter(t) {
-          this.foundation_.setRippleCenter(t);
-        }
-        getDefaultFoundation() {
-          return new s.a(
-            Object.assign({
-              addClass: t => this.root_.classList.add(t),
-              removeClass: t => this.root_.classList.remove(t),
-              hasClass: t => this.root_.classList.contains(t),
-              setStyle: (t, e) => (this.root_.style[t] = e),
-              registerEventHandler: (t, e) => this.root_.addEventListener(t, e),
-              deregisterEventHandler: (t, e) =>
-                this.root_.removeEventListener(t, e)
-            })
-          );
-        }
-      }
-    },
-    /*!********************************************************!*\
-  !*** ../node_modules/@material/line-ripple/adapter.js ***!
-  \********************************************************/
-    /*! exports provided: default */ function(t, e, i) {
-      "use strict";
-      /**
-       * @license
-       * Copyright 2018 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-    },
-    /*!*********************************************************!*\
-  !*** ../node_modules/@material/floating-label/index.js ***!
-  \*********************************************************/
-    /*! exports provided: MDCFloatingLabel, MDCFloatingLabelFoundation */
-    /*! exports used: MDCFloatingLabel */ function(t, e, i) {
-      "use strict";
-      i.d(e, "a", function() {
-        return n;
-      });
-      var a = i(/*! @material/base/component */ 10),
-        s = (i(/*! ./adapter */ 103), i(/*! ./foundation */ 115));
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-      class n extends a.a {
-        static attachTo(t) {
-          return new n(t);
-        }
-        shake(t) {
-          this.foundation_.shake(t);
-        }
-        float(t) {
-          this.foundation_.float(t);
-        }
-        getWidth() {
-          return this.foundation_.getWidth();
-        }
-        getDefaultFoundation() {
-          return new s.a({
-            addClass: t => this.root_.classList.add(t),
-            removeClass: t => this.root_.classList.remove(t),
-            getWidth: () => this.root_.offsetWidth,
-            registerInteractionHandler: (t, e) =>
-              this.root_.addEventListener(t, e),
-            deregisterInteractionHandler: (t, e) =>
-              this.root_.removeEventListener(t, e)
-          });
-        }
-      }
-    },
-    /*!***********************************************************!*\
-  !*** ../node_modules/@material/floating-label/adapter.js ***!
   \***********************************************************/
     /*! exports provided: default */ function(t, e, i) {
       "use strict";
@@ -1164,24 +1571,6 @@ webpackJsonp(
         },
         s = { OUTLINE_NOTCHED: "mdc-notched-outline--notched" };
     },
-    /*!*****************************************************!*\
-  !*** ../node_modules/@material/select/constants.js ***!
-  \*****************************************************/
-    /*! exports provided: cssClasses, strings */
-    /*! exports used: cssClasses, strings */ function(t, e, i) {
-      "use strict";
-      e.a = {
-        BOX: "mdc-select--box",
-        DISABLED: "mdc-select--disabled",
-        ROOT: "mdc-select"
-      };
-      e.b = {
-        CHANGE_EVENT: "MDCSelect:change",
-        LINE_RIPPLE_SELECTOR: ".mdc-line-ripple",
-        LABEL_SELECTOR: ".mdc-floating-label",
-        NATIVE_CONTROL_SELECTOR: ".mdc-select__native-control"
-      };
-    },
     /*!****************************************************!*\
   !*** ../node_modules/@material/textfield/index.js ***!
   \****************************************************/
@@ -1192,16 +1581,16 @@ webpackJsonp(
         i.d(e, "MDCTextField", function() {
           return _;
         });
-      var a = i(/*! @material/base/component */ 10),
-        s = i(/*! @material/ripple/index */ 79),
-        n = i(/*! @material/ripple/util */ 77),
-        r = i(/*! ./constants */ 96),
-        o = (i(/*! ./adapter */ 97), i(/*! ./foundation */ 110)),
-        d = i(/*! @material/line-ripple/index */ 100),
-        l = i(/*! ./helper-text/index */ 113),
-        c = i(/*! ./icon/index */ 114),
-        u = i(/*! @material/floating-label/index */ 102),
-        h = i(/*! @material/notched-outline/index */ 117);
+      var a = i(/*! @material/base/component */ 6),
+        s = i(/*! @material/ripple/index */ 78),
+        n = i(/*! @material/ripple/util */ 79),
+        r = i(/*! ./constants */ 109),
+        o = (i(/*! ./adapter */ 110), i(/*! ./foundation */ 118)),
+        d = i(/*! @material/line-ripple/index */ 85),
+        l = i(/*! ./helper-text/index */ 119),
+        c = i(/*! ./icon/index */ 120),
+        u = i(/*! @material/floating-label/index */ 84),
+        h = i(/*! @material/notched-outline/index */ 121);
       i.d(e, "MDCTextFieldFoundation", function() {
         return o.a;
       }),
@@ -1516,11 +1905,11 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./helper-text/foundation */ 94),
-        i(/*! ./icon/foundation */ 95),
-        i(/*! ./adapter */ 97),
-        i(/*! ./constants */ 96));
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./helper-text/foundation */ 107),
+        i(/*! ./icon/foundation */ 108),
+        i(/*! ./adapter */ 110),
+        i(/*! ./constants */ 109));
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -1791,110 +2180,6 @@ webpackJsonp(
       }
       e.a = r;
     },
-    /*!***********************************************************!*\
-  !*** ../node_modules/@material/line-ripple/foundation.js ***!
-  \***********************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ function(t, e, i) {
-      "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./adapter */ 101), i(/*! ./constants */ 112));
-      /**
-       * @license
-       * Copyright 2018 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-      class n extends a.a {
-        static get cssClasses() {
-          return s.a;
-        }
-        static get defaultAdapter() {
-          return {
-            addClass: () => {},
-            removeClass: () => {},
-            hasClass: () => {},
-            setStyle: () => {},
-            registerEventHandler: () => {},
-            deregisterEventHandler: () => {}
-          };
-        }
-        constructor(t = {}) {
-          super(Object.assign(n.defaultAdapter, t)),
-            (this.transitionEndHandler_ = t => this.handleTransitionEnd(t));
-        }
-        init() {
-          this.adapter_.registerEventHandler(
-            "transitionend",
-            this.transitionEndHandler_
-          );
-        }
-        destroy() {
-          this.adapter_.deregisterEventHandler(
-            "transitionend",
-            this.transitionEndHandler_
-          );
-        }
-        activate() {
-          this.adapter_.removeClass(s.a.LINE_RIPPLE_DEACTIVATING),
-            this.adapter_.addClass(s.a.LINE_RIPPLE_ACTIVE);
-        }
-        setRippleCenter(t) {
-          this.adapter_.setStyle("transform-origin", `${t}px center`);
-        }
-        deactivate() {
-          this.adapter_.addClass(s.a.LINE_RIPPLE_DEACTIVATING);
-        }
-        handleTransitionEnd(t) {
-          const e = this.adapter_.hasClass(s.a.LINE_RIPPLE_DEACTIVATING);
-          "opacity" === t.propertyName &&
-            e &&
-            (this.adapter_.removeClass(s.a.LINE_RIPPLE_ACTIVE),
-            this.adapter_.removeClass(s.a.LINE_RIPPLE_DEACTIVATING));
-        }
-      }
-      e.a = n;
-    },
-    /*!**********************************************************!*\
-  !*** ../node_modules/@material/line-ripple/constants.js ***!
-  \**********************************************************/
-    /*! exports provided: cssClasses */
-    /*! exports used: cssClasses */ function(t, e, i) {
-      "use strict";
-      i.d(e, "a", function() {
-        return a;
-      });
-      /**
-       * @license
-       * Copyright 2018 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-      const a = {
-        LINE_RIPPLE_ACTIVE: "mdc-line-ripple--active",
-        LINE_RIPPLE_DEACTIVATING: "mdc-line-ripple--deactivating"
-      };
-    },
     /*!****************************************************************!*\
   !*** ../node_modules/@material/textfield/helper-text/index.js ***!
   \****************************************************************/
@@ -1908,8 +2193,8 @@ webpackJsonp(
       i.d(e, "a", function() {
         return n;
       });
-      var a = i(/*! @material/base/component */ 10),
-        s = (i(/*! ./adapter */ 98), i(/*! ./foundation */ 94));
+      var a = i(/*! @material/base/component */ 6),
+        s = (i(/*! ./adapter */ 111), i(/*! ./foundation */ 107));
       i.d(e, "b", function() {
         return s.a;
       });
@@ -1965,8 +2250,8 @@ webpackJsonp(
       i.d(e, "a", function() {
         return n;
       });
-      var a = i(/*! @material/base/component */ 10),
-        s = (i(/*! ./adapter */ 99), i(/*! ./foundation */ 95));
+      var a = i(/*! @material/base/component */ 6),
+        s = (i(/*! ./adapter */ 112), i(/*! ./foundation */ 108));
       i.d(e, "b", function() {
         return s.a;
       });
@@ -2009,110 +2294,6 @@ webpackJsonp(
         }
       }
     },
-    /*!**************************************************************!*\
-  !*** ../node_modules/@material/floating-label/foundation.js ***!
-  \**************************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ function(t, e, i) {
-      "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./adapter */ 103), i(/*! ./constants */ 116));
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-      class n extends a.a {
-        static get cssClasses() {
-          return s.a;
-        }
-        static get defaultAdapter() {
-          return {
-            addClass: () => {},
-            removeClass: () => {},
-            getWidth: () => {},
-            registerInteractionHandler: () => {},
-            deregisterInteractionHandler: () => {}
-          };
-        }
-        constructor(t) {
-          super(Object.assign(n.defaultAdapter, t)),
-            (this.shakeAnimationEndHandler_ = () =>
-              this.handleShakeAnimationEnd_());
-        }
-        init() {
-          this.adapter_.registerInteractionHandler(
-            "animationend",
-            this.shakeAnimationEndHandler_
-          );
-        }
-        destroy() {
-          this.adapter_.deregisterInteractionHandler(
-            "animationend",
-            this.shakeAnimationEndHandler_
-          );
-        }
-        getWidth() {
-          return this.adapter_.getWidth();
-        }
-        shake(t) {
-          const { LABEL_SHAKE: e } = n.cssClasses;
-          t ? this.adapter_.addClass(e) : this.adapter_.removeClass(e);
-        }
-        float(t) {
-          const { LABEL_FLOAT_ABOVE: e, LABEL_SHAKE: i } = n.cssClasses;
-          t
-            ? this.adapter_.addClass(e)
-            : (this.adapter_.removeClass(e), this.adapter_.removeClass(i));
-        }
-        handleShakeAnimationEnd_() {
-          const { LABEL_SHAKE: t } = n.cssClasses;
-          this.adapter_.removeClass(t);
-        }
-      }
-      e.a = n;
-    },
-    /*!*************************************************************!*\
-  !*** ../node_modules/@material/floating-label/constants.js ***!
-  \*************************************************************/
-    /*! exports provided: cssClasses */
-    /*! exports used: cssClasses */ function(t, e, i) {
-      "use strict";
-      i.d(e, "a", function() {
-        return a;
-      });
-      /**
-       * @license
-       * Copyright 2016 Google Inc. All Rights Reserved.
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *      http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
-      const a = {
-        LABEL_FLOAT_ABOVE: "mdc-floating-label--float-above",
-        LABEL_SHAKE: "mdc-floating-label--shake"
-      };
-    },
     /*!**********************************************************!*\
   !*** ../node_modules/@material/notched-outline/index.js ***!
   \**********************************************************/
@@ -2122,9 +2303,9 @@ webpackJsonp(
       i.d(e, "a", function() {
         return r;
       });
-      var a = i(/*! @material/base/component */ 10),
-        s = (i(/*! ./adapter */ 104), i(/*! ./foundation */ 118)),
-        n = i(/*! ./constants */ 105);
+      var a = i(/*! @material/base/component */ 6),
+        s = (i(/*! ./adapter */ 113), i(/*! ./foundation */ 122)),
+        n = i(/*! ./constants */ 114);
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -2176,8 +2357,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/foundation */ 7),
-        s = (i(/*! ./adapter */ 104), i(/*! ./constants */ 105));
+      var a = i(/*! @material/base/foundation */ 5),
+        s = (i(/*! ./adapter */ 113), i(/*! ./constants */ 114));
       /**
        * @license
        * Copyright 2017 Google Inc. All Rights Reserved.
@@ -2281,196 +2462,16 @@ webpackJsonp(
       e.a = n;
     },
     /*!*************************************************!*\
-  !*** ../node_modules/@material/select/index.js ***!
-  \*************************************************/
-    /*! exports provided: MDCSelectFoundation, MDCSelect */
-    /*! all exports used */ function(t, e, i) {
-      "use strict";
-      Object.defineProperty(e, "__esModule", { value: !0 });
-      var a = i(/*! @material/base/index */ 76),
-        s = i(/*! @material/floating-label/index */ 102),
-        n = i(/*! @material/line-ripple/index */ 100),
-        r = i(/*! @material/ripple/index */ 79),
-        o = i(/*! ./foundation */ 120),
-        d = i(/*! ./constants */ 106);
-      i.d(e, "MDCSelectFoundation", function() {
-        return o.a;
-      });
-      class l extends a.a {
-        static attachTo(t) {
-          return new l(t);
-        }
-        get value() {
-          return this.nativeControl_.value;
-        }
-        set value(t) {
-          this.foundation_.setValue(t);
-        }
-        get selectedIndex() {
-          return this.nativeControl_.selectedIndex;
-        }
-        set selectedIndex(t) {
-          this.foundation_.setSelectedIndex(t);
-        }
-        get disabled() {
-          return this.nativeControl_.disabled;
-        }
-        set disabled(t) {
-          this.foundation_.setDisabled(t);
-        }
-        initialize(t = t => new s.a(t), e = t => new n.a(t)) {
-          this.nativeControl_ = this.root_.querySelector(
-            d.b.NATIVE_CONTROL_SELECTOR
-          );
-          const i = this.root_.querySelector(d.b.LABEL_SELECTOR);
-          i && (this.label_ = t(i));
-          const a = this.root_.querySelector(d.b.LINE_RIPPLE_SELECTOR);
-          a && (this.lineRipple_ = e(a)),
-            this.root_.classList.contains(d.a.BOX) &&
-              (this.ripple = this.initRipple_());
-        }
-        initRipple_() {
-          const t = Object.assign(r.a.createAdapter(this), {
-              registerInteractionHandler: (t, e) =>
-                this.nativeControl_.addEventListener(t, e),
-              deregisterInteractionHandler: (t, e) =>
-                this.nativeControl_.removeEventListener(t, e)
-            }),
-            e = new r.b(t);
-          return new r.a(this.root_, e);
-        }
-        getDefaultFoundation() {
-          return new o.a({
-            addClass: t => this.root_.classList.add(t),
-            removeClass: t => this.root_.classList.remove(t),
-            floatLabel: t => {
-              this.label_ && this.label_.float(t);
-            },
-            activateBottomLine: () => {
-              this.lineRipple_ && this.lineRipple_.activate();
-            },
-            deactivateBottomLine: () => {
-              this.lineRipple_ && this.lineRipple_.deactivate();
-            },
-            setDisabled: t => (this.nativeControl_.disabled = t),
-            registerInteractionHandler: (t, e) =>
-              this.nativeControl_.addEventListener(t, e),
-            deregisterInteractionHandler: (t, e) =>
-              this.nativeControl_.removeEventListener(t, e),
-            getSelectedIndex: () => this.nativeControl_.selectedIndex,
-            setSelectedIndex: t => (this.nativeControl_.selectedIndex = t),
-            getValue: () => this.nativeControl_.value,
-            setValue: t => (this.nativeControl_.value = t)
-          });
-        }
-        initialSyncWithDOM() {
-          (this.selectedIndex = this.nativeControl_.selectedIndex),
-            this.nativeControl_.disabled && (this.disabled = !0);
-        }
-        destroy() {
-          this.ripple && this.ripple.destroy(), super.destroy();
-        }
-      }
-      e.MDCSelect = l;
-    },
-    /*!******************************************************!*\
-  !*** ../node_modules/@material/select/foundation.js ***!
-  \******************************************************/
-    /*! exports provided: default */
-    /*! exports used: default */ function(t, e, i) {
-      "use strict";
-      var a = i(/*! @material/base/index */ 76),
-        s = i(/*! ./constants */ 106);
-      class n extends a.b {
-        static get cssClasses() {
-          return s.a;
-        }
-        static get strings() {
-          return s.b;
-        }
-        static get defaultAdapter() {
-          return {
-            addClass: () => {},
-            removeClass: () => {},
-            floatLabel: () => {},
-            activateBottomLine: () => {},
-            deactivateBottomLine: () => {},
-            registerInteractionHandler: () => {},
-            deregisterInteractionHandler: () => {},
-            getSelectedIndex: () => -1,
-            setSelectedIndex: () => {},
-            setDisabled: () => {},
-            getValue: () => "",
-            setValue: () => {}
-          };
-        }
-        constructor(t) {
-          super(Object.assign(n.defaultAdapter, t)),
-            (this.focusHandler_ = t => this.handleFocus_(t)),
-            (this.blurHandler_ = t => this.handleBlur_(t)),
-            (this.selectionHandler_ = t => this.handleSelect_(t));
-        }
-        init() {
-          this.adapter_.registerInteractionHandler("focus", this.focusHandler_),
-            this.adapter_.registerInteractionHandler("blur", this.blurHandler_),
-            this.adapter_.registerInteractionHandler(
-              "change",
-              this.selectionHandler_
-            );
-        }
-        destroy() {
-          this.adapter_.deregisterInteractionHandler(
-            "focus",
-            this.focusHandler_
-          ),
-            this.adapter_.deregisterInteractionHandler(
-              "blur",
-              this.blurHandler_
-            ),
-            this.adapter_.deregisterInteractionHandler(
-              "change",
-              this.selectionHandler_
-            );
-        }
-        setSelectedIndex(t) {
-          this.adapter_.setSelectedIndex(t), this.floatLabelWithValue_();
-        }
-        setValue(t) {
-          this.adapter_.setValue(t),
-            this.setSelectedIndex(this.adapter_.getSelectedIndex());
-        }
-        setDisabled(t) {
-          const { DISABLED: e } = n.cssClasses;
-          this.adapter_.setDisabled(t),
-            t ? this.adapter_.addClass(e) : this.adapter_.removeClass(e);
-        }
-        floatLabelWithValue_() {
-          const t = this.adapter_.getValue().length > 0;
-          this.adapter_.floatLabel(t);
-        }
-        handleFocus_() {
-          this.adapter_.floatLabel(!0), this.adapter_.activateBottomLine();
-        }
-        handleBlur_() {
-          this.floatLabelWithValue_(), this.adapter_.deactivateBottomLine();
-        }
-        handleSelect_() {
-          this.setSelectedIndex(this.adapter_.getSelectedIndex());
-        }
-      }
-      e.a = n;
-    },
-    /*!*************************************************!*\
   !*** ../node_modules/@material/dialog/index.js ***!
   \*************************************************/
     /*! exports provided: MDCDialogFoundation, util, MDCDialog */
     /*! all exports used */ function(t, e, i) {
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 });
-      var a = i(/*! @material/base/index */ 76),
-        s = i(/*! @material/ripple/index */ 79),
-        n = i(/*! ./foundation */ 122),
-        r = i(/*! ./util */ 124);
+      var a = i(/*! @material/base/index */ 9),
+        s = i(/*! @material/ripple/index */ 78),
+        n = i(/*! ./foundation */ 124),
+        r = i(/*! ./util */ 126);
       i.d(e, "MDCDialogFoundation", function() {
         return n.a;
       }),
@@ -2548,8 +2549,8 @@ webpackJsonp(
     /*! exports provided: default */
     /*! exports used: default */ function(t, e, i) {
       "use strict";
-      var a = i(/*! @material/base/index */ 76),
-        s = i(/*! ./constants */ 123);
+      var a = i(/*! @material/base/index */ 9),
+        s = i(/*! ./constants */ 125);
       class n extends a.b {
         static get cssClasses() {
           return s.a;
@@ -2721,7 +2722,7 @@ webpackJsonp(
         (e.createFocusTrapInstance = function(t, e, i = s.a) {
           return i(t, { initialFocus: e, clickOutsideDeactivates: !0 });
         });
-      var a = i(/*! focus-trap */ 125),
+      var a = i(/*! focus-trap */ 127),
         s = i.n(a);
     },
     /*!*******************************************!*\
@@ -2729,7 +2730,7 @@ webpackJsonp(
   \*******************************************/
     /*! dynamic exports provided */
     /*! exports used: default */ function(t, e, i) {
-      var a = i(/*! tabbable */ 126),
+      var a = i(/*! tabbable */ 128),
         s = null;
       function n(t) {
         t &&

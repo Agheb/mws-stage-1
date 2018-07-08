@@ -7,7 +7,7 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
   <title>Restaurant Reviews</title>
-<link href="styles.1dc5e417cae105637bc39b019de24bc0.css" rel="stylesheet"></head>
+<link href="styles.ee45caafc1c3c7d36199f47fd1886748.css" rel="stylesheet"></head>
 
 <body>
   <header <div class="col-header">
@@ -25,16 +25,25 @@
       <div aria-hidden="true" role="application" id="map"></div>
     </section>
     <section>
+
       <div class="filter-options">
         <h2>Filter Results</h2>
         <label for="neighborhoods-select" class="hidden">Choose Neighborhood:</label>
-        <select id="neighborhoods-select" name="neighborhoods">
-          <option value="all">All Neighborhoods</option>
-        </select>
+        <div class="mdc-select">
+          <select class="mdc-select__native-control" id="neighborhoods-select" name="neighboorhoods">
+            <option value="all" selected>All</option>
+          </select>
+          <label class="mdc-floating-label mdc-floating-label--float-above">Neighborhoods</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
         <label for="cuisines-select" class="hidden">Choose Cuisine:</label>
-        <select id="cuisines-select" name="cuisines">
-          <option value="all">All Cuisines</option>
-        </select>
+        <div class="cuisines mdc-select">
+          <select class="mdc-select__native-control" id="cuisines-select" name="cuisines">
+            <option value="all" selected>All</option>
+          </select>
+          <label class="mdc-floating-label mdc-floating-label--float-above">Cuisines</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
       </div>
       <ul id="restaurants-list"></ul>
     </section>

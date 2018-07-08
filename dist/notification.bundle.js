@@ -1,5 +1,5 @@
 webpackJsonp([1], {
-  12:
+  14:
     /*!*******************************!*\
   !*** ./assets/js/snackbar.js ***!
   \*******************************/
@@ -8,7 +8,7 @@ webpackJsonp([1], {
       "use strict";
       Object.defineProperty(i, "__esModule", { value: !0 }),
         (i.showNotification = void 0);
-      var n = e(/*! @material/snackbar */ 82);
+      var n = e(/*! @material/snackbar */ 94);
       i.showNotification = function(t) {
         document.querySelector(".snackbar-container").innerHTML =
           '\n<div class="mdc-snackbar "\naria-live="assertive"\naria-atomic="true"\naria-hidden="true">\n<div class="mdc-snackbar__text"></div>\n<div class="mdc-snackbar__action-wrapper">\n<button type="button" class="mdc-snackbar__action-button"></button>\n</div>\n</div>';
@@ -24,23 +24,7 @@ webpackJsonp([1], {
         new n.MDCSnackbar(document.querySelector(".mdc-snackbar")).show(i);
       };
     },
-  76:
-    /*!***********************************************!*\
-  !*** ../node_modules/@material/base/index.js ***!
-  \***********************************************/
-    /*! exports provided: MDCFoundation, MDCComponent */
-    /*! exports used: MDCComponent, MDCFoundation */ function(t, i, e) {
-      "use strict";
-      var n = e(/*! ./foundation */ 7),
-        a = e(/*! ./component */ 10);
-      e.d(i, "b", function() {
-        return n.a;
-      }),
-        e.d(i, "a", function() {
-          return a.a;
-        });
-    },
-  82:
+  94:
     /*!***************************************************!*\
   !*** ../node_modules/@material/snackbar/index.js ***!
   \***************************************************/
@@ -48,9 +32,9 @@ webpackJsonp([1], {
     /*! all exports used */ function(t, i, e) {
       "use strict";
       Object.defineProperty(i, "__esModule", { value: !0 });
-      var n = e(/*! @material/base/index */ 76),
-        a = e(/*! ./foundation */ 83),
-        s = e(/*! @material/animation/index */ 85);
+      var n = e(/*! @material/base/index */ 9),
+        a = e(/*! ./foundation */ 95),
+        s = e(/*! @material/animation/index */ 97);
       e.d(i, "MDCSnackbarFoundation", function() {
         return a.a;
       });
@@ -118,15 +102,15 @@ webpackJsonp([1], {
       }
       i.MDCSnackbar = r;
     },
-  83:
+  95:
     /*!********************************************************!*\
   !*** ../node_modules/@material/snackbar/foundation.js ***!
   \********************************************************/
     /*! exports provided: default */
     /*! exports used: default */ function(t, i, e) {
       "use strict";
-      var n = e(/*! @material/base/index */ 76),
-        a = e(/*! ./constants */ 84);
+      var n = e(/*! @material/base/index */ 9),
+        a = e(/*! ./constants */ 96);
       class s extends n.b {
         static get cssClasses() {
           return a.a;
@@ -317,7 +301,7 @@ webpackJsonp([1], {
       }
       i.a = s;
     },
-  84:
+  96:
     /*!*******************************************************!*\
   !*** ../node_modules/@material/snackbar/constants.js ***!
   \*******************************************************/
@@ -342,7 +326,7 @@ webpackJsonp([1], {
       };
       i.b = { MESSAGE_TIMEOUT: 2750 };
     },
-  85:
+  97:
     /*!****************************************************!*\
   !*** ../node_modules/@material/animation/index.js ***!
   \****************************************************/
