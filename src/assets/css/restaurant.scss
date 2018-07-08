@@ -1,0 +1,19 @@
+@import "~mapbox-gl/dist/mapbox-gl.css";
+
+#mapbox {
+  height: 300px;
+}
+
+@media all and (min-width: 40em) {
+  #mapbox {
+    margin: 0 16px 0;
+  }
+}
+
+.marker {
+  background-image: url("../icons/mapMarker.svg");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}

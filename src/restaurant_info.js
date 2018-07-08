@@ -5,6 +5,7 @@ import "./assets/css/styles.css";
 import "./assets/css/app.scss";
 import "./assets/css/dialog.scss";
 import "./assets/css/snackbar.scss";
+import "./assets/css/restaurant.scss";
 import Manifest from "./assets/data/manifest.json";
 import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
@@ -17,6 +18,7 @@ import {
 import { MapsConfig, MapStyle } from "./assets/js/map";
 import { getParameterByName } from "./assets/js/util";
 import { showNotification } from "./assets/js/snackbar";
+import mapboxgl from "mapbox-gl";
 
 let restaurant;
 let map;
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.restaurant = getRestaurantById(id, restaurants);
         fillRestaurantHTML();
         fillBreadcrumb();
-        initRestaurantMap(window.restaurant, "map", 300);
+        initRestaurantMap(window.restaurant, "mapbox", 300);
         loadReviews(id).then(reviews => {
           console.log(reviews);
           fillReviewsHTML(reviews);
@@ -87,7 +89,7 @@ const initRestaurantMap = (restaurant, element, height) => {
 /**
  * Load interactive Map if user hoovers over static image
  */
-const MapTarget = document.getElementById("map");
+const MapTarget = document.getElementById("mapbox");
 MapTarget.addEventListener(
   "mouseover",
   () => {
@@ -102,20 +104,30 @@ const addInteractiveRestaurantMap = (
   options,
   restaurant = window.restaurant
 ) => {
-  loadGoogleMapsApi(options)
-    .then(googleMaps => {
-      map = new googleMaps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: restaurant.latlng,
-        scrollwheel: false,
-        styles: MapStyle
-      });
-      InteractiveMapLoaded = true;
-      mapMarkerForRestaurant(restaurant, map);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  const ll = [restaurant.latlng.lng, restaurant.latlng.lat];
+
+  // delete static image from DOM if it already exists
+  if (document.querySelector("#mapImage")) {
+    const el = document.querySelector("#mapImage");
+    el.parentNode.removeChild(el);
+  }
+  // TODO: use MapBox variables from util.js
+  //
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg";
+  const mapboxMap = new mapboxgl.Map({
+    center: ll,
+    zoom: 14,
+    container: "mapbox",
+    style: "mapbox://styles/agheb/cjincsidz13122sq8lvfgmn1t?optimize=true"
+  });
+  InteractiveMapLoaded = true;
+
+  new mapboxgl.Marker({ color: "#000000" })
+    .setLngLat([restaurant.latlng.lng, restaurant.latlng.lat])
+    .addTo(mapboxMap);
+
+  // mapMarkerForRestaurant(restaurant, map);
 };
 
 const createRestaurantMapImage = (restaurant, element, height) => {
@@ -124,25 +136,22 @@ const createRestaurantMapImage = (restaurant, element, height) => {
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
-  const url = oneLineTrim`
-  https://maps.googleapis.com/maps/api/staticmap?center=${
-    restaurant.latlng.lat
-  },${restaurant.latlng.lng}&
-  zoom=12&
-  scale=2&
-  size=${width}x${height}&
-  maptype=roadmap&format=png&
-  visual_refresh=true&
-  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
-  markers=size:mid%7Ccolor:red%7C
-  |${restaurant.latlng.lat},${restaurant.latlng.lng}|
-  `;
+  // TODO: Change Markercolor to black -@agheb at 6/18/2018, 2:41:25 PM
 
-  const mapsImage = `
+  const url2 = oneLineTrim`
+   https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/
+   pin-l+3455d9(${restaurant.latlng.lng},${restaurant.latlng.lat})/
+   ${restaurant.latlng.lng},${restaurant.latlng.lat},17/
+   ${width}x${height}@2x?
+   access_token=pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg
+   `;
+
+  const mapImage = `
   <img width="${width}px"
-  src=${encodeURI(url)} alt="Map of${restaurant.name}">
+  id="mapImage"
+  src=${encodeURI(url2)} alt="Map of ${restaurant.name}">
   `;
-  document.getElementById(`${element}`).innerHTML = mapsImage;
+  document.getElementById(`${element}`).innerHTML = mapImage;
 };
 
 /**
@@ -206,13 +215,16 @@ let fillReviewsHTML = (reviews = window.restaurant.reviews) => {
   const title = document.createElement("h3");
   title.innerHTML = "Reviews";
   container.appendChild(title);
-  const addReview = document.createElement("a");
-  addReview.innerHTML = "Add Review";
-  addReview.classList.add("mdc-button", "add-review");
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("buttonContainer");
+  container.appendChild(buttonContainer);
+  const addReview = document.createElement("Button");
+  addReview.innerHTML = `<span class="mdc-fab__icon">add</span>`;
+  addReview.classList.add("mdc-fab", "add-review");
 
-  container.appendChild(addReview);
+  buttonContainer.appendChild(addReview);
 
-  const addReviewButton = document.querySelector(".mdc-button");
+  const addReviewButton = document.querySelector(".mdc-fab");
   addReviewButton.addEventListener("click", evt => {
     import(/* webpackChunkName: "addReview" */ "./assets/js/dialog").then(
       module => {
@@ -264,6 +276,7 @@ let createReviewHTML = review => {
 let fillBreadcrumb = (restaurant = window.restaurant) => {
   const breadcrumb = document.getElementById("breadcrumb");
   const li = document.createElement("li");
+  console.log();
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 };

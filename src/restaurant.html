@@ -3,6 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+
   <meta name="theme-color" content="#000">
   <link rel="manifest" href="/manifest.json">
   <title>Restaurant Info</title>
@@ -15,7 +16,7 @@
         <a href="/">Restaurant Reviews</a>
       </h1>
     </div>
-    <nav aria-label="Breadcrumb">
+    <nav aria-label="Breadcrumb" id="maincontent">
       <ul id="breadcrumb">
         <li>
           <a href="/">Home</a>
@@ -40,13 +41,15 @@
           <table id="restaurant-hours"></table>
         </div>
     </section>
-    <section id="map-container">
-      <div aria-hidden="true" role="application" id="map"></div>
+    <section id="mapbox" aria-hidden="true" role="application">
+
     </section>
+
     <section id="reviews-container">
 
       <ul id="reviews-list"></ul>
     </section>
+
   </main>
 
 

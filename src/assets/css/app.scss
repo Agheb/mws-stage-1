@@ -1,9 +1,14 @@
+$mdc-theme-primary: #212121;
+$mdc-theme--on-surface: #212121;
+
 @import "@material/ripple/mdc-ripple";
-@import "@material/button/mdc-button";
+@import "@material/fab/mdc-fab";
+@import "@material/select/mdc-select";
 
 $material-icons-font-path: "~material-icons/iconfont/";
 
 @import "~material-icons/iconfont/material-icons.scss";
+@import "~mapbox-gl/dist/mapbox-gl.css";
 
 .material-icons.md-24 {
   font-size: 22px;
@@ -22,7 +27,18 @@ $material-icons-font-path: "~material-icons/iconfont/";
   flex-direction: row;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
 .add-review {
-  @include mdc-button-ink-color(#3455db);
-  @include mdc-states(#3455db);
+  width: 40px;
+  height: 40px;
+  @include material-icons();
+  @include mdc-fab-accessible(#212121);
+}
+
+.filter-options > div {
+  margin-right: 32px;
 }

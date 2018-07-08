@@ -17,12 +17,22 @@ import {
 } from "./assets/js/db";
 import { MapStyle, MapsConfig } from "./assets/js/map";
 import { MDCIconToggle } from "@material/icon-toggle";
-import { getParameterByName, FavouriteEndpoint } from "./assets/js/util";
+import { MDCSelect } from "@material/select";
+import mapboxgl from "mapbox-gl";
+import {
+  getParameterByName,
+  FavouriteEndpoint,
+  MAPBOX_API_TOKEN,
+  MAPBOX_STYLE
+} from "./assets/js/util";
 
 let restaurants, neighborhoods, cuisines;
 var map;
 var markers = [];
 let InteractiveMapLoaded;
+
+const NeighborhoodSelect = new MDCSelect(document.querySelector(".mdc-select"));
+const CuisinesSelect = new MDCSelect(document.querySelector(".cuisines"));
 
 const observer = Lozad();
 observer.observe();
@@ -132,30 +142,25 @@ const createStaticMapImage = (height, element) => {
     document.body.clientWidth;
 
   const url = oneLineTrim`
-  https://maps.googleapis.com/maps/api/staticmap?center=40.722216,+-73.987501&
-  zoom=12&
-  scale=2&
-  size=${width}x${height}&
-  maptype=roadmap&format=png&
-  visual_refresh=true&
-  key=AIzaSyAI60PBarZdCiO-BYJqYvoDYBL8F68-PEU&
-  markers=size:mid%7Ccolor:red%7C
-  |40.683555,-73.966393|
-  |40.713829,-73.989667|
-  |40.747143,-73.985414|
-  |40.722216,-73.987501|
-  |40.705089,-73.933585|
-  |40.674925,-74.016162|
-  |40.727397,-73.983645|
-  |40.726584,-74.002082|
-  |40.743797,-73.950652|
-  |40.743394,-73.954235|
-
-  `;
+   https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/
+   pin-l+3455d9(-73.966393,40.68355),
+   pin-l+3455d9(-73.989667,40.713829),
+   pin-l+3455d9(-73.985414,40.747143),
+   pin-l+3455d9(-73.987501,40.722216),
+   pin-l+3455d9(-73.933585,40.70508),
+   pin-l+3455d9(-74.016162,40.674925),
+   pin-l+3455d9(-73.983645,40.727397),
+   pin-l+3455d9(-74.002082,40.726584),
+   pin-l+3455d9(-73.950652,40.743797),
+   pin-l+3455d9(-73.954235,40.743394)/
+   -73.987501,40.722216,11/
+   ${width}x${height}@2x?
+   access_token=pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg
+   `;
 
   const mapsImage = `
   <img width="${width}px"
-  src=${encodeURI(url)} alt="Google Map of 40.722216, -73.987501">
+  src=${encodeURI(url)} alt="Map of all restaurants" id="mapImage">
   `;
   document.getElementById(`${element}`).innerHTML = mapsImage;
 };
@@ -177,25 +182,24 @@ const initMap = (height, element) => {
   }
 };
 
+// TODO: Tasks pending completion -@agheb at 7/8/2018, 8:21:48 PM
+// Delete MapOptions
 const addInteractiveMap = options => {
-  loadGoogleMapsApi(options)
-    .then(googleMaps => {
-      const loc = {
-        lat: 40.722216,
-        lng: -73.9875
-      };
-      map = new googleMaps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: loc,
-        scrollwheel: false,
-        styles: MapStyle
-      });
-      InteractiveMapLoaded = true;
-      updateRestaurants();
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  // delete static image from DOM if it already exists
+  if (document.querySelector("#mapImage")) {
+    const el = document.querySelector("#mapImage");
+    el.parentNode.removeChild(el);
+  }
+
+  mapboxgl.accessToken = MAPBOX_API_TOKEN;
+  map = new mapboxgl.Map({
+    center: [-73.9875, 40.722216],
+    zoom: 11,
+    container: "map",
+    style: "mapbox://styles/agheb/cjincsidz13122sq8lvfgmn1t?optimize=true"
+  });
+  InteractiveMapLoaded = true;
+  updateRestaurants();
 };
 
 const changeMap = () => {
@@ -210,13 +214,11 @@ const changeMap = () => {
  * Update page and map for current restaurants.
  */
 
-const NeighborhoodSelect = document.getElementById("neighborhoods-select");
-const CuisinesSelect = document.getElementById("cuisines-select");
-NeighborhoodSelect.addEventListener("change", () => {
+NeighborhoodSelect.listen("change", () => {
   changeMap();
 });
 
-CuisinesSelect.addEventListener("change", () => {
+CuisinesSelect.listen("change", () => {
   changeMap();
 });
 
@@ -257,7 +259,7 @@ let resetRestaurants = restaurants => {
   // Remove all map markers
 
   if (typeof window.markers !== "undefined") {
-    window.markers.forEach(m => m.setMap(null));
+    window.markers.forEach(m => m.remove());
   }
 
   window.markers = [];
@@ -310,7 +312,7 @@ let createRestaurantHTML = restaurant => {
 
   const more = document.createElement("a");
   more.classList.add("flex-item");
-  more.innerHTML = "View Details";
+  more.innerHTML = "More Details";
   more.href = urlForRestaurant(restaurant);
 
   const favorite = document.createElement("div");
@@ -346,16 +348,22 @@ let createRestaurantHTML = restaurant => {
 let addMarkersToMap = (restaurants = window.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    const marker = mapMarkerForRestaurant(restaurant, map);
-    google.maps.event.addListener(marker, "click", () => {
-      window.location.href = marker.url;
+    const marker = new mapboxgl.Marker({
+      color: "#000000"
+    })
+      .setLngLat([restaurant.latlng.lng, restaurant.latlng.lat])
+      .addTo(map);
+
+    marker._element.addEventListener("click", () => {
+      window.location.href = urlForRestaurant(restaurant);
     });
+
     window.markers.push(marker);
   });
 };
 
 /*
-* PUT request  tofavorite/unfavorite restaurant
+* PUT request to favorite/unfavorite restaurant
 */
 const sendFavorite = (URL, r_id, r_bool) => {
   return fetch(`${URL}${r_id}/`, {

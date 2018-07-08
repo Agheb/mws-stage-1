@@ -21,6 +21,7 @@ module.exports = {
   },
 
   module: {
+    noParse: /(mapbox-gl)\.js$/,
     rules: [
       {
         test: /\.js$/,
@@ -79,7 +80,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: "file-loader",
@@ -90,7 +91,18 @@ module.exports = {
           }
         ]
       },
-
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "icons/"
+            }
+          }
+        ]
+      },
       {
         test: /\.(gif|json)$/,
         use: [

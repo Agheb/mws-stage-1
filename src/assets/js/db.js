@@ -1,4 +1,5 @@
 import LF from "localforage";
+import mapboxgl from "mapbox-gl";
 
 // FIXME: Needing refactor or cleanup -@agheb at 6/1/2018, 10:46:27 PM
 // Endpoints from util.js
@@ -158,11 +159,9 @@ export const urlForRestaurant = restaurant => {
  * Map marker for a restaurant.
  */
 export const mapMarkerForRestaurant = (restaurant, map) => {
-  const marker = new google.maps.Marker({
-    position: restaurant.latlng,
-    title: restaurant.name,
-    url: urlForRestaurant(restaurant),
-    map: map
-  });
+  const marker = new mapboxgl.Marker({
+    color: "#000000",
+    url: urlForRestaurant(restaurant)
+  }).setLngLat([restaurant.latlng.lng, restaurant.latlng.lat]);
   return marker;
 };
