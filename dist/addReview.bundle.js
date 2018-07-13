@@ -1,21 +1,45 @@
 webpackJsonp(
   [0],
-  Array(78).concat([
+  [
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     /*!*************************************************!*\
   !*** ../node_modules/@material/ripple/index.js ***!
   \*************************************************/
     /*! exports provided: MDCRipple, MDCRippleFoundation, RippleCapableSurface, util */
-    /*! exports used: MDCRipple, MDCRippleFoundation */ function(t, e, i) {
+    /*! all exports used */ /*!*************************************************!*\
+  !*** ../node_modules/@material/ripple/index.js ***!
+  \*************************************************/
+    /*! exports provided: MDCRipple, MDCRippleFoundation, RippleCapableSurface, util */
+    /*! all exports used */ function(t, e, i) {
       "use strict";
-      i.d(e, "a", function() {
-        return r;
-      });
+      Object.defineProperty(e, "__esModule", { value: !0 }),
+        i.d(e, "MDCRipple", function() {
+          return r;
+        }),
+        i.d(e, "RippleCapableSurface", function() {
+          return o;
+        });
       var a = i(/*! @material/base/component */ 6),
         s = (i(/*! ./adapter */ 80), i(/*! ./foundation */ 86)),
         n = i(/*! ./util */ 79);
-      i.d(e, "b", function() {
+      i.d(e, "MDCRippleFoundation", function() {
         return s.a;
-      });
+      }),
+        i.d(e, "util", function() {
+          return n;
+        });
       /**
        * @license
        * Copyright 2016 Google Inc. All Rights Reserved.
@@ -41,9 +65,9 @@ webpackJsonp(
           return void 0 !== e && (i.unbounded = e), i;
         }
         static createAdapter(t) {
-          const e = n.b(HTMLElement.prototype);
+          const e = n.getMatchesProperty(HTMLElement.prototype);
           return {
-            browserSupportsCssVars: () => n.d(window),
+            browserSupportsCssVars: () => n.supportsCssVariables(window),
             isUnbounded: () => t.unbounded,
             isSurfaceActive: () => t.root_[e](":active"),
             isSurfaceDisabled: () => t.disabled,
@@ -51,13 +75,17 @@ webpackJsonp(
             removeClass: e => t.root_.classList.remove(e),
             containsEventTarget: e => t.root_.contains(e),
             registerInteractionHandler: (e, i) =>
-              t.root_.addEventListener(e, i, n.a()),
+              t.root_.addEventListener(e, i, n.applyPassive()),
             deregisterInteractionHandler: (e, i) =>
-              t.root_.removeEventListener(e, i, n.a()),
+              t.root_.removeEventListener(e, i, n.applyPassive()),
             registerDocumentInteractionHandler: (t, e) =>
-              document.documentElement.addEventListener(t, e, n.a()),
+              document.documentElement.addEventListener(t, e, n.applyPassive()),
             deregisterDocumentInteractionHandler: (t, e) =>
-              document.documentElement.removeEventListener(t, e, n.a()),
+              document.documentElement.removeEventListener(
+                t,
+                e,
+                n.applyPassive()
+              ),
             registerResizeHandler: t => window.addEventListener("resize", t),
             deregisterResizeHandler: t =>
               window.removeEventListener("resize", t),
@@ -97,15 +125,80 @@ webpackJsonp(
       class o {}
       o.prototype.root_, o.prototype.unbounded, o.prototype.disabled;
     },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     /*!************************************************!*\
   !*** ../node_modules/@material/ripple/util.js ***!
   \************************************************/
     /*! exports provided: supportsCssVariables, applyPassive, getMatchesProperty, getNormalizedEventCoords */
-    /*! exports used: applyPassive, getMatchesProperty, getNormalizedEventCoords, supportsCssVariables */ function(
-      t,
-      e,
-      i
-    ) {
+    /*! all exports used */ /*!************************************************!*\
+  !*** ../node_modules/@material/ripple/util.js ***!
+  \************************************************/
+    /*! exports provided: supportsCssVariables, applyPassive, getMatchesProperty, getNormalizedEventCoords */
+    /*! all exports used */ function(t, e, i) {
       "use strict";
       /**
        * @license
@@ -180,16 +273,17 @@ webpackJsonp(
           { x: o, y: d }
         );
       }
-      i.d(e, "d", function() {
-        return n;
-      }),
-        i.d(e, "a", function() {
+      Object.defineProperty(e, "__esModule", { value: !0 }),
+        i.d(e, "supportsCssVariables", function() {
+          return n;
+        }),
+        i.d(e, "applyPassive", function() {
           return r;
         }),
-        i.d(e, "b", function() {
+        i.d(e, "getMatchesProperty", function() {
           return o;
         }),
-        i.d(e, "c", function() {
+        i.d(e, "getNormalizedEventCoords", function() {
           return d;
         });
     },
@@ -636,7 +730,7 @@ webpackJsonp(
             startPoint: (i = {
               x:
                 (i = e
-                  ? Object(n.c)(
+                  ? Object(n.getNormalizedEventCoords)(
                       t,
                       this.adapter_.getWindowPageOffset(),
                       this.adapter_.computeBoundingRect()
@@ -818,7 +912,7 @@ webpackJsonp(
       var a = i(/*! @material/base/index */ 9),
         s = i(/*! @material/floating-label/index */ 84),
         n = i(/*! @material/line-ripple/index */ 85),
-        r = i(/*! @material/ripple/index */ 78),
+        r = i(/*! @material/ripple/index */ 13),
         o = i(/*! ./foundation */ 93),
         d = i(/*! ./constants */ 83);
       i.d(e, "MDCSelectFoundation", function() {
@@ -858,14 +952,14 @@ webpackJsonp(
               (this.ripple = this.initRipple_());
         }
         initRipple_() {
-          const t = Object.assign(r.a.createAdapter(this), {
+          const t = Object.assign(r.MDCRipple.createAdapter(this), {
               registerInteractionHandler: (t, e) =>
                 this.nativeControl_.addEventListener(t, e),
               deregisterInteractionHandler: (t, e) =>
                 this.nativeControl_.removeEventListener(t, e)
             }),
-            e = new r.b(t);
-          return new r.a(this.root_, e);
+            e = new r.MDCRippleFoundation(t);
+          return new r.MDCRipple(this.root_, e);
         }
         getDefaultFoundation() {
           return new o.a({
@@ -1224,7 +1318,7 @@ webpackJsonp(
       var a = i(/*! @material/textfield */ 115),
         s = i(/*! @material/select */ 88),
         n = i(/*! @material/dialog */ 123),
-        r = i(/*! ./util */ 13),
+        r = i(/*! ./util */ 14),
         o = ((e.render = function(t) {
           document.querySelector(".dialog-container").innerHTML = o;
           new a.MDCTextField(document.querySelector(".text-field-name")),
@@ -1582,7 +1676,7 @@ webpackJsonp(
           return _;
         });
       var a = i(/*! @material/base/component */ 6),
-        s = i(/*! @material/ripple/index */ 78),
+        s = i(/*! @material/ripple/index */ 13),
         n = i(/*! @material/ripple/util */ 79),
         r = i(/*! ./constants */ 109),
         o = (i(/*! ./adapter */ 110), i(/*! ./foundation */ 118)),
@@ -1637,7 +1731,7 @@ webpackJsonp(
           return new _(t);
         }
         initialize(
-          t = (t, e) => new s.a(t, e),
+          t = (t, e) => new s.MDCRipple(t, e),
           e = t => new d.a(t),
           i = t => new l.a(t),
           a = t => new c.a(t),
@@ -1665,15 +1759,15 @@ webpackJsonp(
             (this.ripple = null),
             this.root_.classList.contains(r.a.BOX))
           ) {
-            const e = Object(n.b)(HTMLElement.prototype),
-              i = Object.assign(s.a.createAdapter(this), {
+            const e = Object(n.getMatchesProperty)(HTMLElement.prototype),
+              i = Object.assign(s.MDCRipple.createAdapter(this), {
                 isSurfaceActive: () => this.input_[e](":active"),
                 registerInteractionHandler: (t, e) =>
                   this.input_.addEventListener(t, e),
                 deregisterInteractionHandler: (t, e) =>
                   this.input_.removeEventListener(t, e)
               }),
-              a = new s.b(i);
+              a = new s.MDCRippleFoundation(i);
             this.ripple = t(this.root_, a);
           }
         }
@@ -2469,7 +2563,7 @@ webpackJsonp(
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 });
       var a = i(/*! @material/base/index */ 9),
-        s = i(/*! @material/ripple/index */ 78),
+        s = i(/*! @material/ripple/index */ 13),
         n = i(/*! ./foundation */ 124),
         r = i(/*! ./util */ 126);
       i.d(e, "MDCDialogFoundation", function() {
@@ -2499,7 +2593,7 @@ webpackJsonp(
             (this.footerBtnRipples_ = []);
           const t = this.root_.querySelectorAll(".mdc-dialog__footer__button");
           for (let e, i = 0; (e = t[i]); i++)
-            this.footerBtnRipples_.push(new s.a(e));
+            this.footerBtnRipples_.push(new s.MDCRipple(e));
         }
         destroy() {
           this.footerBtnRipples_.forEach(t => t.destroy()), super.destroy();
@@ -2983,5 +3077,5 @@ webpackJsonp(
         return Array.prototype.push.apply(p, r), p;
       };
     }
-  ])
+  ]
 );

@@ -78,7 +78,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./TemplateTag */ 24);
+    var r = n(/*! ./TemplateTag */ 25);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -89,7 +89,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./trimResultTransformer */ 25);
+    var r = n(/*! ./trimResultTransformer */ 26);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -100,7 +100,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./inlineArrayTransformer */ 31);
+    var r = n(/*! ./inlineArrayTransformer */ 32);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -111,7 +111,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./stripIndentTransformer */ 26);
+    var r = n(/*! ./stripIndentTransformer */ 27);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -122,7 +122,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./replaceResultTransformer */ 27);
+    var r = n(/*! ./replaceResultTransformer */ 28);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -238,7 +238,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./splitStringTransformer */ 32);
+    var r = n(/*! ./splitStringTransformer */ 33);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -249,7 +249,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./html */ 40);
+    var r = n(/*! ./html */ 41);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -275,7 +275,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./replaceSubstitutionTransformer */ 28);
+    var r = n(/*! ./replaceSubstitutionTransformer */ 29);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -286,7 +286,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./removeNonPrintingValuesTransformer */ 33);
+    var r = n(/*! ./removeNonPrintingValuesTransformer */ 34);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -32868,7 +32868,12 @@
       );
     });
   },
+  ,
   /*!***************************!*\
+  !*** ./assets/js/util.js ***!
+  \***************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ /*!***************************!*\
   !*** ./assets/js/util.js ***!
   \***************************/
   /*! dynamic exports provided */
@@ -33110,7 +33115,7 @@
     n.d(e, "replaceSubstitutionTransformer", function() {
       return s.a;
     });
-    var u = n(/*! ./replaceStringTransformer */ 29);
+    var u = n(/*! ./replaceStringTransformer */ 30);
     n.d(e, "replaceStringTransformer", function() {
       return u.a;
     });
@@ -33126,15 +33131,15 @@
     n.d(e, "removeNonPrintingValuesTransformer", function() {
       return h.a;
     });
-    var p = n(/*! ./commaLists */ 34);
+    var p = n(/*! ./commaLists */ 35);
     n.d(e, "commaLists", function() {
       return p.a;
     });
-    var f = n(/*! ./commaListsAnd */ 36);
+    var f = n(/*! ./commaListsAnd */ 37);
     n.d(e, "commaListsAnd", function() {
       return f.a;
     });
-    var d = n(/*! ./commaListsOr */ 38);
+    var d = n(/*! ./commaListsOr */ 39);
     n.d(e, "commaListsOr", function() {
       return d.a;
     });
@@ -33142,51 +33147,51 @@
     n.d(e, "html", function() {
       return m.a;
     });
-    var y = n(/*! ./codeBlock */ 41);
+    var y = n(/*! ./codeBlock */ 42);
     n.d(e, "codeBlock", function() {
       return y.a;
     });
-    var v = n(/*! ./source */ 42);
+    var v = n(/*! ./source */ 43);
     n.d(e, "source", function() {
       return v.a;
     });
-    var g = n(/*! ./safeHtml */ 43);
+    var g = n(/*! ./safeHtml */ 44);
     n.d(e, "safeHtml", function() {
       return g.a;
     });
-    var _ = n(/*! ./oneLine */ 45);
+    var _ = n(/*! ./oneLine */ 46);
     n.d(e, "oneLine", function() {
       return _.a;
     });
-    var x = n(/*! ./oneLineTrim */ 47);
+    var x = n(/*! ./oneLineTrim */ 48);
     n.d(e, "oneLineTrim", function() {
       return x.a;
     });
-    var b = n(/*! ./oneLineCommaLists */ 49);
+    var b = n(/*! ./oneLineCommaLists */ 50);
     n.d(e, "oneLineCommaLists", function() {
       return b.a;
     });
-    var w = n(/*! ./oneLineCommaListsOr */ 51);
+    var w = n(/*! ./oneLineCommaListsOr */ 52);
     n.d(e, "oneLineCommaListsOr", function() {
       return w.a;
     });
-    var A = n(/*! ./oneLineCommaListsAnd */ 53);
+    var A = n(/*! ./oneLineCommaListsAnd */ 54);
     n.d(e, "oneLineCommaListsAnd", function() {
       return A.a;
     });
-    var E = n(/*! ./inlineLists */ 55);
+    var E = n(/*! ./inlineLists */ 56);
     n.d(e, "inlineLists", function() {
       return E.a;
     });
-    var S = n(/*! ./oneLineInlineLists */ 57);
+    var S = n(/*! ./oneLineInlineLists */ 58);
     n.d(e, "oneLineInlineLists", function() {
       return S.a;
     });
-    var T = n(/*! ./stripIndent */ 59);
+    var T = n(/*! ./stripIndent */ 60);
     n.d(e, "stripIndent", function() {
       return T.a;
     });
-    var I = n(/*! ./stripIndents */ 61);
+    var I = n(/*! ./stripIndents */ 62);
     n.d(e, "stripIndents", function() {
       return I.a;
     });
@@ -33411,7 +33416,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./replaceStringTransformer */ 30);
+    var r = n(/*! ./replaceStringTransformer */ 31);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33503,7 +33508,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./commaLists */ 35);
+    var r = n(/*! ./commaLists */ 36);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33527,7 +33532,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./commaListsAnd */ 37);
+    var r = n(/*! ./commaListsAnd */ 38);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33555,7 +33560,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./commaListsOr */ 39);
+    var r = n(/*! ./commaListsOr */ 40);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33616,7 +33621,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./safeHtml */ 44);
+    var r = n(/*! ./safeHtml */ 45);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33653,7 +33658,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./oneLine */ 46);
+    var r = n(/*! ./oneLine */ 47);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33676,7 +33681,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./oneLineTrim */ 48);
+    var r = n(/*! ./oneLineTrim */ 49);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33699,7 +33704,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./oneLineCommaLists */ 50);
+    var r = n(/*! ./oneLineCommaLists */ 51);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33727,7 +33732,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./oneLineCommaListsOr */ 52);
+    var r = n(/*! ./oneLineCommaListsOr */ 53);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33755,7 +33760,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./oneLineCommaListsAnd */ 54);
+    var r = n(/*! ./oneLineCommaListsAnd */ 55);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33783,7 +33788,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./inlineLists */ 56);
+    var r = n(/*! ./inlineLists */ 57);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33807,7 +33812,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./oneLineInlineLists */ 58);
+    var r = n(/*! ./oneLineInlineLists */ 59);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33831,7 +33836,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./stripIndent */ 60);
+    var r = n(/*! ./stripIndent */ 61);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33854,7 +33859,7 @@
   /*! exports provided: default */
   /*! exports used: default */ function(t, e, n) {
     "use strict";
-    var r = n(/*! ./stripIndents */ 62);
+    var r = n(/*! ./stripIndents */ 63);
     n.d(e, "a", function() {
       return r.a;
     });
@@ -33879,7 +33884,7 @@
     "use strict";
     Object.defineProperty(e, "__esModule", { value: !0 }),
       (e.mapMarkerForRestaurant = e.urlForRestaurant = e.getCuisines = e.getNeighborhoods = e.getRestaurantByCuisineNeighborhood = e.getRestaurantByNeighborhood = e.getRestaurantByCuisine = e.getRestaurantById = e.loadReviews = e.loadRestaurants = void 0);
-    var r = o(n(/*! localforage */ 64)),
+    var r = o(n(/*! localforage */ 65)),
       i = o(n(/*! mapbox-gl */ 12));
     function o(t) {
       return t && t.__esModule ? t : { default: t };
@@ -36161,7 +36166,7 @@
         )(4);
       }),
         (t.exports = r());
-    }.call(e, n(/*! ./../../webpack/buildin/global.js */ 65)));
+    }.call(e, n(/*! ./../../webpack/buildin/global.js */ 66)));
   },
   /*!*************************************************!*\
   !*** ../node_modules/webpack/buildin/global.js ***!
@@ -36322,16 +36327,16 @@
   /*! dynamic exports provided */
   /*! all exports used */ function(t, e, n) {
     var r = {
-      "./1.jpg": 68,
-      "./10.jpg": 69,
-      "./2.jpg": 70,
-      "./3.jpg": 71,
-      "./4.jpg": 72,
-      "./5.jpg": 73,
-      "./6.jpg": 74,
-      "./7.jpg": 75,
-      "./8.jpg": 76,
-      "./9.jpg": 77
+      "./1.jpg": 69,
+      "./10.jpg": 70,
+      "./2.jpg": 71,
+      "./3.jpg": 72,
+      "./4.jpg": 73,
+      "./5.jpg": 74,
+      "./6.jpg": 75,
+      "./7.jpg": 76,
+      "./8.jpg": 77,
+      "./9.jpg": 78
     };
     function i(t) {
       return n(o(t));
@@ -36346,7 +36351,7 @@
     }),
       (i.resolve = o),
       (t.exports = i),
-      (i.id = 67);
+      (i.id = 68);
   },
   /*!*******************************!*\
   !*** ./assets/data/img/1.jpg ***!
@@ -36748,7 +36753,6 @@
       height: 225
     };
   },
-  ,
   ,
   ,
   ,
@@ -37179,21 +37183,21 @@
       Object.freeze(
         Object.defineProperties(r, { raw: { value: Object.freeze(i) } })
       )),
-      a = p(n(/*! lozad */ 15));
-    p(n(/*! normalize.css/normalize.css */ 16)),
-      p(n(/*! css-star-rating/css/star-rating.css */ 17));
-    n(/*! ./assets/css/styles.css */ 18),
-      n(/*! ./assets/css/app.scss */ 19),
+      a = p(n(/*! lozad */ 16));
+    p(n(/*! normalize.css/normalize.css */ 17)),
+      p(n(/*! css-star-rating/css/star-rating.css */ 18));
+    n(/*! ./assets/css/styles.css */ 19),
+      n(/*! ./assets/css/app.scss */ 20),
       n(/*! ./assets/css/dialog.scss */ 98),
-      n(/*! ./assets/css/snackbar.scss */ 20),
+      n(/*! ./assets/css/snackbar.scss */ 21),
       n(/*! ./assets/css/restaurant.scss */ 105);
-    p(n(/*! ./assets/data/manifest.json */ 21)),
-      p(n(/*! load-google-maps-api */ 22));
-    var s = n(/*! common-tags */ 23),
-      u = n(/*! ./assets/js/db */ 63),
-      l = n(/*! ./assets/js/map */ 66),
-      c = n(/*! ./assets/js/util */ 13),
-      h = (n(/*! ./assets/js/snackbar */ 14), p(n(/*! mapbox-gl */ 12)));
+    p(n(/*! ./assets/data/manifest.json */ 22)),
+      p(n(/*! load-google-maps-api */ 23));
+    var s = n(/*! common-tags */ 24),
+      u = n(/*! ./assets/js/db */ 64),
+      l = n(/*! ./assets/js/map */ 67),
+      c = n(/*! ./assets/js/util */ 14),
+      h = (n(/*! ./assets/js/snackbar */ 15), p(n(/*! mapbox-gl */ 12)));
     function p(t) {
       return t && t.__esModule ? t : { default: t };
     }
@@ -37206,7 +37210,7 @@
             ? new Promise(function(t) {
                 t();
               })
-                .then(n.bind(null, /*! ./assets/js/snackbar */ 14))
+                .then(n.bind(null, /*! ./assets/js/snackbar */ 15))
                 .then(function(t) {
                   t.showNotification(
                     "Thank you! Your reviews has been sent successfully.Please reload the page."
@@ -37307,7 +37311,7 @@
           (document.getElementById("restaurant-address").innerHTML = t.address);
         var e = document.getElementById("restaurant-img");
         e.className = "restaurant-img";
-        var r = n(/*! ./assets/data/img */ 67)("./" + t.id + ".jpg");
+        var r = n(/*! ./assets/data/img */ 68)("./" + t.id + ".jpg");
         (e.src = r.src),
           (e.srcset = r.srcSet),
           (e.alt = "Image of " + t.name + " Restaurant"),
