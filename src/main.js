@@ -18,6 +18,7 @@ import {
 import { MapStyle, MapsConfig } from "./assets/js/map";
 import { MDCIconToggle } from "@material/icon-toggle";
 import { MDCSelect } from "@material/select";
+import { MDCRipple } from "@material/ripple";
 import mapboxgl from "mapbox-gl";
 import {
   getParameterByName,
@@ -44,9 +45,7 @@ if ("serviceWorker" in navigator) {
     if (event.data === "favorite-success") {
       import(/* webpackChunkName: "notification" */ "./assets/js/snackbar").then(
         snackbar => {
-          snackbar.showNotification(
-            "Your favourite restaurants were sent successfully"
-          );
+          snackbar.showNotification("Data sent to server while offline");
         }
       );
     } else {
@@ -195,6 +194,7 @@ const addInteractiveMap = options => {
   map = new mapboxgl.Map({
     center: [-73.9875, 40.722216],
     zoom: 11,
+    scrollZoom: false,
     container: "map",
     style: "mapbox://styles/agheb/cjjddhl0w3qu22sp5gmnlffum?optimize=true"
   });
@@ -285,7 +285,10 @@ let fillRestaurantsHTML = (restaurants = window.restaurants) => {
  * Create restaurant HTML.
  */
 let createRestaurantHTML = restaurant => {
+  // TODO: Tasks pending completion -@agheb at 7/13/2018, 9:39:11 PM
+  // Refactor Code and change to template literal
   const li = document.createElement("li");
+  li.className = "selector";
   const image = document.createElement("img");
   image.className = "restaurant-img lozad";
   const img = require(`./assets/data/img/${restaurant.id}.jpg`);
@@ -338,7 +341,7 @@ let createRestaurantHTML = restaurant => {
   container.appendChild(more);
   container.appendChild(favorite);
   li.append(container);
-
+  MDCRipple.attachTo(li);
   return li;
 };
 

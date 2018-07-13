@@ -2,18 +2,31 @@ $mdc-theme-primary: #212121;
 $mdc-theme--on-surface: #212121;
 
 @import "@material/ripple/mdc-ripple";
+@import "@material/elevation/mixins";
 @import "@material/fab/mdc-fab";
 @import "@material/select/mdc-select";
-
+@import "@material/card/mdc-card";
 $material-icons-font-path: "~material-icons/iconfont/";
 
 @import "~material-icons/iconfont/material-icons.scss";
 @import "~mapbox-gl/dist/mapbox-gl.css";
+
+#restaurants-list li {
+  @include mdc-ripple-surface;
+  @include mdc-ripple-radius-bounded;
+  @include mdc-states-base-color(black);
+  @include mdc-states-hover-opacity(0.1);
+  @include mdc-states-focus-opacity(0.3);
+  @include mdc-states-press-opacity(0.3);
+  @include mdc-elevation(2);
+  overflow: hidden;
+}
 .material-icons.md-24 {
   font-size: 22px;
   color: #212121;
   margin: auto;
   @include material-icons();
+  outline: none;
 }
 
 .container {
