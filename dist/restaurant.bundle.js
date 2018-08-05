@@ -70,7 +70,7 @@
     (i.oe = function(t) {
       throw (console.error(t), t);
     }),
-    i((i.s = 104));
+    i((i.s = 103));
 })([
   /*!***********************************************************!*\
   !*** ../node_modules/common-tags/es/TemplateTag/index.js ***!
@@ -32868,7 +32868,12 @@
       );
     });
   },
+  ,
   /*!***************************!*\
+  !*** ./assets/js/util.js ***!
+  \***************************/
+  /*! dynamic exports provided */
+  /*! all exports used */ /*!***************************!*\
   !*** ./assets/js/util.js ***!
   \***************************/
   /*! dynamic exports provided */
@@ -32898,7 +32903,7 @@
     "use strict";
     Object.defineProperty(e, "__esModule", { value: !0 }),
       (e.showNotification = void 0);
-    var r = n(/*! @material/snackbar */ 94);
+    var r = n(/*! @material/snackbar */ 92);
     e.showNotification = function(t) {
       document.querySelector(".snackbar-container").innerHTML =
         '\n<div class="mdc-snackbar "\naria-live="assertive"\naria-atomic="true"\naria-hidden="true">\n<div class="mdc-snackbar__text"></div>\n<div class="mdc-snackbar__action-wrapper">\n<button type="button" class="mdc-snackbar__action-button"></button>\n</div>\n</div>';
@@ -33044,44 +33049,6 @@
   /*! dynamic exports provided */
   /*! all exports used */ function(t, e, n) {
     t.exports = n.p + "manifest.json";
-  },
-  /*!*****************************************************!*\
-  !*** ../node_modules/load-google-maps-api/index.js ***!
-  \*****************************************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(t, e) {
-    var n = "__googleMapsApiOnLoadCallback",
-      r = ["channel", "client", "key", "language", "region", "v"],
-      i = null;
-    t.exports = function(t) {
-      return (
-        (t = t || {}),
-        i ||
-          (i = new Promise(function(e, i) {
-            var o = setTimeout(function() {
-              (window[n] = function() {}),
-                i(new Error("Could not load the Google Maps API"));
-            }, t.timeout || 1e4);
-            window[n] = function() {
-              null !== o && clearTimeout(o),
-                e(window.google.maps),
-                delete window[n];
-            };
-            var a = document.createElement("script"),
-              s = ["callback=" + n];
-            r.forEach(function(e) {
-              t[e] && s.push(e + "=" + t[e]);
-            }),
-              t.libraries &&
-                t.libraries.length &&
-                s.push("libraries=" + t.libraries.join(",")),
-              (a.src =
-                "https://maps.googleapis.com/maps/api/js?" + s.join("&")),
-              document.body.appendChild(a);
-          })),
-        i
-      );
-    };
   },
   /*!***********************************************!*\
   !*** ../node_modules/common-tags/es/index.js ***!
@@ -36179,159 +36146,22 @@
     }
     t.exports = n;
   },
-  /*!**************************!*\
-  !*** ./assets/js/map.js ***!
-  \**************************/
-  /*! dynamic exports provided */
-  /*! all exports used */ function(t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });
-    (e.MapStyle = [
-      {
-        featureType: "administrative",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#6195a0" }]
-      },
-      {
-        featureType: "administrative.province",
-        elementType: "geometry.stroke",
-        stylers: [{ visibility: "off" }]
-      },
-      {
-        featureType: "landscape",
-        elementType: "geometry",
-        stylers: [
-          { lightness: "0" },
-          { saturation: "0" },
-          { color: "#f5f5f2" },
-          { gamma: "1" }
-        ]
-      },
-      {
-        featureType: "landscape.man_made",
-        elementType: "all",
-        stylers: [{ lightness: "-3" }, { gamma: "1.00" }]
-      },
-      {
-        featureType: "landscape.natural.terrain",
-        elementType: "all",
-        stylers: [{ visibility: "off" }]
-      },
-      {
-        featureType: "poi",
-        elementType: "all",
-        stylers: [{ visibility: "off" }]
-      },
-      {
-        featureType: "poi.park",
-        elementType: "geometry.fill",
-        stylers: [{ color: "#bae5ce" }, { visibility: "on" }]
-      },
-      {
-        featureType: "road",
-        elementType: "all",
-        stylers: [
-          { saturation: -100 },
-          { lightness: 45 },
-          { visibility: "simplified" }
-        ]
-      },
-      {
-        featureType: "road.highway",
-        elementType: "all",
-        stylers: [{ visibility: "simplified" }]
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry.fill",
-        stylers: [{ color: "#fac9a9" }, { visibility: "simplified" }]
-      },
-      {
-        featureType: "road.highway",
-        elementType: "labels.text",
-        stylers: [{ color: "#4e4e4e" }]
-      },
-      {
-        featureType: "road.arterial",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#787878" }]
-      },
-      {
-        featureType: "road.arterial",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }]
-      },
-      {
-        featureType: "transit",
-        elementType: "all",
-        stylers: [{ visibility: "simplified" }]
-      },
-      {
-        featureType: "transit.station.airport",
-        elementType: "labels.icon",
-        stylers: [
-          { hue: "#0a00ff" },
-          { saturation: "-77" },
-          { gamma: "0.57" },
-          { lightness: "0" }
-        ]
-      },
-      {
-        featureType: "transit.station.rail",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#43321e" }]
-      },
-      {
-        featureType: "transit.station.rail",
-        elementType: "labels.icon",
-        stylers: [
-          { hue: "#ff6c00" },
-          { lightness: "4" },
-          { gamma: "0.75" },
-          { saturation: "-68" }
-        ]
-      },
-      {
-        featureType: "water",
-        elementType: "all",
-        stylers: [{ color: "#eaf6f8" }, { visibility: "on" }]
-      },
-      {
-        featureType: "water",
-        elementType: "geometry.fill",
-        stylers: [{ color: "#c7eced" }]
-      },
-      {
-        featureType: "water",
-        elementType: "labels.text.fill",
-        stylers: [
-          { lightness: "-49" },
-          { saturation: "-53" },
-          { gamma: "0.79" }
-        ]
-      }
-    ]),
-      (e.MapsConfig = {
-        key: "AIzaSyDXJhUDVZRlN4bLZm0nJbwsUUxRtCpRtQI",
-        libraries: ["places"]
-      });
-  },
   /*!***************************************!*\
   !*** ./assets/data/img ^\.\/.*\.jpg$ ***!
   \***************************************/
   /*! dynamic exports provided */
   /*! all exports used */ function(t, e, n) {
     var r = {
-      "./1.jpg": 68,
-      "./10.jpg": 69,
-      "./2.jpg": 70,
-      "./3.jpg": 71,
-      "./4.jpg": 72,
-      "./5.jpg": 73,
-      "./6.jpg": 74,
-      "./7.jpg": 75,
-      "./8.jpg": 76,
-      "./9.jpg": 77
+      "./1.jpg": 67,
+      "./10.jpg": 68,
+      "./2.jpg": 69,
+      "./3.jpg": 70,
+      "./4.jpg": 71,
+      "./5.jpg": 72,
+      "./6.jpg": 73,
+      "./7.jpg": 74,
+      "./8.jpg": 75,
+      "./9.jpg": 76
     };
     function i(t) {
       return n(o(t));
@@ -36346,7 +36176,7 @@
     }),
       (i.resolve = o),
       (t.exports = i),
-      (i.id = 67);
+      (i.id = 66);
   },
   /*!*******************************!*\
   !*** ./assets/data/img/1.jpg ***!
@@ -36763,7 +36593,6 @@
   ,
   ,
   ,
-  ,
   /*!***************************************************!*\
   !*** ../node_modules/@material/snackbar/index.js ***!
   \***************************************************/
@@ -36776,8 +36605,8 @@
     "use strict";
     Object.defineProperty(e, "__esModule", { value: !0 });
     var r = n(/*! @material/base/index */ 9),
-      i = n(/*! ./foundation */ 95),
-      o = n(/*! @material/animation/index */ 97);
+      i = n(/*! ./foundation */ 93),
+      o = n(/*! @material/animation/index */ 95);
     n.d(e, "MDCSnackbarFoundation", function() {
       return i.a;
     });
@@ -36851,7 +36680,7 @@
   /*! exports used: default */ function(t, e, n) {
     "use strict";
     var r = n(/*! @material/base/index */ 9),
-      i = n(/*! ./constants */ 96);
+      i = n(/*! ./constants */ 94);
     class o extends r.b {
       static get cssClasses() {
         return i.a;
@@ -37146,6 +36975,7 @@
   ,
   ,
   ,
+  ,
   /*!****************************!*\
   !*** ./restaurant_info.js ***!
   \****************************/
@@ -37179,34 +37009,32 @@
       Object.freeze(
         Object.defineProperties(r, { raw: { value: Object.freeze(i) } })
       )),
-      a = p(n(/*! lozad */ 15));
-    p(n(/*! normalize.css/normalize.css */ 16)),
-      p(n(/*! css-star-rating/css/star-rating.css */ 17));
-    n(/*! ./assets/css/styles.css */ 18),
-      n(/*! ./assets/css/app.scss */ 19),
-      n(/*! ./assets/css/dialog.scss */ 98),
-      n(/*! ./assets/css/snackbar.scss */ 20),
-      n(/*! ./assets/css/restaurant.scss */ 105);
-    p(n(/*! ./assets/data/manifest.json */ 21)),
-      p(n(/*! load-google-maps-api */ 22));
+      a = h(n(/*! lozad */ 16));
+    h(n(/*! normalize.css/normalize.css */ 17)),
+      h(n(/*! css-star-rating/css/star-rating.css */ 18));
+    n(/*! ./assets/css/styles.css */ 19),
+      n(/*! ./assets/css/app.scss */ 20),
+      n(/*! ./assets/css/dialog.scss */ 96),
+      n(/*! ./assets/css/snackbar.scss */ 21),
+      n(/*! ./assets/css/restaurant.scss */ 104);
+    h(n(/*! ./assets/data/manifest.json */ 22));
     var s = n(/*! common-tags */ 23),
       u = n(/*! ./assets/js/db */ 63),
-      l = n(/*! ./assets/js/map */ 66),
-      c = n(/*! ./assets/js/util */ 13),
-      h = (n(/*! ./assets/js/snackbar */ 14), p(n(/*! mapbox-gl */ 12)));
-    function p(t) {
+      l = n(/*! ./assets/js/util */ 14),
+      c = (n(/*! ./assets/js/snackbar */ 15), h(n(/*! mapbox-gl */ 12)));
+    function h(t) {
       return t && t.__esModule ? t : { default: t };
     }
-    var f = void 0,
-      d = (0, a.default)();
-    d.observe(),
+    var p = void 0,
+      f = (0, a.default)();
+    f.observe(),
       "serviceWorker" in navigator &&
         navigator.serviceWorker.addEventListener("message", function(t) {
           "server-success" === t.data
             ? new Promise(function(t) {
                 t();
               })
-                .then(n.bind(null, /*! ./assets/js/snackbar */ 14))
+                .then(n.bind(null, /*! ./assets/js/snackbar */ 15))
                 .then(function(t) {
                   t.showNotification(
                     "Thank you! Your reviews has been sent successfully.Please reload the page."
@@ -37217,21 +37045,21 @@
       window.addEventListener(
         "resize",
         function() {
-          f || y(l.MapsConfig);
+          p || m(MapsConfig);
         },
         { once: !0 }
       ),
       document.addEventListener("DOMContentLoaded", function() {
         (0, u.loadRestaurants)()
           .then(function(t) {
-            var e = (0, c.getParameterByName)("id");
+            var e = (0, l.getParameterByName)("id");
             e
               ? ((window.restaurant = (0, u.getRestaurantById)(e, t)),
-                g(),
-                w(),
-                m(window.restaurant, "mapbox", 300),
+                v(),
+                b(),
+                d(window.restaurant, "mapbox", 300),
                 (0, u.loadReviews)(e).then(function(t) {
-                  console.log(t), x(t);
+                  console.log(t), _(t);
                 }))
               : console.error("No restaurant id in URL");
           })
@@ -37239,42 +37067,40 @@
             console.error(t);
           });
       });
-    var m = function(t, e, n) {
-      window.matchMedia("(max-width:600px)").matches
-        ? v(t, e, n)
-        : y(l.MapsConfig, t);
+    var d = function(t, e, n) {
+      window.matchMedia("(max-width:600px)").matches ? y(t, e, n) : m(t);
     };
     document.getElementById("mapbox").addEventListener(
       "mouseover",
       function() {
-        f || y(l.MapsConfig);
+        p || m();
       },
       { once: !0 }
     );
-    var y = function(t) {
-        var e =
-            arguments.length > 1 && void 0 !== arguments[1]
-              ? arguments[1]
+    var m = function() {
+        var t =
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
               : window.restaurant,
-          n = [e.latlng.lng, e.latlng.lat];
+          e = [t.latlng.lng, t.latlng.lat];
         if (document.querySelector("#mapImage")) {
-          var r = document.querySelector("#mapImage");
-          r.parentNode.removeChild(r);
+          var n = document.querySelector("#mapImage");
+          n.parentNode.removeChild(n);
         }
-        h.default.accessToken =
-          "pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg";
-        var i = new h.default.Map({
-          center: n,
+        c.default.accessToken = l.MAPBOX_API_TOKEN;
+        var r = new c.default.Map({
+          center: e,
           zoom: 14,
+          scrollZoom: !1,
           container: "mapbox",
           style: "mapbox://styles/agheb/cjjddhl0w3qu22sp5gmnlffum?optimize=true"
         });
-        (f = !0),
-          new h.default.Marker({ color: "#000000" })
-            .setLngLat([e.latlng.lng, e.latlng.lat])
-            .addTo(i);
+        (p = !0),
+          new c.default.Marker({ color: "#000000" })
+            .setLngLat([t.latlng.lng, t.latlng.lat])
+            .addTo(r);
       },
-      v = function(t, e, n) {
+      y = function(t, e, n) {
         var r =
             window.innerWidth ||
             document.documentElement.clientWidth ||
@@ -37298,7 +37124,7 @@
             '">\n  ';
         document.getElementById("" + e).innerHTML = a;
       },
-      g = function() {
+      v = function() {
         var t =
           arguments.length > 0 && void 0 !== arguments[0]
             ? arguments[0]
@@ -37307,16 +37133,16 @@
           (document.getElementById("restaurant-address").innerHTML = t.address);
         var e = document.getElementById("restaurant-img");
         e.className = "restaurant-img";
-        var r = n(/*! ./assets/data/img */ 67)("./" + t.id + ".jpg");
+        var r = n(/*! ./assets/data/img */ 66)("./" + t.id + ".jpg");
         (e.src = r.src),
           (e.srcset = r.srcSet),
           (e.alt = "Image of " + t.name + " Restaurant"),
-          d.observe(),
+          f.observe(),
           (document.getElementById("restaurant-cuisine").innerHTML =
             t.cuisine_type),
-          t.operating_hours && _();
+          t.operating_hours && g();
       },
-      _ = function() {
+      g = function() {
         var t =
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
@@ -37330,7 +37156,7 @@
           (o.innerHTML = t[n]), r.appendChild(o), e.appendChild(r);
         }
       },
-      x = function() {
+      _ = function() {
         var t =
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
@@ -37349,7 +37175,7 @@
             .querySelector(".mdc-fab")
             .addEventListener("click", function(t) {
               n.e(0 /*! addReview */)
-                .then(n.bind(null, /*! ./assets/js/dialog */ 106))
+                .then(n.bind(null, /*! ./assets/js/dialog */ 105))
                 .then(function(e) {
                   e.render(t);
                 });
@@ -37361,22 +37187,22 @@
         }
         var s = document.getElementById("reviews-list");
         t.forEach(function(t) {
-          s.appendChild(b(t));
+          s.appendChild(x(t));
         }),
           e.appendChild(s);
       },
-      b = function(t) {
+      x = function(t) {
         var e = document.createElement("li"),
           n = document.createElement("p");
         (n.innerHTML = t.name), e.appendChild(n);
         var r = document.createElement("p");
         (r.innerHTML = t.createdAt), e.appendChild(r);
         var i = document.createElement("p");
-        (i.innerHTML = A(t.rating)), e.appendChild(i);
+        (i.innerHTML = w(t.rating)), e.appendChild(i);
         var o = document.createElement("p");
         return (o.innerHTML = t.comments), e.appendChild(o), e;
       },
-      w = function() {
+      b = function() {
         var t =
             arguments.length > 0 && void 0 !== arguments[0]
               ? arguments[0]
@@ -37385,7 +37211,7 @@
           n = document.createElement("li");
         console.log(), (n.innerHTML = t.name), e.appendChild(n);
       },
-      A = function(t) {
+      w = function(t) {
         return (
           '\n  <div class="rating small star-icon value-' +
           t +

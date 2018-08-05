@@ -15,7 +15,6 @@ import {
   urlForRestaurant,
   mapMarkerForRestaurant
 } from "./assets/js/db";
-import { MapStyle, MapsConfig } from "./assets/js/map";
 import { MDCIconToggle } from "@material/icon-toggle";
 import { MDCSelect } from "@material/select";
 import { MDCRipple } from "@material/ripple";
@@ -71,7 +70,7 @@ MapTarget.addEventListener(
   "mouseover",
   () => {
     if (!InteractiveMapLoaded) {
-      addInteractiveMap(MapsConfig);
+      addInteractiveMap();
     }
   },
   { once: true }
@@ -177,13 +176,11 @@ const initMap = (height, element) => {
         console.error(err);
       });
   } else {
-    addInteractiveMap(MapsConfig);
+    addInteractiveMap();
   }
 };
 
-// TODO: Tasks pending completion -@agheb at 7/8/2018, 8:21:48 PM
-// Delete MapOptions
-const addInteractiveMap = options => {
+const addInteractiveMap = () => {
   // delete static image from DOM if it already exists
   if (document.querySelector("#mapImage")) {
     const el = document.querySelector("#mapImage");
@@ -204,7 +201,7 @@ const addInteractiveMap = options => {
 
 const changeMap = () => {
   if (!InteractiveMapLoaded) {
-    addInteractiveMap(MapsConfig);
+    addInteractiveMap();
   } else {
     updateRestaurants();
   }

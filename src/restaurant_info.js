@@ -7,7 +7,6 @@ import "./assets/css/dialog.scss";
 import "./assets/css/snackbar.scss";
 import "./assets/css/restaurant.scss";
 import Manifest from "./assets/data/manifest.json";
-import loadGoogleMapsApi from "load-google-maps-api";
 import { oneLineTrim } from "common-tags";
 import {
   mapMarkerForRestaurant,
@@ -15,8 +14,7 @@ import {
   loadReviews,
   getRestaurantById
 } from "./assets/js/db";
-import { MapsConfig, MapStyle } from "./assets/js/map";
-import { getParameterByName } from "./assets/js/util";
+import { getParameterByName, MAPBOX_API_TOKEN } from "./assets/js/util";
 import { showNotification } from "./assets/js/snackbar";
 import mapboxgl from "mapbox-gl";
 
@@ -82,7 +80,7 @@ const initRestaurantMap = (restaurant, element, height) => {
   if (window.matchMedia("(max-width:600px)").matches) {
     createRestaurantMapImage(restaurant, element, height);
   } else {
-    addInteractiveRestaurantMap(MapsConfig, restaurant);
+    addInteractiveRestaurantMap(restaurant);
   }
 };
 
@@ -94,16 +92,13 @@ MapTarget.addEventListener(
   "mouseover",
   () => {
     if (!InteractiveMapLoaded) {
-      addInteractiveRestaurantMap(MapsConfig);
+      addInteractiveRestaurantMap();
     }
   },
   { once: true }
 );
 
-const addInteractiveRestaurantMap = (
-  options,
-  restaurant = window.restaurant
-) => {
+const addInteractiveRestaurantMap = (restaurant = window.restaurant) => {
   const ll = [restaurant.latlng.lng, restaurant.latlng.lat];
 
   // delete static image from DOM if it already exists
@@ -111,13 +106,12 @@ const addInteractiveRestaurantMap = (
     const el = document.querySelector("#mapImage");
     el.parentNode.removeChild(el);
   }
-  // TODO: use MapBox variables from util.js
-  //
-  mapboxgl.accessToken =
-    "pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg";
+  mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
   const mapboxMap = new mapboxgl.Map({
     center: ll,
     zoom: 14,
+    scrollZoom: false,
     container: "mapbox",
     style: "mapbox://styles/agheb/cjjddhl0w3qu22sp5gmnlffum?optimize=true"
   });

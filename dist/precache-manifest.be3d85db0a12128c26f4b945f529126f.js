@@ -7,20 +7,20 @@ self.__precacheManifest = [
     url: "assets/icons/icon-512x512.png"
   },
   {
-    revision: "da131c82adb3fc600621",
+    revision: "85f6cca0c3049e1b8df2",
     url: "main.bundle.js"
   },
   {
-    revision: "da131c82adb3fc600621",
-    url: "styles.ee45caafc1c3c7d36199f47fd1886748.css"
+    revision: "85f6cca0c3049e1b8df2",
+    url: "styles.d3bed2329adaecc610befc6380cf1631.css"
   },
   {
-    revision: "3c8278cd6d84da8b48a7",
+    revision: "7557629504fcf6522b20",
     url: "restaurant.bundle.js"
   },
   {
-    revision: "3c8278cd6d84da8b48a7",
-    url: "styles.0fe49e9405cc63432496d6844943d42d.css"
+    revision: "7557629504fcf6522b20",
+    url: "styles.eafbdaa22b3b1b5e07f8ddcff6579339.css"
   },
   {
     revision: "ada67516bfcb321d3af9a10b5ac85969",
@@ -69,11 +69,11 @@ self.__precacheManifest = [
     url: "e119ebb5ce670b6c9e956f8ed569b061-400.jpg"
   },
   {
-    revision: "709d4f4e51eed1d814beafe5d50b0d64",
+    revision: "dd937691eac118b2f89b4fc69bea151a",
     url: "restaurant.html"
   },
   {
-    revision: "6579cb7b5ada13d299887ef04ea9b3d7",
+    revision: "22177c240f79c65a29cda19219650f93",
     url: "index.html"
   },
   {
@@ -98,7 +98,7 @@ self.__precacheManifest = [
     url: "e2f679773679c3b91eed62426a98cf2b-600.jpg"
   },
   {
-    revision: "5e0d8fc2abf5695dd5c5",
+    revision: "176f3f048d16e2923f10",
     url: "notification.bundle.js"
   },
   {
@@ -111,7 +111,7 @@ self.__precacheManifest = [
     url: "3c1922dd887ee4bc2800abc3192f37ee-400.jpg"
   },
   {
-    revision: "671bad824d06438c9cbb",
+    revision: "23e6dcd37f348c3adc43",
     url: "addReview.bundle.js"
   },
   {
@@ -119,20 +119,20 @@ self.__precacheManifest = [
     url: "assets/icons/icon-384x384.png"
   },
   {
-    revision: "dee82dcda95b3a01d0429d91e111e9b0",
-    url: "assets/icons/icon-144x144.png"
-  },
-  {
     revision: "c8e0c3ad2a323dbeea8e60ba15f2a962",
     url: "assets/icons/icon-152x152.png"
   },
   {
-    revision: "f45ec0c00e27a609b7d0d6c9c326b002",
-    url: "assets/icons/icon-128x128.png"
+    revision: "dee82dcda95b3a01d0429d91e111e9b0",
+    url: "assets/icons/icon-144x144.png"
   },
   {
     revision: "06ec114fc6d846eae72128e947497f58",
     url: "assets/icons/icon-192x192.png"
+  },
+  {
+    revision: "f45ec0c00e27a609b7d0d6c9c326b002",
+    url: "assets/icons/icon-128x128.png"
   },
   {
     url: "af03ab7c0299ba334e3482db3a081087-400.jpg"

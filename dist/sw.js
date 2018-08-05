@@ -1,5 +1,5 @@
 importScripts(
-  "precache-manifest.92f97169e79de18f66e5271028f931cb.js",
+  "precache-manifest.be3d85db0a12128c26f4b945f529126f.js",
   "https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js"
 );
 
