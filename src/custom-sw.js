@@ -34,7 +34,7 @@ const restaurantOptions = {
 };
 
 workbox.routing.registerRoute(
-  "https://server.amanuelg.me/reviews/",
+  "https://apiserver-bsxyywmzus.now.sh/reviews/",
   workbox.strategies.networkOnly({
     plugins: [new workbox.backgroundSync.Plugin("review-frm", mainOptions)]
   }),
@@ -42,7 +42,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  new RegExp("https://server.amanuelg.me/restaurants/.*"),
+  new RegExp("https://apiserver-bsxyywmzus.now.sh/restaurants/.*"),
   workbox.strategies.networkOnly({
     plugins: [
       new workbox.backgroundSync.Plugin("restaurant-frm", restaurantOptions)

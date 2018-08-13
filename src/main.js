@@ -282,8 +282,6 @@ let fillRestaurantsHTML = (restaurants = window.restaurants) => {
  * Create restaurant HTML.
  */
 let createRestaurantHTML = restaurant => {
-  // TODO: Tasks pending completion -@agheb at 7/13/2018, 9:39:11 PM
-  // Refactor Code and change to template literal
   const li = document.createElement("li");
   li.className = "selector";
   const image = document.createElement("img");
