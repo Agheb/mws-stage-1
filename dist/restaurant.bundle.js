@@ -32889,8 +32889,9 @@
           : ""
         : null;
     }),
-      (e.ReviewEndpoint = "https://server.amanuelg.me/reviews/"),
-      (e.FavouriteEndpoint = "https://server.amanuelg.me/restaurants/"),
+      (e.ReviewEndpoint = "https://apiserver-bsxyywmzus.now.sh/reviews/"),
+      (e.FavouriteEndpoint =
+        "https://apiserver-bsxyywmzus.now.sh/restaurants/"),
       (e.MAPBOX_API_TOKEN =
         "pk.eyJ1IjoiYWdoZWIiLCJhIjoiY2ppN3ZodXN4MGZvczN3bGd6MGtlZ25uMyJ9.m3nup5JuyeeDbZ8ovxBzxg"),
       (e.MAPBOX_STYLE = "mapbox://styles/agheb/cjincsidz13122sq8lvfgmn1t");
