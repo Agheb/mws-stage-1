@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "node-sass": "^4.9.0",
-    "serve": "^6.5.5"
+    "serve": "^10.1.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome": "^1.1.7",
