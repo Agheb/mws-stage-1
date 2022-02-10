@@ -6,7 +6,7 @@
   "author": "Aman Ghebreweldi <amanuelg@me.com>",
   "license": "MIT",
   "dependencies": {
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "serve": "^6.5.5"
   },
   "devDependencies": {
